@@ -1,0 +1,119 @@
+
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Facebook, Twitter, Linkedin, Instagram, ArrowUp, Send } from 'lucide-react';
+
+const Footer: React.FC = () => {
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  return (
+    <footer className="py-12 bg-white px-4">
+      <div className="max-w-7xl mx-auto bg-black rounded-[4rem] p-12 md:p-20 shadow-[0_20px_50px_rgba(0,0,0,0.3)] relative overflow-hidden text-white">
+        
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-secondary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 relative z-10">
+          
+          <div className="lg:col-span-5">
+            <div className="flex items-center mb-10">
+              <div className="h-16 w-auto">
+                <img 
+                  src="https://preview.redd.it/qqa49xnzx9og1.png?width=200&format=png&auto=webp&s=1a58946bd9b1f326a0b6710d60adaaf3acdb98a6" 
+                  alt="NICCO Logo" 
+                  className="h-full w-auto object-contain"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+            </div>
+            <p className="text-white/60 leading-relaxed font-light mb-10 text-lg">
+              Over eight decades of unwavering commitment to powering global infrastructure. The pulse of the nation’s core industries.
+            </p>
+            <div className="relative max-w-sm">
+              <input 
+                type="email" 
+                placeholder="Updates to your inbox" 
+                className="w-full bg-white/5 border border-white/10 rounded-full py-4 px-8 focus:outline-none focus:border-brand-secondary transition-all font-medium text-sm text-white placeholder:text-white/30"
+              />
+              <button className="absolute right-2 top-2 bottom-2 bg-brand-secondary text-white p-3 rounded-full hover:bg-white hover:text-black transition-all">
+                <Send className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+
+          <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-10">
+            <div>
+              <h4 className="font-bold text-white mb-8 tracking-widest text-[10px] opacity-40 uppercase">COMPANY</h4>
+              <ul className="space-y-4">
+                {[
+                  { name: 'HOME', link: '/' },
+                  { name: 'ABOUT US', link: '/about' },
+                  { name: 'PRODUCTS', link: '/#products' },
+                  { name: 'BROCHURES', link: '#' },
+                  { name: 'GALLERY', link: '#' },
+                  { name: 'CONTACT US', link: '/contact' }
+                ].map((item) => (
+                  <li key={item.name}>
+                    <Link to={item.link} className="text-white/60 hover:text-white transition-colors text-sm font-medium uppercase">
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold text-white mb-8 tracking-widest text-[10px] opacity-40 uppercase">INDUSTRIES</h4>
+              <ul className="space-y-4">
+                {['RAILWAYS', 'DEFENSE', 'MARINE', 'RENEWABLES', 'POWER'].map((link) => (
+                  <li key={link}>
+                    <Link to="/#products" className="text-white/60 hover:text-white transition-colors text-sm font-medium uppercase">
+                      {link}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="col-span-2 md:col-span-1">
+              <h4 className="font-bold text-white mb-8 tracking-widest text-[10px] opacity-40 uppercase">FOLLOW US</h4>
+              <div className="flex gap-4 mb-10">
+                {[
+                  { Icon: Facebook, href: '#' },
+                  { Icon: Twitter, href: '#' },
+                  { Icon: Linkedin, href: 'https://www.linkedin.com/in/nicco-cables-13b59b317/' },
+                  { Icon: Instagram, href: '#' }
+                ].map((social, i) => (
+                  <a 
+                    key={i} 
+                    href={social.href} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 rounded-full bg-white/5 backdrop-blur-md flex items-center justify-center text-white hover:bg-brand-secondary hover:text-white transition-all hover:-translate-y-1 border border-white/10"
+                  >
+                    <social.Icon className="w-5 h-5" />
+                  </a>
+                ))}
+              </div>
+              <button onClick={scrollToTop} className="flex items-center gap-3 text-xs font-extrabold tracking-[0.3em] text-white/40 hover:text-white transition-colors group uppercase">
+                BACK TO TOP <ArrowUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform" />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-20 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-[10px] text-white/30 font-bold tracking-widest">
+            © 2024 NICCO CABLES. ALL RIGHTS RESERVED.
+          </p>
+          <div className="flex gap-8 text-[10px] text-white/30 font-bold tracking-widest">
+            <a href="#" className="hover:text-white uppercase">PRIVACY</a>
+            <a href="#" className="hover:text-white uppercase">COMPLIANCE</a>
+            <a href="#" className="hover:text-white uppercase">SUSTAINABILITY</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

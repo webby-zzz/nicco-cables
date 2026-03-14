@@ -28,7 +28,9 @@ const MegaMenu = ({ isOpen }: { isOpen: boolean }) => {
               <Zap className="w-4 h-4 text-brand-secondary" /> CABLES BY TYPES
             </h4>
             <ul className="space-y-3 text-sm text-white/50 font-medium">
-              <li className="hover:text-white transition-colors cursor-pointer border-l-2 border-transparent hover:border-brand-secondary pl-3">LT Power & Control</li>
+              <li className="hover:text-white transition-colors cursor-pointer border-l-2 border-transparent hover:border-brand-secondary pl-3">
+                <Link to="/products/lt-power-control">LT Power & Control</Link>
+              </li>
               <li className="hover:text-white transition-colors cursor-pointer border-l-2 border-transparent hover:border-brand-secondary pl-3">Instrumentation Cables</li>
               <li className="hover:text-white transition-colors cursor-pointer border-l-2 border-transparent hover:border-brand-secondary pl-3">Elastomeric & Silicon</li>
               <li className="hover:text-white transition-colors cursor-pointer border-l-2 border-transparent hover:border-brand-secondary pl-3">Electron Beam Cables</li>
@@ -38,10 +40,10 @@ const MegaMenu = ({ isOpen }: { isOpen: boolean }) => {
             </ul>
           </div>
 
-          {/* Column 2 & 3: PRODUCT SOLUTIONS */}
+          {/* Column 2 & 3: INDUSTRY SOLUTIONS */}
           <div className="lg:col-span-2 space-y-8">
             <h4 className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.3em] text-white/40 mb-8">
-              <Zap className="w-4 h-4 text-brand-secondary" /> PRODUCT SOLUTIONS
+              <Zap className="w-4 h-4 text-brand-secondary" /> INDUSTRY SOLUTIONS
             </h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3">
               <ul className="space-y-3 text-sm text-white/50 font-medium">
@@ -73,9 +75,12 @@ const MegaMenu = ({ isOpen }: { isOpen: boolean }) => {
             </div>
             
             <div className="pt-8 border-t border-white/10">
-              <button className="w-full text-[10px] font-black uppercase tracking-widest bg-brand-secondary text-white px-6 py-4 rounded-xl hover:bg-white hover:text-brand-dark transition-all shadow-lg shadow-brand-secondary/20">
+              <Link 
+                to="/brochures"
+                className="w-full text-[10px] font-black uppercase tracking-widest bg-brand-secondary text-white px-6 py-4 rounded-xl hover:bg-white hover:text-brand-dark transition-all shadow-lg shadow-brand-secondary/20 flex items-center justify-center"
+              >
                 VIEW BROCHURES
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -174,8 +179,8 @@ const Navbar: React.FC = () => {
     { name: 'HOME', link: '/' },
     { name: 'ABOUT US', link: '/about' },
     { name: 'PRODUCTS', link: '/#products', hasMegaMenu: true },
-    { name: 'BROCHURES', link: '#' },
-    { name: 'GALLERY', link: '#' },
+    { name: 'BROCHURES', link: '/brochures' },
+    { name: 'GALLERY', link: '/gallery' },
     { name: 'CONTACT US', link: '/contact' },
   ];
 
@@ -269,19 +274,94 @@ const Navbar: React.FC = () => {
       </nav>
 
       {/* Mobile Menu */}
-      <div className={`fixed inset-0 glass-panel z-[60] transition-all duration-500 lg:hidden ${mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none translate-y-10'}`}>
-        <div className="flex flex-col items-center justify-center h-full space-y-8 px-6 text-center">
+      <div className={`fixed inset-0 glass-panel z-[60] transition-all duration-500 lg:hidden overflow-y-auto ${mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none translate-y-10'}`}>
+        <div className="flex flex-col items-center justify-center min-h-full py-20 space-y-8 px-6 text-center">
           <button className="absolute top-10 right-10 p-4" onClick={() => setMobileMenuOpen(false)}><X className="w-8 h-8 text-brand-dark" /></button>
-          {menuItems.map((item) => (
-            <Link 
-              key={item.name} 
-              to={item.link.startsWith('#') ? '/' + item.link : item.link}
-              className="text-3xl font-black text-brand-dark hover:text-brand-secondary tracking-tighter uppercase"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {item.name}
-            </Link>
-          ))}
+          {menuItems.map((item) => {
+            if (item.hasMegaMenu) {
+              return (
+                <div key={item.name} className="flex flex-col items-center w-full">
+                  <button 
+                    onClick={() => setIsMegaMenuOpen(!isMegaMenuOpen)}
+                    className="flex items-center gap-2 text-3xl font-black text-brand-dark hover:text-brand-secondary tracking-tighter uppercase"
+                  >
+                    {item.name}
+                    <ChevronDown className={`w-6 h-6 transition-transform duration-300 ${isMegaMenuOpen ? 'rotate-180 text-brand-secondary' : ''}`} />
+                  </button>
+                  
+                  {/* Mobile Products Dropdown */}
+                  <div className={`w-full max-w-sm overflow-hidden transition-all duration-500 ease-in-out ${isMegaMenuOpen ? 'max-h-[1200px] opacity-100 mt-6' : 'max-h-0 opacity-0'}`}>
+                    <div className="bg-white/50 backdrop-blur-md rounded-3xl p-6 border border-brand-dark/5 shadow-inner space-y-8 text-left">
+                      
+                      {/* Cables by Types */}
+                      <div>
+                        <h4 className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-brand-muted mb-4">
+                          <Zap className="w-3 h-3 text-brand-secondary" /> CABLES BY TYPES
+                        </h4>
+                        <ul className="space-y-3 text-sm font-bold text-brand-dark/80 pl-5 border-l border-brand-dark/10">
+                          <li>
+                            <Link 
+                              to="/products/lt-power-control" 
+                              className="block hover:text-brand-secondary transition-colors"
+                              onClick={() => {
+                                setMobileMenuOpen(false);
+                                setIsMegaMenuOpen(false);
+                              }}
+                            >
+                              LT Power & Control
+                            </Link>
+                          </li>
+                          <li className="opacity-50">Instrumentation Cables</li>
+                          <li className="opacity-50">Elastomeric & Silicon</li>
+                          <li className="opacity-50">Electron Beam Cables</li>
+                          <li className="opacity-50">Overhead Conductors</li>
+                          <li className="opacity-50">HT Cables upto 33kV</li>
+                        </ul>
+                      </div>
+
+                      {/* Industry Solutions */}
+                      <div>
+                        <h4 className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-brand-muted mb-4">
+                          <Zap className="w-3 h-3 text-brand-secondary" /> INDUSTRY SOLUTIONS
+                        </h4>
+                        <ul className="space-y-3 text-sm font-bold text-brand-dark/80 pl-5 border-l border-brand-dark/10">
+                          <li className="opacity-50">Transmission and Distribution</li>
+                          <li className="opacity-50">Renewable Energy (Solar, Wind)</li>
+                          <li className="opacity-50">Power Generation</li>
+                          <li className="opacity-50">Exploration (Oil & Gas, Mining)</li>
+                          <li className="opacity-50">Mobility (Aerospace, Marine)</li>
+                          <li className="opacity-50">Defence (Submarine, Tactical)</li>
+                        </ul>
+                      </div>
+
+                      {/* Cables by Standards */}
+                      <div>
+                        <h4 className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-brand-muted mb-4">
+                          <Globe className="w-3 h-3 text-brand-secondary" /> CABLES BY STANDARDS
+                        </h4>
+                        <ul className="space-y-3 text-sm font-bold text-brand-dark/80 pl-5 border-l border-brand-dark/10">
+                          <li className="opacity-50">Indian Standards (IS)</li>
+                          <li className="opacity-50">International (IEC, UL, CE)</li>
+                        </ul>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              );
+            }
+
+            return (
+              <Link 
+                key={item.name} 
+                to={item.link.startsWith('#') ? '/' + item.link : item.link}
+                className="text-3xl font-black text-brand-dark hover:text-brand-secondary tracking-tighter uppercase"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {item.name}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </div>

@@ -4,9 +4,36 @@ import { motion } from 'motion/react';
 import { Mail, Phone, MapPin, Building2, Factory, Send } from 'lucide-react';
 
 const ContactPage: React.FC = () => {
+  const [submitStatus, setSubmitStatus] = React.useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmitStatus('loading');
+
+    const formData = new FormData(e.currentTarget);
+    
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitStatus('success');
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setSubmitStatus('error');
+    }
+  };
 
   const regionalOffices = [
     {
@@ -124,33 +151,91 @@ const ContactPage: React.FC = () => {
             <div className="lg:col-span-5">
               <div className="glass-panel p-10 md:p-12 rounded-[3rem] border-gray-100 shadow-2xl sticky top-32">
                 <h3 className="text-xs font-bold text-brand-secondary uppercase tracking-[0.4em] mb-10">QUICK FORM</h3>
-                <form className="space-y-6">
-                  <div>
-                    <label className="text-[10px] font-black text-brand-dark uppercase tracking-widest mb-3 block">Name</label>
-                    <input type="text" className="w-full bg-gray-50 border-none rounded-2xl px-6 py-4 text-sm focus:ring-2 focus:ring-brand-secondary transition-all" />
-                  </div>
-                  <div>
-                    <label className="text-[10px] font-black text-brand-dark uppercase tracking-widest mb-3 block">Company</label>
-                    <input type="text" className="w-full bg-gray-50 border-none rounded-2xl px-6 py-4 text-sm focus:ring-2 focus:ring-brand-secondary transition-all" />
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                {submitStatus === 'success' ? (
+                  <motion.div 
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="text-center py-12"
+                  >
+                    <div className="w-20 h-20 bg-emerald-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <Send className="w-8 h-8 text-emerald-500" />
+                    </div>
+                    <h4 className="text-2xl font-black text-brand-dark tracking-tighter mb-4">Message Sent!</h4>
+                    <p className="text-brand-muted font-medium mb-8">Thank you for reaching out. Our team will get back to you shortly.</p>
+                    <button 
+                      onClick={() => setSubmitStatus('idle')}
+                      className="text-xs font-bold text-brand-secondary uppercase tracking-widest hover:underline"
+                    >
+                      Send another message
+                    </button>
+                  </motion.div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    {/* Web3Forms Access Key - Replace with your actual key */}
+                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+                    
                     <div>
-                      <label className="text-[10px] font-black text-brand-dark uppercase tracking-widest mb-3 block">Phone</label>
-                      <input type="tel" className="w-full bg-gray-50 border-none rounded-2xl px-6 py-4 text-sm focus:ring-2 focus:ring-brand-secondary transition-all" />
+                      <label className="text-[10px] font-black text-brand-dark uppercase tracking-widest mb-3 block">Name</label>
+                      <input 
+                        type="text" 
+                        name="name"
+                        required
+                        className="w-full bg-gray-50 border-none rounded-2xl px-6 py-4 text-sm focus:ring-2 focus:ring-brand-secondary transition-all" 
+                      />
                     </div>
                     <div>
-                      <label className="text-[10px] font-black text-brand-dark uppercase tracking-widest mb-3 block">Email</label>
-                      <input type="email" className="w-full bg-gray-50 border-none rounded-2xl px-6 py-4 text-sm focus:ring-2 focus:ring-brand-secondary transition-all" />
+                      <label className="text-[10px] font-black text-brand-dark uppercase tracking-widest mb-3 block">Company</label>
+                      <input 
+                        type="text" 
+                        name="company"
+                        className="w-full bg-gray-50 border-none rounded-2xl px-6 py-4 text-sm focus:ring-2 focus:ring-brand-secondary transition-all" 
+                      />
                     </div>
-                  </div>
-                  <div>
-                    <label className="text-[10px] font-black text-brand-dark uppercase tracking-widest mb-3 block">Message (Optional)</label>
-                    <textarea rows={4} className="w-full bg-gray-50 border-none rounded-2xl px-6 py-4 text-sm focus:ring-2 focus:ring-brand-secondary transition-all resize-none"></textarea>
-                  </div>
-                  <button className="w-full bg-brand-dark text-white font-black text-[10px] uppercase tracking-[0.3em] py-5 rounded-2xl hover:bg-brand-secondary transition-all flex items-center justify-center gap-3 shadow-xl shadow-brand-dark/10">
-                    SEND MESSAGE <Send className="w-4 h-4" />
-                  </button>
-                </form>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="text-[10px] font-black text-brand-dark uppercase tracking-widest mb-3 block">Phone</label>
+                        <input 
+                          type="tel" 
+                          name="phone"
+                          required
+                          className="w-full bg-gray-50 border-none rounded-2xl px-6 py-4 text-sm focus:ring-2 focus:ring-brand-secondary transition-all" 
+                        />
+                      </div>
+                      <div>
+                        <label className="text-[10px] font-black text-brand-dark uppercase tracking-widest mb-3 block">Email</label>
+                        <input 
+                          type="email" 
+                          name="email"
+                          required
+                          className="w-full bg-gray-50 border-none rounded-2xl px-6 py-4 text-sm focus:ring-2 focus:ring-brand-secondary transition-all" 
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <label className="text-[10px] font-black text-brand-dark uppercase tracking-widest mb-3 block">Message (Optional)</label>
+                      <textarea 
+                        name="message"
+                        rows={4} 
+                        className="w-full bg-gray-50 border-none rounded-2xl px-6 py-4 text-sm focus:ring-2 focus:ring-brand-secondary transition-all resize-none"
+                      ></textarea>
+                    </div>
+                    
+                    {submitStatus === 'error' && (
+                      <p className="text-xs font-bold text-red-500 uppercase tracking-widest">
+                        Something went wrong. Please try again.
+                      </p>
+                    )}
+
+                    <button 
+                      type="submit"
+                      disabled={submitStatus === 'loading'}
+                      className={`w-full bg-brand-dark text-white font-black text-[10px] uppercase tracking-[0.3em] py-5 rounded-2xl hover:bg-brand-secondary transition-all flex items-center justify-center gap-3 shadow-xl shadow-brand-dark/10 ${submitStatus === 'loading' ? 'opacity-70 cursor-not-allowed' : ''}`}
+                    >
+                      {submitStatus === 'loading' ? 'SENDING...' : 'SEND MESSAGE'} <Send className="w-4 h-4" />
+                    </button>
+                  </form>
+                )}
               </div>
             </div>
 

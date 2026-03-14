@@ -35,12 +35,7 @@ const Hero: React.FC = () => {
         {/* Animated Accent Line - Softened to white */}
         <div className="w-24 h-1 bg-white mb-8 animate-pulse opacity-50" />
 
-        {/* Refined Action - Switched to Black button with red hover */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full sm:w-auto">
-          <button className="w-full sm:w-auto px-16 py-5 bg-white text-brand-dark rounded-full font-bold uppercase tracking-widest text-xs hover:bg-brand-secondary hover:text-white transition-all duration-500 flex items-center justify-center gap-3 group shadow-2xl">
-            EXPLORE PRODUCTS <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
-        </div>
+        {/* Refined Action - Removed CTA as requested */}
       </div>
 
       {/* Bottom Selection Label */}

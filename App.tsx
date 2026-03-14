@@ -14,6 +14,9 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import AboutPage from './components/AboutPage';
 import ContactPage from './components/ContactPage';
+import BrochuresPage from './components/BrochuresPage';
+import GalleryPage from './components/GalleryPage';
+import LTPowerControlPage from './components/LTPowerControlPage';
 
 const HomePage: React.FC = () => {
   return (
@@ -64,6 +67,9 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/brochures" element={<BrochuresPage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/products/lt-power-control" element={<LTPowerControlPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
         <Footer />

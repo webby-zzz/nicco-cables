@@ -1,86 +1,78 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, Maximize2, Camera, Award, Newspaper, Tent, Users } from 'lucide-react';
+import { X, Maximize2, Camera, Globe, Tent, Newspaper, Award, Users } from 'lucide-react';
 
 interface GalleryItem {
   id: string;
-  category: 'expos' | 'stalls' | 'news' | 'awards' | 'functions';
+  category: string;
   title: string;
   description: string;
   imageUrl: string;
 }
 
-const categories = [
-  { id: 'all', label: 'All Moments', icon: Camera },
-  { id: 'expos', label: 'Expos', icon: Globe },
-  { id: 'stalls', label: 'Event Stalls', icon: Tent },
-  { id: 'news', label: 'Media Coverage', icon: Newspaper },
-  { id: 'awards', label: 'Awards', icon: Award },
-  { id: 'functions', label: 'Functions', icon: Users },
-];
+const getCategory = (filename: string) => {
+  const name = filename.replace(/\.[^/.]+$/, "");
+  const lowerName = name.toLowerCase();
 
-// Helper for Globe icon since it wasn't imported in the first pass
-import { Globe } from 'lucide-react';
-
-const dummyGallery: GalleryItem[] = [
-  {
-    id: '1',
-    category: 'expos',
-    title: 'International Railway Expo 2023',
-    description: 'Showcasing our latest RDSO approved signaling cables to global delegates.',
-    imageUrl: 'https://picsum.photos/seed/expo1/1200/800'
-  },
-  {
-    id: '2',
-    category: 'stalls',
-    title: 'PowerGrid Symposium Stall',
-    description: 'Engaging with industry leaders at the annual PowerGrid technical symposium.',
-    imageUrl: 'https://picsum.photos/seed/stall1/1200/800'
-  },
-  {
-    id: '3',
-    category: 'news',
-    title: 'Economic Times Feature',
-    description: 'Nicco Cables recognized for its contribution to the "Make in India" initiative.',
-    imageUrl: 'https://picsum.photos/seed/news1/1200/800'
-  },
-  {
-    id: '4',
-    category: 'awards',
-    title: 'Excellence in Manufacturing 2023',
-    description: 'Receiving the prestigious award for quality consistency in the cable industry.',
-    imageUrl: 'https://picsum.photos/seed/award1/1200/800'
-  },
-  {
-    id: '5',
-    category: 'functions',
-    title: 'Annual CSR Meet',
-    description: 'Sponsoring the regional education drive for underprivileged children.',
-    imageUrl: 'https://picsum.photos/seed/func1/1200/800'
-  },
-  {
-    id: '6',
-    category: 'expos',
-    title: 'Elecrama 2024',
-    description: 'Our pavilion at Elecrama, the world\'s largest electrical ecosystem congregation.',
-    imageUrl: 'https://picsum.photos/seed/expo2/1200/800'
-  },
-  {
-    id: '7',
-    category: 'news',
-    title: 'Business Standard Highlight',
-    description: 'Coverage of our new Electron Beam cable facility launch.',
-    imageUrl: 'https://picsum.photos/seed/news2/1200/800'
-  },
-  {
-    id: '8',
-    category: 'awards',
-    title: 'Safety First Certification',
-    description: 'Awarded for maintaining 1000+ days without any on-site incidents.',
-    imageUrl: 'https://picsum.photos/seed/award2/1200/800'
+  if (lowerName.includes('celebration') || lowerName.includes('vishkarma puja') || lowerName.includes('vishwakarma puja')) {
+    return 'Events';
   }
-];
+  if (lowerName.includes('exhibitor') || lowerName.includes('exhibition')) {
+    return 'Exhibitions';
+  }
+  if (lowerName.includes('newspaper') || lowerName.includes('news')) {
+    return 'News Coverage';
+  }
+  
+  if (lowerName.startsWith('our chairperson')) return 'Our Chairperson';
+  if (lowerName.startsWith('iree')) return 'IREE Expo';
+  if (lowerName.includes('women_s day') || lowerName.includes("women's day")) return 'Events';
+  if (lowerName.includes('energy conclave')) return 'Energy Conclave';
+  if (lowerName.startsWith('transtech')) return 'TransTech';
+  if (lowerName.startsWith('india & eu')) return 'India & EU FTA';
+  if (lowerName.startsWith('national executive')) return 'IEEMA';
+  
+  const parts = name.split(/[-_]/);
+  return parts[0].trim() || 'Other';
+};
+
+const LazyImage = ({ src, alt, className }: { src: string; alt: string; className?: string }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+  const imgRef = React.useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '200px' }
+    );
+
+    if (imgRef.current) {
+      observer.observe(imgRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <img
+      ref={imgRef}
+      src={isInView ? src : "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"}
+      alt={alt}
+      className={`${className} ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+      onLoad={() => {
+        if (isInView) setIsLoaded(true);
+      }}
+      referrerPolicy="no-referrer"
+    />
+  );
+};
 
 const GalleryPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState('all');
@@ -90,9 +82,37 @@ const GalleryPage: React.FC = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const { galleryItems, categories } = useMemo(() => {
+    const imagePaths = Object.keys(import.meta.glob('/public/Gallery/*'));
+    
+    const items: GalleryItem[] = imagePaths.map((path, index) => {
+      const filename = path.split('/').pop() || '';
+      const title = filename.replace(/\.[^/.]+$/, "");
+      const category = getCategory(filename);
+      return {
+        id: String(index),
+        category,
+        title,
+        description: '',
+        imageUrl: path.replace('/public', '')
+      };
+    });
+
+    const uniqueCategories = Array.from(new Set(items.map(item => item.category)));
+    const cats = uniqueCategories.map(cat => ({
+      id: cat,
+      label: cat,
+      icon: Camera
+    }));
+
+    cats.unshift({ id: 'all', label: 'All Images', icon: Camera });
+
+    return { galleryItems: items, categories: cats };
+  }, []);
+
   const filteredItems = activeTab === 'all' 
-    ? dummyGallery 
-    : dummyGallery.filter(item => item.category === activeTab);
+    ? galleryItems 
+    : galleryItems.filter(item => item.category === activeTab);
 
   return (
     <div className="bg-white min-h-screen">
@@ -136,7 +156,7 @@ const GalleryPage: React.FC = () => {
               <button
                 key={cat.id}
                 onClick={() => setActiveTab(cat.id)}
-                className={`whitespace-nowrap px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest transition-all duration-300 border ${
+                className={`whitespace-nowrap px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest transition-all duration-200 border ${
                   activeTab === cat.id 
                     ? 'bg-brand-dark text-white border-brand-dark shadow-lg shadow-brand-dark/10' 
                     : 'bg-transparent text-brand-muted border-transparent hover:border-gray-200 hover:bg-gray-50'
@@ -164,20 +184,19 @@ const GalleryPage: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.4 }}
+                  transition={{ duration: 0.28 }}
                   className="group"
                 >
                   <div 
                     onClick={() => setSelectedImage(item)}
-                    className="relative aspect-[4/3] rounded-[2rem] overflow-hidden shadow-sm mb-5 bg-gray-50 border border-gray-100 cursor-pointer group-hover:shadow-xl transition-all duration-500"
+                    className="relative aspect-[4/3] rounded-[2rem] overflow-hidden shadow-sm mb-5 bg-gray-50 border border-gray-100 cursor-pointer group-hover:shadow-xl transition-all duration-300"
                   >
-                    <img 
+                    <LazyImage 
                       src={item.imageUrl} 
                       alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-brand-dark/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-brand-dark/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                       <div className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20">
                         <Maximize2 className="w-5 h-5 text-white" />
                       </div>
@@ -187,9 +206,11 @@ const GalleryPage: React.FC = () => {
                   <div className="px-2">
                     <p className="text-[9px] font-black text-brand-secondary uppercase tracking-[0.2em] mb-1">{item.category}</p>
                     <h3 className="text-lg font-black text-brand-dark tracking-tighter mb-1 uppercase">{item.title}</h3>
-                    <p className="text-xs text-brand-muted font-medium leading-relaxed opacity-70">
-                      {item.description}
-                    </p>
+                    {item.description && (
+                      <p className="text-xs text-brand-muted font-medium leading-relaxed opacity-70">
+                        {item.description}
+                      </p>
+                    )}
                   </div>
                 </motion.div>
               ))}
@@ -234,7 +255,9 @@ const GalleryPage: React.FC = () => {
                 <div className="mt-8 text-center max-w-2xl px-4">
                   <p className="text-brand-secondary text-[10px] font-black uppercase tracking-[0.3em] mb-3">{selectedImage.category}</p>
                   <h3 className="text-2xl md:text-3xl font-black tracking-tighter text-white mb-3 uppercase">{selectedImage.title}</h3>
-                  <p className="text-sm md:text-base text-white/70 font-medium leading-relaxed">{selectedImage.description}</p>
+                  {selectedImage.description && (
+                    <p className="text-sm md:text-base text-white/70 font-medium leading-relaxed">{selectedImage.description}</p>
+                  )}
                 </div>
               </div>
             </motion.div>

@@ -35,10 +35,10 @@ const Industries: React.FC = () => {
           {industryList.map((item, index) => (
             <div 
               key={index}
-              className="glass-panel p-10 rounded-[2.5rem] border-transparent hover:border-brand-secondary/20 hover:shadow-2xl hover:shadow-brand-secondary/5 hover:-translate-y-3 transition-all duration-700 cursor-pointer group"
+              className="glass-panel p-10 rounded-[2.5rem] border-transparent hover:border-brand-secondary/20 hover:shadow-2xl hover:shadow-brand-secondary/5 hover:-translate-y-3 transition-all duration-500 cursor-pointer group"
             >
-              <div className="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center mb-10 group-hover:bg-brand-secondary transition-all duration-500 group-hover:rotate-[10deg]">
-                <item.icon className="w-7 h-7 text-brand-secondary group-hover:text-white transition-colors duration-500" strokeWidth={1.5} />
+              <div className="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center mb-10 group-hover:bg-brand-secondary transition-all duration-300 group-hover:rotate-[10deg]">
+                <item.icon className="w-7 h-7 text-brand-secondary group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
               </div>
               <h4 className="text-xl font-bold text-brand-dark mb-4 group-hover:text-brand-secondary transition-colors tracking-tight">{item.title}</h4>
               <p className="text-brand-muted text-sm leading-relaxed font-light">{item.desc}</p>

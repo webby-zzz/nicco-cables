@@ -58,15 +58,15 @@ const Products: React.FC = () => {
             <img 
               src={cat.img} 
               alt={cat.title}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-40 group-hover:opacity-60 transition-opacity duration-700" />
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-40 group-hover:opacity-60 transition-opacity duration-500" />
             
-            <div className="absolute bottom-0 left-0 right-0 p-10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
+            <div className="absolute bottom-0 left-0 right-0 p-10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
               <div className="glass-panel p-8 rounded-[2rem] border-white/20">
                 <span className="text-[10px] font-black uppercase tracking-widest mb-2 block text-brand-secondary">COLLECTION {index + 1}</span>
                 <h4 className="text-2xl font-black tracking-tighter mb-4 text-brand-dark">{cat.title}</h4>
-                <div className="h-[1px] w-full bg-gray-200 mb-6 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-700" />
+                <div className="h-[1px] w-full bg-gray-200 mb-6 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
                 <button className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-dark hover:text-brand-secondary transition-colors">
                   DETAILED SPECS <ArrowRight className="w-4 h-4" />
                 </button>

@@ -17,7 +17,7 @@ const Achievements: React.FC = () => {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 md:gap-20 text-center">
           {stats.map((stat, index) => (
             <div key={index} className="flex flex-col items-center group">
-              <span className="text-7xl md:text-9xl font-black tracking-tighter text-brand-secondary mb-4 group-hover:scale-110 transition-transform duration-500">
+              <span className="text-7xl md:text-9xl font-black tracking-tighter text-brand-secondary mb-4 group-hover:scale-110 transition-transform duration-300">
                 {stat.value}
               </span>
               <div className="h-[2px] w-12 bg-white/10 mb-6" />

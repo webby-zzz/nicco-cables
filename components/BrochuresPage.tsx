@@ -15,35 +15,115 @@ interface Brochure {
 const dummyBrochures: Brochure[] = [
   {
     id: '1',
-    title: 'Corporate Profile 2024',
+    title: 'Nicco Cables Corporate Catalogue',
     category: 'Corporate',
-    thumbnail: 'https://picsum.photos/seed/corp/600/800',
-    pdfUrl: '#',
+    thumbnail: 'https://picsum.photos/seed/corp1/600/800',
+    pdfUrl: '/brochures/Nicco Cables Corporate  Catalogue.pdf',
     description: 'A comprehensive overview of Nicco Cables, our history, and our vision for the future of power transmission.'
   },
   {
     id: '2',
-    title: 'Railway Cables Catalog',
+    title: 'LT Cables Brochure',
     category: 'Technical',
-    thumbnail: 'https://picsum.photos/seed/rail/600/800',
-    pdfUrl: '#',
-    description: 'Detailed specifications for RDSO approved specialized cables for railway signaling and power applications.'
+    thumbnail: 'https://picsum.photos/seed/ltcables/600/800',
+    pdfUrl: '/brochures/LT cables brochure.pdf',
+    description: 'Detailed specifications for Low Tension (LT) cables.'
   },
   {
     id: '3',
-    title: 'Industrial Power Solutions',
+    title: 'Medium Voltage Covered Conductor (MVCC)',
     category: 'Technical',
-    thumbnail: 'https://picsum.photos/seed/power/600/800',
-    pdfUrl: '#',
-    description: 'Explore our range of high-performance cables designed for heavy industrial environments and power plants.'
+    thumbnail: 'https://picsum.photos/seed/mvcc/600/800',
+    pdfUrl: '/brochures/Medium Voltage Covered Conductor (MVCC) with E-Beam Process passed.pdf',
+    description: 'Specifications for Medium Voltage Covered Conductor (MVCC) with E-Beam Process.'
   },
   {
     id: '4',
-    title: 'Quality & Certifications',
-    category: 'Quality',
-    thumbnail: 'https://picsum.photos/seed/quality/600/800',
-    pdfUrl: '#',
-    description: 'A collection of our international certifications and quality assurance protocols.'
+    title: 'Railway Cables',
+    category: 'Technical',
+    thumbnail: 'https://picsum.photos/seed/rail/600/800',
+    pdfUrl: '/brochures/Railway Cables .pdf',
+    description: 'Detailed specifications for RDSO approved specialized cables for railway signaling and power applications.'
+  },
+  {
+    id: '5',
+    title: 'Wind Energy and Solar Cables',
+    category: 'Technical',
+    thumbnail: 'https://picsum.photos/seed/solar/600/800',
+    pdfUrl: '/brochures/Wind Energy and Solar Cables.pdf',
+    description: 'Cables designed specifically for renewable energy applications including wind and solar.'
+  },
+  {
+    id: '6',
+    title: 'Shipbuilding Cables',
+    category: 'Technical',
+    thumbnail: 'https://picsum.photos/seed/ship/600/800',
+    pdfUrl: '/brochures/_SHIPBUILDING CABLES.pdf',
+    description: 'Marine-grade cables designed for shipbuilding and offshore applications.'
+  },
+  {
+    id: '7',
+    title: 'Automotive Cables',
+    category: 'Technical',
+    thumbnail: 'https://picsum.photos/seed/auto/600/800',
+    pdfUrl: '/brochures/AUTOMOTIVE CABLES (R3).pdf',
+    description: 'High-performance cables for the automotive industry.'
+  },
+  {
+    id: '8',
+    title: 'Defense and Aerospace Cables',
+    category: 'Technical',
+    thumbnail: 'https://picsum.photos/seed/defense/600/800',
+    pdfUrl: '/brochures/Defense and Aerospace Cables.pdf',
+    description: 'Specialized cables meeting stringent requirements for defense and aerospace applications.'
+  },
+  {
+    id: '9',
+    title: 'Elastomeric Insulated Cables',
+    category: 'Technical',
+    thumbnail: 'https://picsum.photos/seed/elastomeric1/600/800',
+    pdfUrl: '/brochures/ELASTOMERIC INSULATED CABLES - NICCO.pdf',
+    description: 'Flexible and durable elastomeric insulated cables for various industrial uses.'
+  },
+  {
+    id: '10',
+    title: 'Elastomeric Insulated Cables (Nicco X Cvl)',
+    category: 'Technical',
+    thumbnail: 'https://picsum.photos/seed/elastomeric2/600/800',
+    pdfUrl: '/brochures/ELASTOMERIC INSULATED CABLES (Nicco X Cvl).pdf',
+    description: 'Elastomeric insulated cables in collaboration with CVL.'
+  },
+  {
+    id: '11',
+    title: 'LT Power & Control Cable Catalog',
+    category: 'Technical',
+    thumbnail: 'https://picsum.photos/seed/ltpower/600/800',
+    pdfUrl: '/brochures/LT Power & Control Cable Catalog_compressed.pdf',
+    description: 'Comprehensive catalog for Low Tension power and control cables.'
+  },
+  {
+    id: '12',
+    title: 'HT Cables upto 11KV',
+    category: 'Technical',
+    thumbnail: 'https://picsum.photos/seed/htcables/600/800',
+    pdfUrl: '/brochures/HT Cables upto 11KV - NICCO .pdf',
+    description: 'Specifications for High Tension (HT) cables up to 11KV.'
+  },
+  {
+    id: '13',
+    title: 'Fire Survival Cables',
+    category: 'Technical',
+    thumbnail: 'https://picsum.photos/seed/fire/600/800',
+    pdfUrl: '/brochures/Fire Survival Cables rated at 950°C - NICCO .pdf',
+    description: 'Fire survival cables rated at 950°C for critical safety applications.'
+  },
+  {
+    id: '14',
+    title: 'Instrumentation Cables',
+    category: 'Technical',
+    thumbnail: 'https://picsum.photos/seed/inst/600/800',
+    pdfUrl: '/brochures/INSTRUMENTATION CABLES - NICCO .pdf',
+    description: 'High-precision instrumentation cables for industrial control systems.'
   }
 ];
 
@@ -63,19 +143,35 @@ const BrochuresPage: React.FC = () => {
     e.preventDefault();
     setLoading(true);
     
-    // Simulate API call for lead capture
     const formData = new FormData(e.currentTarget);
-    console.log('Lead captured:', Object.fromEntries(formData.entries()));
+    const data = Object.fromEntries(formData.entries());
     
-    // In a real scenario, you'd send this to Web3Forms or your backend
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          type: "brochure",
+          data: {
+            ...data,
+            brochureName: selectedBrochure?.title,
+          },
+        }),
+      });
+    } catch (error) {
+      console.error("Error sending email:", error);
+    }
     
     setLoading(false);
     setIsSubmitted(true);
     
     // Trigger download after a short delay
     setTimeout(() => {
-      window.open(selectedBrochure?.pdfUrl, '_blank');
+      if (selectedBrochure?.pdfUrl && selectedBrochure.pdfUrl !== '#') {
+        window.open(encodeURI(selectedBrochure.pdfUrl), '_blank');
+      }
     }, 1000);
   };
 
@@ -126,14 +222,14 @@ const BrochuresPage: React.FC = () => {
                 viewport={{ once: true }}
                 className="group"
               >
-                <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden shadow-xl mb-6 bg-gray-100 border border-gray-100 group-hover:shadow-2xl transition-all duration-500">
+                <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden shadow-xl mb-6 bg-gray-100 border border-gray-100 group-hover:shadow-2xl transition-all duration-300">
                   <img 
                     src={brochure.thumbnail} 
                     alt={brochure.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
                     <p className="text-white/60 text-xs font-bold uppercase tracking-widest mb-2">{brochure.category}</p>
                     <h4 className="text-white text-xl font-black tracking-tighter leading-tight">{brochure.title}</h4>
                   </div>

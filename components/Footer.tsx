@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Linkedin, Instagram, ArrowUp, Send } from 'lucide-react';
+import { Linkedin, ArrowUp, Send } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center mb-10">
               <div className="h-16 w-auto">
                 <img 
-                  src="https://preview.redd.it/qqa49xnzx9og1.png?width=200&format=png&auto=webp&s=1a58946bd9b1f326a0b6710d60adaaf3acdb98a6" 
+                  src="/brand identity/Logo.png" 
                   alt="NICCO Logo" 
                   className="h-full w-auto object-contain"
                   referrerPolicy="no-referrer"
@@ -78,10 +78,7 @@ const Footer: React.FC = () => {
               <h4 className="font-bold text-white mb-8 tracking-widest text-[10px] opacity-40 uppercase">FOLLOW US</h4>
               <div className="flex gap-4 mb-10">
                 {[
-                  { Icon: Facebook, href: '#' },
-                  { Icon: Twitter, href: '#' },
-                  { Icon: Linkedin, href: 'https://www.linkedin.com/in/nicco-cables-13b59b317/' },
-                  { Icon: Instagram, href: '#' }
+                  { Icon: Linkedin, href: 'https://www.linkedin.com/company/nicco-cables-pvt-ltd/' }
                 ].map((social, i) => (
                   <a 
                     key={i} 

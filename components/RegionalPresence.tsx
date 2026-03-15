@@ -96,19 +96,19 @@ const RegionalPresence: React.FC = () => {
         {/* Location Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {locations.map((loc, idx) => (
-            <div key={idx} className="bg-white border border-gray-100 rounded-[2.5rem] hover:shadow-2xl transition-all duration-700 flex flex-col items-center text-center group overflow-hidden relative min-h-[500px]">
+            <div key={idx} className="bg-white border border-gray-100 rounded-[2.5rem] hover:shadow-2xl transition-all duration-500 flex flex-col items-center text-center group overflow-hidden relative min-h-[500px]">
               {/* Background City Image */}
               <div className="absolute inset-0 z-0">
                 <img 
                   src={loc.image} 
                   alt={loc.city} 
                   loading="lazy"
-                  className="w-full h-full object-cover opacity-0 group-hover:opacity-10 transition-all duration-1000 scale-110 group-hover:scale-100"
+                  className="w-full h-full object-cover opacity-0 group-hover:opacity-10 transition-all duration-700 scale-110 group-hover:scale-100"
                 />
               </div>
 
               <div className="relative z-10 p-10 flex flex-col items-center h-full w-full">
-                <div className="w-20 h-20 mb-10 text-brand-dark/10 group-hover:text-brand-secondary transition-all duration-500 transform group-hover:-translate-y-2">
+                <div className="w-20 h-20 mb-10 text-brand-dark/10 group-hover:text-brand-secondary transition-all duration-300 transform group-hover:-translate-y-2">
                   <loc.icon className="w-full h-full stroke-[1.5px]" />
                 </div>
                 <h4 className="text-2xl font-black text-brand-dark mb-6 tracking-tighter">{loc.city}</h4>

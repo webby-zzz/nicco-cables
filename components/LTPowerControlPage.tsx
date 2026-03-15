@@ -16,7 +16,7 @@ const LTPowerControlPage: React.FC = () => {
         <motion.section 
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.56, ease: "easeOut" }}
           className="relative flex flex-col lg:flex-row overflow-hidden rounded-[2rem] lg:rounded-[3rem] shadow-2xl border border-gray-100"
         >
           {/* Left Side - Visual */}
@@ -24,7 +24,7 @@ const LTPowerControlPage: React.FC = () => {
             <motion.div 
               initial={{ scale: 1.1, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
+              transition={{ duration: 0.84, ease: "easeOut", delay: 0.2 }}
               className="absolute inset-0"
             >
               <img 
@@ -41,7 +41,7 @@ const LTPowerControlPage: React.FC = () => {
             <motion.div 
               initial={{ x: -50, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
+              transition={{ delay: 0.8, duration: 0.56, ease: "easeOut" }}
               className="absolute bottom-12 left-12 z-20 hidden lg:block"
             >
               <div className="glass-panel p-8 rounded-[2rem] border-white/10 bg-white/5 backdrop-blur-xl text-white max-w-xs shadow-2xl">
@@ -58,7 +58,7 @@ const LTPowerControlPage: React.FC = () => {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
+                transition={{ delay: 0.4, duration: 0.56, ease: "easeOut" }}
                 className="flex items-center gap-3 text-brand-secondary mb-6"
               >
                 <div className="h-[1px] w-12 bg-brand-secondary" />
@@ -68,7 +68,7 @@ const LTPowerControlPage: React.FC = () => {
               <motion.h1 
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
+                transition={{ delay: 0.5, duration: 0.56, ease: "easeOut" }}
                 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-brand-dark tracking-tighter leading-none mb-6"
               >
                 LT Power & <span className="text-brand-secondary">Control</span> Cables
@@ -77,14 +77,14 @@ const LTPowerControlPage: React.FC = () => {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" }}
+                transition={{ delay: 0.6, duration: 0.56, ease: "easeOut" }}
                 className="space-y-6"
               >
                 <p className="text-lg text-brand-muted leading-relaxed font-medium">
                   Our LT Power and Control Cables are designed for efficient power distribution and control applications in industrial, commercial, and infrastructure projects. Manufactured using high-quality conductors and insulation materials, these cables ensure safe operation, mechanical robustness, and long service life under varied operating conditions.
                 </p>
                 
-                <div className="p-6 rounded-[1.5rem] bg-gray-50 border border-gray-100 group hover:bg-brand-dark transition-all duration-500 shadow-sm hover:shadow-xl">
+                <div className="p-6 rounded-[1.5rem] bg-gray-50 border border-gray-100 group hover:bg-brand-dark transition-all duration-300 shadow-sm hover:shadow-xl">
                   <p className="text-[10px] font-black text-brand-secondary uppercase tracking-widest mb-2 group-hover:text-brand-secondary/80 transition-colors">Product Range</p>
                   <p className="text-base font-bold text-brand-dark group-hover:text-white leading-snug transition-colors">
                     LT Power & Control Cables up to 1.1 kV (insulation Type XLPE & PVC), Armoured and Unarmoured variants, FR / FRLS / LSZH sheath options with Fire survival properties.
@@ -106,7 +106,7 @@ const LTPowerControlPage: React.FC = () => {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="glass-panel p-12 rounded-[3rem] bg-white border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-500"
+              className="glass-panel p-12 rounded-[3rem] bg-white border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300"
             >
               <div className="w-16 h-16 rounded-3xl bg-brand-secondary/10 flex items-center justify-center mb-8">
                 <Settings className="w-8 h-8 text-brand-secondary" />
@@ -122,7 +122,7 @@ const LTPowerControlPage: React.FC = () => {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="glass-panel p-12 rounded-[3rem] bg-brand-dark border-white/5 shadow-xl hover:shadow-2xl transition-all duration-500 text-white"
+              className="glass-panel p-12 rounded-[3rem] bg-brand-dark border-white/5 shadow-xl hover:shadow-2xl transition-all duration-300 text-white"
             >
               <div className="w-16 h-16 rounded-3xl bg-white/10 flex items-center justify-center mb-8">
                 <Shield className="w-8 h-8 text-brand-secondary" />
@@ -312,7 +312,7 @@ const LTPowerControlPage: React.FC = () => {
             </div>
             <Link 
               to="/contact"
-              className="bg-brand-dark text-white px-10 py-6 rounded-2xl font-black text-xs uppercase tracking-widest flex items-center gap-4 shadow-xl hover:bg-white hover:text-brand-dark transition-all duration-500"
+              className="bg-brand-dark text-white px-10 py-6 rounded-2xl font-black text-xs uppercase tracking-widest flex items-center gap-4 shadow-xl hover:bg-white hover:text-brand-dark transition-all duration-300"
             >
               CONTACT OUR EXPERTS <ArrowRight className="w-5 h-5" />
             </Link>

@@ -75,7 +75,7 @@ const Clientele: React.FC = () => {
           className="flex whitespace-nowrap"
           animate={{ x: ["0%", "-50%"] }}
           transition={{
-            duration: 40,
+            duration: 28,
             ease: "linear",
             repeat: Infinity,
           }}
@@ -87,7 +87,7 @@ const Clientele: React.FC = () => {
                 <img
                   src={logo}
                   alt={`Client Logo ${index}`}
-                  className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-500"
+                  className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -100,7 +100,7 @@ const Clientele: React.FC = () => {
                 <img
                   src={logo}
                   alt={`Client Logo ${index}`}
-                  className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-500"
+                  className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
                   referrerPolicy="no-referrer"
                 />
               </div>

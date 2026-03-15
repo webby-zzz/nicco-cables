@@ -72,13 +72,13 @@ const AboutPage: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.56 }}
             className="w-24 h-1 bg-brand-secondary mx-auto mb-12"
           />
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.56, delay: 0.2 }}
             className="text-4xl md:text-[10rem] font-black text-white tracking-tighter leading-[0.8] mb-16"
           >
             Our <span className="text-brand-ash">Legacy</span>
@@ -86,7 +86,7 @@ const AboutPage: React.FC = () => {
           <motion.p 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
+            transition={{ delay: 0.6, duration: 0.56 }}
             className="text-white/60 text-[10px] font-black uppercase tracking-[0.6em]"
           >
             ENGINEERING EXCELLENCE SINCE 1944
@@ -108,7 +108,7 @@ const AboutPage: React.FC = () => {
                 <img 
                   src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=1200" 
                   alt="Innovation" 
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
             </div>
@@ -179,8 +179,8 @@ const AboutPage: React.FC = () => {
 
           <div className="flex flex-wrap justify-center gap-8">
             {coreValues.map((value, idx) => (
-              <div key={idx} className="group flex flex-col items-start text-left p-10 bg-[#F3F2EE] rounded-[2.5rem] border border-transparent hover:border-brand-secondary/20 hover:bg-white hover:shadow-2xl transition-all duration-500 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-[400px]">
-                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-secondary group-hover:text-white transition-all duration-500">
+              <div key={idx} className="group flex flex-col items-start text-left p-10 bg-[#F3F2EE] rounded-[2.5rem] border border-transparent hover:border-brand-secondary/20 hover:bg-white hover:shadow-2xl transition-all duration-300 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-[400px]">
+                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-secondary group-hover:text-white transition-all duration-300">
                   {value.icon}
                 </div>
                 <h5 className="text-lg font-black text-brand-dark tracking-tighter mb-4 leading-tight">
@@ -213,7 +213,7 @@ const AboutPage: React.FC = () => {
         <div className="relative flex overflow-hidden">
           <div className="flex animate-marquee whitespace-nowrap py-12 items-center w-max">
             {[...accreditationLogos, ...accreditationLogos].map((logo, idx) => (
-              <div key={idx} className="mx-16 flex items-center justify-center transition-all duration-500 opacity-60 hover:opacity-100 flex-shrink-0">
+              <div key={idx} className="mx-16 flex items-center justify-center transition-all duration-300 opacity-60 hover:opacity-100 flex-shrink-0">
                 <img 
                   src={logo.url} 
                   alt={logo.label} 

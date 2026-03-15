@@ -47,7 +47,7 @@ const WhyNicco: React.FC = () => {
               <img 
                 src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800" 
                 alt="Cable Engineering" 
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/60 to-transparent" />
               <div className="absolute bottom-8 left-8">
@@ -62,7 +62,7 @@ const WhyNicco: React.FC = () => {
 
           <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-8">
             {pillars.map((pillar, index) => (
-              <div key={index} className="bg-white p-10 rounded-[3rem] border border-gray-100 hover:border-brand-secondary/20 hover:shadow-xl transition-all duration-500 group relative overflow-hidden">
+              <div key={index} className="bg-white p-10 rounded-[3rem] border border-gray-100 hover:border-brand-secondary/20 hover:shadow-xl transition-all duration-300 group relative overflow-hidden">
                 <div className="relative z-10">
                   <div className="w-14 h-14 rounded-2xl bg-gray-50 flex items-center justify-center mb-8 group-hover:bg-brand-secondary transition-all">
                     <pillar.icon className="w-7 h-7 text-brand-secondary group-hover:text-white" strokeWidth={1.5} />
@@ -73,7 +73,7 @@ const WhyNicco: React.FC = () => {
                   </p>
                 </div>
                 {/* Subtle Image on Hover */}
-                <div className="absolute top-0 right-0 w-full h-full opacity-0 group-hover:opacity-5 transition-opacity duration-700">
+                <div className="absolute top-0 right-0 w-full h-full opacity-0 group-hover:opacity-5 transition-opacity duration-500">
                   <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&q=80&w=400" className="w-full h-full object-cover" alt="" />
                 </div>
               </div>

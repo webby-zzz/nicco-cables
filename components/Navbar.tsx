@@ -5,9 +5,9 @@ import { Menu, X, ChevronDown, Zap, Shield, Sun, Building2, HardHat, Globe, Layo
 
 const Logo = ({ isScrolled }: { isScrolled: boolean }) => (
   <Link to="/" className="flex items-center group cursor-pointer">
-    <div className={`${isScrolled ? 'h-12' : 'h-14'} w-auto transition-all duration-300 group-hover:scale-105`}>
+    <div className={`${isScrolled ? 'h-8 md:h-12' : 'h-10 md:h-14'} w-auto transition-all duration-200 group-hover:scale-105`}>
       <img 
-        src="https://preview.redd.it/qqa49xnzx9og1.png?width=200&format=png&auto=webp&s=1a58946bd9b1f326a0b6710d60adaaf3acdb98a6" 
+        src="/brand identity/Logo.png" 
         alt="NICCO Logo" 
         className="h-full w-auto object-contain"
         referrerPolicy="no-referrer"
@@ -18,7 +18,7 @@ const Logo = ({ isScrolled }: { isScrolled: boolean }) => (
 
 const MegaMenu = ({ isOpen }: { isOpen: boolean }) => {
   return (
-    <div className={`absolute top-full left-0 w-full pt-4 transition-all duration-500 ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
+    <div className={`absolute top-full left-0 w-full pt-4 transition-all duration-300 ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
       <div className="bg-brand-dark text-white shadow-2xl overflow-hidden rounded-[2.5rem] border border-white/10 max-h-[85vh] overflow-y-auto">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-16 p-12 lg:px-16 lg:py-16">
           
@@ -47,7 +47,9 @@ const MegaMenu = ({ isOpen }: { isOpen: boolean }) => {
             </h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3">
               <ul className="space-y-3 text-sm text-white/50 font-medium">
-                <li className="hover:text-white transition-colors cursor-pointer border-l-2 border-transparent hover:border-brand-secondary pl-3">Transmission and Distribution</li>
+                <li className="hover:text-white transition-colors cursor-pointer border-l-2 border-transparent hover:border-brand-secondary pl-3">
+                  <Link to="/industry/transmission-distribution">Transmission and Distribution</Link>
+                </li>
                 <li className="hover:text-white transition-colors cursor-pointer border-l-2 border-transparent hover:border-brand-secondary pl-3">Renewable Energy (Solar, Wind)</li>
                 <li className="hover:text-white transition-colors cursor-pointer border-l-2 border-transparent hover:border-brand-secondary pl-3">Power Generation</li>
                 <li className="hover:text-white transition-colors cursor-pointer border-l-2 border-transparent hover:border-brand-secondary pl-3">Exploration (Oil & Gas, Mining)</li>
@@ -69,7 +71,9 @@ const MegaMenu = ({ isOpen }: { isOpen: boolean }) => {
                 <Globe className="w-4 h-4 text-brand-secondary" /> CABLES BY STANDARDS
               </h4>
               <ul className="space-y-4 text-sm text-white/50 font-medium">
-                <li className="hover:text-white transition-colors cursor-pointer border-l-2 border-transparent hover:border-brand-secondary pl-3 font-bold">Indian Standards (IS)</li>
+                <li className="hover:text-white transition-colors cursor-pointer border-l-2 border-transparent hover:border-brand-secondary pl-3 font-bold">
+                  <Link to="/standards/indian">Indian Standards (IS)</Link>
+                </li>
                 <li className="hover:text-white transition-colors cursor-pointer border-l-2 border-transparent hover:border-brand-secondary pl-3 font-bold">International (IEC, UL, CE)</li>
               </ul>
             </div>
@@ -187,17 +191,19 @@ const Navbar: React.FC = () => {
   const NavLink = ({ item }: { item: typeof menuItems[0] }) => {
     const isExternal = item.link.startsWith('http');
     const isHash = item.link.includes('#');
+    const isLightPage = location.pathname.includes('/products') || location.pathname.includes('/industry') || location.pathname.includes('/standards');
+    const useDarkText = isScrolled || isLightPage;
     
     if (isHash) {
       return (
         <a 
           href={item.link}
           className={`text-[12px] font-black uppercase tracking-widest hover:text-brand-secondary transition-all flex items-center ${
-            isScrolled ? 'text-brand-dark' : 'text-white'
+            useDarkText ? 'text-brand-dark' : 'text-white'
           }`}
         >
           {item.name}
-          {item.hasMegaMenu && <ChevronDown className={`w-3 h-3 ml-1 transition-transform duration-500 ${isMegaMenuOpen ? 'rotate-180' : ''}`} />}
+          {item.hasMegaMenu && <ChevronDown className={`w-3 h-3 ml-1 transition-transform duration-300 ${isMegaMenuOpen ? 'rotate-180' : ''}`} />}
         </a>
       );
     }
@@ -206,27 +212,30 @@ const Navbar: React.FC = () => {
       <Link 
         to={item.link}
         className={`text-[12px] font-black uppercase tracking-widest hover:text-brand-secondary transition-all flex items-center ${
-          isScrolled ? 'text-brand-dark' : 'text-white'
+          useDarkText ? 'text-brand-dark' : 'text-white'
         }`}
       >
         {item.name}
-        {item.hasMegaMenu && <ChevronDown className={`w-3 h-3 ml-1 transition-transform duration-500 ${isMegaMenuOpen ? 'rotate-180' : ''}`} />}
+        {item.hasMegaMenu && <ChevronDown className={`w-3 h-3 ml-1 transition-transform duration-300 ${isMegaMenuOpen ? 'rotate-180' : ''}`} />}
       </Link>
     );
   };
+
+  const isLightPage = location.pathname.includes('/products') || location.pathname.includes('/industry') || location.pathname.includes('/standards');
+  const useDarkText = isScrolled || isLightPage;
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 flex flex-col items-center">
       <nav 
         onMouseEnter={() => isMegaMenuOpen && setIsMegaMenuOpen(true)}
         onMouseLeave={() => setIsMegaMenuOpen(false)}
-        className={`transition-all duration-500 ease-in-out flex items-center justify-center relative ${
+        className={`transition-all duration-300 ease-in-out flex items-center justify-center relative ${
           isScrolled 
             ? 'w-[calc(100%-2rem)] max-w-7xl bg-white/90 backdrop-blur-md shadow-2xl border border-brand-secondary/10 px-10 lg:py-4 py-6 mt-4 rounded-full' 
             : 'w-[calc(100%-2rem)] max-w-7xl bg-white/5 backdrop-blur-md border border-white/10 shadow-xl px-10 py-6 mt-6 rounded-full'
         }`}
       >
-        <div className={`absolute flex items-center transition-all duration-500 ${isScrolled ? 'left-10' : 'left-10'}`}>
+        <div className={`absolute flex items-center transition-all duration-300 ${isScrolled ? 'left-10' : 'left-10'}`}>
           <Logo isScrolled={isScrolled} />
         </div>
 
@@ -245,16 +254,16 @@ const Navbar: React.FC = () => {
         {/* Center Badge for Mobile/Floating state */}
         {!isScrolled && (
           <div className="lg:hidden flex items-center">
-            <div className="px-5 py-2 bg-black/20 backdrop-blur-md rounded-full border border-white/10 flex items-center gap-2.5">
+            <div className={`px-5 py-2 bg-black/20 backdrop-blur-md rounded-full border border-white/10 flex items-center gap-2.5`}>
               <span className="w-1.5 h-1.5 rounded-full bg-brand-secondary animate-pulse" />
-              <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white">EST. 1944</span>
+              <span className={`text-[10px] font-black uppercase tracking-[0.25em] ${useDarkText ? 'text-brand-dark' : 'text-white'}`}>EST. 1944</span>
             </div>
           </div>
         )}
 
-        <div className={`absolute hidden lg:flex items-center transition-all duration-500 ${isScrolled ? 'right-10' : 'right-10'}`}>
+        <div className={`absolute hidden lg:flex items-center transition-all duration-300 ${isScrolled ? 'right-10' : 'right-10'}`}>
           {/* Integrated Translate Button - Compact version */}
-          <div className={`flex items-center gap-2 px-3 py-1.5 transition-all duration-300 hover:bg-white/5 rounded-lg relative ${isScrolled ? 'text-brand-dark hover:bg-brand-dark/5' : 'text-white'}`}>
+          <div className={`flex items-center gap-2 px-3 py-1.5 transition-all duration-200 hover:bg-white/5 rounded-lg relative ${useDarkText ? 'text-brand-dark hover:bg-brand-dark/5' : 'text-white'}`}>
             <div className="flex items-center gap-1.5 opacity-40 group-hover:opacity-100 transition-opacity">
               <Globe className="w-3 h-3 shrink-0" />
               <span className="text-[9px] font-black uppercase tracking-widest hidden xl:inline-block shrink-0">TRANSLATE</span>
@@ -263,9 +272,10 @@ const Navbar: React.FC = () => {
           </div>
         </div>
 
-        <div className={`absolute lg:hidden flex items-center h-full top-0 transition-all duration-500 ${isScrolled ? 'right-10' : 'right-10'}`}>
+        <div className={`absolute lg:hidden flex items-center gap-2 h-full top-0 transition-all duration-300 ${isScrolled ? 'right-4' : 'right-4'}`}>
+          <div id="google_translate_element_mobile" className="scale-75 origin-right"></div>
           <button className="p-2.5 rounded-full hover:bg-white/10 transition-colors" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-            {mobileMenuOpen ? <X className={isScrolled ? 'text-brand-dark' : 'text-white'} /> : <Menu className={isScrolled ? 'text-brand-dark' : 'text-white'} />}
+            {mobileMenuOpen ? <X className={useDarkText ? 'text-brand-dark' : 'text-white'} /> : <Menu className={useDarkText ? 'text-brand-dark' : 'text-white'} />}
           </button>
         </div>
 
@@ -274,7 +284,7 @@ const Navbar: React.FC = () => {
       </nav>
 
       {/* Mobile Menu */}
-      <div className={`fixed inset-0 glass-panel z-[60] transition-all duration-500 lg:hidden overflow-y-auto ${mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none translate-y-10'}`}>
+      <div className={`fixed inset-0 glass-panel z-[60] transition-all duration-300 lg:hidden overflow-y-auto ${mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none translate-y-10'}`}>
         <div className="flex flex-col items-center justify-center min-h-full py-20 space-y-8 px-6 text-center">
           <button className="absolute top-10 right-10 p-4" onClick={() => setMobileMenuOpen(false)}><X className="w-8 h-8 text-brand-dark" /></button>
           {menuItems.map((item) => {
@@ -286,11 +296,11 @@ const Navbar: React.FC = () => {
                     className="flex items-center gap-2 text-3xl font-black text-brand-dark hover:text-brand-secondary tracking-tighter uppercase"
                   >
                     {item.name}
-                    <ChevronDown className={`w-6 h-6 transition-transform duration-300 ${isMegaMenuOpen ? 'rotate-180 text-brand-secondary' : ''}`} />
+                    <ChevronDown className={`w-6 h-6 transition-transform duration-200 ${isMegaMenuOpen ? 'rotate-180 text-brand-secondary' : ''}`} />
                   </button>
                   
                   {/* Mobile Products Dropdown */}
-                  <div className={`w-full max-w-sm overflow-hidden transition-all duration-500 ease-in-out ${isMegaMenuOpen ? 'max-h-[1200px] opacity-100 mt-6' : 'max-h-0 opacity-0'}`}>
+                  <div className={`w-full max-w-sm overflow-hidden transition-all duration-300 ease-in-out ${isMegaMenuOpen ? 'max-h-[1200px] opacity-100 mt-6' : 'max-h-0 opacity-0'}`}>
                     <div className="bg-white/50 backdrop-blur-md rounded-3xl p-6 border border-brand-dark/5 shadow-inner space-y-8 text-left">
                       
                       {/* Cables by Types */}
@@ -311,11 +321,11 @@ const Navbar: React.FC = () => {
                               LT Power & Control
                             </Link>
                           </li>
-                          <li className="opacity-50">Instrumentation Cables</li>
-                          <li className="opacity-50">Elastomeric & Silicon</li>
-                          <li className="opacity-50">Electron Beam Cables</li>
-                          <li className="opacity-50">Overhead Conductors</li>
-                          <li className="opacity-50">HT Cables upto 33kV</li>
+                          <li className="hover:text-brand-secondary transition-colors cursor-pointer">Instrumentation Cables</li>
+                          <li className="hover:text-brand-secondary transition-colors cursor-pointer">Elastomeric & Silicon</li>
+                          <li className="hover:text-brand-secondary transition-colors cursor-pointer">Electron Beam Cables</li>
+                          <li className="hover:text-brand-secondary transition-colors cursor-pointer">Overhead Conductors</li>
+                          <li className="hover:text-brand-secondary transition-colors cursor-pointer">HT Cables upto 33kV</li>
                         </ul>
                       </div>
 
@@ -325,12 +335,23 @@ const Navbar: React.FC = () => {
                           <Zap className="w-3 h-3 text-brand-secondary" /> INDUSTRY SOLUTIONS
                         </h4>
                         <ul className="space-y-3 text-sm font-bold text-brand-dark/80 pl-5 border-l border-brand-dark/10">
-                          <li className="opacity-50">Transmission and Distribution</li>
-                          <li className="opacity-50">Renewable Energy (Solar, Wind)</li>
-                          <li className="opacity-50">Power Generation</li>
-                          <li className="opacity-50">Exploration (Oil & Gas, Mining)</li>
-                          <li className="opacity-50">Mobility (Aerospace, Marine)</li>
-                          <li className="opacity-50">Defence (Submarine, Tactical)</li>
+                          <li>
+                            <Link 
+                              to="/industry/transmission-distribution" 
+                              className="block hover:text-brand-secondary transition-colors"
+                              onClick={() => {
+                                setMobileMenuOpen(false);
+                                setIsMegaMenuOpen(false);
+                              }}
+                            >
+                              Transmission and Distribution
+                            </Link>
+                          </li>
+                          <li className="hover:text-brand-secondary transition-colors cursor-pointer">Renewable Energy (Solar, Wind)</li>
+                          <li className="hover:text-brand-secondary transition-colors cursor-pointer">Power Generation</li>
+                          <li className="hover:text-brand-secondary transition-colors cursor-pointer">Exploration (Oil & Gas, Mining)</li>
+                          <li className="hover:text-brand-secondary transition-colors cursor-pointer">Mobility (Aerospace, Marine)</li>
+                          <li className="hover:text-brand-secondary transition-colors cursor-pointer">Defence (Submarine, Tactical)</li>
                         </ul>
                       </div>
 
@@ -340,8 +361,19 @@ const Navbar: React.FC = () => {
                           <Globe className="w-3 h-3 text-brand-secondary" /> CABLES BY STANDARDS
                         </h4>
                         <ul className="space-y-3 text-sm font-bold text-brand-dark/80 pl-5 border-l border-brand-dark/10">
-                          <li className="opacity-50">Indian Standards (IS)</li>
-                          <li className="opacity-50">International (IEC, UL, CE)</li>
+                          <li>
+                            <Link 
+                              to="/standards/indian" 
+                              className="block hover:text-brand-secondary transition-colors"
+                              onClick={() => {
+                                setMobileMenuOpen(false);
+                                setIsMegaMenuOpen(false);
+                              }}
+                            >
+                              Indian Standards (IS)
+                            </Link>
+                          </li>
+                          <li className="hover:text-brand-secondary transition-colors cursor-pointer">International (IEC, UL, CE)</li>
                         </ul>
                       </div>
 
@@ -362,6 +394,7 @@ const Navbar: React.FC = () => {
               </Link>
             );
           })}
+          
         </div>
       </div>
     </div>

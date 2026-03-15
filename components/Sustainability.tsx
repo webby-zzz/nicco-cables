@@ -27,10 +27,10 @@ const Sustainability: React.FC = () => {
               {sustainabilityItems.map((item, index) => (
                 <div 
                   key={index}
-                  className="flex items-center gap-8 bg-gray-50 px-10 py-6 rounded-[2.5rem] border border-gray-100 hover:bg-white hover:shadow-xl transition-all duration-500 cursor-pointer group"
+                  className="flex items-center gap-8 bg-gray-50 px-10 py-6 rounded-[2.5rem] border border-gray-100 hover:bg-white hover:shadow-xl transition-all duration-300 cursor-pointer group"
                 >
                   <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-sm">
-                    <img src={item.img} alt="" loading="lazy" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
+                    <img src={item.img} alt="" loading="lazy" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
                   </div>
                   <div className="flex items-center gap-4">
                     <item.icon className="w-6 h-6 text-brand-secondary" strokeWidth={2} />

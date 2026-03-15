@@ -93,7 +93,7 @@ const OurPresence: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.56 }}
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-6xl font-black text-brand-dark tracking-tighter mb-4">
@@ -109,7 +109,7 @@ const OurPresence: React.FC = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.7 }}
           className="relative w-full aspect-[2/1] bg-gray-50 rounded-[3rem] p-8 md:p-16 overflow-hidden border border-gray-100 shadow-inner"
         >
           {/* Subtle Grid Pattern */}
@@ -139,7 +139,7 @@ const OurPresence: React.FC = () => {
                 initial={{ opacity: 0, scale: 0 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.5 + idx * 0.05, duration: 0.5 }}
+                transition={{ delay: 0.5 + idx * 0.05, duration: 0.35 }}
                 className="absolute group"
                 style={{ top: loc.top, left: loc.left }}
               >
@@ -150,7 +150,7 @@ const OurPresence: React.FC = () => {
                 </div>
 
                 {/* Tooltip */}
-                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-20">
+                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none z-20">
                   <div className="bg-brand-dark text-white px-4 py-2 rounded-xl text-[10px] font-black tracking-widest whitespace-nowrap shadow-2xl flex items-center gap-2">
                     <MapPin className={`w-3 h-3 ${loc.type === 'office' ? 'text-brand-secondary' : 'text-green-400'}`} />
                     {loc.name}
@@ -166,7 +166,7 @@ const OurPresence: React.FC = () => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 1, duration: 0.8 }}
+            transition={{ delay: 1, duration: 0.56 }}
             className="absolute bottom-8 left-8 md:bottom-12 md:left-12 bg-white/90 backdrop-blur-md p-6 rounded-3xl border border-gray-100 shadow-xl z-20"
           >
             <div className="flex flex-col gap-4">
@@ -186,7 +186,7 @@ const OurPresence: React.FC = () => {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 1.2, duration: 0.8 }}
+            transition={{ delay: 1.2, duration: 0.56 }}
             className="absolute top-1/2 left-[75%] -translate-y-1/2 hidden md:block"
           >
             <div className="flex items-center gap-4">
@@ -206,10 +206,10 @@ const OurPresence: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 1.5 + idx * 0.1, duration: 0.5 }}
-              className="bg-white border border-gray-100 rounded-[2.5rem] hover:shadow-2xl transition-all duration-700 flex flex-col items-center text-center group overflow-hidden relative p-10"
+              transition={{ delay: 1.5 + idx * 0.1, duration: 0.35 }}
+              className="bg-white border border-gray-100 rounded-[2.5rem] hover:shadow-2xl transition-all duration-500 flex flex-col items-center text-center group overflow-hidden relative p-10"
             >
-              <div className="w-16 h-16 mb-8 text-brand-dark/10 group-hover:text-brand-secondary transition-all duration-500 transform group-hover:-translate-y-2">
+              <div className="w-16 h-16 mb-8 text-brand-dark/10 group-hover:text-brand-secondary transition-all duration-300 transform group-hover:-translate-y-2">
                 <loc.icon className="w-full h-full stroke-[1.5px]" />
               </div>
               <h4 className="text-xl font-black text-brand-dark mb-4 tracking-tighter">{loc.city}</h4>

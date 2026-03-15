@@ -9,20 +9,20 @@ interface IndustryCardProps {
 }
 
 const IndustryCard: React.FC<IndustryCardProps> = ({ title, description, image }) => (
-  <div className="group relative overflow-hidden rounded-[2rem] bg-gray-900 aspect-[4/5] flex flex-col justify-end p-8 border border-gray-100 hover:shadow-2xl transition-all duration-700">
+  <div className="group relative overflow-hidden rounded-[2rem] bg-gray-900 aspect-[4/5] flex flex-col justify-end p-8 border border-gray-100 hover:shadow-2xl transition-all duration-500">
     <img 
       src={`${image}?auto=format&fit=crop&q=80&w=1200`} 
       alt={title} 
       loading="lazy"
-      className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000 grayscale group-hover:grayscale-0"
+      className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 grayscale group-hover:grayscale-0"
     />
     <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/10 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
     
-    <div className="relative z-10 space-y-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+    <div className="relative z-10 space-y-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
       <h3 className="text-2xl font-black text-white tracking-tighter leading-tight">
         {title}
       </h3>
-      <p className="text-sm text-white/70 leading-relaxed font-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 line-clamp-3">
+      <p className="text-sm text-white/70 leading-relaxed font-light opacity-0 group-hover:opacity-100 transition-opacity duration-300 line-clamp-3">
         {description}
       </p>
       <div className="pt-2">

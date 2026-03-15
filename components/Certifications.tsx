@@ -60,7 +60,7 @@ const Certifications: React.FC = () => {
                     alt={logo.label} 
                     loading="lazy"
                     referrerPolicy="no-referrer"
-                    className="max-h-full w-auto object-contain transition-transform duration-500 group-hover:scale-110"
+                    className="max-h-full w-auto object-contain transition-transform duration-300 group-hover:scale-110"
                   />
                 </div>
                 <span className="mt-4 text-[10px] font-black text-brand-dark/40 tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
@@ -75,7 +75,7 @@ const Certifications: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
           {certificateData.map((cert) => (
             <div key={cert.id} className="group">
-              <div className="bg-white p-2 md:p-4 rounded-sm shadow-xl border border-gray-100 transition-all duration-700 hover:shadow-2xl hover:-translate-y-2 relative overflow-hidden">
+              <div className="bg-white p-2 md:p-4 rounded-sm shadow-xl border border-gray-100 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 relative overflow-hidden">
                 <div className="aspect-[1/1.414] relative bg-white overflow-hidden">
                   <img 
                     src={cert.img} 

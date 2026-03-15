@@ -17,9 +17,15 @@ const ContactPage: React.FC = () => {
     const formData = new FormData(e.currentTarget);
     
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("/api/send-email", {
         method: "POST",
-        body: formData
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          type: "contact",
+          data: Object.fromEntries(formData.entries()),
+        }),
       });
 
       const data = await response.json();
@@ -39,50 +45,47 @@ const ContactPage: React.FC = () => {
     {
       city: "Mumbai",
       address: [
-        "207, 2nd Floor",
+        "2O7, 2nd Floor",
         "Hubtown Viva",
         "Western Express Highway",
-        "Jogeshwari (East)",
-        "Mumbai - 400060"
+        "Jogeshwari (East) Mumbai, 400060"
       ]
     },
     {
       city: "Noida",
       address: [
-        "Office No. 404, 4th Floor",
+        "Office No.404, 4th Floor",
         "Wave Silver Tower",
-        "Sector 18",
-        "Noida - 201301"
+        "Sec 18,",
+        "Noida – 201301"
       ]
     },
     {
       city: "Hyderabad",
       address: [
-        "48, 2nd Floor",
-        "Sarvasukhi Colony",
-        "West Marredpally",
-        "Above Indian Overseas Bank",
-        "Secunderabad - 500026"
+        "48, 2nd Floor,",
+        "Sarvasukhi Colony, West Marredpally,",
+        "above Indian Overseas Bank,",
+        "Sarvasukhi Colony,",
+        "Secundarabad-500026"
       ]
     },
     {
-      city: "Bhubaneswar",
+      city: "BBSR",
       address: [
-        "Plot No. 44, 1st Floor",
+        "Pl. No. - 44, 1st floor,",
         "Ananda Bhaban",
-        "Near Bharat Petrol Pump",
-        "Rasulgarh",
-        "Bhubaneswar - 751010"
+        "Near Bharat Petrol Pump,",
+        "Rasulgarh,",
+        "Bhubaneswar- 751010"
       ]
     },
     {
       city: "Chennai",
       address: [
-        "Haive House",
-        "Old No. 1226 / New No. 24",
-        "20th Main Road",
-        "Anna Nagar",
-        "Chennai - 600040"
+        "Haive House, Old. No. 1226 New No. 24,",
+        "20th Main Road, Anna Nagar,",
+        "Chennai – 600040"
       ]
     }
   ];
@@ -133,8 +136,8 @@ const ContactPage: React.FC = () => {
                   <Phone className="w-5 h-5 text-brand-secondary group-hover:text-white" />
                 </div>
                 <div>
-                  <p className="text-[10px] font-black text-white/40 uppercase tracking-widest mb-1">Phone</p>
-                  <a href="tel:+9103340647177" className="text-lg font-bold text-white hover:text-brand-secondary transition-colors">+91 (033) 40647177</a>
+                  <p className="text-[10px] font-black text-white/40 uppercase tracking-widest mb-1">Contact</p>
+                  <a href="tel:03340647177" className="text-lg font-bold text-white hover:text-brand-secondary transition-colors">(033) 40647177</a>
                 </div>
               </div>
             </div>
@@ -172,9 +175,6 @@ const ContactPage: React.FC = () => {
                   </motion.div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
-                    {/* Web3Forms Access Key - Replace with your actual key */}
-                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
-                    
                     <div>
                       <label className="text-[10px] font-black text-brand-dark uppercase tracking-widest mb-3 block">Name</label>
                       <input 
@@ -257,10 +257,7 @@ const ContactPage: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                   <div className="space-y-6">
                     <p className="text-xl text-brand-muted leading-relaxed font-medium">
-                      Suket Building, 2nd Floor<br />
-                      20 Ballygunge Circular Road<br />
-                      Kolkata - 700019<br />
-                      West Bengal, India
+                      Suket Building, 2nd Floor, 20 Ballygunge Circular Road Kolkata - 700019
                     </p>
                   </div>
                   <div className="rounded-[2.5rem] overflow-hidden shadow-2xl aspect-video bg-gray-100 border border-gray-100">
@@ -294,10 +291,7 @@ const ContactPage: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                   <div className="space-y-6">
                     <p className="text-xl text-brand-muted leading-relaxed font-medium">
-                      71 East Ghosh Para Road<br />
-                      North 24 Parganas<br />
-                      West Bengal - 743128<br />
-                      India
+                      Shyamnagar Unit, 71 East Ghosh Para Road, North 24 Pgs., West Bengal – 743128
                     </p>
                   </div>
                   <div className="rounded-[2.5rem] overflow-hidden shadow-2xl aspect-video bg-gray-100 border border-gray-100">
@@ -325,7 +319,7 @@ const ContactPage: React.FC = () => {
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {regionalOffices.map((office, idx) => (
-                    <div key={idx} className="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-500 group">
+                    <div key={idx} className="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300 group">
                       <div className="flex items-center gap-4 mb-6">
                         <div className="w-10 h-10 rounded-2xl bg-brand-secondary/10 flex items-center justify-center group-hover:bg-brand-secondary transition-colors">
                           <MapPin className="w-5 h-5 text-brand-secondary group-hover:text-white" />

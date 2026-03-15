@@ -63,12 +63,12 @@ const ProductShowcase: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
           {products.map((product, idx) => (
             <div key={idx} className="group cursor-pointer">
-              <div className="aspect-square bg-[#F8F9FA] rounded-[2rem] overflow-hidden mb-6 flex items-center justify-center p-0 transition-all duration-500 group-hover:shadow-xl group-hover:-translate-y-2 relative">
+              <div className="aspect-square bg-[#F8F9FA] rounded-[2rem] overflow-hidden mb-6 flex items-center justify-center p-0 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-2 relative">
                 <img 
                   src={product.img} 
                   alt={product.name} 
                   loading="lazy"
-                  className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-brand-dark/5 group-hover:bg-transparent transition-colors" />
               </div>

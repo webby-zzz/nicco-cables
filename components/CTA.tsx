@@ -8,7 +8,7 @@ const CTA: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="bg-brand-dark rounded-[2.5rem] md:rounded-[4rem] p-8 md:p-32 relative overflow-hidden group">
           {/* Background Image Addition */}
-          <div className="absolute inset-0 z-0 opacity-20 grayscale transition-transform duration-[3s] group-hover:scale-110">
+          <div className="absolute inset-0 z-0 opacity-20 grayscale transition-transform duration-\[2s\] group-hover:scale-110">
             <img 
               src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000" 
               alt="Infrastructure Background" 

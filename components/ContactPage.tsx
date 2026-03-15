@@ -5,6 +5,7 @@ import { Mail, Phone, MapPin, Building2, Factory, Send } from 'lucide-react';
 
 const ContactPage: React.FC = () => {
   const [submitStatus, setSubmitStatus] = React.useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = React.useState<string>('');
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -17,14 +18,22 @@ const ContactPage: React.FC = () => {
     const formData = new FormData(e.currentTarget);
     
     try {
-      const response = await fetch("/api/send-email", {
+      const formDataObj = Object.fromEntries(formData.entries());
+      
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Accept: "application/json"
         },
         body: JSON.stringify({
-          type: "contact",
-          data: Object.fromEntries(formData.entries()),
+          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_ACCESS_KEY_HERE",
+          subject: "New Contact Form Submission from Niccocables Website",
+          from_name: formDataObj.name,
+          email: formDataObj.email,
+          phone: formDataObj.phone,
+          company: formDataObj.company || 'N/A',
+          message: formDataObj.message || 'N/A'
         }),
       });
 
@@ -32,12 +41,15 @@ const ContactPage: React.FC = () => {
 
       if (data.success) {
         setSubmitStatus('success');
+        setErrorMessage('');
       } else {
         setSubmitStatus('error');
+        setErrorMessage(data.error || 'Something went wrong. Please try again.');
       }
     } catch (error) {
       console.error("Form submission error:", error);
       setSubmitStatus('error');
+      setErrorMessage('Network error. Please try again later.');
     }
   };
 
@@ -223,7 +235,7 @@ const ContactPage: React.FC = () => {
                     
                     {submitStatus === 'error' && (
                       <p className="text-xs font-bold text-red-500 uppercase tracking-widest">
-                        Something went wrong. Please try again.
+                        {errorMessage || 'Something went wrong. Please try again.'}
                       </p>
                     )}
 

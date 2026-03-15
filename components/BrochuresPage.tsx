@@ -147,19 +147,28 @@ const BrochuresPage: React.FC = () => {
     const data = Object.fromEntries(formData.entries());
     
     try {
-      await fetch("/api/send-email", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Accept: "application/json"
         },
         body: JSON.stringify({
-          type: "brochure",
-          data: {
-            ...data,
-            brochureName: selectedBrochure?.title,
-          },
+          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_ACCESS_KEY_HERE",
+          subject: `New Brochure Download: ${selectedBrochure?.title}`,
+          from_name: data.name,
+          email: data.email,
+          phone: data.phone,
+          brochure: selectedBrochure?.title
         }),
       });
+
+      const result = await response.json();
+      
+      if (!result.success) {
+        console.error("Server returned error:", result.error);
+        // We still allow the download even if email fails, but we log it
+      }
     } catch (error) {
       console.error("Error sending email:", error);
     }

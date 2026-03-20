@@ -105,7 +105,7 @@ const ContactPage: React.FC = () => {
   return (
     <div className="bg-brand-ash">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 bg-brand-dark overflow-hidden">
+      <section className="relative pt-48 md:pt-56 pb-16 bg-brand-dark overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-secondary/5 -skew-x-12 translate-x-1/4" />
         <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
           <div className="max-w-3xl">
@@ -252,7 +252,13 @@ const ContactPage: React.FC = () => {
             </div>
 
             {/* Offices */}
-            <div className="lg:col-span-7 space-y-16">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="lg:col-span-7 space-y-16"
+            >
               
               {/* Head Office */}
               <div className="space-y-8">
@@ -350,7 +356,7 @@ const ContactPage: React.FC = () => {
                 </div>
               </div>
 
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

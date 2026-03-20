@@ -1,11 +1,18 @@
 
 import React from 'react';
+import { motion } from 'motion/react';
 
 const Overview: React.FC = () => {
   return (
     <section id="about" className="py-12 md:py-16 bg-brand-ash overflow-hidden min-h-[40vh] flex items-center">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
+        >
           
           <div className="lg:col-span-6 relative">
             <h2 className="text-xs font-bold text-brand-secondary tracking-widest uppercase mb-3 block">OUR HERITAGE STORY</h2>
@@ -41,7 +48,7 @@ const Overview: React.FC = () => {
             </div>
           </div>
 
-        </div>
+        </motion.div>
       </div>
     </section>
   );

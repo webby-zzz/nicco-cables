@@ -136,7 +136,13 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-12 md:py-16 bg-brand-ash">
+      <motion.section 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="py-12 md:py-16 bg-brand-ash"
+      >
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <motion.div 
@@ -166,7 +172,7 @@ const AboutPage: React.FC = () => {
             </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Core Values */}
       <section className="py-12 md:py-16 bg-brand-ash">
@@ -263,7 +269,13 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* Facilities */}
-      <section className="py-12 md:py-16 bg-brand-ash">
+      <motion.section 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="py-12 md:py-16 bg-brand-ash"
+      >
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-6 space-y-6">
@@ -321,7 +333,7 @@ const AboutPage: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };

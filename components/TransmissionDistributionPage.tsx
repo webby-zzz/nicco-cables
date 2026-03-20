@@ -1,151 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { Zap, Shield, Settings, ChevronDown, ChevronUp, FileText } from 'lucide-react';
-
-const products = [
-  {
-    id: 'overhead-conductors',
-    title: 'Overhead Conductors',
-    image: 'https://picsum.photos/seed/overhead/1200/800',
-    description: 'Overhead Transmission Conductors (Bare Conductors) are designed for efficient and reliable transmission of electrical power over long distances in overhead line systems. Manufactured from high-quality aluminium or aluminium alloy with or without steel reinforcement, they provide excellent electrical performance and mechanical strength for diverse terrains and climatic conditions. The range includes AAC, AAAC, ACSR, ACSR/AW, and ACAR conductors, used in high-voltage transmission, sub-transmission, and distribution networks across urban, rural, and remote areas. These conductors offer high current carrying capacity, low electrical losses, strong corrosion resistance, and long-term reliability in demanding environments.',
-    technicalDetails: [
-      { label: 'Construction', value: 'Concentric stranded construction, Single or multi-layer stranding' },
-      { label: 'Conductor Material', value: 'EC-grade aluminium / aluminium alloy, Galvanized steel / aluminium-clad steel (for reinforced conductors)' },
-      { label: 'Voltage Range', value: 'From LV distribution to EHV transmission systems' },
-      { label: 'Operating Temperature', value: 'Continuous operation up to 75°C / 90°C, Higher temperature ratings available on request' },
-      { label: 'Standards / Specifications', value: 'IEC 61089, IS 398 (Part-2), BS EN 50182, ASTM B231 / B232 / B399 (on request)/ IS 398 (Part 4)/ SS-424-08-13/SS-424-08-14' }
-    ]
-  },
-  {
-    id: 'lt-power-control',
-    title: 'LT Power & Control Cable',
-    image: 'https://picsum.photos/seed/lt-cable/1200/800',
-    description: 'LT Power & Control Cables are designed for efficient low-voltage power distribution and control applications in industrial, commercial, and infrastructure projects. These cables are manufactured with high-quality conductors and insulation materials, available up to 1.1 kV in XLPE or PVC insulation, with armoured/unarmoured constructions and FR, FRLS, or LSZH sheath options including fire-survival properties. They are widely used for power supply in factories, buildings, substations, and utilities, as well as for control, monitoring, and signalling circuits in automation systems and machinery. The cables offer excellent insulation strength, mechanical protection, fire safety, and reliable performance in demanding industrial environments.',
-    technicalDetails: [
-      { label: 'Construction', value: 'Multi-core stranded conductors with insulation, laid up with fillers and protective layers' },
-      { label: 'Voltage Rating', value: 'Up to and including 1.1 kV (1100 V)' },
-      { label: 'Conductor (Material & Type)', value: 'Aluminium or Copper, Solid, stranded & Flexible (Class 1/ Class 2 / Class 5)' },
-      { label: 'Insulation', value: 'PVC /HR PVC/ XLPE /PE' },
-      { label: 'Inner Sheath', value: 'PVC / FR PVC / FRLS PVC / LSZH / HDPE / PE' },
-      { label: 'Armouring', value: 'Galvanized steel wire / strip armour (for armoured cables), Aluminium Wire & Strip Armour (Applicable for single core armoured)' },
-      { label: 'Outer Sheath', value: 'PVC / FR PVC / FRLS / LSZH / HDPE / PE' },
-      { label: 'Operating Temperature Range', value: 'iv) PVC and HR PVC insulated: up to +70°C and +85°C respectively\nv) XLPE insulated: up to +90°C\nvi) Short circuit temperature: up to +160°C (PVC), +250°C (XLPE)' },
-      { label: 'Standards / Specifications', value: 'IS 1554 (Part 1), IS 7098 (Part 1), IEC 60502-1, IEC 60227 / 60228 (as applicable), BS/EN and other international standards as applicable' },
-      { label: 'Special Features', value: 'Flame retardant /Fire Resistant / FRLS / LSZH options, Oil and moisture resistant, Suitable for indoor and outdoor installations, good flexibility for easy installation' }
-    ]
-  },
-  {
-    id: 'ht-cables',
-    title: 'HT Cables up to 11kV',
-    image: 'https://picsum.photos/seed/ht-cable/1200/800',
-    description: 'HT Power Cables up to 11 kV are designed for reliable transmission and distribution of electrical power in medium voltage networks ranging from 3.3 kV to 11 kV earthed systems. Manufactured using high-quality materials and advanced processes, these cables ensure electrical safety, durability, and consistent performance in industrial and utility applications. The range includes armoured and unarmoured variants with FR, FRLS, and LSZH sheath options, suitable for underground, duct, trench, and tray installations. They provide excellent insulation strength, resistance to moisture and mechanical stress, and long service life in demanding environments.',
-    technicalDetails: [
-      { label: 'Construction', value: 'Single core or three core, stranded compacted circular conductor with Conductor screen, insulation, insulation screen, metallic screen, and protective layers' },
-      { label: 'Voltage Rating', value: 'Earthed systems: 1.9/3.3 kV, 3.8/6.6 kV, 6.35/11 kV\nUnearthed system: 3.3/3.3 kV and 6.6/6.6 kV' },
-      { label: 'Conductor (Material & Type)', value: 'Aluminium or Copper Stranded Compacted Circular' },
-      { label: 'Insulation', value: 'XLPE (Cross-linked Polyethylene)' },
-      { label: 'Screening (if any)', value: 'Conductor screen and insulation screen (taped/extruded as per Standard)' },
-      { label: 'Metallic Screen', value: 'Copper tape / copper wire screen (as per standard)' },
-      { label: 'Inner Sheath', value: 'PVC / FR PVC /PE /HDPE' },
-      { label: 'Armouring', value: 'Galvanized steel wire / strip armour (for armoured cables), Aluminium Wire & Strip Armour (Applicable for single core armoured)' },
-      { label: 'Outer Sheath', value: 'PVC / FR PVC / FRLS / LSZH (as per requirement)' },
-      { label: 'Operating Temperature Range', value: 'Conductor temperature: up to +90°C\nShort circuit temperature: up to +250°C' },
-      { label: 'Standards / Specifications', value: 'IS 7098 (Part 2), IEC 60502-2, OEM / Utility specifications (on request), BS/EN and other international standards as applicable.' }
-    ]
-  }
-];
-
-const ProductSection: React.FC<{ product: typeof products[0], index: number }> = ({ product, index }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  return (
-    <motion.div 
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.56, ease: "easeOut" }}
-      className="mb-24 last:mb-0"
-    >
-      <div className={`flex flex-col ${index % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 lg:gap-12 items-start`}>
-        {/* Image Side */}
-        <div className="w-full lg:w-1/2">
-          <div className="relative rounded-[1.5rem] lg:rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/3] group">
-            <img 
-              src={product.image} 
-              alt={product.title} 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              referrerPolicy="no-referrer"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent opacity-100" />
-            <div className="absolute bottom-6 left-6 right-6">
-              <h3 className="text-2xl font-black text-white tracking-tighter">{product.title}</h3>
-            </div>
-          </div>
-        </div>
-
-        {/* Content Side */}
-        <div className="w-full lg:w-1/2 flex flex-col justify-center pt-2 lg:pt-4">
-          <div className="flex items-center gap-3 text-brand-secondary mb-4">
-            <div className="h-[1px] w-8 bg-brand-secondary" />
-            <span className="text-xs font-black uppercase tracking-widest">PRODUCT</span>
-          </div>
-          
-          <h2 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tighter leading-tight mb-4">
-            {product.title}
-          </h2>
-          
-          <p className="text-base text-black leading-relaxed font-medium mb-6">
-            {product.description}
-          </p>
-
-          {/* Collapsible Technical Details */}
-          <div className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow">
-            <button 
-              onClick={() => setIsExpanded(!isExpanded)}
-              className="w-full px-6 py-5 flex items-center justify-between bg-gray-50 hover:bg-gray-100 transition-colors"
-            >
-              <div className="flex items-center gap-3">
-                <Settings className="w-5 h-5 text-brand-secondary" />
-                <span className="text-sm font-black text-brand-dark uppercase tracking-widest">Technical Details</span>
-              </div>
-              {isExpanded ? (
-                <ChevronUp className="w-5 h-5 text-black" />
-              ) : (
-                <ChevronDown className="w-5 h-5 text-black" />
-              )}
-            </button>
-            
-            <AnimatePresence>
-              {isExpanded && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: 'auto', opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
-                >
-                  <div className="px-6 py-6 border-t border-gray-200">
-                    <div className="grid grid-cols-1 gap-4">
-                      {product.technicalDetails.map((detail, i) => (
-                        <div key={i} className="flex flex-col md:flex-row md:gap-4 py-3 border-b border-gray-100 last:border-0 last:pb-0">
-                          <span className="text-xs font-bold text-brand-secondary uppercase tracking-wider md:w-1/3 shrink-0 mb-1 md:mb-0">
-                            {detail.label}
-                          </span>
-                          <span className="text-sm font-medium text-brand-dark whitespace-pre-line">
-                            {detail.value}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        </div>
-      </div>
-    </motion.div>
-  );
-};
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
+import { motion } from 'motion/react';
 
 const TransmissionDistributionPage: React.FC = () => {
   useEffect(() => {
@@ -153,100 +9,405 @@ const TransmissionDistributionPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-brand-ash min-h-screen pt-24 md:pt-32">
-      {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 md:px-8 mb-16">
-        <motion.section 
-          initial={{ opacity: 0, y: 40 }}
+    <div className="bg-brand-ash min-h-screen pt-32 md:pt-40 pb-16">
+      <div className="max-w-5xl mx-auto px-4 md:px-8">
+        
+        {/* Header Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.56, ease: "easeOut" }}
-          className="relative flex flex-col lg:flex-row overflow-hidden rounded-[1.5rem] lg:rounded-[2rem] shadow-2xl border border-gray-100"
+          transition={{ duration: 0.6 }}
+          className="bg-white rounded-[2rem] p-8 md:p-12 shadow-md mb-8 border border-gray-100 flex flex-col md:flex-row gap-8 items-center"
         >
-          {/* Left Side - Visual */}
-          <div className="lg:w-1/2 relative h-[40vh] lg:h-auto bg-brand-dark">
-            <motion.div 
-              initial={{ scale: 1.1, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.84, ease: "easeOut", delay: 0.2 }}
-              className="absolute inset-0"
-            >
-              <img 
-                src="https://picsum.photos/seed/transmission/1200/1600" 
-                alt="Transmission and Distribution" 
-                className="w-full h-full object-cover opacity-100"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/80 via-transparent to-transparent lg:hidden" />
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-brand-dark/80 lg:hidden" />
-            </motion.div>
-            
-            {/* Floating Badge */}
-            <motion.div 
-              initial={{ x: -50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: 0.8, duration: 0.56, ease: "easeOut" }}
-              className="absolute bottom-8 left-8 z-20 hidden lg:block"
-            >
-              <div className="glass-panel p-6 rounded-[1.5rem] border-white/10 bg-white/5 backdrop-blur-xl text-white max-w-xs shadow-2xl">
-                <Zap className="w-6 h-6 text-brand-secondary mb-3" />
-                <p className="text-xs font-black uppercase tracking-widest opacity-80 mb-1">Industry Solution</p>
-                <h4 className="text-2xl font-black tracking-tighter">Powering Networks</h4>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Right Side - Content */}
-          <div className="lg:w-1/2 flex items-center px-6 md:px-10 lg:px-12 py-10 lg:py-12 bg-brand-ash relative">
-            <div className="max-w-2xl">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.56, ease: "easeOut" }}
-                className="flex items-center gap-3 text-brand-secondary mb-4"
-              >
-                <div className="h-[1px] w-8 bg-brand-secondary" />
-                <span className="text-xs font-black uppercase tracking-widest">INDUSTRY SOLUTIONS</span>
-              </motion.div>
-              
-              <motion.h1 
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.56, ease: "easeOut" }}
-                className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-brand-dark tracking-tighter leading-tight mb-4"
-              >
-                Transmission and <span className="text-brand-secondary">Distribution</span>
-              </motion.h1>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6, duration: 0.56, ease: "easeOut" }}
-                className="space-y-4"
-              >
-                <p className="text-base text-black leading-relaxed font-medium">
-                  Comprehensive cable solutions designed for efficient and reliable transmission of electrical power across diverse terrains and demanding environments. From high-voltage transmission to low-voltage distribution, our products ensure the pulse of the nation's core infrastructure remains uninterrupted.
-                </p>
-              </motion.div>
+          <div className="md:w-1/2">
+            <div className="flex items-center gap-3 text-brand-secondary mb-4">
+              <div className="h-[1px] w-8 bg-brand-secondary" />
+              <span className="text-xs font-black uppercase tracking-widest">INDUSTRY SOLUTIONS</span>
             </div>
+            <h1 className="text-4xl md:text-6xl font-black text-brand-dark tracking-tighter mb-6 leading-tight">
+              Transmission & <span className="text-brand-secondary">Distribution</span>
+            </h1>
+            <p className="text-base text-black leading-relaxed font-medium">
+              From high-voltage overhead transmission to low-voltage distribution and control, Nicco's T&D product range is engineered to meet the demands of power utilities, infrastructure developers, and industrial operators. Built for diverse terrains and challenging environments, our cables and conductors keep the pulse of the nation's core infrastructure uninterrupted.
+            </p>
           </div>
-        </motion.section>
-      </div>
-
-      {/* Products Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="mb-12 text-center max-w-3xl mx-auto">
-            <h3 className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-3">OUR PRODUCTS</h3>
-            <h2 className="text-4xl md:text-6xl font-black text-brand-dark tracking-tighter">Solutions for Transmission & Distribution</h2>
+          <div className="md:w-1/2 w-full">
+            <img 
+              src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800" 
+              alt="Transmission and Distribution" 
+              className="w-full h-auto rounded-2xl shadow-lg object-cover aspect-[4/3]"
+              referrerPolicy="no-referrer"
+            />
           </div>
+        </motion.div>
 
-          <div className="space-y-8">
-            {products.map((product, index) => (
-              <ProductSection key={product.id} product={product} index={index} />
-            ))}
+        {/* Product 1: Overhead Transmission Conductors */}
+        <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-md border border-gray-100 overflow-hidden mb-8">
+          <div className="mb-8">
+            <h2 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tighter mb-4">
+              Overhead Transmission Conductors (Bare Conductors)
+            </h2>
+            <p className="text-base text-black leading-relaxed font-medium">
+              Enable efficient and reliable long-distance power transmission with Nicco's Overhead Transmission Conductors. Manufactured using high-quality aluminium and aluminium alloy with optional steel reinforcement, these conductors deliver optimal electrical performance, mechanical strength, and proven durability across diverse climatic and terrain conditions - from urban grids to remote electrification and power evacuation from renewable energy plants.
+            </p>
+          </div>
+          
+          <h3 className="text-xl font-bold text-brand-dark mb-4 border-b-2 border-brand-secondary pb-2 inline-block">
+            Technical Details
+          </h3>
+          
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse min-w-[600px]">
+              <tbody>
+                <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <th className="py-4 px-4 text-sm font-bold text-brand-dark w-1/3 align-top bg-gray-50/50 rounded-tl-xl uppercase tracking-widest">
+                    Construction
+                  </th>
+                  <td className="py-4 px-4 text-sm text-black font-medium align-top">
+                    Concentric stranded — single or multi-layer stranding
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <th className="py-4 px-4 text-sm font-bold text-brand-dark align-top bg-gray-50/50 uppercase tracking-widest">
+                    Conductor Material
+                  </th>
+                  <td className="py-4 px-4 text-sm text-black font-medium align-top">
+                    EC-grade Aluminium / Aluminium Alloy; Galvanized Steel / Aluminium-Clad Steel (for reinforced types)
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <th className="py-4 px-4 text-sm font-bold text-brand-dark align-top bg-gray-50/50 uppercase tracking-widest">
+                    Voltage Range
+                  </th>
+                  <td className="py-4 px-4 text-sm text-black font-medium align-top">
+                    LV distribution to EHV transmission systems
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <th className="py-4 px-4 text-sm font-bold text-brand-dark align-top bg-gray-50/50 uppercase tracking-widest">
+                    Operating Temperature
+                  </th>
+                  <td className="py-4 px-4 text-sm text-black font-medium align-top">
+                    Continuous operation up to 75°C / 90°C; higher ratings available on request
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <th className="py-4 px-4 text-sm font-bold text-brand-dark align-top bg-gray-50/50 uppercase tracking-widest">
+                    Standards / Specifications
+                  </th>
+                  <td className="py-4 px-4 text-sm text-black font-medium align-top">
+                    IEC 61089, IS 398 (Part 2 & Part 4), BS EN 50182, ASTM B231 / B232 / B399, SS-424-08-13 / SS-424-08-14
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <th className="py-4 px-4 text-sm font-bold text-brand-dark align-top bg-gray-50/50 uppercase tracking-widest">
+                    Special Features
+                  </th>
+                  <td className="py-4 px-4 text-sm text-black font-medium align-top">
+                    High current capacity with low electrical losses; excellent strength-to-weight ratio; superior corrosion resistance; stable under wind and ice loading; suitable for coastal, desert, and high-pollution environments
+                  </td>
+                </tr>
+                <tr className="hover:bg-gray-50 transition-colors">
+                  <th className="py-4 px-4 text-sm font-bold text-brand-dark align-top bg-gray-50/50 rounded-bl-xl uppercase tracking-widest">
+                    Sizes & Variants
+                  </th>
+                  <td className="py-4 px-4 text-sm text-black font-medium align-top">
+                    <ul className="list-none space-y-2">
+                      <li><strong>Conductor Types:</strong> AAC, AAAC, ACSR, ACSR/AW, ACAR; Special high-strength & high-temperature conductors on request</li>
+                      <li><strong>Aluminium Area:</strong> As per standard conductor sizes</li>
+                      <li><strong>Stranding:</strong> Stranded, Compact, Non-compacted</li>
+                      <li><strong>Surface Finish:</strong> Bright / Greased (as per requirement)</li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
-      </section>
+
+        {/* Product 2: LT Power & Control Cables */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="bg-white rounded-[2rem] p-8 md:p-12 shadow-md border border-gray-100 overflow-hidden mb-8"
+        >
+          <div className="mb-8">
+            <h2 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tighter mb-4">
+              LT Power & Control Cables
+            </h2>
+            <p className="text-base text-black leading-relaxed font-medium">
+              Power your industrial, commercial, and infrastructure projects with Nicco's LT Power & Control Cables, engineered for reliable low voltage power distribution and control applications. Built with high-quality conductors and premium insulation, these cables deliver mechanical strength, operational safety, and a long service life across diverse conditions. Available up to 1.1 kV in XLPE & PVC insulation, with Armoured and Unarmoured variants, and FR / FRLS / LSZH sheath options including fire survival properties.
+            </p>
+          </div>
+          
+          <h3 className="text-xl font-bold text-brand-dark mb-4 border-b-2 border-brand-secondary pb-2 inline-block">
+            Technical Details
+          </h3>
+          
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse min-w-[600px]">
+              <tbody>
+                <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <th className="py-4 px-4 text-sm font-bold text-brand-dark w-1/3 align-top bg-gray-50/50 rounded-tl-xl uppercase tracking-widest">
+                    Construction
+                  </th>
+                  <td className="py-4 px-4 text-sm text-black font-medium align-top">
+                    Multi-core stranded conductors with insulation, laid up with fillers and protective layers
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <th className="py-4 px-4 text-sm font-bold text-brand-dark align-top bg-gray-50/50 uppercase tracking-widest">
+                    Voltage Rating
+                  </th>
+                  <td className="py-4 px-4 text-sm text-black font-medium align-top">
+                    Up to and including 1.1 kV (1100 V)
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <th className="py-4 px-4 text-sm font-bold text-brand-dark align-top bg-gray-50/50 uppercase tracking-widest">
+                    Conductor (Material & Type)
+                  </th>
+                  <td className="py-4 px-4 text-sm text-black font-medium align-top">
+                    Aluminium or Copper, Solid, stranded & Flexible (Class 1 / Class 2 / Class 5)
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <th className="py-4 px-4 text-sm font-bold text-brand-dark align-top bg-gray-50/50 uppercase tracking-widest">
+                    Insulation
+                  </th>
+                  <td className="py-4 px-4 text-sm text-black font-medium align-top">
+                    PVC / HR PVC / XLPE / PE
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <th className="py-4 px-4 text-sm font-bold text-brand-dark align-top bg-gray-50/50 uppercase tracking-widest">
+                    Inner Sheath
+                  </th>
+                  <td className="py-4 px-4 text-sm text-black font-medium align-top">
+                    PVC / FR PVC / FRLS PVC / LSZH / HDPE / PE
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <th className="py-4 px-4 text-sm font-bold text-brand-dark align-top bg-gray-50/50 uppercase tracking-widest">
+                    Armouring
+                  </th>
+                  <td className="py-4 px-4 text-sm text-black font-medium align-top">
+                    Galvanized steel wire / strip armour (for armoured cables), Aluminium Wire & Strip Armour (Applicable for single core armoured)
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <th className="py-4 px-4 text-sm font-bold text-brand-dark align-top bg-gray-50/50 uppercase tracking-widest">
+                    Outer Sheath
+                  </th>
+                  <td className="py-4 px-4 text-sm text-black font-medium align-top">
+                    PVC / FR PVC / FRLS / LSZH / HDPE / PE
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <th className="py-4 px-4 text-sm font-bold text-brand-dark align-top bg-gray-50/50 uppercase tracking-widest">
+                    Operating Temperature Range
+                  </th>
+                  <td className="py-4 px-4 text-sm text-black font-medium align-top">
+                    <ul className="list-none space-y-2">
+                      <li>i) PVC and HR PVC insulated: up to +70°C and +85°C respectively</li>
+                      <li>ii) XLPE insulated: up to +90°C</li>
+                      <li>iii) Short circuit temperature: up to +160°C (PVC), +250°C (XLPE)</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <th className="py-4 px-4 text-sm font-bold text-brand-dark align-top bg-gray-50/50 uppercase tracking-widest">
+                    Standards / Specifications
+                  </th>
+                  <td className="py-4 px-4 text-sm text-black font-medium align-top">
+                    IS 1554 (Part 1), IS 7098 (Part 1), IEC 60502-1, IEC 60227 / 60228 (as applicable), BS/EN and other international standards as applicable
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <th className="py-4 px-4 text-sm font-bold text-brand-dark align-top bg-gray-50/50 uppercase tracking-widest">
+                    Special Features
+                  </th>
+                  <td className="py-4 px-4 text-sm text-black font-medium align-top">
+                    Flame Retardant / Fire Resistant / FRLS / LSZH options, Oil and moisture resistant, Suitable for indoor and outdoor installations, good flexibility for easy installation
+                  </td>
+                </tr>
+                <tr className="hover:bg-gray-50 transition-colors">
+                  <th className="py-4 px-4 text-sm font-bold text-brand-dark align-top bg-gray-50/50 rounded-bl-xl uppercase tracking-widest">
+                    Sizes & Variants
+                  </th>
+                  <td className="py-4 px-4 text-sm text-black font-medium align-top">
+                    <ul className="list-none space-y-2">
+                      <li><strong>Number of Cores:</strong> Power Core up to 5C with circular/segmental conductors as applicable, Control core from 2 core to 61 cores</li>
+                      <li><strong>Size Range (sq.mm):</strong> Single core up to 1000 sq.mm & multi-core up to 630 sq.mm (power cables), 0.5 to 2.5 sq.mm (control cables)</li>
+                      <li><strong>Voltage Options:</strong> Up to and including 1.1 kV</li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </motion.div>
+
+        {/* Product 3: HT Power Cables */}
+        <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-md border border-gray-100 overflow-hidden mb-8">
+          <div className="mb-8">
+            <h2 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tighter mb-4">
+              HT Power Cables - Up to 11 kV
+            </h2>
+            <p className="text-base text-black leading-relaxed font-medium">
+              Ensure reliable power transmission across medium voltage networks with Nicco's HT Power Cables, rated from 3.3 kV to 11 kV. Manufactured using premium-grade materials and advanced processes, these cables deliver exceptional electrical safety, dielectric strength, and long service life in demanding industrial and utility environments. Available in Armoured and Unarmoured variants with FR / FRLS / LSZH sheath options, suited for underground, duct, trench, and tray installations.
+            </p>
+          </div>
+          
+          <h3 className="text-xl font-bold text-brand-dark mb-4 border-b-2 border-brand-secondary pb-2 inline-block">
+            Technical Details
+          </h3>
+          
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse min-w-[600px]">
+              <tbody>
+                <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <th className="py-4 px-4 text-sm font-bold text-brand-dark w-1/3 align-top bg-gray-50/50 rounded-tl-xl uppercase tracking-widest">
+                    Construction
+                  </th>
+                  <td className="py-4 px-4 text-sm text-black font-medium align-top">
+                    Single or three core, stranded compacted circular conductor with conductor screen, insulation, insulation screen, metallic screen, and protective layers
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <th className="py-4 px-4 text-sm font-bold text-brand-dark align-top bg-gray-50/50 uppercase tracking-widest">
+                    Voltage Rating
+                  </th>
+                  <td className="py-4 px-4 text-sm text-black font-medium align-top">
+                    <ul className="list-none space-y-1">
+                      <li><strong>Earthed systems:</strong> 1.9/3.3 kV, 3.8/6.6 kV, 6.35/11 kV</li>
+                      <li><strong>Unearthed systems:</strong> 3.3/3.3 kV, 6.6/6.6 kV</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <th className="py-4 px-4 text-sm font-bold text-brand-dark align-top bg-gray-50/50 uppercase tracking-widest">
+                    Conductor (Material & Type)
+                  </th>
+                  <td className="py-4 px-4 text-sm text-black font-medium align-top">
+                    Aluminium or Copper — Stranded Compacted Circular
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <th className="py-4 px-4 text-sm font-bold text-brand-dark align-top bg-gray-50/50 uppercase tracking-widest">
+                    Insulation
+                  </th>
+                  <td className="py-4 px-4 text-sm text-black font-medium align-top">
+                    XLPE (Cross-Linked Polyethylene)
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <th className="py-4 px-4 text-sm font-bold text-brand-dark align-top bg-gray-50/50 uppercase tracking-widest">
+                    Screening
+                  </th>
+                  <td className="py-4 px-4 text-sm text-black font-medium align-top">
+                    Conductor screen & insulation screen (taped / extruded as per standard)
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <th className="py-4 px-4 text-sm font-bold text-brand-dark align-top bg-gray-50/50 uppercase tracking-widest">
+                    Metallic Screen
+                  </th>
+                  <td className="py-4 px-4 text-sm text-black font-medium align-top">
+                    Copper tape / copper wire screen (as per standard)
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <th className="py-4 px-4 text-sm font-bold text-brand-dark align-top bg-gray-50/50 uppercase tracking-widest">
+                    Inner Sheath
+                  </th>
+                  <td className="py-4 px-4 text-sm text-black font-medium align-top">
+                    PVC / FR PVC / PE / HDPE
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <th className="py-4 px-4 text-sm font-bold text-brand-dark align-top bg-gray-50/50 uppercase tracking-widest">
+                    Armouring
+                  </th>
+                  <td className="py-4 px-4 text-sm text-black font-medium align-top">
+                    Galvanized steel wire / strip armour (for armoured cables), Aluminium Wire & Strip Armour (Applicable for single core armoured)
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <th className="py-4 px-4 text-sm font-bold text-brand-dark align-top bg-gray-50/50 uppercase tracking-widest">
+                    Outer Sheath
+                  </th>
+                  <td className="py-4 px-4 text-sm text-black font-medium align-top">
+                    PVC / FR PVC / FRLS / LSZH (as per requirement)
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <th className="py-4 px-4 text-sm font-bold text-brand-dark align-top bg-gray-50/50 uppercase tracking-widest">
+                    Operating Temperature Range
+                  </th>
+                  <td className="py-4 px-4 text-sm text-black font-medium align-top">
+                    <ul className="list-none space-y-2">
+                      <li>i) Conductor temperature: up to +90°C</li>
+                      <li>ii) Short circuit temperature: up to +250°C</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <th className="py-4 px-4 text-sm font-bold text-brand-dark align-top bg-gray-50/50 uppercase tracking-widest">
+                    Standards / Specifications
+                  </th>
+                  <td className="py-4 px-4 text-sm text-black font-medium align-top">
+                    IS 7098 (Part 2), IEC 60502-2, OEM / Utility specifications on request, BS/EN and other international standards as applicable
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <th className="py-4 px-4 text-sm font-bold text-brand-dark align-top bg-gray-50/50 uppercase tracking-widest">
+                    Special Features
+                  </th>
+                  <td className="py-4 px-4 text-sm text-black font-medium align-top">
+                    Flame Retardant / Fire Resistant / FRLS / LSZH options, Moisture and chemical resistant, Excellent thermal and electrical stability, Suitable for direct burial and underground installation
+                  </td>
+                </tr>
+                <tr className="hover:bg-gray-50 transition-colors">
+                  <th className="py-4 px-4 text-sm font-bold text-brand-dark align-top bg-gray-50/50 rounded-bl-xl uppercase tracking-widest">
+                    Sizes & Variants
+                  </th>
+                  <td className="py-4 px-4 text-sm text-black font-medium align-top">
+                    <ul className="list-none space-y-2">
+                      <li><strong>Number of Cores:</strong> Single core and three core (circular / compacted / segmental conductors as applicable)</li>
+                      <li><strong>Size Range (sq.mm):</strong> Single core up to 630 sq.mm; Multi-core up to 400 sq.mm</li>
+                      <li><strong>Voltage Options:</strong> Up to 11 kV</li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* CTA Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="bg-brand-secondary rounded-[2rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-lg"
+        >
+          <div>
+            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tighter mb-2">Need more information?</h2>
+            <p className="text-white/90 text-base font-medium">Contact our team for a detailed consultation.</p>
+          </div>
+          <Link 
+            to="/contact"
+            className="bg-white text-brand-secondary px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-gray-100 transition-colors flex items-center gap-2 whitespace-nowrap"
+          >
+            Contact Us <ArrowRight className="w-4 h-4" />
+          </Link>
+        </motion.div>
+
+      </div>
     </div>
   );
 };

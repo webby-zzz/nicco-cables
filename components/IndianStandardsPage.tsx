@@ -100,7 +100,7 @@ const IndianStandardsPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-brand-ash min-h-screen pt-24 md:pt-32">
+    <div className="bg-brand-ash min-h-screen pt-32 md:pt-40">
       {/* Hero Section */}
       <div className="max-w-7xl mx-auto px-4 md:px-8 mb-16">
         <motion.section 

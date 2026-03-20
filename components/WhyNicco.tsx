@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { motion } from 'motion/react';
 import { Microscope, History, ShieldAlert, Cpu } from 'lucide-react';
 
 const pillars = [
@@ -26,7 +27,13 @@ const WhyNicco: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 md:px-8 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
+        >
           
           <div className="lg:col-span-5 space-y-4">
             <h2 className="text-xs font-bold text-brand-secondary uppercase tracking-widest">WHY CHOOSE NICCO</h2>
@@ -57,7 +64,7 @@ const WhyNicco: React.FC = () => {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

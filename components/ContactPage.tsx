@@ -103,16 +103,16 @@ const ContactPage: React.FC = () => {
   ];
 
   return (
-    <div className="bg-white">
+    <div className="bg-brand-ash">
       {/* Hero Section */}
-      <section className="relative pt-40 pb-20 bg-brand-dark overflow-hidden">
+      <section className="relative pt-32 pb-16 bg-brand-dark overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-secondary/5 -skew-x-12 translate-x-1/4" />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
           <div className="max-w-3xl">
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-xs font-bold text-brand-secondary uppercase tracking-[0.4em] mb-8"
+              className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-6"
             >
               CONTACT US
             </motion.h1>
@@ -120,7 +120,7 @@ const ContactPage: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-7xl font-black text-white tracking-tighter leading-[0.9] mb-10"
+              className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-tight mb-8"
             >
               Have a question about our products or require technical support?
             </motion.h2>
@@ -128,28 +128,28 @@ const ContactPage: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl text-white/60 leading-relaxed font-light max-w-2xl"
+              className="text-base text-white leading-relaxed font-light max-w-2xl"
             >
               Our team is here to assist you with product inquiries, project requirements, and technical guidance.
             </motion.p>
             
-            <div className="mt-12 flex flex-col sm:flex-row gap-8">
-              <div className="flex items-center gap-4 group">
-                <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-brand-secondary transition-colors">
-                  <Mail className="w-5 h-5 text-brand-secondary group-hover:text-white" />
+            <div className="mt-8 flex flex-col sm:flex-row gap-6">
+              <div className="flex items-center gap-3 group">
+                <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-brand-secondary transition-colors">
+                  <Mail className="w-4 h-4 text-brand-secondary group-hover:text-white" />
                 </div>
                 <div>
-                  <p className="text-[10px] font-black text-white/40 uppercase tracking-widest mb-1">Email</p>
-                  <a href="mailto:info@niccocables.com" className="text-lg font-bold text-white hover:text-brand-secondary transition-colors">info@niccocables.com</a>
+                  <p className="text-xs font-black text-white uppercase tracking-widest mb-1">Email</p>
+                  <a href="mailto:info@niccocables.com" className="text-sm font-bold text-white hover:text-brand-secondary transition-colors">info@niccocables.com</a>
                 </div>
               </div>
-              <div className="flex items-center gap-4 group">
-                <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-brand-secondary transition-colors">
-                  <Phone className="w-5 h-5 text-brand-secondary group-hover:text-white" />
+              <div className="flex items-center gap-3 group">
+                <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-brand-secondary transition-colors">
+                  <Phone className="w-4 h-4 text-brand-secondary group-hover:text-white" />
                 </div>
                 <div>
-                  <p className="text-[10px] font-black text-white/40 uppercase tracking-widest mb-1">Contact</p>
-                  <a href="tel:03340647177" className="text-lg font-bold text-white hover:text-brand-secondary transition-colors">(033) 40647177</a>
+                  <p className="text-xs font-black text-white uppercase tracking-widest mb-1">Contact</p>
+                  <a href="tel:03340647177" className="text-sm font-bold text-white hover:text-brand-secondary transition-colors">(033) 40647177</a>
                 </div>
               </div>
             </div>
@@ -158,14 +158,14 @@ const ContactPage: React.FC = () => {
       </section>
 
       {/* Main Content */}
-      <section className="py-24 md:py-32">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
+      <section className="py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             
             {/* Quick Form */}
             <div className="lg:col-span-5">
-              <div className="glass-panel p-10 md:p-12 rounded-[3rem] border-gray-100 shadow-2xl sticky top-32">
-                <h3 className="text-xs font-bold text-brand-secondary uppercase tracking-[0.4em] mb-10">QUICK FORM</h3>
+              <div className="glass-panel p-8 md:p-10 rounded-[2rem] border-gray-100 shadow-2xl sticky top-24">
+                <h3 className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-8">QUICK FORM</h3>
                 
                 {submitStatus === 'success' ? (
                   <motion.div 
@@ -177,7 +177,7 @@ const ContactPage: React.FC = () => {
                       <Send className="w-8 h-8 text-emerald-500" />
                     </div>
                     <h4 className="text-2xl font-black text-brand-dark tracking-tighter mb-4">Message Sent!</h4>
-                    <p className="text-brand-muted font-medium mb-8">Thank you for reaching out. Our team will get back to you shortly.</p>
+                    <p className="text-black font-medium mb-8 text-base">Thank you for reaching out. Our team will get back to you shortly.</p>
                     <button 
                       onClick={() => setSubmitStatus('idle')}
                       className="text-xs font-bold text-brand-secondary uppercase tracking-widest hover:underline"
@@ -188,7 +188,7 @@ const ContactPage: React.FC = () => {
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
-                      <label className="text-[10px] font-black text-brand-dark uppercase tracking-widest mb-3 block">Name</label>
+                      <label className="text-xs font-black text-brand-dark uppercase tracking-widest mb-3 block">Name</label>
                       <input 
                         type="text" 
                         name="name"
@@ -197,7 +197,7 @@ const ContactPage: React.FC = () => {
                       />
                     </div>
                     <div>
-                      <label className="text-[10px] font-black text-brand-dark uppercase tracking-widest mb-3 block">Company</label>
+                      <label className="text-xs font-black text-brand-dark uppercase tracking-widest mb-3 block">Company</label>
                       <input 
                         type="text" 
                         name="company"
@@ -206,7 +206,7 @@ const ContactPage: React.FC = () => {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label className="text-[10px] font-black text-brand-dark uppercase tracking-widest mb-3 block">Phone</label>
+                        <label className="text-xs font-black text-brand-dark uppercase tracking-widest mb-3 block">Phone</label>
                         <input 
                           type="tel" 
                           name="phone"
@@ -215,7 +215,7 @@ const ContactPage: React.FC = () => {
                         />
                       </div>
                       <div>
-                        <label className="text-[10px] font-black text-brand-dark uppercase tracking-widest mb-3 block">Email</label>
+                        <label className="text-xs font-black text-brand-dark uppercase tracking-widest mb-3 block">Email</label>
                         <input 
                           type="email" 
                           name="email"
@@ -225,7 +225,7 @@ const ContactPage: React.FC = () => {
                       </div>
                     </div>
                     <div>
-                      <label className="text-[10px] font-black text-brand-dark uppercase tracking-widest mb-3 block">Message (Optional)</label>
+                      <label className="text-xs font-black text-brand-dark uppercase tracking-widest mb-3 block">Message (Optional)</label>
                       <textarea 
                         name="message"
                         rows={4} 
@@ -242,7 +242,7 @@ const ContactPage: React.FC = () => {
                     <button 
                       type="submit"
                       disabled={submitStatus === 'loading'}
-                      className={`w-full bg-brand-dark text-white font-black text-[10px] uppercase tracking-[0.3em] py-5 rounded-2xl hover:bg-brand-secondary transition-all flex items-center justify-center gap-3 shadow-xl shadow-brand-dark/10 ${submitStatus === 'loading' ? 'opacity-70 cursor-not-allowed' : ''}`}
+                      className={`w-full bg-brand-secondary text-white font-black text-xs uppercase tracking-[0.3em] py-5 rounded-2xl hover:bg-brand-dark transition-all flex items-center justify-center gap-3 shadow-xl shadow-brand-dark/10 ${submitStatus === 'loading' ? 'opacity-50 cursor-not-allowed' : ''}`}
                     >
                       {submitStatus === 'loading' ? 'SENDING...' : 'SEND MESSAGE'} <Send className="w-4 h-4" />
                     </button>
@@ -252,27 +252,27 @@ const ContactPage: React.FC = () => {
             </div>
 
             {/* Offices */}
-            <div className="lg:col-span-7 space-y-24">
+            <div className="lg:col-span-7 space-y-16">
               
               {/* Head Office */}
-              <div className="space-y-10">
-                <div className="flex items-center gap-6">
-                  <div className="w-16 h-16 rounded-3xl bg-brand-secondary/10 flex items-center justify-center">
-                    <Building2 className="w-8 h-8 text-brand-secondary" />
+              <div className="space-y-8">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-brand-secondary/10 flex items-center justify-center">
+                    <Building2 className="w-6 h-6 text-brand-secondary" />
                   </div>
                   <div>
-                    <h3 className="text-xs font-bold text-brand-secondary uppercase tracking-[0.4em] mb-2">HEAD OFFICE</h3>
-                    <h4 className="text-3xl font-black text-brand-dark tracking-tighter">Nicco Corporation Limited</h4>
+                    <h3 className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-1">HEAD OFFICE</h3>
+                    <h4 className="text-2xl font-black text-brand-dark tracking-tighter">Nicco Corporation Limited</h4>
                   </div>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-                  <div className="space-y-6">
-                    <p className="text-xl text-brand-muted leading-relaxed font-medium">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                  <div className="space-y-4">
+                    <p className="text-base text-black leading-relaxed font-medium">
                       Suket Building, 2nd Floor, 20 Ballygunge Circular Road Kolkata - 700019
                     </p>
                   </div>
-                  <div className="rounded-[2.5rem] overflow-hidden shadow-2xl aspect-video bg-gray-100 border border-gray-100">
+                  <div className="rounded-[1.5rem] overflow-hidden shadow-2xl aspect-video bg-gray-100 border border-gray-100">
                     {/* Map for Head Office - Kolkata */}
                     <iframe 
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.9786!2d88.36!3d22.54!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02766666666667%3A0x6666666666666666!2s20%20Ballygunge%20Circular%20Road%2C%20Kolkata!5e0!3m2!1sen!2sin!4v1710312000000!5m2!1sen!2sin" 
@@ -289,24 +289,24 @@ const ContactPage: React.FC = () => {
               </div>
 
               {/* Manufacturing Plant */}
-              <div className="space-y-10">
-                <div className="flex items-center gap-6">
-                  <div className="w-16 h-16 rounded-3xl bg-brand-secondary/10 flex items-center justify-center">
-                    <Factory className="w-8 h-8 text-brand-secondary" />
+              <div className="space-y-8">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-brand-secondary/10 flex items-center justify-center">
+                    <Factory className="w-6 h-6 text-brand-secondary" />
                   </div>
                   <div>
-                    <h3 className="text-xs font-bold text-brand-secondary uppercase tracking-[0.4em] mb-2">MANUFACTURING PLANT</h3>
-                    <h4 className="text-3xl font-black text-brand-dark tracking-tighter">Shyamnagar Unit</h4>
+                    <h3 className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-1">MANUFACTURING PLANT</h3>
+                    <h4 className="text-2xl font-black text-brand-dark tracking-tighter">Shyamnagar Unit</h4>
                   </div>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-                  <div className="space-y-6">
-                    <p className="text-xl text-brand-muted leading-relaxed font-medium">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                  <div className="space-y-4">
+                    <p className="text-base text-black leading-relaxed font-medium">
                       Shyamnagar Unit, 71 East Ghosh Para Road, North 24 Pgs., West Bengal – 743128
                     </p>
                   </div>
-                  <div className="rounded-[2.5rem] overflow-hidden shadow-2xl aspect-video bg-gray-100 border border-gray-100">
+                  <div className="rounded-[1.5rem] overflow-hidden shadow-2xl aspect-video bg-gray-100 border border-gray-100">
                     {/* Map for Manufacturing Plant */}
                     <iframe 
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3678.9654!2d88.38!3d22.83!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDQ5JzQ4LjAiTiA4OMKwMjInNDguMCJF!5e0!3m2!1sen!2sin!4v1710312000000!5m2!1sen!2sin" 
@@ -323,22 +323,22 @@ const ContactPage: React.FC = () => {
               </div>
 
               {/* Regional Offices */}
-              <div className="space-y-12">
+              <div className="space-y-8">
                 <div>
-                  <h3 className="text-xs font-bold text-brand-secondary uppercase tracking-[0.4em] mb-4">REGIONAL OFFICES</h3>
+                  <h3 className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-3">REGIONAL OFFICES</h3>
                   <div className="h-[1px] w-full bg-gray-100" />
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {regionalOffices.map((office, idx) => (
-                    <div key={idx} className="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300 group">
-                      <div className="flex items-center gap-4 mb-6">
-                        <div className="w-10 h-10 rounded-2xl bg-brand-secondary/10 flex items-center justify-center group-hover:bg-brand-secondary transition-colors">
-                          <MapPin className="w-5 h-5 text-brand-secondary group-hover:text-white" />
+                    <div key={idx} className="bg-white p-6 rounded-[1.5rem] border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300 group">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-8 h-8 rounded-xl bg-brand-secondary/10 flex items-center justify-center group-hover:bg-brand-secondary transition-colors">
+                          <MapPin className="w-4 h-4 text-brand-secondary group-hover:text-white" />
                         </div>
-                        <h4 className="text-xl font-black text-brand-dark tracking-tighter uppercase">{office.city}</h4>
+                        <h4 className="text-lg font-black text-brand-dark tracking-tighter uppercase">{office.city}</h4>
                       </div>
-                      <p className="text-sm text-brand-muted leading-relaxed font-medium">
+                      <p className="text-xs text-black leading-relaxed font-medium">
                         {office.address.map((line, i) => (
                           <React.Fragment key={i}>
                             {line}<br />

@@ -21,7 +21,7 @@ const Achievements: React.FC = () => {
                 {stat.value}
               </span>
               <div className="h-[2px] w-12 bg-white/10 mb-6" />
-              <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] text-white/40">
+              <span className="text-xs md:text-xs font-bold uppercase tracking-widest text-white">
                 {stat.label}
               </span>
             </div>

@@ -115,16 +115,16 @@ const GalleryPage: React.FC = () => {
     : galleryItems.filter(item => item.category === activeTab);
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-brand-ash min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-40 pb-20 bg-brand-dark overflow-hidden">
+      <section className="relative pt-32 pb-16 bg-brand-dark overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-secondary/5 -skew-x-12 translate-x-1/4" />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
           <div className="max-w-3xl">
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-xs font-bold text-brand-secondary uppercase tracking-[0.4em] mb-8"
+              className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-6"
             >
               GALLERY
             </motion.h1>
@@ -132,7 +132,7 @@ const GalleryPage: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-7xl font-black text-white tracking-tighter leading-[0.9] mb-10"
+              className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-tight mb-6"
             >
               Moments of Excellence & Impact
             </motion.h2>
@@ -140,7 +140,7 @@ const GalleryPage: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl text-white/60 leading-relaxed font-light max-w-2xl"
+              className="text-lg text-white leading-relaxed font-light max-w-2xl"
             >
               Explore our journey through industry events, media recognitions, and corporate milestones.
             </motion.p>
@@ -149,32 +149,34 @@ const GalleryPage: React.FC = () => {
       </section>
 
       {/* Tabs Section */}
-      <section className="py-4 border-b border-gray-100 sticky top-24 md:top-28 bg-white/80 backdrop-blur-md z-40">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="flex items-center justify-start md:justify-center gap-2 overflow-x-auto pb-2 md:pb-0 no-scrollbar">
-            {categories.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => setActiveTab(cat.id)}
-                className={`whitespace-nowrap px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest transition-all duration-200 border ${
-                  activeTab === cat.id 
-                    ? 'bg-brand-dark text-white border-brand-dark shadow-lg shadow-brand-dark/10' 
-                    : 'bg-transparent text-brand-muted border-transparent hover:border-gray-200 hover:bg-gray-50'
-                }`}
-              >
-                {cat.label}
-              </button>
-            ))}
+      <section className="py-6 sticky top-24 md:top-28 z-40">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="bg-white/90 backdrop-blur-md shadow-xl border border-brand-secondary/10 rounded-[2rem] md:rounded-full py-3 md:py-4 px-2 md:px-8">
+            <div className="flex items-center justify-start md:justify-center gap-2 overflow-x-auto no-scrollbar px-2">
+              {categories.map((cat) => (
+                <button
+                  key={cat.id}
+                  onClick={() => setActiveTab(cat.id)}
+                  className={`whitespace-nowrap px-5 py-2 rounded-full text-xs font-black uppercase tracking-widest transition-all duration-200 border ${
+                    activeTab === cat.id 
+                      ? 'bg-brand-secondary text-white border-brand-secondary shadow-lg shadow-brand-secondary/10' 
+                      : 'bg-transparent text-black border-transparent hover:border-brand-dark hover:bg-brand-dark hover:text-white'
+                  }`}
+                >
+                  {cat.label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Gallery Grid */}
-      <section className="py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <section className="py-12 md:py-20">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
           <motion.div 
             layout
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             <AnimatePresence mode="popLayout">
               {filteredItems.map((item) => (
@@ -204,10 +206,10 @@ const GalleryPage: React.FC = () => {
                   </div>
                   
                   <div className="px-2">
-                    <p className="text-[9px] font-black text-brand-secondary uppercase tracking-[0.2em] mb-1">{item.category}</p>
+                    <p className="font-black text-brand-secondary uppercase tracking-[0.2em] mb-1 text-xs">{item.category}</p>
                     <h3 className="text-lg font-black text-brand-dark tracking-tighter mb-1 uppercase">{item.title}</h3>
                     {item.description && (
-                      <p className="text-xs text-brand-muted font-medium leading-relaxed opacity-70">
+                      <p className="text-xs text-black font-medium leading-relaxed opacity-100">
                         {item.description}
                       </p>
                     )}
@@ -239,7 +241,7 @@ const GalleryPage: React.FC = () => {
             >
               <button 
                 onClick={() => setSelectedImage(null)}
-                className="absolute -top-12 right-0 p-2 text-white/40 hover:text-white transition-colors"
+                className="absolute -top-12 right-0 p-2 text-white hover:text-white transition-colors"
               >
                 <X className="w-6 h-6" />
               </button>
@@ -253,10 +255,10 @@ const GalleryPage: React.FC = () => {
                 />
                 
                 <div className="mt-8 text-center max-w-2xl px-4">
-                  <p className="text-brand-secondary text-[10px] font-black uppercase tracking-[0.3em] mb-3">{selectedImage.category}</p>
-                  <h3 className="text-2xl md:text-3xl font-black tracking-tighter text-white mb-3 uppercase">{selectedImage.title}</h3>
+                  <p className="text-brand-secondary text-xs font-black uppercase tracking-[0.3em] mb-3">{selectedImage.category}</p>
+                  <h3 className="text-3xl md:text-4xl font-black tracking-tighter text-white mb-3 uppercase">{selectedImage.title}</h3>
                   {selectedImage.description && (
-                    <p className="text-sm md:text-base text-white/70 font-medium leading-relaxed">{selectedImage.description}</p>
+                    <p className="text-white font-medium leading-relaxed text-base">{selectedImage.description}</p>
                   )}
                 </div>
               </div>

@@ -49,6 +49,14 @@
     display: none;
   }
 
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
   .parallax-img {
     @apply transition-transform duration-100 ease-out;
   }

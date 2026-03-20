@@ -56,14 +56,14 @@ const AboutPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-white">
+    <div className="bg-brand-ash">
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-brand-dark">
+      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden bg-brand-dark">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&q=80&w=2000" 
-            alt="Industrial Background" 
-            className="w-full h-full object-cover opacity-40"
+            src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80&w=2000" 
+            alt="Cable Manufacturing" 
+            className="w-full h-full object-cover opacity-100"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/60 via-transparent to-brand-dark" />
         </div>
@@ -73,21 +73,21 @@ const AboutPage: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.56 }}
-            className="w-24 h-1 bg-brand-secondary mx-auto mb-12"
+            className="w-16 h-1 bg-brand-secondary mx-auto mb-8"
           />
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.56, delay: 0.2 }}
-            className="text-4xl md:text-[10rem] font-black text-white tracking-tighter leading-[0.8] mb-16"
+            className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-tight mb-6"
           >
-            Our <span className="text-brand-ash">Legacy</span>
+            Our <span className="text-brand-secondary">Legacy</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.56 }}
-            className="text-white/60 text-[10px] font-black uppercase tracking-[0.6em]"
+            className="text-white text-xs font-black uppercase tracking-widest"
           >
             ENGINEERING EXCELLENCE SINCE 1944
           </motion.p>
@@ -95,29 +95,28 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* Introduction */}
-      <section className="py-24 md:py-40 bg-white">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+      <section className="py-12 md:py-16 bg-brand-ash">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             <div className="lg:col-span-5">
-              <h2 className="text-xs font-bold text-brand-secondary uppercase tracking-[0.4em] mb-10 block">ABOUT US</h2>
-              <h3 className="text-4xl md:text-7xl font-black text-brand-dark tracking-tighter leading-[0.9] mb-12">
-                Eight Decades of <br /> 
-                <span className="text-brand-ash">Trusted Innovation.</span>
+              <h2 className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-4 block">ABOUT US</h2>
+              <h3 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tighter leading-tight mb-6">
+                Eight Decades of <span className="text-brand-secondary">Trusted Innovation.</span>
               </h3>
-              <div className="relative rounded-[3rem] overflow-hidden aspect-square shadow-2xl group">
+              <div className="relative rounded-[1.5rem] overflow-hidden aspect-square shadow-2xl group">
                 <img 
-                  src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=1200" 
-                  alt="Innovation" 
+                  src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80&w=1200" 
+                  alt="Cable Innovation" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
             </div>
-            <div className="lg:col-span-7 lg:pt-24 space-y-10">
-              <p className="text-2xl md:text-3xl text-brand-muted leading-relaxed font-normal">
+            <div className="lg:col-span-7 lg:pt-16 space-y-6">
+              <p className="text-black leading-relaxed font-normal text-base">
                 For over 8 decades, Nicco Cables has been a trusted name in India’s cable manufacturing industry, delivering high-performance connectivity solutions for critical infrastructure and strategic sectors.
               </p>
-              <div className="h-[1px] w-32 bg-brand-secondary" />
-              <div className="space-y-8 text-brand-muted/70 leading-relaxed font-light text-lg">
+              <div className="h-[1px] w-24 bg-brand-secondary" />
+              <div className="space-y-6 text-black leading-relaxed font-light text-base">
                 <p>
                   Established with a vision to support the nation’s growing industrial and power needs, Nicco has evolved into a technology-driven manufacturer of advanced electrical cables and specialized connectivity systems. Today, the company engineers a comprehensive portfolio including HT cables up to 33kV, LT power and control cables, instrumentation cables, fire survival cables, electron-beam irradiated cables, and specialized elastomeric and silicon cable solutions.
                 </p>
@@ -127,7 +126,7 @@ const AboutPage: React.FC = () => {
                 <p>
                   With solutions designed for defence, railways, metros, power utilities, renewable energy, mining, and large-scale infrastructure, Nicco continues to play a vital role in powering India’s progress while expanding its reach across global markets.
                 </p>
-                <p className="font-bold text-brand-dark text-xl">
+                <p className="font-bold text-brand-dark text-base">
                   Driven by engineering excellence, stringent quality standards, and a commitment to innovation, Nicco remains dedicated to delivering safe, reliable, and future-ready connectivity solutions.
                 </p>
               </div>
@@ -137,31 +136,31 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-24 md:py-32 bg-[#F3F2EE]">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <section className="py-12 md:py-16 bg-brand-ash">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <motion.div 
-              whileHover={{ y: -10 }}
-              className="bg-white p-12 md:p-20 rounded-[4rem] shadow-xl border border-black/5 flex flex-col h-full"
+              whileHover={{ y: -5 }}
+              className="bg-white p-8 md:p-10 rounded-[1.5rem] shadow-xl border border-black/5 flex flex-col h-full"
             >
-              <div className="w-16 h-16 bg-brand-secondary/10 rounded-2xl flex items-center justify-center mb-10">
-                <Flag className="w-8 h-8 text-brand-secondary" />
+              <div className="w-10 h-10 bg-brand-secondary/10 rounded-xl flex items-center justify-center mb-6">
+                <Flag className="w-5 h-5 text-brand-secondary" />
               </div>
-              <h4 className="text-4xl font-black text-brand-dark tracking-tighter mb-8 uppercase">OUR MISSION</h4>
-              <p className="text-brand-muted/80 leading-relaxed text-lg">
+              <h4 className="text-xl font-black text-brand-dark tracking-tighter mb-4 uppercase">OUR MISSION</h4>
+              <p className="text-black leading-relaxed text-base">
                 To design and manufacture high-performance cable solutions that meet the evolving needs of critical infrastructure and strategic industries, while consistently delivering superior quality, safety, and reliability. Through innovation, advanced engineering, and responsible manufacturing practices, we aim to contribute meaningfully to India’s industrial growth and global competitiveness.
               </p>
             </motion.div>
 
             <motion.div 
-              whileHover={{ y: -10 }}
-              className="bg-brand-dark p-12 md:p-20 rounded-[4rem] shadow-xl text-white flex flex-col h-full"
+              whileHover={{ y: -5 }}
+              className="bg-brand-dark p-8 md:p-10 rounded-[1.5rem] shadow-xl text-white flex flex-col h-full"
             >
-              <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-10">
-                <Lightbulb className="w-8 h-8 text-brand-secondary" />
+              <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center mb-6">
+                <Lightbulb className="w-5 h-5 text-brand-secondary" />
               </div>
-              <h4 className="text-4xl font-black tracking-tighter mb-8 uppercase">OUR VISION</h4>
-              <p className="text-white/70 leading-relaxed text-lg">
+              <h4 className="text-xl font-black tracking-tighter mb-4 uppercase">OUR VISION</h4>
+              <p className="text-white leading-relaxed text-base">
                 To be recognized as a global leader in advanced cable technologies, delivering world-class connectivity solutions that power industries, strengthen infrastructure, and support the development of a modern and resilient economy.
               </p>
             </motion.div>
@@ -170,23 +169,23 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* Core Values */}
-      <section className="py-24 md:py-40 bg-white">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="text-center mb-32">
-            <h2 className="text-xs font-bold text-brand-secondary uppercase tracking-[0.4em] mb-8 block">FOUNDATIONS</h2>
-            <h3 className="text-5xl md:text-8xl font-black text-brand-dark tracking-tighter leading-none">Core Values</h3>
+      <section className="py-12 md:py-16 bg-brand-ash">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-2 block">FOUNDATIONS</h2>
+            <h3 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tighter leading-tight">Core Values</h3>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-8">
+          <div className="flex flex-wrap justify-center gap-4 mx-auto max-w-[1200px]">
             {coreValues.map((value, idx) => (
-              <div key={idx} className="group flex flex-col items-start text-left p-10 bg-[#F3F2EE] rounded-[2.5rem] border border-transparent hover:border-brand-secondary/20 hover:bg-white hover:shadow-2xl transition-all duration-300 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-[400px]">
-                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-secondary group-hover:text-white transition-all duration-300">
+              <div key={idx} className="group flex flex-col items-start text-left p-6 bg-[#F3F2EE] rounded-[1.5rem] border border-transparent hover:border-brand-secondary/20 hover:bg-white hover:shadow-2xl transition-all duration-300 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)] max-w-[400px]">
+                <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center mb-4 group-hover:bg-brand-secondary group-hover:text-white transition-all duration-300">
                   {value.icon}
                 </div>
-                <h5 className="text-lg font-black text-brand-dark tracking-tighter mb-4 leading-tight">
+                <h5 className="text-sm font-black text-brand-dark tracking-tighter mb-2 leading-tight">
                   {value.title}
                 </h5>
-                <p className="text-sm text-brand-muted/70 leading-relaxed font-medium">
+                <p className="text-xs text-black leading-relaxed font-medium">
                   {value.description}
                 </p>
               </div>
@@ -196,54 +195,90 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* Certifications Slider */}
-      <section className="py-32 bg-white overflow-hidden relative">
-        <div className="absolute top-0 left-0 w-full h-1 bg-brand-secondary opacity-30" />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 mb-20">
+      <section className="py-12 md:py-20 bg-brand-ash overflow-hidden relative">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 mb-10">
           <div className="text-center">
-            <h2 className="text-xs font-bold text-brand-secondary uppercase tracking-[0.4em] mb-6">CERTIFICATIONS</h2>
-            <h3 className="text-4xl md:text-6xl font-black text-brand-dark tracking-tighter uppercase mb-4">
+            <h2 className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-4">CERTIFICATIONS</h2>
+            <h3 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tighter uppercase mb-2">
               CERTIFIED FOR
             </h3>
-            <p className="text-2xl md:text-4xl font-medium text-brand-muted italic tracking-tight">
+            <p className="font-medium text-black italic tracking-tight text-base">
               Quality, Safety & Reliability
             </p>
           </div>
         </div>
 
-        <div className="relative flex overflow-hidden">
-          <div className="flex animate-marquee whitespace-nowrap py-12 items-center w-max">
-            {[...accreditationLogos, ...accreditationLogos].map((logo, idx) => (
-              <div key={idx} className="mx-16 flex items-center justify-center transition-all duration-300 opacity-60 hover:opacity-100 flex-shrink-0">
-                <img 
-                  src={logo.url} 
-                  alt={logo.label} 
-                  className="h-20 md:h-28 w-auto object-contain"
-                  referrerPolicy="no-referrer"
-                />
+        <div className="max-w-7xl mx-auto px-4 md:px-8 w-full">
+          <div className="relative flex overflow-hidden py-6 bg-white/90 backdrop-blur-md border border-brand-secondary/10 shadow-xl rounded-full w-full">
+            <motion.div
+              className="flex whitespace-nowrap"
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{
+                duration: 60,
+                ease: "linear",
+                repeat: Infinity,
+              }}
+            >
+              {/* First set of logos */}
+              <div className="flex items-center">
+                {accreditationLogos.map((logo, idx) => (
+                  <div key={`logo-1-${idx}`} className="mx-8 md:mx-12 flex flex-col items-center text-center flex-shrink-0">
+                    <div className="h-20 md:h-24 w-32 flex items-center justify-center">
+                      <img 
+                        src={logo.url} 
+                        alt={logo.label} 
+                        loading="lazy"
+                        referrerPolicy="no-referrer"
+                        className="max-h-full max-w-full object-contain"
+                      />
+                    </div>
+                    <span className="mt-3 text-[9px] font-black text-black tracking-widest">
+                      {logo.label}
+                    </span>
+                  </div>
+                ))}
               </div>
-            ))}
+              {/* Second set of logos for seamless loop */}
+              <div className="flex items-center">
+                {accreditationLogos.map((logo, idx) => (
+                  <div key={`logo-2-${idx}`} className="mx-8 md:mx-12 flex flex-col items-center text-center flex-shrink-0">
+                    <div className="h-20 md:h-24 w-32 flex items-center justify-center">
+                      <img 
+                        src={logo.url} 
+                        alt={logo.label} 
+                        loading="lazy"
+                        referrerPolicy="no-referrer"
+                        className="max-h-full max-w-full object-contain"
+                      />
+                    </div>
+                    <span className="mt-3 text-[9px] font-black text-black tracking-widest">
+                      {logo.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Facilities */}
-      <section className="py-24 md:py-40 bg-white">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
-            <div className="lg:col-span-6 space-y-12">
+      <section className="py-12 md:py-16 bg-brand-ash">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-6 space-y-6">
               <div>
-                <h2 className="text-xs font-bold text-brand-secondary uppercase tracking-[0.4em] mb-8 block">INFRASTRUCTURE</h2>
-                <h3 className="text-5xl md:text-8xl font-black text-brand-dark tracking-tighter leading-[0.85] mb-12">
-                  World-Class <br /> 
-                  <span className="text-brand-ash">Facilities</span>
+                <h2 className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-2 block">INFRASTRUCTURE</h2>
+                <h3 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tighter leading-tight mb-4">
+                  World-Class <span className="text-brand-secondary">Facilities</span>
                 </h3>
               </div>
               
-              <p className="text-xl text-brand-muted leading-relaxed font-normal">
+              <p className="text-black leading-relaxed font-normal text-base">
                 Nicco Cables operates a state-of-the-art manufacturing facility spanning approximately 4,96,520 sq. ft., equipped with advanced machinery and automation systems designed for precision cable manufacturing.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
                 {[
                   "Advanced manufacturing lines",
                   "In-house compounding facility",
@@ -252,34 +287,34 @@ const AboutPage: React.FC = () => {
                   "Modern quality control systems",
                   "500+ Skilled professionals"
                 ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-4 group">
-                    <div className="w-2 h-2 rounded-full bg-brand-secondary group-hover:scale-150 transition-transform" />
+                  <div key={idx} className="flex items-center gap-3 group">
+                    <div className="w-1.5 h-1.5 rounded-full bg-brand-secondary group-hover:scale-150 transition-transform" />
                     <span className="text-xs font-black text-brand-dark uppercase tracking-widest">{item}</span>
                   </div>
                 ))}
               </div>
 
-              <div className="p-8 bg-[#F3F2EE] rounded-3xl border-l-4 border-brand-secondary">
-                <p className="text-sm text-brand-muted/80 leading-relaxed font-medium">
+              <div className="p-6 bg-[#F3F2EE] rounded-2xl border-l-4 border-brand-secondary">
+                <p className="text-xs text-black leading-relaxed font-medium">
                   This world-class manufacturing ecosystem enables Nicco to deliver high-volume production, consistent quality, and technologically advanced cable solutions for demanding industrial applications.
                 </p>
               </div>
             </div>
 
-            <div className="lg:col-span-6 grid grid-cols-2 gap-6">
-              <div className="space-y-6">
-                <div className="rounded-[3rem] overflow-hidden aspect-[3/4] shadow-2xl">
+            <div className="lg:col-span-6 grid grid-cols-2 gap-4">
+              <div className="space-y-4">
+                <div className="rounded-[2rem] overflow-hidden aspect-[3/4] shadow-2xl">
                   <img src="https://niccocable.com/wp-content/uploads/2024/07/1-12.jpg" alt="Facility 1" className="w-full h-full object-cover" />
                 </div>
-                <div className="rounded-[3rem] overflow-hidden aspect-square shadow-2xl">
+                <div className="rounded-[2rem] overflow-hidden aspect-square shadow-2xl">
                   <img src="https://niccocable.com/wp-content/uploads/2024/07/img1-1.jpg" alt="Facility 2" className="w-full h-full object-cover" />
                 </div>
               </div>
-              <div className="space-y-6 pt-16">
-                <div className="rounded-[3rem] overflow-hidden aspect-square shadow-2xl">
+              <div className="space-y-4 pt-12">
+                <div className="rounded-[2rem] overflow-hidden aspect-square shadow-2xl">
                   <img src="https://niccocable.com/wp-content/uploads/2024/07/1-9-scaled.jpg" alt="Facility 3" className="w-full h-full object-cover" />
                 </div>
-                <div className="rounded-[3rem] overflow-hidden aspect-[3/4] shadow-2xl">
+                <div className="rounded-[2rem] overflow-hidden aspect-[3/4] shadow-2xl">
                   <img src="https://niccocable.com/wp-content/uploads/2024/07/1-1.jpg" alt="Facility 4" className="w-full h-full object-cover" />
                 </div>
               </div>

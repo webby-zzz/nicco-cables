@@ -185,16 +185,16 @@ const BrochuresPage: React.FC = () => {
   };
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-brand-ash min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-40 pb-20 bg-brand-dark overflow-hidden">
+      <section className="relative pt-32 pb-16 bg-brand-dark overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-secondary/5 -skew-x-12 translate-x-1/4" />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
           <div className="max-w-3xl">
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-xs font-bold text-brand-secondary uppercase tracking-[0.4em] mb-8"
+              className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-6"
             >
               RESOURCES
             </motion.h1>
@@ -202,7 +202,7 @@ const BrochuresPage: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-7xl font-black text-white tracking-tighter leading-[0.9] mb-10"
+              className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-tight mb-6"
             >
               Technical Literature & Brochures
             </motion.h2>
@@ -210,7 +210,7 @@ const BrochuresPage: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl text-white/60 leading-relaxed font-light max-w-2xl"
+              className="text-lg text-white leading-relaxed font-light max-w-2xl"
             >
               Download our latest product catalogs, technical specifications, and corporate documentation.
             </motion.p>
@@ -219,9 +219,9 @@ const BrochuresPage: React.FC = () => {
       </section>
 
       {/* Grid Section */}
-      <section className="py-24 md:py-32">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+      <section className="py-12 md:py-20">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {dummyBrochures.map((brochure, idx) => (
               <motion.div
                 key={brochure.id}
@@ -239,19 +239,19 @@ const BrochuresPage: React.FC = () => {
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
-                    <p className="text-white/60 text-xs font-bold uppercase tracking-widest mb-2">{brochure.category}</p>
+                    <p className="text-white text-xs font-bold uppercase tracking-widest mb-2">{brochure.category}</p>
                     <h4 className="text-white text-xl font-black tracking-tighter leading-tight">{brochure.title}</h4>
                   </div>
                 </div>
                 
                 <div className="px-2">
-                  <h3 className="text-lg font-black text-brand-dark tracking-tighter mb-2">{brochure.title}</h3>
-                  <p className="text-sm text-brand-muted/70 line-clamp-2 mb-6 font-medium leading-relaxed">
+                  <h3 className="text-base font-black text-brand-dark tracking-tighter mb-2">{brochure.title}</h3>
+                  <p className="text-xs text-black line-clamp-2 mb-4 font-medium leading-relaxed">
                     {brochure.description}
                   </p>
                   <button 
                     onClick={() => handleDownloadClick(brochure)}
-                    className="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-brand-secondary hover:text-brand-dark transition-colors"
+                    className="flex items-center gap-3 text-xs font-black uppercase tracking-widest text-brand-secondary hover:text-brand-dark transition-colors"
                   >
                     <Download className="w-4 h-4" /> DOWNLOAD PDF
                   </button>
@@ -294,10 +294,10 @@ const BrochuresPage: React.FC = () => {
                       <CheckCircle2 className="w-10 h-10 text-emerald-500" />
                     </div>
                     <h3 className="text-3xl font-black text-brand-dark tracking-tighter mb-4">Thank You!</h3>
-                    <p className="text-brand-muted font-medium mb-8">Your download will start automatically. If it doesn't, click the button below.</p>
+                    <p className="text-black font-medium mb-8 text-base">Your download will start automatically. If it doesn't, click the button below.</p>
                     <a 
                       href={selectedBrochure?.pdfUrl}
-                      className="inline-flex items-center gap-3 bg-brand-dark text-white px-8 py-4 rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-brand-secondary transition-all"
+                      className="inline-flex items-center gap-3 bg-brand-secondary text-white px-8 py-4 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-brand-dark transition-all"
                     >
                       <Download className="w-4 h-4" /> RESTART DOWNLOAD
                     </a>
@@ -307,17 +307,17 @@ const BrochuresPage: React.FC = () => {
                     <div className="mb-10">
                       <div className="flex items-center gap-3 text-brand-secondary mb-4">
                         <FileText className="w-5 h-5" />
-                        <span className="text-[10px] font-black uppercase tracking-[0.3em]">DOWNLOAD REQUEST</span>
+                        <span className="text-xs font-black uppercase tracking-[0.3em]">DOWNLOAD REQUEST</span>
                       </div>
                       <h3 className="text-3xl font-black text-brand-dark tracking-tighter mb-4">
                         {selectedBrochure?.title}
                       </h3>
-                      <p className="text-brand-muted font-medium">Please provide your details to access the technical documentation.</p>
+                      <p className="text-black font-medium text-base">Please provide your details to access the technical documentation.</p>
                     </div>
 
                     <form onSubmit={handleFormSubmit} className="space-y-6">
                       <div>
-                        <label className="text-[10px] font-black text-brand-dark uppercase tracking-widest mb-3 block">Full Name</label>
+                        <label className="text-xs font-black text-brand-dark uppercase tracking-widest mb-3 block">Full Name</label>
                         <input 
                           type="text" 
                           name="name"
@@ -328,7 +328,7 @@ const BrochuresPage: React.FC = () => {
                       </div>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                          <label className="text-[10px] font-black text-brand-dark uppercase tracking-widest mb-3 block">Phone Number</label>
+                          <label className="text-xs font-black text-brand-dark uppercase tracking-widest mb-3 block">Phone Number</label>
                           <input 
                             type="tel" 
                             name="phone"
@@ -338,7 +338,7 @@ const BrochuresPage: React.FC = () => {
                           />
                         </div>
                         <div>
-                          <label className="text-[10px] font-black text-brand-dark uppercase tracking-widest mb-3 block">Email Address</label>
+                          <label className="text-xs font-black text-brand-dark uppercase tracking-widest mb-3 block">Email Address</label>
                           <input 
                             type="email" 
                             name="email"
@@ -352,7 +352,7 @@ const BrochuresPage: React.FC = () => {
                       <button 
                         type="submit"
                         disabled={loading}
-                        className={`w-full bg-brand-dark text-white font-black text-[10px] uppercase tracking-[0.3em] py-5 rounded-2xl hover:bg-brand-secondary transition-all flex items-center justify-center gap-3 shadow-xl shadow-brand-dark/10 ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}
+                        className={`w-full bg-brand-secondary text-white font-black text-xs uppercase tracking-[0.3em] py-5 rounded-2xl hover:bg-brand-dark transition-all flex items-center justify-center gap-3 shadow-xl shadow-brand-dark/10 ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
                       >
                         {loading ? 'PROCESSING...' : 'ACCESS BROCHURE'} <Send className="w-4 h-4" />
                       </button>

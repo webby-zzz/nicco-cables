@@ -41,7 +41,7 @@ const standards = [
   }
 ];
 
-const StandardSection = ({ standard, index }: { standard: typeof standards[0], index: number }) => {
+const StandardSection: React.FC<{ standard: typeof standards[0], index: number }> = ({ standard, index }) => {
   return (
     <motion.div 
       initial={{ opacity: 0, y: 40 }}
@@ -50,39 +50,39 @@ const StandardSection = ({ standard, index }: { standard: typeof standards[0], i
       transition={{ duration: 0.56, ease: "easeOut" }}
       className="mb-24 last:mb-0"
     >
-      <div className={`flex flex-col ${index % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 lg:gap-20 items-center`}>
+      <div className={`flex flex-col ${index % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 lg:gap-12 items-center`}>
         {/* Image Side */}
         <div className="w-full lg:w-1/2">
-          <div className="relative rounded-[2rem] lg:rounded-[3rem] overflow-hidden shadow-2xl aspect-[4/3] group">
+          <div className="relative rounded-[1.5rem] lg:rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/3] group">
             <img 
               src={standard.image} 
               alt={standard.title} 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent opacity-60" />
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent opacity-100" />
           </div>
         </div>
 
         {/* Content Side */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center">
-          <div className="flex items-center gap-3 text-brand-secondary mb-6">
-            <div className="h-[1px] w-12 bg-brand-secondary" />
-            <span className="text-[10px] font-black uppercase tracking-[0.4em]">INDIAN STANDARDS</span>
+          <div className="flex items-center gap-3 text-brand-secondary mb-4">
+            <div className="h-[1px] w-8 bg-brand-secondary" />
+            <span className="text-xs font-black uppercase tracking-widest">INDIAN STANDARDS</span>
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-black text-brand-dark tracking-tighter leading-none mb-8">
+          <h2 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tighter leading-tight mb-6">
             {standard.title}
           </h2>
           
-          <div className="bg-white border border-gray-100 rounded-[2rem] p-8 md:p-10 shadow-sm">
+          <div className="bg-white border border-gray-100 rounded-[1.5rem] p-6 md:p-8 shadow-sm">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center shadow-sm shrink-0">
-                <FileText className="w-6 h-6 text-brand-secondary" />
+              <div className="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center shadow-sm shrink-0">
+                <FileText className="w-5 h-5 text-brand-secondary" />
               </div>
               <div>
-                <h4 className="text-[10px] font-black text-brand-muted uppercase tracking-widest mb-2">Applicable Standards</h4>
-                <p className="text-xl md:text-2xl font-bold text-brand-dark tracking-tight">
+                <h4 className="text-xs font-black text-black uppercase tracking-widest mb-1">Applicable Standards</h4>
+                <p className="font-bold text-brand-dark tracking-tight text-base">
                   {standard.description}
                 </p>
               </div>
@@ -100,14 +100,14 @@ const IndianStandardsPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-white min-h-screen pt-32 md:pt-40">
+    <div className="bg-brand-ash min-h-screen pt-24 md:pt-32">
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 mb-20">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 mb-16">
         <motion.section 
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.56, ease: "easeOut" }}
-          className="relative flex flex-col lg:flex-row overflow-hidden rounded-[2rem] lg:rounded-[3rem] shadow-2xl border border-gray-100"
+          className="relative flex flex-col lg:flex-row overflow-hidden rounded-[1.5rem] lg:rounded-[2rem] shadow-2xl border border-gray-100"
         >
           {/* Left Side - Visual */}
           <div className="lg:w-1/2 relative h-[40vh] lg:h-auto bg-brand-dark">
@@ -120,7 +120,7 @@ const IndianStandardsPage: React.FC = () => {
               <img 
                 src="https://picsum.photos/seed/indian-standards/1200/1600" 
                 alt="Indian Standards" 
-                className="w-full h-full object-cover opacity-60"
+                className="w-full h-full object-cover opacity-100"
                 referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/80 via-transparent to-transparent lg:hidden" />
@@ -132,34 +132,34 @@ const IndianStandardsPage: React.FC = () => {
               initial={{ x: -50, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.56, ease: "easeOut" }}
-              className="absolute bottom-12 left-12 z-20 hidden lg:block"
+              className="absolute bottom-8 left-8 z-20 hidden lg:block"
             >
-              <div className="glass-panel p-8 rounded-[2rem] border-white/10 bg-white/5 backdrop-blur-xl text-white max-w-xs shadow-2xl">
-                <Globe className="w-8 h-8 text-brand-secondary mb-4" />
-                <p className="text-xs font-black uppercase tracking-widest opacity-50 mb-2">Compliance</p>
-                <h4 className="text-3xl font-black tracking-tighter">Indian Standards</h4>
+              <div className="glass-panel p-6 rounded-[1.5rem] border-white/10 bg-white/5 backdrop-blur-xl text-white max-w-xs shadow-2xl">
+                <Globe className="w-6 h-6 text-brand-secondary mb-3" />
+                <p className="text-xs font-black uppercase tracking-widest opacity-80 mb-1">Compliance</p>
+                <h4 className="text-2xl font-black tracking-tighter">Indian Standards</h4>
               </div>
             </motion.div>
           </div>
 
           {/* Right Side - Content */}
-          <div className="lg:w-1/2 flex items-center px-8 md:px-12 lg:px-16 py-12 lg:py-16 bg-white relative">
+          <div className="lg:w-1/2 flex items-center px-6 md:px-10 lg:px-12 py-10 lg:py-12 bg-brand-ash relative">
             <div className="max-w-2xl">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.56, ease: "easeOut" }}
-                className="flex items-center gap-3 text-brand-secondary mb-6"
+                className="flex items-center gap-3 text-brand-secondary mb-4"
               >
-                <div className="h-[1px] w-12 bg-brand-secondary" />
-                <span className="text-xs font-black uppercase tracking-[0.4em]">CABLES BY STANDARDS</span>
+                <div className="h-[1px] w-8 bg-brand-secondary" />
+                <span className="text-xs font-black uppercase tracking-widest">CABLES BY STANDARDS</span>
               </motion.div>
               
               <motion.h1 
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.56, ease: "easeOut" }}
-                className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-brand-dark tracking-tighter leading-none mb-6"
+                className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-brand-dark tracking-tighter leading-tight mb-4"
               >
                 Indian <span className="text-brand-secondary">Standards</span>
               </motion.h1>
@@ -168,17 +168,17 @@ const IndianStandardsPage: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.56, ease: "easeOut" }}
-                className="space-y-6"
+                className="space-y-4"
               >
-                <p className="text-lg text-brand-muted leading-relaxed font-medium">
+                <p className="text-base text-black leading-relaxed font-medium">
                   Our comprehensive range of cables is manufactured in strict accordance with Indian Standards (IS), ensuring the highest levels of safety, reliability, and performance for diverse applications across the nation.
                 </p>
                 
-                <ul className="space-y-3 pt-4">
+                <ul className="space-y-2 pt-2">
                   {['Rigorous Quality Testing', 'Certified Manufacturing', 'Nationwide Compliance'].map((item, idx) => (
                     <li key={idx} className="flex items-center gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-brand-secondary" />
-                      <span className="text-brand-dark font-bold">{item}</span>
+                      <CheckCircle2 className="w-4 h-4 text-brand-secondary" />
+                      <span className="text-sm text-brand-dark font-bold">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -189,14 +189,14 @@ const IndianStandardsPage: React.FC = () => {
       </div>
 
       {/* Standards Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="mb-20 text-center max-w-3xl mx-auto">
-            <h3 className="text-xs font-bold text-brand-secondary uppercase tracking-[0.4em] mb-4">SPECIFICATIONS</h3>
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="mb-12 text-center max-w-3xl mx-auto">
+            <h3 className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-3">SPECIFICATIONS</h3>
             <h2 className="text-4xl md:text-6xl font-black text-brand-dark tracking-tighter">IS Compliant Cables</h2>
           </div>
 
-          <div className="space-y-12">
+          <div className="space-y-8">
             {standards.map((standard, index) => (
               <StandardSection key={standard.id} standard={standard} index={index} />
             ))}

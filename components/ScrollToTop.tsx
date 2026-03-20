@@ -29,7 +29,7 @@ const ScrollToTop: React.FC = () => {
     <button
       onClick={scrollToTop}
       aria-label="Scroll to top"
-      className={`fixed bottom-8 right-8 z-[100] p-5 bg-brand-dark text-white rounded-full shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 group border-2 border-white/20 overflow-hidden ${
+      className={`fixed bottom-8 right-8 z-[100] p-5 bg-brand-secondary text-white rounded-full shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 group border-2 border-white/20 overflow-hidden hover:bg-brand-dark ${
         isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-10 scale-50 pointer-events-none'
       }`}
     >
@@ -38,12 +38,12 @@ const ScrollToTop: React.FC = () => {
       </div>
       
       {/* Tooltip */}
-      <span className="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-brand-dark text-white text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap hidden lg:block border border-white/10">
+      <span className="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-brand-dark text-white text-xs font-black uppercase tracking-widest px-4 py-2 rounded-xl opacity-100 group-hover:opacity-100 transition-opacity whitespace-nowrap hidden lg:block border border-white/10">
         Back to Top
       </span>
 
       {/* Background Pulse Effect */}
-      <span className="absolute inset-0 bg-brand-secondary/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+      <span className="absolute inset-0 bg-brand-dark/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
     </button>
   );
 };

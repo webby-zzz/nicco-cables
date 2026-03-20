@@ -5,11 +5,9 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Overview from './components/Overview';
 import Clientele from './components/Clientele';
-import OurPresence from './components/OurPresence';
 import ExhibitionBanner from './components/ExhibitionBanner';
 import WhyNicco from './components/WhyNicco';
 import Certifications from './components/Certifications';
-import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import AboutPage from './components/AboutPage';
@@ -26,11 +24,9 @@ const HomePage: React.FC = () => {
       <Hero />
       <Overview />
       <Clientele />
-      <OurPresence />
       <WhyNicco />
       <ExhibitionBanner />
       <Certifications />
-      <Testimonials />
     </main>
   );
 };
@@ -64,7 +60,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <ScrollToTopOnRouteChange />
-      <div className="min-h-screen bg-white selection:bg-brand-secondary selection:text-white">
+      <div className="min-h-screen bg-brand-ash selection:bg-brand-secondary selection:text-white">
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />

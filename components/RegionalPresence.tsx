@@ -13,7 +13,7 @@ const locations = [
   {
     city: "Kolkata",
     icon: Landmark,
-    image: "https://images.unsplash.com/photo-1558431382-bb7218352691?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80&w=800",
     details: [
       "Nicco Cables Private Ltd",
       "Suket Building, 2nd Floor,",
@@ -26,7 +26,7 @@ const locations = [
   {
     city: "New Delhi",
     icon: TowerControl,
-    image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=800",
     details: [
       "Nicco Cables Private Ltd",
       "Wave Silver Tower",
@@ -39,7 +39,7 @@ const locations = [
   {
     city: "Chennai",
     icon: Building2,
-    image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800",
     details: [
       "Nicco Cables Private Ltd",
       "Haive House, Old No-1226",
@@ -52,7 +52,7 @@ const locations = [
   {
     city: "Mumbai",
     icon: Building,
-    image: "https://images.unsplash.com/photo-1566552881560-0be862a7c445?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=800",
     details: [
       "Nicco Cables Private Ltd",
       "West Regional Office-207, 2nd floor,",
@@ -66,7 +66,7 @@ const locations = [
 
 const RegionalPresence: React.FC = () => {
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section className="py-24 bg-brand-ash overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Stats Banner - Hidden for now */}
@@ -74,7 +74,7 @@ const RegionalPresence: React.FC = () => {
         <div className="relative bg-brand-dark rounded-[2.5rem] p-12 md:p-16 mb-24 overflow-hidden shadow-2xl">
           <div className="absolute top-0 right-0 w-96 h-96 bg-brand-secondary/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
           <div className="relative z-10">
-            <h3 className="text-3xl md:text-5xl font-black text-white tracking-tighter mb-16 max-w-2xl leading-tight">
+            <h3 className="text-4xl md:text-6xl font-black text-white tracking-tighter mb-16 max-w-2xl leading-tight">
               Leading companies chose <span className="text-brand-secondary">NICCO</span> for all their cable requirements.
             </h3>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
@@ -83,7 +83,7 @@ const RegionalPresence: React.FC = () => {
                   <span className="text-4xl md:text-6xl font-black text-white block tracking-tighter">
                     {stat.value}
                   </span>
-                  <span className="text-[10px] font-bold tracking-[0.3em] text-white/40">
+                  <span className="text-xs font-bold tracking-[0.3em] text-white">
                     {stat.label}
                   </span>
                 </div>
@@ -103,18 +103,18 @@ const RegionalPresence: React.FC = () => {
                   src={loc.image} 
                   alt={loc.city} 
                   loading="lazy"
-                  className="w-full h-full object-cover opacity-0 group-hover:opacity-10 transition-all duration-700 scale-110 group-hover:scale-100"
+                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-700 scale-110 group-hover:scale-100"
                 />
               </div>
 
               <div className="relative z-10 p-10 flex flex-col items-center h-full w-full">
-                <div className="w-20 h-20 mb-10 text-brand-dark/10 group-hover:text-brand-secondary transition-all duration-300 transform group-hover:-translate-y-2">
+                <div className="w-20 h-20 mb-10 text-black group-hover:text-brand-secondary transition-all duration-300 transform group-hover:-translate-y-2">
                   <loc.icon className="w-full h-full stroke-[1.5px]" />
                 </div>
                 <h4 className="text-2xl font-black text-brand-dark mb-6 tracking-tighter">{loc.city}</h4>
                 <div className="space-y-1 mb-auto">
                   {loc.details.map((line, i) => (
-                    <p key={i} className="text-[11px] text-brand-muted font-bold leading-relaxed">{line}</p>
+                    <p key={i} className="text-[11px] text-black font-bold leading-relaxed">{line}</p>
                   ))}
                 </div>
                 <div className="space-y-4 pt-8 border-t border-gray-100 w-full mt-10">

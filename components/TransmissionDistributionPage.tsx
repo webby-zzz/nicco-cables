@@ -55,7 +55,7 @@ const products = [
   }
 ];
 
-const ProductSection = ({ product, index }: { product: typeof products[0], index: number }) => {
+const ProductSection: React.FC<{ product: typeof products[0], index: number }> = ({ product, index }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
@@ -66,35 +66,35 @@ const ProductSection = ({ product, index }: { product: typeof products[0], index
       transition={{ duration: 0.56, ease: "easeOut" }}
       className="mb-24 last:mb-0"
     >
-      <div className={`flex flex-col ${index % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 lg:gap-20 items-start`}>
+      <div className={`flex flex-col ${index % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 lg:gap-12 items-start`}>
         {/* Image Side */}
         <div className="w-full lg:w-1/2">
-          <div className="relative rounded-[2rem] lg:rounded-[3rem] overflow-hidden shadow-2xl aspect-[4/3] group">
+          <div className="relative rounded-[1.5rem] lg:rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/3] group">
             <img 
               src={product.image} 
               alt={product.title} 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent opacity-60" />
-            <div className="absolute bottom-8 left-8 right-8">
-              <h3 className="text-3xl font-black text-white tracking-tighter">{product.title}</h3>
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent opacity-100" />
+            <div className="absolute bottom-6 left-6 right-6">
+              <h3 className="text-2xl font-black text-white tracking-tighter">{product.title}</h3>
             </div>
           </div>
         </div>
 
         {/* Content Side */}
-        <div className="w-full lg:w-1/2 flex flex-col justify-center pt-4 lg:pt-8">
-          <div className="flex items-center gap-3 text-brand-secondary mb-6">
-            <div className="h-[1px] w-12 bg-brand-secondary" />
-            <span className="text-[10px] font-black uppercase tracking-[0.4em]">PRODUCT</span>
+        <div className="w-full lg:w-1/2 flex flex-col justify-center pt-2 lg:pt-4">
+          <div className="flex items-center gap-3 text-brand-secondary mb-4">
+            <div className="h-[1px] w-8 bg-brand-secondary" />
+            <span className="text-xs font-black uppercase tracking-widest">PRODUCT</span>
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-black text-brand-dark tracking-tighter leading-none mb-6">
+          <h2 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tighter leading-tight mb-4">
             {product.title}
           </h2>
           
-          <p className="text-lg text-brand-muted leading-relaxed font-medium mb-10">
+          <p className="text-base text-black leading-relaxed font-medium mb-6">
             {product.description}
           </p>
 
@@ -109,9 +109,9 @@ const ProductSection = ({ product, index }: { product: typeof products[0], index
                 <span className="text-sm font-black text-brand-dark uppercase tracking-widest">Technical Details</span>
               </div>
               {isExpanded ? (
-                <ChevronUp className="w-5 h-5 text-brand-muted" />
+                <ChevronUp className="w-5 h-5 text-black" />
               ) : (
-                <ChevronDown className="w-5 h-5 text-brand-muted" />
+                <ChevronDown className="w-5 h-5 text-black" />
               )}
             </button>
             
@@ -153,14 +153,14 @@ const TransmissionDistributionPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-white min-h-screen pt-32 md:pt-40">
+    <div className="bg-brand-ash min-h-screen pt-24 md:pt-32">
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 mb-20">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 mb-16">
         <motion.section 
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.56, ease: "easeOut" }}
-          className="relative flex flex-col lg:flex-row overflow-hidden rounded-[2rem] lg:rounded-[3rem] shadow-2xl border border-gray-100"
+          className="relative flex flex-col lg:flex-row overflow-hidden rounded-[1.5rem] lg:rounded-[2rem] shadow-2xl border border-gray-100"
         >
           {/* Left Side - Visual */}
           <div className="lg:w-1/2 relative h-[40vh] lg:h-auto bg-brand-dark">
@@ -173,7 +173,7 @@ const TransmissionDistributionPage: React.FC = () => {
               <img 
                 src="https://picsum.photos/seed/transmission/1200/1600" 
                 alt="Transmission and Distribution" 
-                className="w-full h-full object-cover opacity-60"
+                className="w-full h-full object-cover opacity-100"
                 referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/80 via-transparent to-transparent lg:hidden" />
@@ -185,34 +185,34 @@ const TransmissionDistributionPage: React.FC = () => {
               initial={{ x: -50, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.56, ease: "easeOut" }}
-              className="absolute bottom-12 left-12 z-20 hidden lg:block"
+              className="absolute bottom-8 left-8 z-20 hidden lg:block"
             >
-              <div className="glass-panel p-8 rounded-[2rem] border-white/10 bg-white/5 backdrop-blur-xl text-white max-w-xs shadow-2xl">
-                <Zap className="w-8 h-8 text-brand-secondary mb-4" />
-                <p className="text-xs font-black uppercase tracking-widest opacity-50 mb-2">Industry Solution</p>
-                <h4 className="text-3xl font-black tracking-tighter">Powering Networks</h4>
+              <div className="glass-panel p-6 rounded-[1.5rem] border-white/10 bg-white/5 backdrop-blur-xl text-white max-w-xs shadow-2xl">
+                <Zap className="w-6 h-6 text-brand-secondary mb-3" />
+                <p className="text-xs font-black uppercase tracking-widest opacity-80 mb-1">Industry Solution</p>
+                <h4 className="text-2xl font-black tracking-tighter">Powering Networks</h4>
               </div>
             </motion.div>
           </div>
 
           {/* Right Side - Content */}
-          <div className="lg:w-1/2 flex items-center px-8 md:px-12 lg:px-16 py-12 lg:py-16 bg-white relative">
+          <div className="lg:w-1/2 flex items-center px-6 md:px-10 lg:px-12 py-10 lg:py-12 bg-brand-ash relative">
             <div className="max-w-2xl">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.56, ease: "easeOut" }}
-                className="flex items-center gap-3 text-brand-secondary mb-6"
+                className="flex items-center gap-3 text-brand-secondary mb-4"
               >
-                <div className="h-[1px] w-12 bg-brand-secondary" />
-                <span className="text-xs font-black uppercase tracking-[0.4em]">INDUSTRY SOLUTIONS</span>
+                <div className="h-[1px] w-8 bg-brand-secondary" />
+                <span className="text-xs font-black uppercase tracking-widest">INDUSTRY SOLUTIONS</span>
               </motion.div>
               
               <motion.h1 
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.56, ease: "easeOut" }}
-                className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-brand-dark tracking-tighter leading-none mb-6"
+                className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-brand-dark tracking-tighter leading-tight mb-4"
               >
                 Transmission and <span className="text-brand-secondary">Distribution</span>
               </motion.h1>
@@ -221,9 +221,9 @@ const TransmissionDistributionPage: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.56, ease: "easeOut" }}
-                className="space-y-6"
+                className="space-y-4"
               >
-                <p className="text-lg text-brand-muted leading-relaxed font-medium">
+                <p className="text-base text-black leading-relaxed font-medium">
                   Comprehensive cable solutions designed for efficient and reliable transmission of electrical power across diverse terrains and demanding environments. From high-voltage transmission to low-voltage distribution, our products ensure the pulse of the nation's core infrastructure remains uninterrupted.
                 </p>
               </motion.div>
@@ -233,14 +233,14 @@ const TransmissionDistributionPage: React.FC = () => {
       </div>
 
       {/* Products Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="mb-20 text-center max-w-3xl mx-auto">
-            <h3 className="text-xs font-bold text-brand-secondary uppercase tracking-[0.4em] mb-4">OUR PRODUCTS</h3>
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="mb-12 text-center max-w-3xl mx-auto">
+            <h3 className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-3">OUR PRODUCTS</h3>
             <h2 className="text-4xl md:text-6xl font-black text-brand-dark tracking-tighter">Solutions for Transmission & Distribution</h2>
           </div>
 
-          <div className="space-y-12">
+          <div className="space-y-8">
             {products.map((product, index) => (
               <ProductSection key={product.id} product={product} index={index} />
             ))}

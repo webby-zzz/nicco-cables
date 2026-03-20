@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { motion } from 'motion/react';
 
 const accreditationLogos = [
   { url: "https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/122012/iso9001.png?itok=5sehR1Fm", label: "ISO 9001" },
@@ -20,76 +21,69 @@ const accreditationLogos = [
   { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/International_Electrotechnical_Commission_Logo.svg/960px-International_Electrotechnical_Commission_Logo.svg.png", label: "IEC" }
 ];
 
-const certificateData = [
-  { 
-    id: '9001', 
-    img: "https://niccocable.com/wp-content/uploads/2024/07/ISO-9001.jpg", 
-    label: 'ISO 9001:2015' 
-  },
-  { 
-    id: '45001', 
-    img: "https://niccocable.com/wp-content/uploads/2024/07/ISO-45001.jpg", 
-    label: 'ISO 45001:2018' 
-  },
-  { 
-    id: '14001', 
-    img: "https://niccocable.com/wp-content/uploads/2024/07/ISO-14001.jpg", 
-    label: 'ISO 14001:2015' 
-  }
-];
-
 const Certifications: React.FC = () => {
   return (
-    <section id="quality" className="py-24 md:py-32 bg-white">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <section id="quality" className="py-12 md:py-16 bg-brand-ash overflow-hidden min-h-[40vh] flex flex-col justify-center">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 mb-6 w-full">
         {/* Main Title */}
-        <div className="text-center mb-24">
-          <h2 className="text-4xl md:text-7xl font-black text-[#1A2B3C] tracking-tighter leading-none">
-            Accreditations & Certificates
+        <div className="text-center">
+          <h2 className="text-3xl md:text-4xl font-black text-[#1A2B3C] tracking-tighter leading-tight">
+            Accreditations
           </h2>
         </div>
+      </div>
 
-        {/* Accreditation Logos Marquee */}
-        <div className="relative flex overflow-hidden mb-32">
-          <div className="flex animate-marquee whitespace-nowrap py-12 items-center w-max">
-            {[...accreditationLogos, ...accreditationLogos].map((logo, idx) => (
-              <div key={idx} className="mx-12 md:mx-20 flex flex-col items-center text-center group flex-shrink-0">
-                <div className="h-24 md:h-32 w-full flex items-center justify-center">
+      {/* Accreditation Logos Marquee */}
+      <div className="max-w-7xl mx-auto px-4 md:px-8 w-full">
+        <div className="relative flex overflow-hidden py-6 bg-white/90 backdrop-blur-md border border-brand-secondary/10 shadow-xl rounded-full w-full">
+          <motion.div
+          className="flex whitespace-nowrap"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            duration: 60,
+            ease: "linear",
+            repeat: Infinity,
+          }}
+        >
+          {/* First set of logos */}
+          <div className="flex items-center">
+            {accreditationLogos.map((logo, idx) => (
+              <div key={`logo-1-${idx}`} className="mx-8 md:mx-12 flex flex-col items-center text-center flex-shrink-0">
+                <div className="h-20 md:h-24 w-32 flex items-center justify-center">
                   <img 
                     src={logo.url} 
                     alt={logo.label} 
                     loading="lazy"
                     referrerPolicy="no-referrer"
-                    className="max-h-full w-auto object-contain transition-transform duration-300 group-hover:scale-110"
+                    className="max-h-full max-w-full object-contain"
                   />
                 </div>
-                <span className="mt-4 text-[10px] font-black text-brand-dark/40 tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
+                <span className="mt-3 text-[9px] font-black text-black tracking-widest">
                   {logo.label}
                 </span>
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Certificate Display Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-          {certificateData.map((cert) => (
-            <div key={cert.id} className="group">
-              <div className="bg-white p-2 md:p-4 rounded-sm shadow-xl border border-gray-100 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 relative overflow-hidden">
-                <div className="aspect-[1/1.414] relative bg-white overflow-hidden">
+          {/* Second set of logos for seamless loop */}
+          <div className="flex items-center">
+            {accreditationLogos.map((logo, idx) => (
+              <div key={`logo-2-${idx}`} className="mx-8 md:mx-12 flex flex-col items-center text-center flex-shrink-0">
+                <div className="h-20 md:h-24 w-32 flex items-center justify-center">
                   <img 
-                    src={cert.img} 
-                    alt={`Certificate ${cert.label}`}
-                    className="w-full h-full object-contain"
+                    src={logo.url} 
+                    alt={logo.label} 
                     loading="lazy"
                     referrerPolicy="no-referrer"
+                    className="max-h-full max-w-full object-contain"
                   />
-                  {/* Subtle noise/paper texture overlay */}
-                  <div className="absolute inset-0 opacity-[0.08] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cardboard-flat.png')]" />
                 </div>
+                <span className="mt-3 text-[9px] font-black text-black tracking-widest">
+                  {logo.label}
+                </span>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+        </motion.div>
         </div>
       </div>
     </section>

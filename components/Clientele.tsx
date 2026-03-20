@@ -60,22 +60,23 @@ const logos = [
 
 const Clientele: React.FC = () => {
   return (
-    <section id="clientele" className="py-24 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 mb-16">
+    <section id="clientele" className="py-12 md:py-16 bg-brand-ash overflow-hidden min-h-[40vh] flex flex-col justify-center">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 mb-6 w-full">
         <div className="text-center">
-          <h2 className="text-xs font-bold text-brand-secondary tracking-[0.4em] uppercase mb-6">OUR CLIENTELE</h2>
-          <h3 className="text-4xl md:text-6xl font-black text-brand-dark tracking-tighter">
+          <h2 className="text-xs font-bold text-brand-secondary tracking-widest uppercase mb-2">OUR CLIENTELE</h2>
+          <h3 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tighter">
             Trusted by Industry <span className="text-brand-secondary">Leaders</span>
           </h3>
         </div>
       </div>
 
-      <div className="relative flex overflow-hidden py-12 bg-gray-50/50">
-        <motion.div
+      <div className="max-w-7xl mx-auto px-4 md:px-8 w-full">
+        <div className="relative flex overflow-hidden py-6 bg-white/90 backdrop-blur-md border border-brand-secondary/10 shadow-xl rounded-full w-full">
+          <motion.div
           className="flex whitespace-nowrap"
           animate={{ x: ["0%", "-50%"] }}
           transition={{
-            duration: 28,
+            duration: 200,
             ease: "linear",
             repeat: Infinity,
           }}
@@ -87,7 +88,7 @@ const Clientele: React.FC = () => {
                 <img
                   src={logo}
                   alt={`Client Logo ${index}`}
-                  className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  className="max-w-full max-h-full object-contain"
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -100,13 +101,14 @@ const Clientele: React.FC = () => {
                 <img
                   src={logo}
                   alt={`Client Logo ${index}`}
-                  className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  className="max-w-full max-h-full object-contain"
                   referrerPolicy="no-referrer"
                 />
               </div>
             ))}
           </div>
         </motion.div>
+        </div>
       </div>
     </section>
   );

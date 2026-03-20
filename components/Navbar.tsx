@@ -5,9 +5,9 @@ import { Menu, X, ChevronDown, Zap, Shield, Sun, Building2, HardHat, Globe, Layo
 
 const Logo = ({ isScrolled }: { isScrolled: boolean }) => (
   <Link to="/" className="flex items-center group cursor-pointer">
-    <div className={`${isScrolled ? 'h-8 md:h-12' : 'h-10 md:h-14'} w-auto transition-all duration-200 group-hover:scale-105`}>
+    <div className={`${isScrolled ? 'h-12 md:h-16' : 'h-14 md:h-20'} w-auto transition-all duration-200 group-hover:scale-105`}>
       <img 
-        src="/brand identity/Logo.png" 
+        src="/brand identity/Nicco logo 1.5ft X 1.5ft-01 (1).png" 
         alt="NICCO Logo" 
         className="h-full w-auto object-contain"
         referrerPolicy="no-referrer"
@@ -24,10 +24,10 @@ const MegaMenu = ({ isOpen }: { isOpen: boolean }) => {
           
           {/* Column 1: CABLES BY TYPES */}
           <div className="space-y-8">
-            <h4 className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.3em] text-white/40 mb-8">
+            <h4 className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.3em] text-white mb-8">
               <Zap className="w-4 h-4 text-brand-secondary" /> CABLES BY TYPES
             </h4>
-            <ul className="space-y-3 text-sm text-white/50 font-medium">
+            <ul className="space-y-3 text-sm text-white font-medium">
               <li className="hover:text-white transition-colors cursor-pointer border-l-2 border-transparent hover:border-brand-secondary pl-3">
                 <Link to="/products/lt-power-control">LT Power & Control</Link>
               </li>
@@ -42,11 +42,11 @@ const MegaMenu = ({ isOpen }: { isOpen: boolean }) => {
 
           {/* Column 2 & 3: INDUSTRY SOLUTIONS */}
           <div className="lg:col-span-2 space-y-8">
-            <h4 className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.3em] text-white/40 mb-8">
+            <h4 className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.3em] text-white mb-8">
               <Zap className="w-4 h-4 text-brand-secondary" /> INDUSTRY SOLUTIONS
             </h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3">
-              <ul className="space-y-3 text-sm text-white/50 font-medium">
+              <ul className="space-y-3 text-sm text-white font-medium">
                 <li className="hover:text-white transition-colors cursor-pointer border-l-2 border-transparent hover:border-brand-secondary pl-3">
                   <Link to="/industry/transmission-distribution">Transmission and Distribution</Link>
                 </li>
@@ -55,7 +55,7 @@ const MegaMenu = ({ isOpen }: { isOpen: boolean }) => {
                 <li className="hover:text-white transition-colors cursor-pointer border-l-2 border-transparent hover:border-brand-secondary pl-3">Exploration (Oil & Gas, Mining)</li>
                 <li className="hover:text-white transition-colors cursor-pointer border-l-2 border-transparent hover:border-brand-secondary pl-3">Mobility (Aerospace, Marine)</li>
               </ul>
-              <ul className="space-y-3 text-sm text-white/50 font-medium">
+              <ul className="space-y-3 text-sm text-white font-medium">
                 <li className="hover:text-white transition-colors cursor-pointer border-l-2 border-transparent hover:border-brand-secondary pl-3">Defence (Submarine, Tactical)</li>
                 <li className="hover:text-white transition-colors cursor-pointer border-l-2 border-transparent hover:border-brand-secondary pl-3">Manufacturing & Process</li>
                 <li className="hover:text-white transition-colors cursor-pointer border-l-2 border-transparent hover:border-brand-secondary pl-3">Infrastructure (Metro, Tunnels)</li>
@@ -67,10 +67,10 @@ const MegaMenu = ({ isOpen }: { isOpen: boolean }) => {
           {/* Column 4: CABLES BY STANDARDS */}
           <div className="space-y-12">
             <div>
-              <h4 className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.3em] text-white/40 mb-8">
+              <h4 className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.3em] text-white mb-8">
                 <Globe className="w-4 h-4 text-brand-secondary" /> CABLES BY STANDARDS
               </h4>
-              <ul className="space-y-4 text-sm text-white/50 font-medium">
+              <ul className="space-y-4 text-sm text-white font-medium">
                 <li className="hover:text-white transition-colors cursor-pointer border-l-2 border-transparent hover:border-brand-secondary pl-3 font-bold">
                   <Link to="/standards/indian">Indian Standards (IS)</Link>
                 </li>
@@ -81,7 +81,7 @@ const MegaMenu = ({ isOpen }: { isOpen: boolean }) => {
             <div className="pt-8 border-t border-white/10">
               <Link 
                 to="/brochures"
-                className="w-full text-[10px] font-black uppercase tracking-widest bg-brand-secondary text-white px-6 py-4 rounded-xl hover:bg-white hover:text-brand-dark transition-all shadow-lg shadow-brand-secondary/20 flex items-center justify-center"
+                className="w-full text-xs font-black uppercase tracking-widest bg-brand-secondary text-white px-6 py-4 rounded-xl hover:bg-white hover:text-brand-dark transition-all shadow-lg shadow-brand-secondary/20 flex items-center justify-center"
               >
                 VIEW BROCHURES
               </Link>
@@ -191,8 +191,7 @@ const Navbar: React.FC = () => {
   const NavLink = ({ item }: { item: typeof menuItems[0] }) => {
     const isExternal = item.link.startsWith('http');
     const isHash = item.link.includes('#');
-    const isLightPage = location.pathname.includes('/products') || location.pathname.includes('/industry') || location.pathname.includes('/standards');
-    const useDarkText = isScrolled || isLightPage;
+    const useDarkText = true;
     
     if (isHash) {
       return (
@@ -221,8 +220,7 @@ const Navbar: React.FC = () => {
     );
   };
 
-  const isLightPage = location.pathname.includes('/products') || location.pathname.includes('/industry') || location.pathname.includes('/standards');
-  const useDarkText = isScrolled || isLightPage;
+  const useDarkText = true;
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 flex flex-col items-center">
@@ -232,7 +230,7 @@ const Navbar: React.FC = () => {
         className={`transition-all duration-300 ease-in-out flex items-center justify-center relative ${
           isScrolled 
             ? 'w-[calc(100%-2rem)] max-w-7xl bg-white/90 backdrop-blur-md shadow-2xl border border-brand-secondary/10 px-10 lg:py-4 py-6 mt-4 rounded-full' 
-            : 'w-[calc(100%-2rem)] max-w-7xl bg-white/5 backdrop-blur-md border border-white/10 shadow-xl px-10 py-6 mt-6 rounded-full'
+            : 'w-[calc(100%-2rem)] max-w-7xl bg-white/90 backdrop-blur-md border border-brand-secondary/10 shadow-xl px-10 py-6 mt-6 rounded-full'
         }`}
       >
         <div className={`absolute flex items-center transition-all duration-300 ${isScrolled ? 'left-10' : 'left-10'}`}>
@@ -256,7 +254,7 @@ const Navbar: React.FC = () => {
           <div className="lg:hidden flex items-center">
             <div className={`px-5 py-2 bg-black/20 backdrop-blur-md rounded-full border border-white/10 flex items-center gap-2.5`}>
               <span className="w-1.5 h-1.5 rounded-full bg-brand-secondary animate-pulse" />
-              <span className={`text-[10px] font-black uppercase tracking-[0.25em] ${useDarkText ? 'text-brand-dark' : 'text-white'}`}>EST. 1944</span>
+              <span className={`text-xs font-black uppercase tracking-[0.25em] ${useDarkText ? 'text-brand-dark' : 'text-white'}`}>Eight Decades of Trust & Innovation</span>
             </div>
           </div>
         )}
@@ -264,7 +262,7 @@ const Navbar: React.FC = () => {
         <div className={`absolute hidden lg:flex items-center transition-all duration-300 ${isScrolled ? 'right-10' : 'right-10'}`}>
           {/* Integrated Translate Button - Compact version */}
           <div className={`flex items-center gap-2 px-3 py-1.5 transition-all duration-200 hover:bg-white/5 rounded-lg relative ${useDarkText ? 'text-brand-dark hover:bg-brand-dark/5' : 'text-white'}`}>
-            <div className="flex items-center gap-1.5 opacity-40 group-hover:opacity-100 transition-opacity">
+            <div className="flex items-center gap-1.5 opacity-50 group-hover:opacity-100 transition-opacity">
               <Globe className="w-3 h-3 shrink-0" />
               <span className="text-[9px] font-black uppercase tracking-widest hidden xl:inline-block shrink-0">TRANSLATE</span>
             </div>
@@ -305,10 +303,10 @@ const Navbar: React.FC = () => {
                       
                       {/* Cables by Types */}
                       <div>
-                        <h4 className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-brand-muted mb-4">
+                        <h4 className="flex items-center gap-2 text-xs font-black uppercase tracking-[0.3em] text-black mb-4">
                           <Zap className="w-3 h-3 text-brand-secondary" /> CABLES BY TYPES
                         </h4>
-                        <ul className="space-y-3 text-sm font-bold text-brand-dark/80 pl-5 border-l border-brand-dark/10">
+                        <ul className="space-y-3 text-sm font-bold text-black pl-5 border-l border-brand-dark/10">
                           <li>
                             <Link 
                               to="/products/lt-power-control" 
@@ -331,10 +329,10 @@ const Navbar: React.FC = () => {
 
                       {/* Industry Solutions */}
                       <div>
-                        <h4 className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-brand-muted mb-4">
+                        <h4 className="flex items-center gap-2 text-xs font-black uppercase tracking-[0.3em] text-black mb-4">
                           <Zap className="w-3 h-3 text-brand-secondary" /> INDUSTRY SOLUTIONS
                         </h4>
-                        <ul className="space-y-3 text-sm font-bold text-brand-dark/80 pl-5 border-l border-brand-dark/10">
+                        <ul className="space-y-3 text-sm font-bold text-black pl-5 border-l border-brand-dark/10">
                           <li>
                             <Link 
                               to="/industry/transmission-distribution" 
@@ -357,10 +355,10 @@ const Navbar: React.FC = () => {
 
                       {/* Cables by Standards */}
                       <div>
-                        <h4 className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-brand-muted mb-4">
+                        <h4 className="flex items-center gap-2 text-xs font-black uppercase tracking-[0.3em] text-black mb-4">
                           <Globe className="w-3 h-3 text-brand-secondary" /> CABLES BY STANDARDS
                         </h4>
-                        <ul className="space-y-3 text-sm font-bold text-brand-dark/80 pl-5 border-l border-brand-dark/10">
+                        <ul className="space-y-3 text-sm font-bold text-black pl-5 border-l border-brand-dark/10">
                           <li>
                             <Link 
                               to="/standards/indian" 

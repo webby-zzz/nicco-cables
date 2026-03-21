@@ -9,7 +9,7 @@ const TransmissionDistributionPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-brand-ash min-h-screen pt-32 md:pt-40 pb-16">
+    <div className="bg-white min-h-screen pt-32 md:pt-40 pb-16">
       <div className="max-w-5xl mx-auto px-4 md:px-8">
         
         {/* Header Section */}
@@ -45,7 +45,7 @@ const TransmissionDistributionPage: React.FC = () => {
         <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-md border border-gray-100 overflow-hidden mb-8">
           <div className="mb-8">
             <h2 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tighter mb-4">
-              Overhead Transmission Conductors (Bare Conductors)
+              Overhead Transmission Conductors (Bare{"\u00A0"}Conductors)
             </h2>
             <p className="text-base text-black leading-relaxed font-medium">
               Enable efficient and reliable long-distance power transmission with Nicco's Overhead Transmission Conductors. Manufactured using high-quality aluminium and aluminium alloy with optional steel reinforcement, these conductors deliver optimal electrical performance, mechanical strength, and proven durability across diverse climatic and terrain conditions - from urban grids to remote electrification and power evacuation from renewable energy plants.
@@ -53,7 +53,7 @@ const TransmissionDistributionPage: React.FC = () => {
           </div>
           
           <h3 className="text-xl font-bold text-brand-dark mb-4 border-b-2 border-brand-secondary pb-2 inline-block">
-            Technical Details
+            Technical{"\u00A0"}Details
           </h3>
           
           <div className="overflow-x-auto">
@@ -135,7 +135,7 @@ const TransmissionDistributionPage: React.FC = () => {
         >
           <div className="mb-8">
             <h2 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tighter mb-4">
-              LT Power & Control Cables
+              LT Power & Control{"\u00A0"}Cables
             </h2>
             <p className="text-base text-black leading-relaxed font-medium">
               Power your industrial, commercial, and infrastructure projects with Nicco's LT Power & Control Cables, engineered for reliable low voltage power distribution and control applications. Built with high-quality conductors and premium insulation, these cables deliver mechanical strength, operational safety, and a long service life across diverse conditions. Available up to 1.1 kV in XLPE & PVC insulation, with Armoured and Unarmoured variants, and FR / FRLS / LSZH sheath options including fire survival properties.
@@ -143,7 +143,7 @@ const TransmissionDistributionPage: React.FC = () => {
           </div>
           
           <h3 className="text-xl font-bold text-brand-dark mb-4 border-b-2 border-brand-secondary pb-2 inline-block">
-            Technical Details
+            Technical{"\u00A0"}Details
           </h3>
           
           <div className="overflow-x-auto">
@@ -262,7 +262,7 @@ const TransmissionDistributionPage: React.FC = () => {
           </div>
           
           <h3 className="text-xl font-bold text-brand-dark mb-4 border-b-2 border-brand-secondary pb-2 inline-block">
-            Technical Details
+            Technical{"\u00A0"}Details
           </h3>
           
           <div className="overflow-x-auto">
@@ -396,15 +396,22 @@ const TransmissionDistributionPage: React.FC = () => {
           className="bg-brand-secondary rounded-[2rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-lg"
         >
           <div>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tighter mb-2">Need more information?</h2>
-            <p className="text-white/90 text-base font-medium">Contact our team for a detailed consultation.</p>
+            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tighter mb-2">Need more{"\u00A0"}information?</h2>
+            <p className="text-white/90 text-base font-medium">Contact our team or download our product brochure.</p>
           </div>
-          <Link 
-            to="/contact"
-            className="bg-white text-brand-secondary px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-gray-100 transition-colors flex items-center gap-2 whitespace-nowrap"
-          >
-            Contact Us <ArrowRight className="w-4 h-4" />
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+            <button 
+              className="bg-brand-dark text-white px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-black transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
+            >
+              Download Brochure <ArrowRight className="w-4 h-4" />
+            </button>
+            <Link 
+              to="/contact"
+              className="bg-white text-brand-secondary px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
+            >
+              Contact Us <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </motion.div>
 
       </div>

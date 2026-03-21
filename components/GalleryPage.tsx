@@ -115,7 +115,7 @@ const GalleryPage: React.FC = () => {
     : galleryItems.filter(item => item.category === activeTab);
 
   return (
-    <div className="bg-brand-ash min-h-screen">
+    <div className="bg-white min-h-screen">
       {/* Hero Section */}
       <section className="relative pt-48 md:pt-56 pb-16 bg-brand-dark overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-secondary/5 -skew-x-12 translate-x-1/4" />
@@ -134,7 +134,7 @@ const GalleryPage: React.FC = () => {
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-tight mb-6"
             >
-              Moments of Excellence & Impact
+              Moments of Excellence &{"\u00A0"}Impact
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -142,7 +142,7 @@ const GalleryPage: React.FC = () => {
               transition={{ delay: 0.2 }}
               className="text-lg text-white leading-relaxed font-light max-w-2xl"
             >
-              Explore our journey through industry events, media recognitions, and corporate milestones.
+              Explore our journey through industry events, media recognitions, and corporate{"\u00A0"}milestones.
             </motion.p>
           </div>
         </div>

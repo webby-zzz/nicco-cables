@@ -11,11 +11,11 @@ const Sustainability: React.FC = () => {
   ];
 
   return (
-    <section id="sustainability" className="py-24 md:py-40 bg-brand-ash overflow-hidden">
+    <section id="sustainability" className="py-24 md:py-40 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 mb-16">
         <h2 className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-6 block">RESPONSIBILITY</h2>
         <h3 className="text-4xl md:text-6xl font-black text-brand-dark tracking-tighter leading-tight">
-          Cabling a <span className="text-brand-secondary">Greener</span> Tomorrow.
+          Cabling a <span className="text-brand-secondary">Greener</span>{"\u00A0"}Tomorrow.
         </h3>
       </div>
 
@@ -27,7 +27,7 @@ const Sustainability: React.FC = () => {
               {sustainabilityItems.map((item, index) => (
                 <div 
                   key={index}
-                  className="flex items-center gap-8 bg-gray-50 px-10 py-6 rounded-[2.5rem] border border-gray-100 hover:bg-brand-ash hover:shadow-xl transition-all duration-300 cursor-pointer group"
+                  className="flex items-center gap-8 bg-gray-50 px-10 py-6 rounded-[2.5rem] border border-gray-100 hover:bg-white hover:shadow-xl transition-all duration-300 cursor-pointer group"
                 >
                   <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-sm">
                     <img src={item.img} alt="" loading="lazy" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />

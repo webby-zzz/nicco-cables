@@ -65,7 +65,7 @@ const Clientele: React.FC = () => {
         <div className="text-center">
           <h2 className="text-xs font-bold text-brand-secondary tracking-widest uppercase mb-2">OUR CLIENTELE</h2>
           <h3 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tighter">
-            Trusted by Industry <span className="text-brand-secondary">Leaders</span>
+            Trusted by Industry{"\u00A0"}<span className="text-brand-secondary">Leaders</span>
           </h3>
         </div>
       </div>

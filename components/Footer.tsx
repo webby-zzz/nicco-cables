@@ -7,8 +7,8 @@ const Footer: React.FC = () => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
-    <footer className="py-4 bg-brand-ash px-4">
-      <div className="max-w-7xl mx-auto bg-brand-dark rounded-[2rem] p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.3)] relative overflow-hidden text-white">
+    <footer className="py-4 bg-white px-4">
+      <div className="max-w-7xl mx-auto bg-[#413E3A] rounded-[2rem] p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.3)] relative overflow-hidden text-white">
         
         {/* Decorative elements */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
               </div>
             </div>
             <p className="text-white leading-relaxed font-light mb-6 text-base">
-              Over eight decades of unwavering commitment to powering global infrastructure. The pulse of the nation’s core industries.
+              Over 8 decades of unwavering commitment to powering global infrastructure. The pulse of the nation’s core industries.
             </p>
             <div className="relative max-w-sm">
               <input 

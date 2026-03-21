@@ -84,13 +84,13 @@ const IndustriesVertical: React.FC = () => {
   ];
 
   return (
-    <div className="bg-brand-ash py-24 md:py-32">
+    <div className="bg-white py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
           <div>
             <h2 className="text-xs font-bold text-black uppercase tracking-widest mb-6 block">ENGINEERING SECTORS</h2>
             <h2 className="text-4xl md:text-6xl font-black text-brand-dark tracking-tighter leading-tight">
-              Industry Solutions.
+              Industry{"\u00A0"}Solutions.
             </h2>
           </div>
           <p className="text-black max-w-sm font-light text-base">

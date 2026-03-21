@@ -100,7 +100,7 @@ const IndianStandardsPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-brand-ash min-h-screen pt-32 md:pt-40">
+    <div className="bg-white min-h-screen pt-32 md:pt-40">
       {/* Hero Section */}
       <div className="max-w-7xl mx-auto px-4 md:px-8 mb-16">
         <motion.section 
@@ -137,13 +137,13 @@ const IndianStandardsPage: React.FC = () => {
               <div className="glass-panel p-6 rounded-[1.5rem] border-white/10 bg-white/5 backdrop-blur-xl text-white max-w-xs shadow-2xl">
                 <Globe className="w-6 h-6 text-brand-secondary mb-3" />
                 <p className="text-xs font-black uppercase tracking-widest opacity-80 mb-1">Compliance</p>
-                <h4 className="text-2xl font-black tracking-tighter">Indian Standards</h4>
+                <h4 className="text-2xl font-black tracking-tighter">Indian{"\u00A0"}Standards</h4>
               </div>
             </motion.div>
           </div>
 
           {/* Right Side - Content */}
-          <div className="lg:w-1/2 flex items-center px-6 md:px-10 lg:px-12 py-10 lg:py-12 bg-brand-ash relative">
+          <div className="lg:w-1/2 flex items-center px-6 md:px-10 lg:px-12 py-10 lg:py-12 bg-white relative">
             <div className="max-w-2xl">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -161,7 +161,7 @@ const IndianStandardsPage: React.FC = () => {
                 transition={{ delay: 0.5, duration: 0.56, ease: "easeOut" }}
                 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-brand-dark tracking-tighter leading-tight mb-4"
               >
-                Indian <span className="text-brand-secondary">Standards</span>
+                Indian{"\u00A0"}<span className="text-brand-secondary">Standards</span>
               </motion.h1>
 
               <motion.div
@@ -193,7 +193,7 @@ const IndianStandardsPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="mb-12 text-center max-w-3xl mx-auto">
             <h3 className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-3">SPECIFICATIONS</h3>
-            <h2 className="text-4xl md:text-6xl font-black text-brand-dark tracking-tighter">IS Compliant Cables</h2>
+            <h2 className="text-4xl md:text-6xl font-black text-brand-dark tracking-tighter">IS Compliant{"\u00A0"}Cables</h2>
           </div>
 
           <div className="space-y-8">

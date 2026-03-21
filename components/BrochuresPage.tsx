@@ -185,7 +185,7 @@ const BrochuresPage: React.FC = () => {
   };
 
   return (
-    <div className="bg-brand-ash min-h-screen">
+    <div className="bg-white min-h-screen">
       {/* Hero Section */}
       <section className="relative pt-48 md:pt-56 pb-16 bg-brand-dark overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-secondary/5 -skew-x-12 translate-x-1/4" />
@@ -204,7 +204,7 @@ const BrochuresPage: React.FC = () => {
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-tight mb-6"
             >
-              Technical Literature & Brochures
+              Technical Literature &{"\u00A0"}Brochures
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -212,7 +212,7 @@ const BrochuresPage: React.FC = () => {
               transition={{ delay: 0.2 }}
               className="text-lg text-white leading-relaxed font-light max-w-2xl"
             >
-              Download our latest product catalogs, technical specifications, and corporate documentation.
+              Download our latest product catalogs, technical specifications, and corporate{"\u00A0"}documentation.
             </motion.p>
           </div>
         </div>
@@ -293,7 +293,7 @@ const BrochuresPage: React.FC = () => {
                     <div className="w-20 h-20 bg-emerald-50 rounded-full flex items-center justify-center mx-auto mb-8">
                       <CheckCircle2 className="w-10 h-10 text-emerald-500" />
                     </div>
-                    <h3 className="text-3xl font-black text-brand-dark tracking-tighter mb-4">Thank You!</h3>
+                    <h3 className="text-3xl font-black text-brand-dark tracking-tighter mb-4">Thank{"\u00A0"}You!</h3>
                     <p className="text-black font-medium mb-8 text-base">Your download will start automatically. If it doesn't, click the button below.</p>
                     <a 
                       href={selectedBrochure?.pdfUrl}

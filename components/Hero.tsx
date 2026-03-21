@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
       
       {/* Hero Content */}
       <div className="relative z-10 w-full max-w-7xl px-6 md:px-12 flex flex-col items-center justify-center text-center h-full">
-        <span className="text-sm md:text-base font-black text-white uppercase tracking-[0.5em] opacity-90">Eight Decades of Trust & Innovation</span>
+        <span className="text-sm md:text-base font-black text-white uppercase tracking-[0.5em] opacity-90">8 Decades of Trust & Innovation</span>
       </div>
     </section>
   );

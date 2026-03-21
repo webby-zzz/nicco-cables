@@ -15,15 +15,15 @@ const industryList = [
 
 const Industries: React.FC = () => {
   return (
-    <section id="industries" className="py-8 md:py-12 bg-brand-ash relative overflow-hidden min-h-[50vh] flex flex-col justify-center">
-      <div className="absolute top-0 left-0 w-full h-1/2 bg-gray-50/50 -skew-y-3 origin-top-left -z-10" />
+    <section id="industries" className="py-8 md:py-12 bg-white relative overflow-hidden min-h-[50vh] flex flex-col justify-center">
+      <div className="absolute top-0 left-0 w-full h-1/2 bg-brand-ash/20 -skew-y-3 origin-top-left -z-10" />
       
       <div className="max-w-7xl mx-auto px-4 md:px-8 w-full">
         <div className="flex flex-col md:flex-row justify-between items-end mb-8 gap-4">
           <div className="max-w-xl">
             <h2 className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-4">CORE VERTICALS</h2>
             <h3 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tighter leading-tight">
-              Specialized Solutions for Every <span className="text-brand-secondary">Challenge</span>.
+              Specialized Solutions for Every{"\u00A0"}<span className="text-brand-secondary">Challenge</span>.
             </h3>
           </div>
           <p className="text-black max-w-sm mb-2 font-light text-base">

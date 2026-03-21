@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 
 const CTA: React.FC = () => {
   return (
-    <section className="py-8 md:py-12 bg-brand-ash min-h-[50vh] flex flex-col justify-center">
+    <section className="py-8 md:py-12 bg-white min-h-[50vh] flex flex-col justify-center">
       <div className="max-w-7xl mx-auto px-4 md:px-8 w-full">
         <div className="bg-brand-dark rounded-[2rem] md:rounded-[3rem] p-6 md:p-12 relative overflow-hidden group">
           {/* Background Image Addition */}

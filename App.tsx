@@ -60,7 +60,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <ScrollToTopOnRouteChange />
-      <div className="min-h-screen bg-brand-ash selection:bg-brand-secondary selection:text-white">
+      <div className="min-h-screen bg-white selection:bg-brand-secondary selection:text-white">
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />

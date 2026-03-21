@@ -51,12 +51,12 @@ const products = [
 
 const ProductShowcase: React.FC = () => {
   return (
-    <section id="products" className="py-24 md:py-32 bg-brand-ash">
+    <section id="products" className="py-24 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="mb-20">
           <span className="text-xs font-black uppercase tracking-widest text-brand-dark mb-4 block opacity-50">OUR PRODUCTS</span>
           <h2 className="text-4xl md:text-6xl font-black text-brand-dark tracking-tighter max-w-3xl leading-[1.1]">
-            Providing You with the Best and Most Advanced Products.
+            Providing You with the Best and Most Advanced{"\u00A0"}Products.
           </h2>
         </div>
 

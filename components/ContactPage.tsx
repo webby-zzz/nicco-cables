@@ -103,7 +103,7 @@ const ContactPage: React.FC = () => {
   ];
 
   return (
-    <div className="bg-brand-ash">
+    <div className="bg-white">
       {/* Hero Section */}
       <section className="relative pt-48 md:pt-56 pb-16 bg-brand-dark overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-secondary/5 -skew-x-12 translate-x-1/4" />
@@ -122,7 +122,7 @@ const ContactPage: React.FC = () => {
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-tight mb-8"
             >
-              Have a question about our products or require technical support?
+              Have a question about our products or require technical{"\u00A0"}support?
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -130,7 +130,7 @@ const ContactPage: React.FC = () => {
               transition={{ delay: 0.2 }}
               className="text-base text-white leading-relaxed font-light max-w-2xl"
             >
-              Our team is here to assist you with product inquiries, project requirements, and technical guidance.
+              Our team is here to assist you with product inquiries, project requirements, and technical{"\u00A0"}guidance.
             </motion.p>
             
             <div className="mt-8 flex flex-col sm:flex-row gap-6">
@@ -158,7 +158,7 @@ const ContactPage: React.FC = () => {
       </section>
 
       {/* Main Content */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 bg-brand-ash">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             
@@ -176,7 +176,7 @@ const ContactPage: React.FC = () => {
                     <div className="w-20 h-20 bg-emerald-50 rounded-full flex items-center justify-center mx-auto mb-6">
                       <Send className="w-8 h-8 text-emerald-500" />
                     </div>
-                    <h4 className="text-2xl font-black text-brand-dark tracking-tighter mb-4">Message Sent!</h4>
+                    <h4 className="text-2xl font-black text-brand-dark tracking-tighter mb-4">Message{"\u00A0"}Sent!</h4>
                     <p className="text-black font-medium mb-8 text-base">Thank you for reaching out. Our team will get back to you shortly.</p>
                     <button 
                       onClick={() => setSubmitStatus('idle')}
@@ -268,7 +268,7 @@ const ContactPage: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-1">HEAD OFFICE</h3>
-                    <h4 className="text-2xl font-black text-brand-dark tracking-tighter">Nicco Corporation Limited</h4>
+                    <h4 className="text-2xl font-black text-brand-dark tracking-tighter">Nicco{"\u00A0"}Cables</h4>
                   </div>
                 </div>
                 
@@ -302,7 +302,7 @@ const ContactPage: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-1">MANUFACTURING PLANT</h3>
-                    <h4 className="text-2xl font-black text-brand-dark tracking-tighter">Shyamnagar Unit</h4>
+                    <h4 className="text-2xl font-black text-brand-dark tracking-tighter">Shyamnagar{"\u00A0"}Unit</h4>
                   </div>
                 </div>
                 

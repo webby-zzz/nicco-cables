@@ -66,7 +66,7 @@ const locations = [
 
 const RegionalPresence: React.FC = () => {
   return (
-    <section className="py-24 bg-brand-ash overflow-hidden">
+    <section className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Stats Banner - Hidden for now */}

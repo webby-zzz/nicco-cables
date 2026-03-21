@@ -20,7 +20,7 @@ const pillars = [
 
 const WhyNicco: React.FC = () => {
   return (
-    <section className="py-12 md:py-16 bg-brand-ash border-y border-gray-50 relative overflow-hidden min-h-[40vh] flex items-center">
+    <section className="py-12 md:py-16 bg-white border-y border-gray-50 relative overflow-hidden min-h-[40vh] flex items-center">
       {/* Ghostly Background Image for texture */}
       <div className="absolute top-0 right-0 w-1/3 h-full opacity-[0.03] grayscale pointer-events-none">
          <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80&w=1200" alt="Tech Background" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
@@ -38,7 +38,7 @@ const WhyNicco: React.FC = () => {
           <div className="lg:col-span-5 space-y-4">
             <h2 className="text-xs font-bold text-brand-secondary uppercase tracking-widest">WHY CHOOSE NICCO</h2>
             <h3 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tighter leading-tight">
-              Precision in <span className="text-brand-secondary underline decoration-brand-dark/10 underline-offset-[8px]">Every Strand.</span>
+              Precision in <span className="text-brand-secondary underline decoration-brand-dark/10 underline-offset-[8px]">Every{"\u00A0"}Strand.</span>
             </h3>
             
             <div className="rounded-[1.5rem] overflow-hidden shadow-2xl relative aspect-[4/3] group">

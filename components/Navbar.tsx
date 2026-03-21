@@ -5,7 +5,7 @@ import { Menu, X, ChevronDown, Zap, Shield, Sun, Building2, HardHat, Globe, Layo
 
 const Logo = ({ isScrolled }: { isScrolled: boolean }) => (
   <Link to="/" className="flex items-center group cursor-pointer">
-    <div className={`${isScrolled ? 'h-12 md:h-16' : 'h-14 md:h-20'} w-auto transition-all duration-200 group-hover:scale-105`}>
+    <div className={`${isScrolled ? 'h-10 md:h-16' : 'h-12 md:h-20'} w-auto transition-all duration-200 group-hover:scale-105`}>
       <img 
         src="/brand identity/Nicco logo 1.5ft X 1.5ft-01 (1).png" 
         alt="NICCO Logo" 
@@ -182,7 +182,7 @@ const Navbar: React.FC = () => {
   const menuItems = [
     { name: 'HOME', link: '/' },
     { name: 'ABOUT US', link: '/about' },
-    { name: 'PRODUCTS', link: '/#products', hasMegaMenu: true },
+    { name: 'PRODUCTS', link: '#', hasMegaMenu: true },
     { name: 'BROCHURES', link: '/brochures' },
     { name: 'GALLERY', link: '/gallery' },
     { name: 'CONTACT US', link: '/contact' },
@@ -193,6 +193,20 @@ const Navbar: React.FC = () => {
     const isHash = item.link.includes('#');
     const useDarkText = true;
     
+    if (item.link === '#') {
+      return (
+        <button 
+          className={`text-[12px] font-black uppercase tracking-widest hover:text-brand-secondary transition-all flex items-center ${
+            useDarkText ? 'text-brand-dark' : 'text-white'
+          }`}
+          onClick={(e) => e.preventDefault()}
+        >
+          {item.name}
+          {item.hasMegaMenu && <ChevronDown className={`w-3 h-3 ml-1 transition-transform duration-300 ${isMegaMenuOpen ? 'rotate-180' : ''}`} />}
+        </button>
+      );
+    }
+
     if (isHash) {
       return (
         <a 
@@ -229,11 +243,11 @@ const Navbar: React.FC = () => {
         onMouseLeave={() => setIsMegaMenuOpen(false)}
         className={`transition-all duration-300 ease-in-out flex items-center justify-center relative ${
           isScrolled 
-            ? 'w-[calc(100%-2rem)] max-w-7xl bg-white/90 backdrop-blur-md shadow-2xl border border-brand-secondary/10 px-10 lg:py-4 py-6 mt-4 rounded-full' 
-            : 'w-[calc(100%-2rem)] max-w-7xl bg-white/90 backdrop-blur-md border border-brand-secondary/10 shadow-xl px-10 py-6 mt-6 rounded-full'
+            ? 'w-[calc(100%-1rem)] md:w-[calc(100%-2rem)] max-w-7xl bg-white/90 backdrop-blur-md shadow-2xl border border-brand-secondary/10 px-4 lg:px-10 lg:py-4 py-4 mt-2 md:mt-4 rounded-full' 
+            : 'w-[calc(100%-1rem)] md:w-[calc(100%-2rem)] max-w-7xl bg-white/90 backdrop-blur-md border border-brand-secondary/10 shadow-xl px-4 lg:px-10 py-4 md:py-6 mt-4 md:mt-6 rounded-full'
         }`}
       >
-        <div className={`absolute flex items-center transition-all duration-300 ${isScrolled ? 'left-10' : 'left-10'}`}>
+        <div className={`absolute flex items-center transition-all duration-300 ${isScrolled ? 'left-4 lg:left-10' : 'left-4 lg:left-10'}`}>
           <Logo isScrolled={isScrolled} />
         </div>
 
@@ -252,9 +266,9 @@ const Navbar: React.FC = () => {
         {/* Center Badge for Mobile/Floating state */}
         {!isScrolled && (
           <div className="lg:hidden flex items-center">
-            <div className={`px-5 py-2 bg-black/20 backdrop-blur-md rounded-full border border-white/10 flex items-center gap-2.5`}>
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-secondary animate-pulse" />
-              <span className={`text-xs font-black uppercase tracking-[0.25em] ${useDarkText ? 'text-brand-dark' : 'text-white'}`}>Eight Decades of Trust & Innovation</span>
+            <div className={`px-3 py-1.5 bg-black/10 backdrop-blur-md rounded-full border border-black/5 flex items-center gap-1.5`}>
+              <span className="w-1 h-1 rounded-full bg-brand-secondary animate-pulse" />
+              <span className={`text-[8px] font-black uppercase tracking-[0.2em] ${useDarkText ? 'text-brand-dark' : 'text-white'}`}>Since 1944</span>
             </div>
           </div>
         )}

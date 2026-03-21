@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 
 const Overview: React.FC = () => {
   return (
-    <section id="about" className="py-12 md:py-16 bg-brand-ash overflow-hidden min-h-[40vh] flex items-center">
+    <section id="about" className="py-12 md:py-16 bg-white overflow-hidden min-h-[40vh] flex items-center">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
@@ -17,7 +17,7 @@ const Overview: React.FC = () => {
           <div className="lg:col-span-6 relative">
             <h2 className="text-xs font-bold text-brand-secondary tracking-widest uppercase mb-3 block">OUR HERITAGE STORY</h2>
             <h3 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tighter leading-tight mb-4">
-              Powering Connections <span className="text-brand-secondary">that Build Nations</span>
+              Powering Connections <span className="text-brand-secondary">that Build{"\u00A0"}Nations</span>
             </h3>
             
             {/* Visual Addition */}
@@ -34,7 +34,7 @@ const Overview: React.FC = () => {
 
           <div className="lg:col-span-6 space-y-4">
             <p className="text-black font-normal leading-relaxed text-base">
-              For over <strong>eight decades</strong>, <strong>Nicco Cables</strong> has been at the forefront of <strong>India’s cable manufacturing industry</strong>. From <strong>HT cables up to 33kV</strong> to advanced <strong>fire-survival</strong> and <strong>electron-beam technologies</strong>, our solutions power critical sectors including <strong>defence, railways, power utilities, infrastructure, and aerospace</strong>.
+              For over <strong>8 decades</strong>, <strong>Nicco Cables</strong> has been at the forefront of <strong>India’s cable manufacturing industry</strong>. From <strong>HT cables up to 33kV</strong> to advanced <strong>fire-survival</strong> and <strong>electron-beam technologies</strong>, our solutions power critical sectors including <strong>defence, railways, power utilities, infrastructure, and aerospace</strong>.
             </p>
             <div className="h-[1px] w-16 bg-brand-secondary" />
             <p className="text-xs text-black leading-relaxed font-light">

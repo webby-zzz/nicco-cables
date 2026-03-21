@@ -56,7 +56,7 @@ const AboutPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-brand-ash">
+    <div className="bg-white">
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden bg-brand-dark">
         <div className="absolute inset-0 z-0">
@@ -81,7 +81,7 @@ const AboutPage: React.FC = () => {
             transition={{ duration: 0.56, delay: 0.2 }}
             className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-tight mb-6"
           >
-            Our <span className="text-brand-secondary">Legacy</span>
+            Our{"\u00A0"}<span className="text-brand-secondary">Legacy</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0 }}
@@ -95,13 +95,13 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* Introduction */}
-      <section className="py-12 md:py-16 bg-brand-ash">
+      <section className="py-12 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             <div className="lg:col-span-5">
               <h2 className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-4 block">ABOUT US</h2>
               <h3 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tighter leading-tight mb-6">
-                Eight Decades of <span className="text-brand-secondary">Trusted Innovation.</span>
+                8 Decades of <span className="text-brand-secondary">Trusted{"\u00A0"}Innovation.</span>
               </h3>
               <div className="relative rounded-[1.5rem] overflow-hidden aspect-square shadow-2xl group">
                 <img 
@@ -113,21 +113,21 @@ const AboutPage: React.FC = () => {
             </div>
             <div className="lg:col-span-7 lg:pt-16 space-y-6">
               <p className="text-black leading-relaxed font-normal text-base">
-                For over 8 decades, Nicco Cables has been a trusted name in India’s cable manufacturing industry, delivering high-performance connectivity solutions for critical infrastructure and strategic sectors.
+                For over <strong className="font-bold text-brand-secondary">8 decades</strong>, <strong className="font-bold text-brand-dark">Nicco Cables</strong> has been a trusted name in India’s cable manufacturing industry, delivering <strong className="font-bold text-brand-dark">high-performance connectivity solutions</strong> for critical infrastructure and strategic sectors.
               </p>
               <div className="h-[1px] w-24 bg-brand-secondary" />
               <div className="space-y-6 text-black leading-relaxed font-light text-base">
                 <p>
-                  Established with a vision to support the nation’s growing industrial and power needs, Nicco has evolved into a technology-driven manufacturer of advanced electrical cables and specialized connectivity systems. Today, the company engineers a comprehensive portfolio including HT cables up to 33kV, LT power and control cables, instrumentation cables, fire survival cables, electron-beam irradiated cables, and specialized elastomeric and silicon cable solutions.
+                  Established with a vision to support the nation’s growing industrial and power needs, Nicco has evolved into a <strong className="font-bold text-brand-dark">technology-driven manufacturer</strong> of advanced electrical cables and specialized connectivity systems. Today, the company engineers a comprehensive portfolio including <strong className="font-bold text-brand-dark">HT cables up to 33kV</strong>, LT power and control cables, instrumentation cables, <strong className="font-bold text-brand-dark">fire survival cables</strong>, electron-beam irradiated cables, and specialized elastomeric and silicon cable solutions.
                 </p>
                 <p>
-                  Our manufacturing capabilities are supported by cutting-edge plant and machinery, advanced compounding technology, and a fully equipped in-house R&D and testing ecosystem. The company was also among the first in India’s private sector to introduce Electron Beam Irradiation technology, enabling superior cable performance in high-demand industrial applications.
+                  Our manufacturing capabilities are supported by <strong className="font-bold text-brand-dark">cutting-edge plant and machinery</strong>, advanced compounding technology, and a fully equipped <strong className="font-bold text-brand-dark">in-house R&D and testing ecosystem</strong>. The company was also among the first in India’s private sector to introduce <strong className="font-bold text-brand-dark">Electron Beam Irradiation technology</strong>, enabling superior cable performance in high-demand industrial applications.
                 </p>
                 <p>
-                  With solutions designed for defence, railways, metros, power utilities, renewable energy, mining, and large-scale infrastructure, Nicco continues to play a vital role in powering India’s progress while expanding its reach across global markets.
+                  With solutions designed for <strong className="font-bold text-brand-dark">defence, railways, metros, power utilities, renewable energy, mining, and large-scale infrastructure</strong>, Nicco continues to play a vital role in powering India’s progress while expanding its reach across global markets.
                 </p>
                 <p className="font-bold text-brand-dark text-base">
-                  Driven by engineering excellence, stringent quality standards, and a commitment to innovation, Nicco remains dedicated to delivering safe, reliable, and future-ready connectivity solutions.
+                  Driven by <strong className="font-bold text-brand-secondary">engineering excellence</strong>, stringent quality standards, and a commitment to innovation, Nicco remains dedicated to delivering safe, reliable, and future-ready connectivity solutions.
                 </p>
               </div>
             </div>
@@ -141,7 +141,7 @@ const AboutPage: React.FC = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="py-12 md:py-16 bg-brand-ash"
+        className="py-12 md:py-16 bg-white"
       >
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -201,7 +201,7 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* Certifications Slider */}
-      <section className="py-12 md:py-20 bg-brand-ash overflow-hidden relative">
+      <section className="py-12 md:py-20 bg-white overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-4 md:px-8 mb-10">
           <div className="text-center">
             <h2 className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-4">CERTIFICATIONS</h2>
@@ -274,7 +274,7 @@ const AboutPage: React.FC = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="py-12 md:py-16 bg-brand-ash"
+        className="py-12 md:py-16 bg-white"
       >
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">

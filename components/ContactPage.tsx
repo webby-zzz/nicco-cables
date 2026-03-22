@@ -261,69 +261,69 @@ const ContactPage: React.FC = () => {
             >
               
               {/* Head Office */}
-              <div className="space-y-8">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-brand-secondary/10 flex items-center justify-center">
-                    <Building2 className="w-6 h-6 text-brand-secondary" />
-                  </div>
+              <div className="flex gap-6 items-start">
+                <div className="w-12 h-12 rounded-2xl bg-brand-secondary/10 flex items-center justify-center flex-shrink-0">
+                  <Building2 className="w-6 h-6 text-brand-secondary" />
+                </div>
+                <div className="flex-1 space-y-4">
                   <div>
                     <h3 className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-1">HEAD OFFICE</h3>
-                    <h4 className="text-2xl font-black text-brand-dark tracking-tighter">Nicco{"\u00A0"}Cables</h4>
+                    <h4 className="text-2xl font-black text-brand-dark tracking-tighter">Nicco Cables</h4>
                   </div>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                  <div className="space-y-4">
-                    <p className="text-base text-black leading-relaxed font-medium">
-                      Suket Building, 2nd Floor, 20 Ballygunge Circular Road Kolkata - 700019
-                    </p>
-                  </div>
-                  <div className="rounded-[1.5rem] overflow-hidden shadow-2xl aspect-video bg-gray-100 border border-gray-100">
-                    {/* Map for Head Office - Kolkata */}
-                    <iframe 
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.9786!2d88.36!3d22.54!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02766666666667%3A0x6666666666666666!2s20%20Ballygunge%20Circular%20Road%2C%20Kolkata!5e0!3m2!1sen!2sin!4v1710312000000!5m2!1sen!2sin" 
-                      width="100%" 
-                      height="100%" 
-                      style={{ border: 0 }} 
-                      allowFullScreen 
-                      loading="lazy" 
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="Head Office Map"
-                    ></iframe>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                    <div className="space-y-4">
+                      <p className="text-base text-black leading-relaxed font-medium">
+                        Suket Building, 2nd Floor, 20 Ballygunge Circular Road Kolkata - 700019
+                      </p>
+                    </div>
+                    <div className="rounded-[1.5rem] overflow-hidden shadow-2xl aspect-video bg-gray-100 border border-gray-100">
+                      {/* Map for Head Office - Kolkata */}
+                      <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.9786!2d88.36!3d22.54!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02766666666667%3A0x6666666666666666!2s20%20Ballygunge%20Circular%20Road%2C%20Kolkata!5e0!3m2!1sen!2sin!4v1710312000000!5m2!1sen!2sin" 
+                        width="100%" 
+                        height="100%" 
+                        style={{ border: 0 }} 
+                        allowFullScreen 
+                        loading="lazy" 
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="Head Office Map"
+                      ></iframe>
+                    </div>
                   </div>
                 </div>
               </div>
 
               {/* Manufacturing Plant */}
-              <div className="space-y-8">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-brand-secondary/10 flex items-center justify-center">
-                    <Factory className="w-6 h-6 text-brand-secondary" />
-                  </div>
+              <div className="flex gap-6 items-start">
+                <div className="w-12 h-12 rounded-2xl bg-brand-secondary/10 flex items-center justify-center flex-shrink-0">
+                  <Factory className="w-6 h-6 text-brand-secondary" />
+                </div>
+                <div className="flex-1 space-y-4">
                   <div>
                     <h3 className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-1">MANUFACTURING PLANT</h3>
-                    <h4 className="text-2xl font-black text-brand-dark tracking-tighter">Shyamnagar{"\u00A0"}Unit</h4>
+                    <h4 className="text-2xl font-black text-brand-dark tracking-tighter">Shyamnagar Unit</h4>
                   </div>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                  <div className="space-y-4">
-                    <p className="text-base text-black leading-relaxed font-medium">
-                      Shyamnagar Unit, 71 East Ghosh Para Road, North 24 Pgs., West Bengal – 743128
-                    </p>
-                  </div>
-                  <div className="rounded-[1.5rem] overflow-hidden shadow-2xl aspect-video bg-gray-100 border border-gray-100">
-                    {/* Map for Manufacturing Plant */}
-                    <iframe 
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3678.9654!2d88.38!3d22.83!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDQ5JzQ4LjAiTiA4OMKwMjInNDguMCJF!5e0!3m2!1sen!2sin!4v1710312000000!5m2!1sen!2sin" 
-                      width="100%" 
-                      height="100%" 
-                      style={{ border: 0 }} 
-                      allowFullScreen 
-                      loading="lazy" 
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="Manufacturing Plant Map"
-                    ></iframe>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                    <div className="space-y-4">
+                      <p className="text-base text-black leading-relaxed font-medium">
+                        Shyamnagar Unit, 71 East Ghosh Para Road, North 24 Pgs., West Bengal – 743128
+                      </p>
+                    </div>
+                    <div className="rounded-[1.5rem] overflow-hidden shadow-2xl aspect-video bg-gray-100 border border-gray-100">
+                      {/* Map for Manufacturing Plant */}
+                      <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3678.9654!2d88.38!3d22.83!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDQ5JzQ4LjAiTiA4OMKwMjInNDguMCJF!5e0!3m2!1sen!2sin!4v1710312000000!5m2!1sen!2sin" 
+                        width="100%" 
+                        height="100%" 
+                        style={{ border: 0 }} 
+                        allowFullScreen 
+                        loading="lazy" 
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="Manufacturing Plant Map"
+                      ></iframe>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -337,20 +337,20 @@ const ContactPage: React.FC = () => {
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {regionalOffices.map((office, idx) => (
-                    <div key={idx} className="bg-white p-6 rounded-[1.5rem] border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300 group">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-8 h-8 rounded-xl bg-brand-secondary/10 flex items-center justify-center group-hover:bg-brand-secondary transition-colors">
-                          <MapPin className="w-4 h-4 text-brand-secondary group-hover:text-white" />
-                        </div>
-                        <h4 className="text-lg font-black text-brand-dark tracking-tighter uppercase">{office.city}</h4>
+                    <div key={idx} className="bg-white p-6 rounded-[1.5rem] border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300 group flex gap-4 items-start">
+                      <div className="w-8 h-8 rounded-xl bg-brand-secondary/10 flex items-center justify-center group-hover:bg-brand-secondary transition-colors flex-shrink-0 mt-1">
+                        <MapPin className="w-4 h-4 text-brand-secondary group-hover:text-white" />
                       </div>
-                      <p className="text-xs text-black leading-relaxed font-medium">
-                        {office.address.map((line, i) => (
-                          <React.Fragment key={i}>
-                            {line}<br />
-                          </React.Fragment>
-                        ))}
-                      </p>
+                      <div>
+                        <h4 className="text-lg font-black text-brand-dark tracking-tighter uppercase mb-2">{office.city}</h4>
+                        <p className="text-xs text-black leading-relaxed font-medium">
+                          {office.address.map((line, i) => (
+                            <React.Fragment key={i}>
+                              {line}<br />
+                            </React.Fragment>
+                          ))}
+                        </p>
+                      </div>
                     </div>
                   ))}
                 </div>

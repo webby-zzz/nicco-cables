@@ -17,6 +17,7 @@ import GalleryPage from './components/GalleryPage';
 import LTPowerControlPage from './components/LTPowerControlPage';
 import TransmissionDistributionPage from './components/TransmissionDistributionPage';
 import IndianStandardsPage from './components/IndianStandardsPage';
+import PrivacyCompliancePage from './components/PrivacyCompliancePage';
 
 const HomePage: React.FC = () => {
   return (
@@ -70,6 +71,7 @@ const App: React.FC = () => {
           <Route path="/products/lt-power-control" element={<LTPowerControlPage />} />
           <Route path="/industry/transmission-distribution" element={<TransmissionDistributionPage />} />
           <Route path="/standards/indian" element={<IndianStandardsPage />} />
+          <Route path="/privacy-compliance" element={<PrivacyCompliancePage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
         <Footer />

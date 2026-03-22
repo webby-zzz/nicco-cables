@@ -103,9 +103,7 @@ const Footer: React.FC = () => {
             © 2024 NICCO CABLES. ALL RIGHTS RESERVED.
           </p>
           <div className="flex gap-6 text-[9px] text-white font-bold tracking-widest">
-            <a href="#" className="hover:text-white uppercase">PRIVACY</a>
-            <a href="#" className="hover:text-white uppercase">COMPLIANCE</a>
-            <a href="#" className="hover:text-white uppercase">SUSTAINABILITY</a>
+            <Link to="/privacy-compliance" className="hover:text-white uppercase">PRIVACY & COMPLIANCE</Link>
           </div>
         </div>
       </div>

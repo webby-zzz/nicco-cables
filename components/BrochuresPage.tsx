@@ -17,7 +17,7 @@ const dummyBrochures: Brochure[] = [
     id: '1',
     title: 'Nicco Cables Corporate Catalogue',
     category: 'Corporate',
-    thumbnail: 'https://picsum.photos/seed/corp1/600/800',
+    thumbnail: 'https://placehold.co/1x1/000000/000000',
     pdfUrl: '/brochures/Nicco Cables Corporate  Catalogue.pdf',
     description: 'A comprehensive overview of Nicco Cables, our history, and our vision for the future of power transmission.'
   },
@@ -25,7 +25,7 @@ const dummyBrochures: Brochure[] = [
     id: '2',
     title: 'LT Cables Brochure',
     category: 'Technical',
-    thumbnail: 'https://picsum.photos/seed/ltcables/600/800',
+    thumbnail: 'https://placehold.co/1x1/000000/000000',
     pdfUrl: '/brochures/LT cables brochure.pdf',
     description: 'Detailed specifications for Low Tension (LT) cables.'
   },
@@ -33,7 +33,7 @@ const dummyBrochures: Brochure[] = [
     id: '3',
     title: 'Medium Voltage Covered Conductor (MVCC)',
     category: 'Technical',
-    thumbnail: 'https://picsum.photos/seed/mvcc/600/800',
+    thumbnail: 'https://placehold.co/1x1/000000/000000',
     pdfUrl: '/brochures/Medium Voltage Covered Conductor (MVCC) with E-Beam Process passed.pdf',
     description: 'Specifications for Medium Voltage Covered Conductor (MVCC) with E-Beam Process.'
   },
@@ -41,7 +41,7 @@ const dummyBrochures: Brochure[] = [
     id: '4',
     title: 'Railway Cables',
     category: 'Technical',
-    thumbnail: 'https://picsum.photos/seed/rail/600/800',
+    thumbnail: 'https://placehold.co/1x1/000000/000000',
     pdfUrl: '/brochures/Railway Cables .pdf',
     description: 'Detailed specifications for RDSO approved specialized cables for railway signaling and power applications.'
   },
@@ -49,7 +49,7 @@ const dummyBrochures: Brochure[] = [
     id: '5',
     title: 'Wind Energy and Solar Cables',
     category: 'Technical',
-    thumbnail: 'https://picsum.photos/seed/solar/600/800',
+    thumbnail: 'https://placehold.co/1x1/000000/000000',
     pdfUrl: '/brochures/Wind Energy and Solar Cables.pdf',
     description: 'Cables designed specifically for renewable energy applications including wind and solar.'
   },
@@ -57,7 +57,7 @@ const dummyBrochures: Brochure[] = [
     id: '6',
     title: 'Shipbuilding Cables',
     category: 'Technical',
-    thumbnail: 'https://picsum.photos/seed/ship/600/800',
+    thumbnail: 'https://placehold.co/1x1/000000/000000',
     pdfUrl: '/brochures/_SHIPBUILDING CABLES.pdf',
     description: 'Marine-grade cables designed for shipbuilding and offshore applications.'
   },
@@ -65,7 +65,7 @@ const dummyBrochures: Brochure[] = [
     id: '7',
     title: 'Automotive Cables',
     category: 'Technical',
-    thumbnail: 'https://picsum.photos/seed/auto/600/800',
+    thumbnail: 'https://placehold.co/1x1/000000/000000',
     pdfUrl: '/brochures/AUTOMOTIVE CABLES (R3).pdf',
     description: 'High-performance cables for the automotive industry.'
   },
@@ -73,7 +73,7 @@ const dummyBrochures: Brochure[] = [
     id: '8',
     title: 'Defense and Aerospace Cables',
     category: 'Technical',
-    thumbnail: 'https://picsum.photos/seed/defense/600/800',
+    thumbnail: 'https://placehold.co/1x1/000000/000000',
     pdfUrl: '/brochures/Defense and Aerospace Cables.pdf',
     description: 'Specialized cables meeting stringent requirements for defense and aerospace applications.'
   },
@@ -81,7 +81,7 @@ const dummyBrochures: Brochure[] = [
     id: '9',
     title: 'Elastomeric Insulated Cables',
     category: 'Technical',
-    thumbnail: 'https://picsum.photos/seed/elastomeric1/600/800',
+    thumbnail: 'https://placehold.co/1x1/000000/000000',
     pdfUrl: '/brochures/ELASTOMERIC INSULATED CABLES - NICCO.pdf',
     description: 'Flexible and durable elastomeric insulated cables for various industrial uses.'
   },
@@ -89,7 +89,7 @@ const dummyBrochures: Brochure[] = [
     id: '10',
     title: 'Elastomeric Insulated Cables (Nicco X Cvl)',
     category: 'Technical',
-    thumbnail: 'https://picsum.photos/seed/elastomeric2/600/800',
+    thumbnail: 'https://placehold.co/1x1/000000/000000',
     pdfUrl: '/brochures/ELASTOMERIC INSULATED CABLES (Nicco X Cvl).pdf',
     description: 'Elastomeric insulated cables in collaboration with CVL.'
   },
@@ -97,7 +97,7 @@ const dummyBrochures: Brochure[] = [
     id: '11',
     title: 'LT Power & Control Cable Catalog',
     category: 'Technical',
-    thumbnail: 'https://picsum.photos/seed/ltpower/600/800',
+    thumbnail: 'https://placehold.co/1x1/000000/000000',
     pdfUrl: '/brochures/LT Power & Control Cable Catalog_compressed.pdf',
     description: 'Comprehensive catalog for Low Tension power and control cables.'
   },
@@ -105,7 +105,7 @@ const dummyBrochures: Brochure[] = [
     id: '12',
     title: 'HT Cables upto 11KV',
     category: 'Technical',
-    thumbnail: 'https://picsum.photos/seed/htcables/600/800',
+    thumbnail: 'https://placehold.co/1x1/000000/000000',
     pdfUrl: '/brochures/HT Cables upto 11KV - NICCO .pdf',
     description: 'Specifications for High Tension (HT) cables up to 11KV.'
   },
@@ -113,7 +113,7 @@ const dummyBrochures: Brochure[] = [
     id: '13',
     title: 'Fire Survival Cables',
     category: 'Technical',
-    thumbnail: 'https://picsum.photos/seed/fire/600/800',
+    thumbnail: 'https://placehold.co/1x1/000000/000000',
     pdfUrl: '/brochures/Fire Survival Cables rated at 950°C - NICCO .pdf',
     description: 'Fire survival cables rated at 950°C for critical safety applications.'
   },
@@ -121,7 +121,7 @@ const dummyBrochures: Brochure[] = [
     id: '14',
     title: 'Instrumentation Cables',
     category: 'Technical',
-    thumbnail: 'https://picsum.photos/seed/inst/600/800',
+    thumbnail: 'https://placehold.co/1x1/000000/000000',
     pdfUrl: '/brochures/INSTRUMENTATION CABLES - NICCO .pdf',
     description: 'High-precision instrumentation cables for industrial control systems.'
   }
@@ -189,7 +189,7 @@ const BrochuresPage: React.FC = () => {
       {/* Hero Section */}
       <section className="relative pt-48 md:pt-56 pb-16 bg-brand-dark overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-secondary/5 -skew-x-12 translate-x-1/4" />
-        <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
+        <div className="max-w-[1440px] mx-auto px-4 lg:px-10 relative z-10">
           <div className="max-w-3xl">
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
@@ -202,7 +202,7 @@ const BrochuresPage: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-tight mb-6"
+              className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-tight mb-6 md:whitespace-nowrap"
             >
               Technical Literature &{"\u00A0"}Brochures
             </motion.h2>
@@ -220,7 +220,7 @@ const BrochuresPage: React.FC = () => {
 
       {/* Grid Section */}
       <section className="py-12 md:py-20">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {dummyBrochures.map((brochure, idx) => (
               <motion.div

@@ -4,10 +4,10 @@ import { Leaf, Recycle, Sun, Droplets } from 'lucide-react';
 
 const Sustainability: React.FC = () => {
   const sustainabilityItems = [
-    { icon: Leaf, text: "Eco-friendly insulation materials", img: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80&w=200" },
-    { icon: Recycle, text: "95% recyclable packaging", img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=200" },
-    { icon: Sun, text: "Solar powered manufacturing hubs", img: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=200" },
-    { icon: Droplets, text: "Zero wastewater discharge", img: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=200" }
+    { icon: Leaf, text: "Eco-friendly insulation materials", img: "" },
+    { icon: Recycle, text: "95% recyclable packaging", img: "" },
+    { icon: Sun, text: "Solar powered manufacturing hubs", img: "" },
+    { icon: Droplets, text: "Zero wastewater discharge", img: "" }
   ];
 
   return (

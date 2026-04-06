@@ -1,0 +1,128 @@
+
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
+import { motion } from 'motion/react';
+import Breadcrumbs from './Breadcrumbs';
+
+const TechnicalTable: React.FC<{ title: string; data: { label: string; value: React.ReactNode }[] }> = ({ title, data }) => (
+  <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-md border border-gray-100 overflow-hidden mb-12">
+    <h3 className="text-xl font-bold text-brand-dark mb-6 border-l-4 border-brand-secondary pl-4 inline-block uppercase tracking-widest">
+      {title}
+    </h3>
+    <div className="overflow-x-auto no-scrollbar">
+      <table className="w-full text-left border-collapse border border-brand-secondary/30">
+        <tbody>
+          {data.map((item, index) => (
+            <tr key={index} className="border-b border-brand-secondary/30 hover:bg-brand-secondary/[0.02] transition-colors">
+              <th className="py-4 px-6 text-[11px] font-black text-brand-dark w-1/3 align-top bg-brand-secondary/[0.05] uppercase tracking-[0.2em] border-r border-brand-secondary/30">
+                {item.label}
+              </th>
+              <td className="py-4 px-6 text-sm text-black font-medium align-top">
+                {item.value}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+);
+
+const ElectronBeamCablesPage: React.FC = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const technicalDetails = [
+    { label: "Construction", value: "Single core or multi-core flexible stranded Copper / Tinned Copper conductors, insulated and sheathed" },
+    { label: "Voltage Rating", value: "300/300 V up to 3.6/6.0 kV" },
+    { label: "Conductor", value: "Annealed Flexible Copper / Tinned Copper — Class 5 / Class 6" },
+    { label: "Insulation", value: "Elastomeric compound (halogen free, heat resistant)" },
+    { label: "Outer Sheath", value: "Elastomeric, halogen free, flame retardant" },
+    { label: "Operating Temperature", value: "+90°C / +120°C / +180°C (as per design)" },
+    { label: "Fire Performance", value: "Low smoke, halogen free, flame retardant, low toxicity and corrosive gas emission" },
+    { label: "Standards", value: "BS EN 50264, BS EN 50306, OEM / RDSO specifications (as applicable)" },
+    { label: "Special Features", value: "Excellent flexibility and mechanical robustness, resistant to oils, fuels, ozone and weathering, suitable for high-temperature zones" }
+  ];
+
+  const variantsDetails = [
+    { label: "Voltage Options", value: "300/300 V up to 3.6/6.0 kV" },
+    { label: "Core Configuration", value: "Single core and multi-core" },
+    { label: "Types", value: "Thin-walled flexible elastomeric cables, power & control cables, high-temperature rolling stock cables, locomotive cable sets" }
+  ];
+
+  return (
+    <div className="bg-white min-h-screen pt-28 md:pt-36 pb-16">
+      <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
+        
+        <Breadcrumbs />
+
+        {/* Header Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="bg-white rounded-[2rem] p-8 md:p-12 shadow-md mb-12 border border-gray-100 flex flex-col md:flex-row gap-8 items-center"
+        >
+          <div className="md:w-1/2">
+            <div className="flex items-center gap-3 text-brand-secondary mb-4">
+              <div className="h-[1px] w-8 bg-brand-secondary" />
+              <span className="text-xs font-black uppercase tracking-widest">INDUSTRY SOLUTIONS</span>
+            </div>
+            <h1 className="text-3xl md:text-4xl lg:text-[44px] font-black text-brand-dark tracking-tighter mb-6 leading-[1.1]">
+              Electron Beam <span className="text-brand-secondary">& Specialised</span>
+            </h1>
+            <p className="text-base text-black leading-relaxed font-medium">
+              Specially engineered for rolling stock, coaching stock, and railway power and control applications, our Railway Cables deliver high safety, reliability, and durability across low, medium, and high voltage environments. Compliant with BS EN 50264, BS EN 50306, BS EN 50382, and RDSO/EDTS/CLW specifications suitable for power supply, signalling, control circuits, traction equipment, and onboard electrical systems.
+            </p>
+          </div>
+          <div className="md:w-1/2 w-full h-64 md:h-80 bg-brand-ash rounded-[2rem] shadow-lg overflow-hidden">
+            <img 
+              src="https://picsum.photos/seed/electron/1200/800" 
+              alt="Electron Beam Cables" 
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+        </motion.div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col gap-8"
+        >
+          <TechnicalTable title="Technical Details" data={technicalDetails} />
+          <TechnicalTable title="Sizes & Variants" data={variantsDetails} />
+        </motion.div>
+
+        {/* CTA Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="bg-brand-secondary rounded-[2rem] p-8 md:p-12 mt-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-lg"
+        >
+          <div>
+            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tighter mb-2">Need more information?</h2>
+            <p className="text-white/90 text-base font-medium">Contact our team or download our product brochure.</p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+            <Link to="/brochures" className="bg-brand-dark text-white px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-black transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
+              Download Brochure <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link to="/contact" className="bg-white text-brand-secondary px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
+              Contact Us <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </motion.div>
+
+      </div>
+    </div>
+  );
+};
+
+export default ElectronBeamCablesPage;

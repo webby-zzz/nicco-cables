@@ -1,13 +1,19 @@
 
 import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 const categories = [
-  { title: "Power & Control", img: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?q=80&w=1974&auto=format&fit=crop" },
-  { title: "Instrumentation", img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2070&auto=format&fit=crop" },
-  { title: "Elastomeric", img: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=1968&auto=format&fit=crop" },
-  { title: "HT & LT Cables", img: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop" },
-  { title: "Railway Signal", img: "https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?q=80&w=2070&auto=format&fit=crop" },
+  { title: "LT Power & Control Cables", img: "", link: "/products/lt-power-control" },
+  { title: "Instrumentation Cables", img: "", link: "/products/instrumentation" },
+  { title: "Elastomeric and Silicon Cables (upto 15 kV)", img: "", link: "/products/elastomeric-silicon" },
+  { title: "Electron Beam Cables", img: "", link: "/products/electron-beam" },
+  { title: "Solar Cables", img: "", link: "/products/solar-cables" },
+  { title: "Wind Energy Cables", img: "", link: "/products/wind-energy-cables" },
+  { title: "Overhead Conductors", img: "", link: "/products/overhead-conductors" },
+  { title: "HT Cables — Up to 11 kV", img: "", link: "/products/ht-power-cables" },
+  { title: "Medium Voltage Covered Conductors / Tree Spacer Cables", img: "", link: "/products/mvcc" },
+  { title: "High Temperature Cables (ETFE / FEP / PTFE)", img: "", link: "/products/high-temperature" },
 ];
 
 const Products: React.FC = () => {
@@ -67,9 +73,12 @@ const Products: React.FC = () => {
                 <span className="text-xs font-black uppercase tracking-widest mb-1 block text-brand-secondary">COLLECTION {index + 1}</span>
                 <h4 className="text-xl font-black tracking-tighter mb-3 text-brand-dark">{cat.title}</h4>
                 <div className="h-[1px] w-full bg-gray-200 mb-4 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
-                <button className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-secondary hover:text-brand-dark transition-colors">
+                <Link 
+                  to={cat.link}
+                  className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-secondary hover:text-brand-dark transition-colors"
+                >
                   DETAILED SPECS <ArrowRight className="w-3 h-3" />
-                </button>
+                </Link>
               </div>
             </div>
           </div>

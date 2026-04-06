@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Building2, Factory, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Building2, Factory, Send, Anchor, Cpu, Castle, Milestone, Waves } from 'lucide-react';
 
 const ContactPage: React.FC = () => {
   const [submitStatus, setSubmitStatus] = React.useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -56,6 +56,7 @@ const ContactPage: React.FC = () => {
   const regionalOffices = [
     {
       city: "Mumbai",
+      icon: Anchor,
       address: [
         "2O7, 2nd Floor",
         "Hubtown Viva",
@@ -65,6 +66,7 @@ const ContactPage: React.FC = () => {
     },
     {
       city: "Noida",
+      icon: Cpu,
       address: [
         "Office No.404, 4th Floor",
         "Wave Silver Tower",
@@ -74,6 +76,7 @@ const ContactPage: React.FC = () => {
     },
     {
       city: "Hyderabad",
+      icon: Castle,
       address: [
         "48, 2nd Floor,",
         "Sarvasukhi Colony, West Marredpally,",
@@ -83,7 +86,8 @@ const ContactPage: React.FC = () => {
       ]
     },
     {
-      city: "BBSR",
+      city: "Bhubaneswar",
+      icon: Milestone,
       address: [
         "Pl. No. - 44, 1st floor,",
         "Ananda Bhaban",
@@ -94,6 +98,7 @@ const ContactPage: React.FC = () => {
     },
     {
       city: "Chennai",
+      icon: Waves,
       address: [
         "Haive House, Old. No. 1226 New No. 24,",
         "20th Main Road, Anna Nagar,",
@@ -120,9 +125,11 @@ const ContactPage: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-tight mb-8"
+              className="text-3xl md:text-6xl font-black text-white tracking-tighter leading-tight mb-8"
             >
-              Have a question about our products or require technical{"\u00A0"}support?
+              <span className="block md:inline md:whitespace-nowrap">Have a question about our products or</span>
+              <br className="hidden md:block" />
+              <span className="block md:inline md:whitespace-nowrap">require technical support?</span>
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -135,8 +142,8 @@ const ContactPage: React.FC = () => {
             
             <div className="mt-8 flex flex-col sm:flex-row gap-6">
               <div className="flex items-center gap-3 group">
-                <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-brand-secondary transition-colors">
-                  <Mail className="w-4 h-4 text-brand-secondary group-hover:text-white" />
+                <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center transition-colors">
+                  <Mail className="w-4 h-4 text-brand-secondary" />
                 </div>
                 <div>
                   <p className="text-xs font-black text-white uppercase tracking-widest mb-1">Email</p>
@@ -144,8 +151,8 @@ const ContactPage: React.FC = () => {
                 </div>
               </div>
               <div className="flex items-center gap-3 group">
-                <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-brand-secondary transition-colors">
-                  <Phone className="w-4 h-4 text-brand-secondary group-hover:text-white" />
+                <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center transition-colors">
+                  <Phone className="w-4 h-4 text-brand-secondary" />
                 </div>
                 <div>
                   <p className="text-xs font-black text-white uppercase tracking-widest mb-1">Contact</p>
@@ -158,26 +165,32 @@ const ContactPage: React.FC = () => {
       </section>
 
       {/* Main Content */}
-      <section className="py-16 md:py-24 bg-brand-ash">
+      <motion.section 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="py-16 md:py-24 bg-white"
+      >
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             
             {/* Quick Form */}
             <div className="lg:col-span-5">
-              <div className="glass-panel p-8 md:p-10 rounded-[2rem] border-gray-100 shadow-2xl sticky top-24">
-                <h3 className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-8">QUICK FORM</h3>
+              <div className="bg-brand-ash p-6 md:p-8 rounded-[2rem] border-gray-100 shadow-xl sticky top-24">
+                <h3 className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-6">QUICK FORM</h3>
                 
                 {submitStatus === 'success' ? (
                   <motion.div 
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="text-center py-12"
+                    className="text-center py-8"
                   >
-                    <div className="w-20 h-20 bg-emerald-50 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <Send className="w-8 h-8 text-emerald-500" />
+                    <div className="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Send className="w-6 h-6 text-emerald-500" />
                     </div>
-                    <h4 className="text-2xl font-black text-brand-dark tracking-tighter mb-4">Message{"\u00A0"}Sent!</h4>
-                    <p className="text-black font-medium mb-8 text-base">Thank you for reaching out. Our team will get back to you shortly.</p>
+                    <h4 className="text-xl font-black text-brand-dark tracking-tighter mb-2">Message{"\u00A0"}Sent!</h4>
+                    <p className="text-black font-medium mb-6 text-sm">Thank you for reaching out. Our team will get back to you shortly.</p>
                     <button 
                       onClick={() => setSubmitStatus('idle')}
                       className="text-xs font-bold text-brand-secondary uppercase tracking-widest hover:underline"
@@ -186,55 +199,55 @@ const ContactPage: React.FC = () => {
                     </button>
                   </motion.div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
-                      <label className="text-xs font-black text-brand-dark uppercase tracking-widest mb-3 block">Name</label>
+                      <label className="text-[10px] font-black text-brand-dark uppercase tracking-widest mb-1.5 block">Name</label>
                       <input 
                         type="text" 
                         name="name"
                         required
-                        className="w-full bg-gray-50 border-none rounded-2xl px-6 py-4 text-sm focus:ring-2 focus:ring-brand-secondary transition-all" 
+                        className="w-full bg-white border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-brand-secondary transition-all" 
                       />
                     </div>
                     <div>
-                      <label className="text-xs font-black text-brand-dark uppercase tracking-widest mb-3 block">Company</label>
+                      <label className="text-[10px] font-black text-brand-dark uppercase tracking-widest mb-1.5 block">Company</label>
                       <input 
                         type="text" 
                         name="company"
-                        className="w-full bg-gray-50 border-none rounded-2xl px-6 py-4 text-sm focus:ring-2 focus:ring-brand-secondary transition-all" 
+                        className="w-full bg-white border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-brand-secondary transition-all" 
                       />
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label className="text-xs font-black text-brand-dark uppercase tracking-widest mb-3 block">Phone</label>
+                        <label className="text-[10px] font-black text-brand-dark uppercase tracking-widest mb-1.5 block">Phone</label>
                         <input 
                           type="tel" 
                           name="phone"
                           required
-                          className="w-full bg-gray-50 border-none rounded-2xl px-6 py-4 text-sm focus:ring-2 focus:ring-brand-secondary transition-all" 
+                          className="w-full bg-white border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-brand-secondary transition-all" 
                         />
                       </div>
                       <div>
-                        <label className="text-xs font-black text-brand-dark uppercase tracking-widest mb-3 block">Email</label>
+                        <label className="text-[10px] font-black text-brand-dark uppercase tracking-widest mb-1.5 block">Email</label>
                         <input 
                           type="email" 
                           name="email"
                           required
-                          className="w-full bg-gray-50 border-none rounded-2xl px-6 py-4 text-sm focus:ring-2 focus:ring-brand-secondary transition-all" 
+                          className="w-full bg-white border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-brand-secondary transition-all" 
                         />
                       </div>
                     </div>
                     <div>
-                      <label className="text-xs font-black text-brand-dark uppercase tracking-widest mb-3 block">Message (Optional)</label>
+                      <label className="text-[10px] font-black text-brand-dark uppercase tracking-widest mb-1.5 block">Message (Optional)</label>
                       <textarea 
                         name="message"
-                        rows={4} 
-                        className="w-full bg-gray-50 border-none rounded-2xl px-6 py-4 text-sm focus:ring-2 focus:ring-brand-secondary transition-all resize-none"
+                        rows={3} 
+                        className="w-full bg-white border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-brand-secondary transition-all resize-none"
                       ></textarea>
                     </div>
                     
                     {submitStatus === 'error' && (
-                      <p className="text-xs font-bold text-red-500 uppercase tracking-widest">
+                      <p className="text-[10px] font-bold text-red-500 uppercase tracking-widest">
                         {errorMessage || 'Something went wrong. Please try again.'}
                       </p>
                     )}
@@ -242,7 +255,7 @@ const ContactPage: React.FC = () => {
                     <button 
                       type="submit"
                       disabled={submitStatus === 'loading'}
-                      className={`w-full bg-brand-secondary text-white font-black text-xs uppercase tracking-[0.3em] py-5 rounded-2xl hover:bg-brand-dark transition-all flex items-center justify-center gap-3 shadow-xl shadow-brand-dark/10 ${submitStatus === 'loading' ? 'opacity-50 cursor-not-allowed' : ''}`}
+                      className={`w-full bg-brand-secondary text-white font-black text-xs uppercase tracking-[0.3em] py-4 rounded-xl hover:bg-brand-dark transition-all flex items-center justify-center gap-3 shadow-xl shadow-brand-dark/10 ${submitStatus === 'loading' ? 'opacity-50 cursor-not-allowed' : ''}`}
                     >
                       {submitStatus === 'loading' ? 'SENDING...' : 'SEND MESSAGE'} <Send className="w-4 h-4" />
                     </button>
@@ -262,8 +275,8 @@ const ContactPage: React.FC = () => {
               
               {/* Head Office */}
               <div className="flex gap-6 items-start">
-                <div className="w-12 h-12 rounded-2xl bg-brand-secondary/10 flex items-center justify-center flex-shrink-0">
-                  <Building2 className="w-6 h-6 text-brand-secondary" />
+                <div className="w-16 h-16 rounded-2xl bg-brand-ash flex items-center justify-center flex-shrink-0 border border-brand-secondary/20">
+                  <Building2 className="w-8 h-8 text-brand-secondary" strokeWidth={1.5} />
                 </div>
                 <div className="flex-1 space-y-4">
                   <div>
@@ -296,8 +309,8 @@ const ContactPage: React.FC = () => {
 
               {/* Manufacturing Plant */}
               <div className="flex gap-6 items-start">
-                <div className="w-12 h-12 rounded-2xl bg-brand-secondary/10 flex items-center justify-center flex-shrink-0">
-                  <Factory className="w-6 h-6 text-brand-secondary" />
+                <div className="w-16 h-16 rounded-2xl bg-brand-ash flex items-center justify-center flex-shrink-0 border border-brand-secondary/20">
+                  <Factory className="w-8 h-8 text-brand-secondary" strokeWidth={1.5} />
                 </div>
                 <div className="flex-1 space-y-4">
                   <div>
@@ -337,12 +350,14 @@ const ContactPage: React.FC = () => {
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {regionalOffices.map((office, idx) => (
-                    <div key={idx} className="bg-white p-6 rounded-[1.5rem] border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300 group flex gap-4 items-start">
-                      <div className="w-8 h-8 rounded-xl bg-brand-secondary/10 flex items-center justify-center group-hover:bg-brand-secondary transition-colors flex-shrink-0 mt-1">
-                        <MapPin className="w-4 h-4 text-brand-secondary group-hover:text-white" />
+                    <div key={idx} className="bg-brand-ash/30 p-6 rounded-[1.5rem] border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 group flex gap-4 items-start">
+                      <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center flex-shrink-0 mt-1 shadow-sm">
+                        <office.icon className="w-5 h-5 text-brand-secondary" />
                       </div>
                       <div>
-                        <h4 className="text-lg font-black text-brand-dark tracking-tighter uppercase mb-2">{office.city}</h4>
+                        <div className="flex flex-col mb-2">
+                          <h4 className="text-lg font-black text-brand-dark tracking-tighter uppercase">{office.city}</h4>
+                        </div>
                         <p className="text-xs text-black leading-relaxed font-medium">
                           {office.address.map((line, i) => (
                             <React.Fragment key={i}>
@@ -359,7 +374,113 @@ const ContactPage: React.FC = () => {
             </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
+
+      {/* Careers Section */}
+      <motion.section 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="py-20 bg-brand-ash"
+      >
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h3 className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-6">CAREERS</h3>
+              <h2 className="text-4xl md:text-5xl font-black text-brand-dark tracking-tighter leading-tight mb-8">
+                Join Our Team & Build the Future of Power
+              </h2>
+              <p className="text-lg text-black leading-relaxed font-medium mb-8">
+                At Nicco Cables, we're always looking for passionate individuals to join our growing family. If you're ready to make an impact in the cable industry, we want to hear from you.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm">
+                    <Mail className="w-4 h-4 text-brand-secondary" />
+                  </div>
+                  <p className="text-sm font-bold text-brand-dark">info@niccocables.com</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-2xl border border-gray-100">
+              <h3 className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-8 text-center">APPLY NOW</h3>
+              <form 
+                action="https://api.web3forms.com/submit" 
+                method="POST"
+                className="space-y-6"
+              >
+                <input type="hidden" name="access_key" value={import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_ACCESS_KEY_HERE"} />
+                <input type="hidden" name="subject" value="New Career Application from Niccocables Website" />
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="text-xs font-black text-brand-dark uppercase tracking-widest mb-2 block">Full Name</label>
+                    <input 
+                      type="text" 
+                      name="name"
+                      required
+                      placeholder="John Doe"
+                      className="w-full bg-gray-50 border-none rounded-xl px-5 py-4 text-sm focus:ring-2 focus:ring-brand-secondary transition-all" 
+                    />
+                  </div>
+                  <div>
+                    <label className="text-xs font-black text-brand-dark uppercase tracking-widest mb-2 block">Email Address</label>
+                    <input 
+                      type="email" 
+                      name="email"
+                      required
+                      placeholder="john@example.com"
+                      className="w-full bg-gray-50 border-none rounded-xl px-5 py-4 text-sm focus:ring-2 focus:ring-brand-secondary transition-all" 
+                    />
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="text-xs font-black text-brand-dark uppercase tracking-widest mb-2 block">Phone Number</label>
+                    <input 
+                      type="tel" 
+                      name="phone"
+                      required
+                      placeholder="+91 00000 00000"
+                      className="w-full bg-gray-50 border-none rounded-xl px-5 py-4 text-sm focus:ring-2 focus:ring-brand-secondary transition-all" 
+                    />
+                  </div>
+                  <div>
+                    <label className="text-xs font-black text-brand-dark uppercase tracking-widest mb-2 block">Position Applied For</label>
+                    <input 
+                      type="text" 
+                      name="position"
+                      required
+                      placeholder="Sales Manager"
+                      className="w-full bg-gray-50 border-none rounded-xl px-5 py-4 text-sm focus:ring-2 focus:ring-brand-secondary transition-all" 
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="text-xs font-black text-brand-dark uppercase tracking-widest mb-2 block">Message / Cover Letter</label>
+                  <textarea 
+                    name="message"
+                    rows={4} 
+                    placeholder="Tell us about yourself..."
+                    className="w-full bg-gray-50 border-none rounded-xl px-5 py-4 text-sm focus:ring-2 focus:ring-brand-secondary transition-all resize-none"
+                  ></textarea>
+                </div>
+
+                <button 
+                  type="submit"
+                  className="w-full bg-brand-dark text-white font-black text-xs uppercase tracking-[0.3em] py-5 rounded-xl hover:bg-brand-secondary transition-all flex items-center justify-center gap-3 shadow-xl shadow-brand-dark/10"
+                >
+                  SUBMIT APPLICATION <Send className="w-4 h-4" />
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </motion.section>
     </div>
   );
 };

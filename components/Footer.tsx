@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="py-4 bg-white px-4">
-      <div className="max-w-7xl mx-auto bg-[#413E3A] rounded-[2rem] p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.3)] relative overflow-hidden text-white">
+      <div className="max-w-[1440px] mx-auto bg-[#413E3A] rounded-[2rem] p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.3)] relative overflow-hidden text-white">
         
         {/* Decorative elements */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center mb-6">
               <div className="h-20 w-auto">
                 <img 
-                  src="/brand identity/Nicco logo 1.5ft X 1.5ft-01 (1).png" 
+                  src="/brand identity/Logo.png" 
                   alt="NICCO Logo" 
                   className="h-full w-auto object-contain"
                   referrerPolicy="no-referrer"
@@ -65,7 +65,17 @@ const Footer: React.FC = () => {
             <div>
               <h4 className="font-bold text-white mb-4 tracking-widest text-xs opacity-50 uppercase">INDUSTRIES</h4>
               <ul className="space-y-2">
-                {['RAILWAYS', 'DEFENSE', 'MARINE', 'RENEWABLES', 'POWER'].map((link) => (
+                {[
+                  'Transmission and Distribution',
+                  'Renewable Energy',
+                  'Power Generation',
+                  'Exploration',
+                  'Mobility',
+                  'Defence',
+                  'Manufacturing',
+                  'Infrastructure',
+                  'Harnessing'
+                ].map((link) => (
                   <li key={link}>
                     <Link to="/#products" className="text-white hover:text-white transition-colors text-xs font-medium uppercase">
                       {link}
@@ -85,7 +95,7 @@ const Footer: React.FC = () => {
                     href={social.href} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-white/5 backdrop-blur-md flex items-center justify-center text-white hover:bg-brand-secondary hover:text-white transition-all hover:-translate-y-1 border border-white/10"
+                    className="w-10 h-10 rounded-full bg-white/5 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/10 hover:text-white transition-all hover:-translate-y-1 border border-white/10"
                   >
                     <social.Icon className="w-4 h-4" />
                   </a>

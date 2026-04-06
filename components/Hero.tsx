@@ -20,17 +20,12 @@ const Hero: React.FC = () => {
           transform: `translateY(${scrollY * 0.15}px)`
         }}
       >
-        <img 
-          src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80&w=2000" 
-          alt="Cable Manufacturing" 
-          className="w-full h-full object-cover opacity-60"
-          referrerPolicy="no-referrer"
-        />
+        <div className="absolute inset-0 bg-brand-dark" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80" />
       </div>
       
       {/* Hero Content */}
-      <div className="relative z-10 w-full max-w-7xl px-6 md:px-12 flex flex-col items-center justify-center text-center h-full">
+      <div className="relative z-10 w-full max-w-[1440px] px-4 lg:px-10 flex flex-col items-center justify-center text-center h-full">
         <span className="text-sm md:text-base font-black text-white uppercase tracking-[0.5em] opacity-90">8 Decades of Trust & Innovation</span>
       </div>
     </section>

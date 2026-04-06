@@ -1,11 +1,12 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 
 const Overview: React.FC = () => {
   return (
     <section id="about" className="py-12 md:py-16 bg-white overflow-hidden min-h-[40vh] flex items-center">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -21,30 +22,25 @@ const Overview: React.FC = () => {
             </h3>
             
             {/* Visual Addition */}
-            <div className="relative mt-4 rounded-[1.5rem] overflow-hidden aspect-video shadow-2xl group">
-              <img 
-                src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80&w=1200" 
-                alt="Industrial Connectivity" 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                referrerPolicy="no-referrer"
-              />
+            <div className="relative mt-4 rounded-[1.5rem] overflow-hidden aspect-video shadow-2xl group bg-brand-ash flex items-center justify-center">
+              <span className="text-brand-dark/10 font-black text-2xl tracking-tighter">NICCO CABLES</span>
               <div className="absolute inset-0 bg-brand-secondary/10 group-hover:bg-transparent transition-colors duration-300" />
             </div>
           </div>
 
           <div className="lg:col-span-6 space-y-4">
             <p className="text-black font-normal leading-relaxed text-base">
-              For over <strong>8 decades</strong>, <strong>Nicco Cables</strong> has been at the forefront of <strong>India’s cable manufacturing industry</strong>. From <strong>HT cables up to 33kV</strong> to advanced <strong>fire-survival</strong> and <strong>electron-beam technologies</strong>, our solutions power critical sectors including <strong>defence, railways, power utilities, infrastructure, and aerospace</strong>.
+              For over <strong>8 decades</strong>, <strong>Nicco Cables</strong> has been at the forefront of <strong>India’s cable manufacturing industry</strong>. From <strong>HT cables up to 33kV</strong> to advanced <strong>fire-survival</strong> and <strong>electron-beam technologies</strong>, our solutions power critical sectors including <strong>transmission and distribution, renewable energy, power generation, exploration, mobility, defence, manufacturing, infrastructure, and harnessing</strong>.
             </p>
             <div className="h-[1px] w-16 bg-brand-secondary" />
-            <p className="text-xs text-black leading-relaxed font-light">
+            <p className="text-black leading-relaxed font-light text-base">
               With <strong>world-class manufacturing</strong>, <strong>in-house R&D</strong>, advanced <strong>compounding technology</strong>, and <strong>NABL-accredited testing</strong>, we engineer cables that deliver uncompromising <strong>safety, durability, and performance</strong> in the most demanding environments.
             </p>
             
             <div className="pt-2">
-              <button className="px-6 py-2.5 bg-brand-secondary text-white rounded-full font-bold uppercase tracking-widest text-xs hover:bg-black transition-all shadow-xl shadow-brand-dark/10">
+              <Link to="/about" className="inline-block px-6 py-2.5 bg-brand-secondary text-white rounded-full font-bold uppercase tracking-widest text-xs hover:bg-black transition-all shadow-xl shadow-brand-dark/10">
                 Know More
-              </button>
+              </Link>
             </div>
           </div>
 

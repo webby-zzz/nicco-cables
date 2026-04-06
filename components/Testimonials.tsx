@@ -6,19 +6,19 @@ const testimonials = [
   {
     name: "Alexander Volkov",
     role: "Lead Engineer, Nord Energy",
-    avatar: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80&w=150",
+    avatar: "https://i.pravatar.cc/150?u=alexander",
     text: "Nicco Cables provided a level of durability we haven't seen in 20 years. Their fire-resistant series is exceptional and outperforms every standard test we've conducted."
   },
   {
     name: "Sarah Jenkins",
     role: "Project Director, SkyRise Const.",
-    avatar: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=150",
+    avatar: "https://i.pravatar.cc/150?u=sarah",
     text: "The responsiveness of their technical team is as impressive as their cable conductivity. A true long-term partner for our high-rise projects across Mumbai."
   },
   {
     name: "Marcus Chen",
     role: "Operations Head, DataCore Hubs",
-    avatar: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=150",
+    avatar: "https://i.pravatar.cc/150?u=marcus",
     text: "Seamless installation and zero signal degradation. Their high-speed data cables changed our infrastructure efficiency across our regional server farms."
   }
 ];
@@ -45,8 +45,8 @@ const Testimonials: React.FC = () => {
                     <div key={star} className="w-2 h-2 rounded-full bg-brand-secondary" />
                   ))}
                 </div>
-                <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-brand-secondary/20 p-0.5 group-hover:scale-110 transition-transform">
-                  <img src={t.avatar} alt={t.name} loading="lazy" className="w-full h-full object-cover rounded-full" />
+                <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-brand-secondary/20 p-2 group-hover:scale-110 transition-transform flex items-center justify-center bg-brand-ash">
+                  <div className="w-full h-full rounded-full bg-brand-secondary/20" />
                 </div>
               </div>
 

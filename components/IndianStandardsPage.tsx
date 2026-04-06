@@ -7,37 +7,37 @@ const standards = [
     id: 'power-control',
     title: 'Power & Control Cables',
     description: 'IS 1554, IS 7098 (Part 1)',
-    image: 'https://picsum.photos/seed/standard-power/1200/800'
+    image: 'https://picsum.photos/seed/power/800/600'
   },
   {
     id: 'elastomeric',
     title: 'Elastomeric Cables',
-    description: 'IS 9968 (Part 1), IS 9968 (Part 2)',
-    image: 'https://picsum.photos/seed/standard-elastomeric/1200/800'
+    description: 'IS 9968 (Part 1 & 2)',
+    image: 'https://picsum.photos/seed/elastomeric/800/600'
   },
   {
     id: 'solar',
     title: 'Solar Cables',
     description: 'IS 17293',
-    image: 'https://picsum.photos/seed/standard-solar/1200/800'
+    image: 'https://picsum.photos/seed/solar/800/600'
   },
   {
     id: 'fire-resistant',
     title: 'Fire Resistant Cables with Low Smoke & Gases',
     description: 'IS 17505',
-    image: 'https://picsum.photos/seed/standard-fire/1200/800'
+    image: 'https://picsum.photos/seed/fire/800/600'
   },
   {
     id: 'automotive',
-    title: 'Automotive Cables',
-    description: 'IS 2465 – Battery cables',
-    image: 'https://picsum.photos/seed/standard-auto/1200/800'
+    title: 'Automotive / Battery Cables',
+    description: 'IS 2465',
+    image: 'https://picsum.photos/seed/auto/800/600'
   },
   {
     id: 'overhead',
     title: 'Cables for Overhead Power Transmission & Distribution',
-    description: 'IS 398 Part-2, IS 398 Part-4, IS 398 Part-6',
-    image: 'https://picsum.photos/seed/standard-overhead/1200/800'
+    description: 'IS 398 (Part 2, 4 & 6)',
+    image: 'https://picsum.photos/seed/transmission/800/600'
   }
 ];
 
@@ -100,9 +100,9 @@ const IndianStandardsPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-white min-h-screen pt-32 md:pt-40">
+    <div className="bg-white min-h-screen pt-28 md:pt-36">
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 md:px-8 mb-16">
+      <div className="max-w-[1440px] mx-auto px-4 lg:px-10 mb-16">
         <motion.section 
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -118,7 +118,7 @@ const IndianStandardsPage: React.FC = () => {
               className="absolute inset-0"
             >
               <img 
-                src="https://picsum.photos/seed/indian-standards/1200/1600" 
+                src="https://picsum.photos/seed/standards/1200/800" 
                 alt="Indian Standards" 
                 className="w-full h-full object-cover opacity-100"
                 referrerPolicy="no-referrer"
@@ -159,7 +159,7 @@ const IndianStandardsPage: React.FC = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.56, ease: "easeOut" }}
-                className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-brand-dark tracking-tighter leading-tight mb-4"
+                className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-brand-dark tracking-tighter leading-tight mb-4 md:whitespace-nowrap"
               >
                 Indian{"\u00A0"}<span className="text-brand-secondary">Standards</span>
               </motion.h1>
@@ -190,7 +190,7 @@ const IndianStandardsPage: React.FC = () => {
 
       {/* Standards Section */}
       <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
           <div className="mb-12 text-center max-w-3xl mx-auto">
             <h3 className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-3">SPECIFICATIONS</h3>
             <h2 className="text-4xl md:text-6xl font-black text-brand-dark tracking-tighter">IS Compliant{"\u00A0"}Cables</h2>

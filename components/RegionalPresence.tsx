@@ -13,7 +13,7 @@ const locations = [
   {
     city: "Kolkata",
     icon: Landmark,
-    image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80&w=800",
+    image: "https://placehold.co/1x1/000000/000000",
     details: [
       "Nicco Cables Private Ltd",
       "Suket Building, 2nd Floor,",
@@ -26,7 +26,7 @@ const locations = [
   {
     city: "New Delhi",
     icon: TowerControl,
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=800",
+    image: "https://placehold.co/1x1/000000/000000",
     details: [
       "Nicco Cables Private Ltd",
       "Wave Silver Tower",
@@ -39,7 +39,7 @@ const locations = [
   {
     city: "Chennai",
     icon: Building2,
-    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800",
+    image: "https://placehold.co/1x1/000000/000000",
     details: [
       "Nicco Cables Private Ltd",
       "Haive House, Old No-1226",
@@ -52,7 +52,7 @@ const locations = [
   {
     city: "Mumbai",
     icon: Building,
-    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=800",
+    image: "https://placehold.co/1x1/000000/000000",
     details: [
       "Nicco Cables Private Ltd",
       "West Regional Office-207, 2nd floor,",

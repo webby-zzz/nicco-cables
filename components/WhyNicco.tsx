@@ -20,13 +20,13 @@ const pillars = [
 
 const WhyNicco: React.FC = () => {
   return (
-    <section className="py-12 md:py-16 bg-white border-y border-gray-50 relative overflow-hidden min-h-[40vh] flex items-center">
+    <section className="py-12 md:py-16 bg-[#ccc5b9] border-y border-gray-50 relative overflow-hidden min-h-[40vh] flex items-center">
       {/* Ghostly Background Image for texture */}
       <div className="absolute top-0 right-0 w-1/3 h-full opacity-[0.03] grayscale pointer-events-none">
-         <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80&w=1200" alt="Tech Background" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+         <img src="https://placehold.co/1x1/000000/000000" alt="Tech Background" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 md:px-8 w-full">
+      <div className="max-w-[1440px] mx-auto px-4 lg:px-10 w-full">
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -43,7 +43,7 @@ const WhyNicco: React.FC = () => {
             
             <div className="rounded-[1.5rem] overflow-hidden shadow-2xl relative aspect-[4/3] group">
               <img 
-                src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=800" 
+                src="https://placehold.co/1x1/000000/000000" 
                 alt="Cable Engineering" 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
               />
@@ -59,7 +59,7 @@ const WhyNicco: React.FC = () => {
                 </div>
                 {/* Subtle Image on Hover */}
                 <div className="absolute top-0 right-0 w-full h-full opacity-0 group-hover:opacity-10 transition-opacity duration-500">
-                  <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=400" className="w-full h-full object-cover" alt="" />
+                  <img src="https://placehold.co/1x1/000000/000000" className="w-full h-full object-cover" alt="" />
                 </div>
               </div>
             ))}

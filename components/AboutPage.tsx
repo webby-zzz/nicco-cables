@@ -1,7 +1,7 @@
 
-import React, { useEffect } from 'react';
-import { motion } from 'motion/react';
-import { Settings, ShieldCheck, Lightbulb, Flag, Handshake, CheckCircle2 } from 'lucide-react';
+import React, { useEffect, useRef } from 'react';
+import { motion, useScroll, useSpring, useTransform } from 'motion/react';
+import { Settings, ShieldCheck, Lightbulb, Flag, Handshake, Target, Eye } from 'lucide-react';
 
 const coreValues = [
   {
@@ -32,25 +32,72 @@ const coreValues = [
 ];
 
 const accreditationLogos = [
-  { url: "https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/122012/iso9001.png?itok=5sehR1Fm", label: "ISO 9001" },
-  { url: "https://icon2.cleanpng.com/20180802/cg/2472e9d13023e64e5047ad48a2fe547d.webp", label: "ISO 14001" },
-  { url: "https://jalalasd.com/wp-content/uploads/2022/08/image_2022-08-10_223156335-removebg-preview-1.png", label: "ISO 45001" },
-  { url: "https://media.licdn.com/dms/image/v2/C560BAQGfmi0oSeiRtg/company-logo_200_200/company-logo_200_200/0/1630594735142/research_design_and_standards_organization_logo?e=2147483647&v=beta&t=F7mvkXJHSC7k2ODs-hPz-JHzkwxgK_skvyv3v2AnXgk", label: "RDSO" },
-  { url: "https://media.licdn.com/dms/image/v2/C560BAQFIkCnHpmZxMA/company-logo_200_200/company-logo_200_200/0/1631338119076?e=2147483647&v=beta&t=cCB38n4__u5V0QgBG_yFYW-SOR-zKGGtXz9thw9q4V0", label: "CLW" },
-  { url: "https://assets.isu.pub/document-structure/240408100107-a6ac3e9c4f08ae7af104800f247fbd3a/v1/ee67ecfd5386e507637f0c8e4b4c819c.jpeg", label: "CORE" },
-  { url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToDDptzM-472zyGrw1UsAwVnuigK16UprUaQ&s", label: "CE" },
-  { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/UL_Mark.svg/960px-UL_Mark.svg.png", label: "UL" },
-  { url: "https://media.licdn.com/dms/image/v2/D4D0BAQEjEIpf0RNDgg/company-logo_200_200/company-logo_200_200/0/1697543254798?e=2147483647&v=beta&t=8cSWYkLp-tlR6dPCF2ny775ShXyXWXSOo3dW7j05Unk", label: "NSIC" },
-  { url: "https://upload.wikimedia.org/wikipedia/commons/f/f8/Bureau_of_Indian_Standards_Logo.svg", label: "BIS" },
-  { url: "https://www.leclanche.com/wp-content/uploads/2020/11/IRIS_logo_TM_white_bleed-scaled-e1605550366995.jpg", label: "IRIS" },
-  { url: "https://www.dnv.in/siteassets/images/dnv-cert-mark-352x190.jpg?mode=crop&scale=both&quality=90&format=webp&width=480&height=276", label: "DNV" },
-  { url: "https://upload.wikimedia.org/wikipedia/commons/6/66/Conformit%C3%A9_Europ%C3%A9enne_%28logo%29.svg", label: "CE Mark" },
-  { url: "https://www.araiindia.com/wp-content/uploads/2025/12/ARAI-Logo-Hindi-.png", label: "ARAI" },
-  { url: "https://upload.wikimedia.org/wikipedia/en/d/d4/NABL_Official_LOGO_Registered.png", label: "NABL" },
-  { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/International_Electrotechnical_Commission_Logo.svg/960px-International_Electrotechnical_Commission_Logo.svg.png", label: "IEC" }
+  { url: "/certifications/89281811cd50e63a99bb0a7e29ab271b.webp", label: "IRS" },
+  { url: "/certifications/UL_logo.svg.webp", label: "UL" },
+  { url: "/certifications/american-bureau-of-shipping-logo-brandlogos.net_nef0sjdw1.webp", label: "ABS" },
+  { url: "/certifications/ISO_9001-2015.svg.webp", label: "ISO 9001" },
+  { url: "/certifications/ISO_english_logo.svg.webp", label: "ISO" },
+  { url: "/certifications/images.webp", label: "CPRI" },
+  { url: "/certifications/Bureau_of_Indian_Standards_Logo.svg.webp", label: "BIS" },
+  { url: "/certifications/NABL_Official_LOGO_Registered.webp", label: "NABL" },
+  { url: "/certifications/International_Electrotechnical_Commission_Logo.svg.webp", label: "IEC" },
+  { url: "/certifications/Post-1.webp", label: "DNV" },
+  { url: "/certifications/Conformité_Européenne_(logo).webp", label: "CE" },
+  { url: "/certifications/ARAI-Logo-Hindi-.webp", label: "ARAI" },
+  { url: "/certifications/images_1.webp", label: "RDSO" },
+  { url: "/certifications/iris-logo-1.webp", label: "IRIS" },
+  { url: "/certifications/images (1).webp", label: "DDP" }
+];
+
+const timelineData = [
+  {
+    title: "Engineering Excellence",
+    description: "Designing high-performance cable solutions for critical infrastructure and strategic industries.",
+    icon: <Flag className="w-5 h-5" />,
+    type: "Mission"
+  },
+  {
+    title: "Quality Assurance",
+    description: "Consistently delivering superior quality, safety, and reliability across our entire product range.",
+    icon: <ShieldCheck className="w-5 h-5" />,
+    type: "Mission"
+  },
+  {
+    title: "National Growth",
+    description: "Contributing meaningfully to India’s industrial growth and global competitiveness through responsible manufacturing.",
+    icon: <Handshake className="w-5 h-5" />,
+    type: "Mission"
+  },
+  {
+    title: "Global Innovation",
+    description: "To be recognized as a global leader in advanced cable technologies and world-class connectivity.",
+    icon: <Lightbulb className="w-5 h-5" />,
+    type: "Vision"
+  },
+  {
+    title: "Resilient Future",
+    description: "Powering industries and strengthening infrastructure to support a modern, resilient economy.",
+    icon: <Settings className="w-5 h-5" />,
+    type: "Vision"
+  }
 ];
 
 const AboutPage: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start center", "end center"]
+  });
+
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+  // Progress for Mission & Vision timeline
+  const lineScale = useTransform(smoothProgress, [0, 1], [0, 1]);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -58,13 +105,9 @@ const AboutPage: React.FC = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden bg-brand-dark">
+      <section className="relative h-[40vh] flex items-center justify-center overflow-hidden bg-brand-dark">
         <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80&w=2000" 
-            alt="Cable Manufacturing" 
-            className="w-full h-full object-cover opacity-100"
-          />
+          <div className="absolute inset-0 bg-brand-dark" />
           <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/60 via-transparent to-brand-dark" />
         </div>
         
@@ -96,19 +139,21 @@ const AboutPage: React.FC = () => {
 
       {/* Introduction */}
       <section className="py-12 md:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start"
+          >
             <div className="lg:col-span-5">
               <h2 className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-4 block">ABOUT US</h2>
               <h3 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tighter leading-tight mb-6">
                 8 Decades of <span className="text-brand-secondary">Trusted{"\u00A0"}Innovation.</span>
               </h3>
-              <div className="relative rounded-[1.5rem] overflow-hidden aspect-square shadow-2xl group">
-                <img 
-                  src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80&w=1200" 
-                  alt="Cable Innovation" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
+              <div className="relative rounded-[1.5rem] overflow-hidden aspect-square shadow-2xl bg-brand-ash flex items-center justify-center">
+                <span className="text-brand-dark/20 font-black text-4xl tracking-tighter">NICCO</span>
               </div>
             </div>
             <div className="lg:col-span-7 lg:pt-16 space-y-6">
@@ -131,52 +176,88 @@ const AboutPage: React.FC = () => {
                 </p>
               </div>
             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Mission & Vision Section */}
+      <section ref={containerRef} className="py-24 bg-white overflow-hidden">
+        <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
+          <div className="text-center mb-20">
+            <h2 className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-4 block">PURPOSE</h2>
+            <h3 className="text-4xl md:text-5xl font-black text-brand-dark tracking-tighter leading-tight">
+              Mission & <span className="text-brand-secondary">Vision</span>
+            </h3>
+          </div>
+
+          <div className="relative max-w-5xl mx-auto">
+            {/* Central Line Background */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-[2px] bg-gray-100" />
+            
+            {/* Animated Filling Line */}
+            <motion.div 
+              style={{ scaleY: lineScale, transformOrigin: "top" }}
+              className="absolute left-1/2 transform -translate-x-1/2 h-full w-[2px] bg-brand-secondary z-10"
+            />
+
+            <div className="space-y-16 relative z-20">
+              {timelineData.map((item, idx) => (
+                <div key={idx} className={`flex items-center justify-between w-full ${idx % 2 === 0 ? 'flex-row-reverse' : ''}`}>
+                  {/* Content Card */}
+                  <motion.div 
+                    initial={{ opacity: 0, x: idx % 2 === 0 ? 50 : -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="w-[42%] group"
+                  >
+                    <div className={`bg-white p-6 md:p-8 rounded-[1.5rem] shadow-xl border border-black/5 hover:border-brand-secondary/20 transition-all duration-300 relative ${idx % 2 === 0 ? 'text-left' : 'text-right'}`}>
+                      {/* Arrow/Pointer */}
+                      <div className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-white border-t border-l border-black/5 transform rotate-45 z-0 ${idx % 2 === 0 ? '-left-2' : '-right-2'}`} />
+                      
+                      <div className={`flex items-center gap-3 mb-4 ${idx % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
+                        <span className="text-[10px] font-black text-brand-secondary uppercase tracking-widest px-2 py-0.5 bg-brand-secondary/10 rounded">
+                          {item.type}
+                        </span>
+                      </div>
+                      <h4 className="text-xl font-black text-brand-dark tracking-tighter mb-3 uppercase">{item.title}</h4>
+                      <p className="text-black/70 leading-relaxed text-sm">
+                        {item.description}
+                      </p>
+                    </div>
+                  </motion.div>
+
+                  {/* Center Icon */}
+                  <motion.div 
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.1 }}
+                    className="w-12 h-12 rounded-full bg-white border-2 border-brand-secondary flex items-center justify-center z-30 shadow-lg"
+                  >
+                    <div className="text-brand-secondary">
+                      {item.icon}
+                    </div>
+                  </motion.div>
+
+                  {/* Spacer for the other side */}
+                  <div className="w-[42%]" />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Mission & Vision */}
-      <motion.section 
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="py-12 md:py-16 bg-white"
-      >
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <motion.div 
-              whileHover={{ y: -5 }}
-              className="bg-white p-8 md:p-10 rounded-[1.5rem] shadow-xl border border-black/5 flex flex-col h-full"
-            >
-              <div className="w-10 h-10 bg-brand-secondary/10 rounded-xl flex items-center justify-center mb-6">
-                <Flag className="w-5 h-5 text-brand-secondary" />
-              </div>
-              <h4 className="text-xl font-black text-brand-dark tracking-tighter mb-4 uppercase">OUR MISSION</h4>
-              <p className="text-black leading-relaxed text-base">
-                To design and manufacture high-performance cable solutions that meet the evolving needs of critical infrastructure and strategic industries, while consistently delivering superior quality, safety, and reliability. Through innovation, advanced engineering, and responsible manufacturing practices, we aim to contribute meaningfully to India’s industrial growth and global competitiveness.
-              </p>
-            </motion.div>
-
-            <motion.div 
-              whileHover={{ y: -5 }}
-              className="bg-brand-dark p-8 md:p-10 rounded-[1.5rem] shadow-xl text-white flex flex-col h-full"
-            >
-              <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center mb-6">
-                <Lightbulb className="w-5 h-5 text-brand-secondary" />
-              </div>
-              <h4 className="text-xl font-black tracking-tighter mb-4 uppercase">OUR VISION</h4>
-              <p className="text-white leading-relaxed text-base">
-                To be recognized as a global leader in advanced cable technologies, delivering world-class connectivity solutions that power industries, strengthen infrastructure, and support the development of a modern and resilient economy.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </motion.section>
-
       {/* Core Values */}
       <section className="py-12 md:py-16 bg-brand-ash">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-[1440px] mx-auto px-4 lg:px-10"
+        >
           <div className="text-center mb-12">
             <h2 className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-2 block">FOUNDATIONS</h2>
             <h3 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tighter leading-tight">Core Values</h3>
@@ -185,10 +266,10 @@ const AboutPage: React.FC = () => {
           <div className="flex flex-wrap justify-center gap-4 mx-auto max-w-[1200px]">
             {coreValues.map((value, idx) => (
               <div key={idx} className="group flex flex-col items-start text-left p-6 bg-[#F3F2EE] rounded-[1.5rem] border border-transparent hover:border-brand-secondary/20 hover:bg-white hover:shadow-2xl transition-all duration-300 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)] max-w-[400px]">
-                <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center mb-4 group-hover:bg-brand-secondary group-hover:text-white transition-all duration-300">
+                <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center mb-4 transition-all duration-300">
                   {value.icon}
                 </div>
-                <h5 className="text-sm font-black text-brand-dark tracking-tighter mb-2 leading-tight">
+                <h5 className="text-sm font-black text-brand-dark tracking-tighter mb-2 leading-tight uppercase">
                   {value.title}
                 </h5>
                 <p className="text-xs text-black leading-relaxed font-medium">
@@ -197,12 +278,18 @@ const AboutPage: React.FC = () => {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Certifications Slider */}
       <section className="py-12 md:py-20 bg-white overflow-hidden relative">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 mb-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-[1440px] mx-auto px-4 lg:px-10 mb-10"
+        >
           <div className="text-center">
             <h2 className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-4">CERTIFICATIONS</h2>
             <h3 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tighter uppercase mb-2">
@@ -212,10 +299,14 @@ const AboutPage: React.FC = () => {
               Quality, Safety & Reliability
             </p>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="max-w-7xl mx-auto px-4 md:px-8 w-full">
-          <div className="relative flex overflow-hidden py-6 bg-white/90 backdrop-blur-md border border-brand-secondary/10 shadow-xl rounded-full w-full">
+        <div className="w-full relative">
+          <div className="relative flex overflow-hidden py-10 w-full group">
+            {/* Edge Blur Effects */}
+            <div className="absolute inset-y-0 left-0 w-64 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
+            <div className="absolute inset-y-0 right-0 w-64 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
+
             <motion.div
               className="flex whitespace-nowrap"
               animate={{ x: ["0%", "-50%"] }}
@@ -228,8 +319,8 @@ const AboutPage: React.FC = () => {
               {/* First set of logos */}
               <div className="flex items-center">
                 {accreditationLogos.map((logo, idx) => (
-                  <div key={`logo-1-${idx}`} className="mx-8 md:mx-12 flex flex-col items-center text-center flex-shrink-0">
-                    <div className="h-20 md:h-24 w-32 flex items-center justify-center">
+                  <div key={`logo-1-${idx}`} className="mx-12 md:mx-16 flex flex-col items-center text-center flex-shrink-0 transition-all duration-500">
+                    <div className="h-24 md:h-28 w-36 flex items-center justify-center">
                       <img 
                         src={logo.url} 
                         alt={logo.label} 
@@ -238,7 +329,7 @@ const AboutPage: React.FC = () => {
                         className="max-h-full max-w-full object-contain"
                       />
                     </div>
-                    <span className="mt-3 text-[9px] font-black text-black tracking-widest">
+                    <span className="mt-4 text-[10px] font-black text-black tracking-widest uppercase">
                       {logo.label}
                     </span>
                   </div>
@@ -247,8 +338,8 @@ const AboutPage: React.FC = () => {
               {/* Second set of logos for seamless loop */}
               <div className="flex items-center">
                 {accreditationLogos.map((logo, idx) => (
-                  <div key={`logo-2-${idx}`} className="mx-8 md:mx-12 flex flex-col items-center text-center flex-shrink-0">
-                    <div className="h-20 md:h-24 w-32 flex items-center justify-center">
+                  <div key={`logo-2-${idx}`} className="mx-12 md:mx-16 flex flex-col items-center text-center flex-shrink-0 transition-all duration-500">
+                    <div className="h-24 md:h-28 w-36 flex items-center justify-center">
                       <img 
                         src={logo.url} 
                         alt={logo.label} 
@@ -257,7 +348,7 @@ const AboutPage: React.FC = () => {
                         className="max-h-full max-w-full object-contain"
                       />
                     </div>
-                    <span className="mt-3 text-[9px] font-black text-black tracking-widest">
+                    <span className="mt-4 text-[10px] font-black text-black tracking-widest uppercase">
                       {logo.label}
                     </span>
                   </div>
@@ -276,7 +367,7 @@ const AboutPage: React.FC = () => {
         transition={{ duration: 0.6 }}
         className="py-12 md:py-16 bg-white"
       >
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-6 space-y-6">
               <div>
@@ -315,20 +406,12 @@ const AboutPage: React.FC = () => {
 
             <div className="lg:col-span-6 grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                <div className="rounded-[2rem] overflow-hidden aspect-[3/4] shadow-2xl">
-                  <img src="https://niccocable.com/wp-content/uploads/2024/07/1-12.jpg" alt="Facility 1" className="w-full h-full object-cover" />
-                </div>
-                <div className="rounded-[2rem] overflow-hidden aspect-square shadow-2xl">
-                  <img src="https://niccocable.com/wp-content/uploads/2024/07/img1-1.jpg" alt="Facility 2" className="w-full h-full object-cover" />
-                </div>
+                <div className="rounded-[2rem] overflow-hidden aspect-[3/4] shadow-2xl bg-brand-ash" />
+                <div className="rounded-[2rem] overflow-hidden aspect-square shadow-2xl bg-brand-ash" />
               </div>
               <div className="space-y-4 pt-12">
-                <div className="rounded-[2rem] overflow-hidden aspect-square shadow-2xl">
-                  <img src="https://niccocable.com/wp-content/uploads/2024/07/1-9-scaled.jpg" alt="Facility 3" className="w-full h-full object-cover" />
-                </div>
-                <div className="rounded-[2rem] overflow-hidden aspect-[3/4] shadow-2xl">
-                  <img src="https://niccocable.com/wp-content/uploads/2024/07/1-1.jpg" alt="Facility 4" className="w-full h-full object-cover" />
-                </div>
+                <div className="rounded-[2rem] overflow-hidden aspect-square shadow-2xl bg-brand-ash" />
+                <div className="rounded-[2rem] overflow-hidden aspect-[3/4] shadow-2xl bg-brand-ash" />
               </div>
             </div>
           </div>

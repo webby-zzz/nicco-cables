@@ -78,9 +78,13 @@ const HTPowerCablesPage: React.FC = () => {
             </p>
           </div>
           <div className="md:w-1/2 w-full">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="rounded-2xl overflow-hidden shadow-lg aspect-square bg-brand-ash" />
-              <div className="rounded-2xl overflow-hidden shadow-lg aspect-square bg-brand-ash" />
+            <div className="w-full h-64 md:h-80 bg-brand-ash rounded-[2rem] shadow-lg overflow-hidden">
+              <img 
+                src="/Product Images/HT-Power-Cables/1.webp" 
+                alt="HT Power Cable 1" 
+                className="w-full h-full object-contain rotate-90 scale-[1.6]"
+                referrerPolicy="no-referrer"
+              />
             </div>
           </div>
         </motion.div>
@@ -89,6 +93,24 @@ const HTPowerCablesPage: React.FC = () => {
           <TechnicalTable title="Technical Details" data={technicalDetails} />
           <TechnicalTable title="Sizes & Variants" data={variantsDetails} />
         </div>
+
+        {/* Additional Image Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="my-12 flex justify-center"
+        >
+          <div className="w-full max-w-5xl aspect-video bg-white rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center">
+            <img 
+              src="/Product Images/HT-Power-Cables/2.webp" 
+              alt="HT Power Cable 2" 
+              className="w-full h-full object-contain rotate-90 scale-[1.6]"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+        </motion.div>
 
         {/* CTA Section */}
         <div className="bg-brand-secondary rounded-[2rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-lg">

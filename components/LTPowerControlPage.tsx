@@ -84,8 +84,22 @@ const LTPowerControlPage: React.FC = () => {
           </div>
           <div className="md:w-1/2 w-full">
             <div className="grid grid-cols-2 gap-4">
-              <div className="rounded-2xl overflow-hidden shadow-lg aspect-square bg-brand-ash" />
-              <div className="rounded-2xl overflow-hidden shadow-lg aspect-square bg-brand-ash" />
+              <div className="rounded-2xl overflow-hidden shadow-lg aspect-square bg-brand-ash">
+                <img 
+                  src="/Product Images/LT cables/3.jpg" 
+                  alt="LT Power & Control Cable 3" 
+                  className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div className="rounded-2xl overflow-hidden shadow-lg aspect-square bg-brand-ash">
+                <img 
+                  src="/Product Images/LT cables/2.jpg" 
+                  alt="LT Power & Control Cable 2" 
+                  className="w-full h-full object-cover rotate-90"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
             </div>
           </div>
         </motion.div>
@@ -101,10 +115,16 @@ const LTPowerControlPage: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-12 grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="mb-12 flex justify-center"
         >
-          <div className="w-full h-64 md:h-96 bg-brand-ash rounded-[2rem] shadow-lg" />
-          <div className="w-full h-64 md:h-96 bg-brand-ash rounded-[2rem] shadow-lg" />
+          <div className="w-full max-w-5xl aspect-video bg-white rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center">
+            <img 
+              src="/Product Images/LT cables/1.jpg" 
+              alt="LT Power & Control Cable 1" 
+              className="w-full h-full object-contain rotate-90 scale-[1.6]"
+              referrerPolicy="no-referrer"
+            />
+          </div>
         </motion.div>
 
         {/* CTA Section */}

@@ -86,13 +86,15 @@ const ULCablesPage: React.FC = () => {
               Engineered to meet stringent Underwriters Laboratories (UL) standards, our UL Cables deliver superior safety, performance, and reliability across power distribution, building wiring, industrial installations, and solar photovoltaic systems. Available in thermoset insulated wires, service entrance cables (USE / USE-2 / SER / SEU), and photovoltaic (PV) wire variants — suitable for indoor and outdoor applications. Compliant with UL 44, UL 83, UL 854, UL 4703, and CSA (on request).
             </p>
           </div>
-          <div className="md:w-1/2 w-full h-64 md:h-80 bg-brand-ash rounded-[2rem] shadow-lg overflow-hidden">
-            <img 
-              src="https://picsum.photos/seed/ul-cables/1200/800" 
-              alt="UL Cables" 
-              className="w-full h-full object-cover"
-              referrerPolicy="no-referrer"
-            />
+          <div className="md:w-1/2 w-full">
+            <div className="w-full h-64 md:h-80 bg-brand-ash rounded-[2rem] shadow-lg overflow-hidden">
+              <img 
+                src="/Product Images/UL-Cables/1.webp" 
+                alt="UL Cable 1" 
+                className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+              />
+            </div>
           </div>
         </motion.div>
 
@@ -102,6 +104,24 @@ const ULCablesPage: React.FC = () => {
           <TechnicalTable title="Cable Marking" data={cableMarking} />
           <TechnicalTable title="Sizes & Variants" data={variantsDetails} />
         </div>
+
+        {/* Additional Image Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="my-12 flex justify-center"
+        >
+          <div className="w-full max-w-5xl aspect-video bg-white rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center">
+            <img 
+              src="/Product Images/UL-Cables/3.webp" 
+              alt="UL Cable 3" 
+              className="w-full h-full object-contain scale-[1.6]"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+        </motion.div>
 
         {/* CTA Section */}
         <div className="bg-brand-secondary rounded-[2rem] p-8 md:p-12 mt-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-lg">

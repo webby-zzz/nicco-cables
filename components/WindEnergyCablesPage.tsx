@@ -75,8 +75,22 @@ const WindEnergyCablesPage: React.FC = () => {
           </div>
           <div className="md:w-1/2 w-full">
             <div className="grid grid-cols-2 gap-4">
-              <div className="rounded-2xl overflow-hidden shadow-lg aspect-square bg-brand-ash" />
-              <div className="rounded-2xl overflow-hidden shadow-lg aspect-square bg-brand-ash" />
+              <div className="rounded-2xl overflow-hidden shadow-lg aspect-square bg-brand-ash">
+                <img 
+                  src="/Product Images/Wind-Energy-Cables/1.webp" 
+                  alt="Wind Energy Cable 1" 
+                  className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div className="rounded-2xl overflow-hidden shadow-lg aspect-square bg-brand-ash">
+                <img 
+                  src="/Product Images/Wind-Energy-Cables/12.webp" 
+                  alt="Wind Energy Cable 12" 
+                  className="w-full h-full object-contain -rotate-90"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
             </div>
           </div>
         </motion.div>
@@ -85,6 +99,24 @@ const WindEnergyCablesPage: React.FC = () => {
           <TechnicalTable title="Technical Details" data={technicalDetails} />
           <TechnicalTable title="Sizes & Variants" data={sizesVariants} />
         </div>
+
+        {/* Additional Image Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="my-12 flex justify-center"
+        >
+          <div className="w-full max-w-5xl aspect-video bg-white rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center">
+            <img 
+              src="/Product Images/Wind-Energy-Cables/2.webp" 
+              alt="Wind Energy Cable 2" 
+              className="w-full h-full object-contain -rotate-90 scale-[1.6]"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+        </motion.div>
 
         {/* CTA Section */}
         <div className="bg-brand-secondary rounded-[2rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-lg">

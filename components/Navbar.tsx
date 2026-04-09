@@ -18,8 +18,8 @@ const Logo = () => (
 
 const MegaMenu = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
   const cableTypes = [
-    { name: 'LT Power & Control Cables', image: 'https://placehold.co/1x1/000000/000000', link: '/products/lt-power-control' },
-    { name: 'Instrumentation Cables', image: 'https://placehold.co/1x1/000000/000000', link: '/products/instrumentation' },
+    { name: 'LT Power & Control Cables', image: '/Product Images/LT cables/3.jpg', link: '/products/lt-power-control' },
+    { name: 'Instrumentation Cables', image: '/Product Images/instrumental-cables/1.webp', link: '/products/instrumentation' },
     { name: 'Elastomeric and Silicon Cables (upto 15 kV)', image: 'https://placehold.co/1x1/000000/000000', link: '/products/elastomeric-silicon' },
     { name: 'Electron Beam Cables', image: 'https://placehold.co/1x1/000000/000000', link: '/products/electron-beam' },
     { name: 'Solar Cables', image: 'https://placehold.co/1x1/000000/000000', link: '/products/solar-cables' },

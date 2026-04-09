@@ -71,9 +71,13 @@ const MVCCPage: React.FC = () => {
             </p>
           </div>
           <div className="md:w-1/2 w-full">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="rounded-2xl overflow-hidden shadow-lg aspect-square bg-brand-ash" />
-              <div className="rounded-2xl overflow-hidden shadow-lg aspect-square bg-brand-ash" />
+            <div className="w-full aspect-square bg-white rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center border border-gray-100">
+              <img 
+                src="/Product Images/MVCC/7.webp" 
+                alt="MVCC Cable 7" 
+                className="w-full h-full object-contain rotate-90"
+                referrerPolicy="no-referrer"
+              />
             </div>
           </div>
         </motion.div>
@@ -88,10 +92,26 @@ const MVCCPage: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-12 grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="mb-12 flex justify-center"
         >
-          <div className="w-full h-64 md:h-96 bg-brand-ash rounded-[2rem] shadow-lg" />
-          <div className="w-full h-64 md:h-96 bg-brand-ash rounded-[2rem] shadow-lg" />
+          <div className="w-full max-w-5xl aspect-[2/1] bg-white rounded-[2rem] shadow-lg overflow-hidden grid grid-cols-2 gap-4 p-4 border border-gray-100">
+            <div className="w-full h-full overflow-hidden rounded-xl flex items-center justify-center bg-white">
+              <img 
+                src="/Product Images/MVCC/5.webp" 
+                alt="MVCC Cable 5" 
+                className="w-full h-full object-contain rotate-90"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            <div className="w-full h-full overflow-hidden rounded-xl flex items-center justify-center bg-white">
+              <img 
+                src="/Product Images/MVCC/6.webp" 
+                alt="MVCC Cable 6" 
+                className="w-full h-full object-contain -rotate-90"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+          </div>
         </motion.div>
 
         {/* CTA Section */}

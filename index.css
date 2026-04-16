@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #ffffff;
+  --color-brand-secondary: #ED1C24;
+  --color-brand-dark: #262522;
+  --color-brand-muted: #413E3A;
+  --color-brand-ash: #CCC5B9;
+
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2.5rem;
+  --radius-4xl: 3.5rem;
+
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-[#fcfcfc] text-brand-dark overflow-x-hidden text-[16px];
+    letter-spacing: 0.01em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: 0.02em;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #ED1C24;
+    border-radius: 10px;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/70 backdrop-blur-xl border border-white/30;
+  }
+
+  .glass-dark {
+    @apply bg-brand-dark/80 backdrop-blur-xl border border-white/10;
+  }
+
+  .horizontal-scroll-hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .horizontal-scroll-hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .parallax-img {
+    @apply transition-transform duration-100 ease-out;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Google Translate Overrides */
+#google_translate_element, #google_translate_element_mobile {
+  display: flex !important;
+  align-items: center;
+  z-index: 100 !important;
+}
+
+.goog-te-gadget {
+  font-family: inherit !important;
+  font-size: 0 !important;
+  color: transparent !important;
+  display: flex !important;
+  align-items: center;
+}
+
+.goog-te-gadget .goog-te-combo {
+  color: var(--color-brand-dark);
+  background-color: transparent;
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: none !important;
+  outline: none !important;
+  cursor: pointer !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.goog-logo-link, .goog-te-gadget span, .goog-te-banner-frame.skiptranslate, .goog-te-banner-frame, .goog-te-banner {
+  display: none !important;
+}
+
+.goog-te-balloon-frame, .goog-tooltip, .goog-tooltip:hover, .skiptranslate > iframe {
+  display: none !important;
+}
+
+.goog-text-highlight {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+body {
+  top: 0px !important;
+}
+
+/* Hide the "Original Text" popup */
+#goog-gt-tt, .goog-te-balloon-frame {
+  display: none !important;
+}
+.goog-te-spinner-pos {
+  display: none !important;
+}

@@ -1,11 +1,14 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 import { Mail, Phone, Send } from 'lucide-react';
 
 const ContactPage: React.FC = () => {
   const [submitStatus, setSubmitStatus] = React.useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = React.useState<string>('');
+  
+  const [careerSubmitStatus, setCareerSubmitStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [careerErrorMessage, setCareerErrorMessage] = useState<string>('');
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -50,6 +53,48 @@ const ContactPage: React.FC = () => {
       console.error("Form submission error:", error);
       setSubmitStatus('error');
       setErrorMessage('Network error. Please try again later.');
+    }
+  };
+
+  const handleCareerSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setCareerSubmitStatus('loading');
+    setCareerErrorMessage('');
+
+    const formData = new FormData(e.currentTarget);
+    const formDataObj = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_ACCESS_KEY_HERE",
+          subject: "New Career Application from Niccocables Website",
+          name: formDataObj.name,
+          email: formDataObj.email,
+          phone: formDataObj.phone,
+          position: formDataObj.position,
+          cv_link: formDataObj.cv_link,
+          message: formDataObj.message || 'N/A'
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setCareerSubmitStatus('success');
+      } else {
+        setCareerSubmitStatus('error');
+        setCareerErrorMessage(data.message || 'Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error("Career form submission error:", error);
+      setCareerSubmitStatus('error');
+      setCareerErrorMessage('Network error. Please try again later.');
     }
   };
 
@@ -430,92 +475,114 @@ const ContactPage: React.FC = () => {
 
             <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-2xl border border-gray-100">
               <h3 className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-8 text-center">APPLY NOW</h3>
-              <form 
-                action="https://api.web3forms.com/submit" 
-                method="POST"
-                encType="multipart/form-data"
-                className="space-y-6"
-              >
-                <input type="hidden" name="access_key" value={import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_ACCESS_KEY_HERE"} />
-                <input type="hidden" name="subject" value="New Career Application from Niccocables Website" />
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="text-xs font-black text-brand-dark uppercase tracking-widest mb-2 block">Full Name</label>
-                    <input 
-                      type="text" 
-                      name="name"
-                      required
-                      placeholder="John Doe"
-                      className="w-full bg-gray-50 border-none rounded-xl px-5 py-4 text-sm focus:ring-2 focus:ring-brand-secondary transition-all" 
-                    />
-                  </div>
-                  <div>
-                    <label className="text-xs font-black text-brand-dark uppercase tracking-widest mb-2 block">Email Address</label>
-                    <input 
-                      type="email" 
-                      name="email"
-                      required
-                      placeholder="john@example.com"
-                      className="w-full bg-gray-50 border-none rounded-xl px-5 py-4 text-sm focus:ring-2 focus:ring-brand-secondary transition-all" 
-                    />
-                  </div>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="text-xs font-black text-brand-dark uppercase tracking-widest mb-2 block">Phone Number</label>
-                    <input 
-                      type="tel" 
-                      name="phone"
-                      required
-                      placeholder="+91 00000 00000"
-                      className="w-full bg-gray-50 border-none rounded-xl px-5 py-4 text-sm focus:ring-2 focus:ring-brand-secondary transition-all" 
-                    />
-                  </div>
-                  <div>
-                    <label className="text-xs font-black text-brand-dark uppercase tracking-widest mb-2 block">Position Applied For</label>
-                    <input 
-                      type="text" 
-                      name="position"
-                      required
-                      placeholder="Sales Manager"
-                      className="w-full bg-gray-50 border-none rounded-xl px-5 py-4 text-sm focus:ring-2 focus:ring-brand-secondary transition-all" 
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="text-xs font-black text-brand-dark uppercase tracking-widest mb-2 block">Upload CV / Resume (PDF)</label>
-                  <div className="relative">
-                    <input 
-                      type="file" 
-                      name="attachment"
-                      accept=".pdf,.doc,.docx"
-                      required
-                      className="w-full bg-gray-50 border-none rounded-xl px-5 py-4 text-sm focus:ring-2 focus:ring-brand-secondary transition-all file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-[10px] file:font-black file:uppercase file:tracking-widest file:bg-brand-secondary file:text-white hover:file:bg-brand-dark transition-all cursor-pointer" 
-                    />
-                  </div>
-                  <p className="text-[10px] text-brand-muted mt-2 uppercase tracking-widest font-bold">Accepted formats: PDF, DOC, DOCX (Max 5MB)</p>
-                </div>
-
-                <div>
-                  <label className="text-xs font-black text-brand-dark uppercase tracking-widest mb-2 block">Message / Cover Letter</label>
-                  <textarea 
-                    name="message"
-                    rows={4} 
-                    placeholder="Tell us about yourself..."
-                    className="w-full bg-gray-50 border-none rounded-xl px-5 py-4 text-sm focus:ring-2 focus:ring-brand-secondary transition-all resize-none"
-                  ></textarea>
-                </div>
-
-                <button 
-                  type="submit"
-                  className="w-full bg-brand-dark text-white font-black text-xs uppercase tracking-[0.3em] py-5 rounded-xl hover:bg-brand-secondary transition-all flex items-center justify-center gap-3 shadow-xl shadow-brand-dark/10"
+              
+              {careerSubmitStatus === 'success' ? (
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="text-center py-12"
                 >
-                  SUBMIT APPLICATION <Send className="w-4 h-4" />
-                </button>
-              </form>
+                  <div className="w-20 h-20 bg-emerald-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Send className="w-8 h-8 text-emerald-500" />
+                  </div>
+                  <h4 className="text-2xl font-black text-brand-dark tracking-tighter mb-4">Application Received!</h4>
+                  <p className="text-black font-medium mb-8 text-base">Thank you for your interest. Our HR team will review your CV and contact you shortly.</p>
+                  <button 
+                    onClick={() => setCareerSubmitStatus('idle')}
+                    className="text-xs font-bold text-brand-secondary uppercase tracking-widest hover:underline"
+                  >
+                    Submit another application
+                  </button>
+                </motion.div>
+              ) : (
+                <form 
+                  onSubmit={handleCareerSubmit}
+                  className="space-y-6"
+                >
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="text-xs font-black text-brand-dark uppercase tracking-widest mb-2 block">Full Name</label>
+                      <input 
+                        type="text" 
+                        name="name"
+                        required
+                        placeholder="John Doe"
+                        className="w-full bg-gray-50 border-none rounded-xl px-5 py-4 text-sm focus:ring-2 focus:ring-brand-secondary transition-all" 
+                      />
+                    </div>
+                    <div>
+                      <label className="text-xs font-black text-brand-dark uppercase tracking-widest mb-2 block">Email Address</label>
+                      <input 
+                        type="email" 
+                        name="email"
+                        required
+                        placeholder="john@example.com"
+                        className="w-full bg-gray-50 border-none rounded-xl px-5 py-4 text-sm focus:ring-2 focus:ring-brand-secondary transition-all" 
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="text-xs font-black text-brand-dark uppercase tracking-widest mb-2 block">Phone Number</label>
+                      <input 
+                        type="tel" 
+                        name="phone"
+                        required
+                        placeholder="+91 00000 00000"
+                        className="w-full bg-gray-50 border-none rounded-xl px-5 py-4 text-sm focus:ring-2 focus:ring-brand-secondary transition-all" 
+                      />
+                    </div>
+                    <div>
+                      <label className="text-xs font-black text-brand-dark uppercase tracking-widest mb-2 block">Position Applied For</label>
+                      <input 
+                        type="text" 
+                        name="position"
+                        required
+                        placeholder="Sales Manager"
+                        className="w-full bg-gray-50 border-none rounded-xl px-5 py-4 text-sm focus:ring-2 focus:ring-brand-secondary transition-all" 
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="text-xs font-black text-brand-dark uppercase tracking-widest mb-2 block">Link to CV / Resume</label>
+                    <input 
+                      type="url" 
+                      name="cv_link"
+                      required
+                      placeholder="https://drive.google.com/..."
+                      className="w-full bg-gray-50 border-none rounded-xl px-5 py-4 text-sm focus:ring-2 focus:ring-brand-secondary transition-all" 
+                    />
+                    <p className="text-[10px] text-brand-muted mt-2 uppercase tracking-widest font-bold">Please provide a link (Google Drive, Dropbox, or LinkedIn)</p>
+                  </div>
+
+                  <div>
+                    <label className="text-xs font-black text-brand-dark uppercase tracking-widest mb-2 block">Message / Cover Letter</label>
+                    <textarea 
+                      name="message"
+                      rows={4} 
+                      placeholder="Tell us about yourself..."
+                      className="w-full bg-gray-50 border-none rounded-xl px-5 py-4 text-sm focus:ring-2 focus:ring-brand-secondary transition-all resize-none"
+                    ></textarea>
+                  </div>
+
+                  {careerSubmitStatus === 'error' && (
+                    <p className="text-[10px] font-bold text-red-500 uppercase tracking-widest">
+                      {careerErrorMessage}
+                    </p>
+                  )}
+
+                  <button 
+                    type="submit"
+                    disabled={careerSubmitStatus === 'loading'}
+                    className={`w-full bg-brand-dark text-white font-black text-xs uppercase tracking-[0.3em] py-5 rounded-xl hover:bg-brand-secondary transition-all flex items-center justify-center gap-3 shadow-xl shadow-brand-dark/10 ${careerSubmitStatus === 'loading' ? 'opacity-50 cursor-not-allowed' : ''}`}
+                  >
+                    {careerSubmitStatus === 'loading' ? 'SENDING...' : 'SUBMIT APPLICATION'} <Send className="w-4 h-4" />
+                  </button>
+                </form>
+              )}
             </div>
           </div>
         </div>

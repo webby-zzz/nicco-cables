@@ -88,16 +88,16 @@ const BrochureDownloadModal: React.FC<BrochureDownloadModalProps> = ({
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="relative w-full max-w-xl bg-white rounded-[3rem] shadow-2xl overflow-hidden"
+            className="relative w-full max-w-md bg-white rounded-[2rem] md:rounded-[3rem] shadow-2xl overflow-hidden"
           >
             <button
               onClick={onClose}
-              className="absolute top-8 right-8 p-2 rounded-full hover:bg-gray-100 transition-colors z-50"
+              className="absolute top-6 right-6 p-2 rounded-full hover:bg-gray-100 transition-colors z-50"
             >
-              <X className="w-6 h-6 text-brand-dark" />
+              <X className="w-5 h-5 text-brand-dark" />
             </button>
 
-            <div className="p-6 md:p-16">
+            <div className="p-6 md:p-10">
               {isSubmitted ? (
                 <div className="text-center py-8">
                   <div className="w-20 h-20 bg-emerald-50 rounded-full flex items-center justify-center mx-auto mb-8">

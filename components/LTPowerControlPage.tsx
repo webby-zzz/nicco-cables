@@ -140,7 +140,7 @@ const LTPowerControlPage: React.FC = () => {
             <p className="text-white/90 text-base font-medium">Contact our team or download our product brochure.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-            <button onClick={() => { setModalProps({ title: 'LT Power & Control Cable Catalog', url: '/product page brochures/A5 Catalogues/Long LT.pdf' }); setIsModalOpen(true); }} className="bg-brand-dark text-white px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-black transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
+            <button onClick={() => { setModalProps({ title: 'LT Power & Control Cable Catalog', url: '/product page brochures/A5 Catalogues/Long LT-compressed.pdf' }); setIsModalOpen(true); }} className="bg-brand-dark text-white px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-black transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
               Download Brochure <ArrowRight className="w-4 h-4" />
             </button>
             <Link 

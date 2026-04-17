@@ -5,7 +5,7 @@ import { Menu, X, ChevronDown, Zap, Shield, Sun, Building2, HardHat, Globe, Layo
 
 const Logo = () => (
   <Link to="/" className="flex items-center group cursor-pointer">
-    <div className="h-6 md:h-10 w-auto transition-all duration-200 group-hover:scale-105">
+    <div className="h-8 md:h-10 w-auto transition-all duration-200 group-hover:scale-105">
       <img 
         src="/brand identity/Logo.png" 
         alt="NICCO Logo" 
@@ -382,7 +382,7 @@ const Navbar: React.FC = () => {
     <div className="fixed top-0 left-0 right-0 z-50 flex flex-col items-center">
       <nav 
         onMouseLeave={() => setIsMegaMenuOpen(false)}
-        className="transition-all duration-300 ease-in-out flex items-center justify-center relative w-[calc(100%-1rem)] md:w-[calc(100%-2rem)] max-w-[1440px] bg-white/90 backdrop-blur-md shadow-2xl border border-brand-secondary/10 px-4 lg:px-10 py-4 mt-2 md:mt-4 rounded-full"
+        className="transition-all duration-300 ease-in-out flex items-center justify-center relative w-[calc(100%-1rem)] md:w-[calc(100%-2rem)] max-w-[1440px] bg-white/90 backdrop-blur-md shadow-2xl border border-brand-secondary/10 px-4 lg:px-10 py-5 lg:py-4 mt-2 md:mt-4 rounded-full"
       >
         <div className="absolute flex items-center left-4 lg:left-10">
           <Logo />

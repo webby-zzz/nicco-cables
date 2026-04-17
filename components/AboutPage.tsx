@@ -214,30 +214,31 @@ const AboutPage: React.FC = () => {
 
           <div className="relative max-w-5xl mx-auto">
             {/* Central Line Background */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-[2px] bg-gray-100" />
+            <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 h-full w-[2px] bg-gray-100" />
             
             {/* Animated Filling Line */}
             <motion.div 
               style={{ scaleY: lineScale, transformOrigin: "top" }}
-              className="absolute left-1/2 transform -translate-x-1/2 h-full w-[2px] bg-brand-secondary z-10"
+              className="absolute left-8 md:left-1/2 transform -translate-x-1/2 h-full w-[2px] bg-brand-secondary z-10"
             />
 
-            <div className="space-y-16 relative z-20">
+            <div className="space-y-12 md:space-y-16 relative z-20">
               {timelineData.map((item, idx) => (
-                <div key={idx} className={`flex items-center justify-between w-full ${idx % 2 === 0 ? 'flex-row-reverse' : ''}`}>
+                <div key={idx} className={`flex items-start md:items-center justify-between w-full ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''} flex-row`}>
+                  
                   {/* Content Card */}
                   <motion.div 
                     initial={{ opacity: 0, x: idx % 2 === 0 ? 50 : -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="w-[42%] group"
+                    className="w-[calc(100%-5rem)] md:w-[42%] ml-auto md:ml-0 group"
                   >
-                    <div className={`bg-white p-6 md:p-8 rounded-[1.5rem] shadow-xl border border-black/5 hover:border-brand-secondary/20 transition-all duration-300 relative ${idx % 2 === 0 ? 'text-left' : 'text-right'}`}>
+                    <div className={`bg-white p-6 md:p-8 rounded-[1.5rem] shadow-xl border border-black/5 hover:border-brand-secondary/20 transition-all duration-300 relative text-left ${idx % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}>
                       {/* Arrow/Pointer */}
-                      <div className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-white border-t border-l border-black/5 transform rotate-45 z-0 ${idx % 2 === 0 ? '-left-2' : '-right-2'}`} />
+                      <div className={`absolute top-6 md:top-1/2 -translate-y-1/2 w-4 h-4 bg-white border border-black/5 transform rotate-45 z-0 ${idx % 2 === 0 ? '-left-2' : '-left-2 md:left-auto md:-right-2'}`} />
                       
-                      <div className={`flex items-center gap-3 mb-4 ${idx % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
+                      <div className={`flex items-center gap-3 mb-4 justify-start ${idx % 2 === 0 ? 'md:justify-start' : 'md:justify-end'}`}>
                         <span className="text-[10px] font-black text-brand-secondary uppercase tracking-widest px-2 py-0.5 bg-brand-secondary/10 rounded">
                           {item.type}
                         </span>
@@ -255,15 +256,15 @@ const AboutPage: React.FC = () => {
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.1 }}
-                    className="w-12 h-12 rounded-full bg-white border-2 border-brand-secondary flex items-center justify-center z-30 shadow-lg"
+                    className="absolute left-8 md:relative md:left-auto transform -translate-x-1/2 md:translate-x-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-white border-[3px] border-brand-secondary flex items-center justify-center z-30 shadow-lg mt-2 md:mt-0"
                   >
-                    <div className="text-brand-secondary">
+                    <div className="text-brand-secondary scale-75 md:scale-100">
                       {item.icon}
                     </div>
                   </motion.div>
 
-                  {/* Spacer for the other side */}
-                  <div className="w-[42%]" />
+                  {/* Spacer for the other side on desktop */}
+                  <div className="hidden md:block w-[42%]" />
                 </div>
               ))}
             </div>
@@ -326,8 +327,8 @@ const AboutPage: React.FC = () => {
         <div className="w-full relative">
           <div className="relative flex overflow-hidden py-10 w-full group">
             {/* Edge Blur Effects */}
-            <div className="absolute inset-y-0 left-0 w-64 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
-            <div className="absolute inset-y-0 right-0 w-64 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
+            <div className="absolute inset-y-0 left-0 w-12 md:w-64 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
+            <div className="absolute inset-y-0 right-0 w-12 md:w-64 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
 
             <motion.div
               className="flex whitespace-nowrap"

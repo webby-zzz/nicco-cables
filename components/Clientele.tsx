@@ -78,8 +78,8 @@ const Clientele: React.FC = () => {
       <div className="w-full relative">
         <div className="relative flex overflow-hidden py-10 w-full group">
           {/* Edge Blur Effects */}
-          <div className="absolute inset-y-0 left-0 w-64 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-64 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 left-0 w-12 md:w-64 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-12 md:w-64 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
           
           <motion.div
             className="flex whitespace-nowrap"

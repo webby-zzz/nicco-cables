@@ -101,11 +101,13 @@ const RenewableEnergyPage: React.FC = () => {
               Purpose-built for renewable energy systems, our Solar and Wind Energy Cables are engineered to deliver reliable power transmission in demanding outdoor environments. Designed for long service life, high flexibility, and resistance to UV, moisture, and temperature extremes.
             </p>
           </div>
-          <div className="md:w-1/2 w-full h-64 md:h-80 bg-brand-ash rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center p-4 bg-white border border-gray-100">
+          <div className="md:w-1/2 w-full h-64 md:h-80 bg-brand-ash rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center bg-white border border-gray-100">
             <ImageCarousel 
               images={[
-                "/Product Images/Solar-Cables/1.webp",
-                "/Product Images/Wind-Energy-Cables/1.webp"
+                "/Product Images/Industry Solution/Renewable energy - solar & wind/photovoltaics-solar-power-station-energy-from-natural.webp",
+                "/Product Images/Industry Solution/Renewable energy - solar & wind/shot-wind-turbines-mountains.webp",
+                "/Product Images/Industry Solution/Renewable energy - solar & wind/solar-energy-generated-farm.webp",
+                "/Product Images/Industry Solution/Renewable energy - solar & wind/wind-turbines-agricultural-field-summer-day-energy-production-clean-renewable-energy.webp"
               ]} 
             />
           </div>

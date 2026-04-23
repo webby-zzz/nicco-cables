@@ -15,10 +15,9 @@ const Footer: React.FC = () => {
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-secondary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 relative z-10">
-          
-          <div className="lg:col-span-5">
-            <div className="flex items-center mb-6">
-              <div className="h-20 w-auto">
+          <div className="lg:col-span-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-10 w-full pt-4">
+            <div className="flex flex-col justify-start">
+              <div className="h-14 w-auto mb-6">
                 <img 
                   src="/brand identity/Logo.png" 
                   alt="NICCO Logo" 
@@ -26,57 +25,81 @@ const Footer: React.FC = () => {
                   referrerPolicy="no-referrer"
                 />
               </div>
+              <p className="text-white/80 leading-relaxed font-light text-[13px]">
+                Over 8 decades of unwavering commitment to powering global infrastructure. The pulse of the nation’s core industries.
+              </p>
             </div>
-            <p className="text-white leading-relaxed font-light mb-6 text-base">
-              Over 8 decades of unwavering commitment to powering global infrastructure. The pulse of the nation’s core industries.
-            </p>
-          </div>
-
-          <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-6">
+            
             <div>
-              <h4 className="font-bold text-white mb-4 tracking-widest text-xs opacity-50 uppercase">COMPANY</h4>
-              <ul className="space-y-2">
+              <h4 className="font-bold text-white mb-6 tracking-widest text-xs opacity-60 uppercase border-l-2 border-brand-secondary pl-3">COMPANY</h4>
+              <ul className="space-y-3">
                 {[
                   { name: 'HOME', link: '/' },
                   { name: 'ABOUT US', link: '/about' },
-                  { name: 'PRODUCTS', link: '/#products' },
-                  { name: 'BROCHURES', link: '#' },
-                  { name: 'GALLERY', link: '#' },
+                  { name: 'BROCHURES', link: '/brochures' },
+                  { name: 'GALLERY', link: '/gallery' },
                   { name: 'CONTACT US', link: '/contact' }
                 ].map((item) => (
                   <li key={item.name}>
-                    <Link to={item.link} className="text-white hover:text-white transition-colors text-xs font-medium uppercase">
+                    <Link to={item.link} className="text-white/90 hover:text-brand-secondary transition-colors text-[11px] font-medium uppercase tracking-wide">
                       {item.name}
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
+
             <div>
-              <h4 className="font-bold text-white mb-4 tracking-widest text-xs opacity-50 uppercase">INDUSTRIES</h4>
-              <ul className="space-y-2">
+              <h4 className="font-bold text-white mb-6 tracking-widest text-xs opacity-60 uppercase border-l-2 border-brand-secondary pl-3">PRODUCTS</h4>
+              <ul className="space-y-3">
                 {[
-                  'Transmission and Distribution',
-                  'Renewable Energy',
-                  'Power Generation',
-                  'Exploration',
-                  'Mobility',
-                  'Defence',
-                  'Manufacturing',
-                  'Infrastructure',
-                  'Harnessing'
-                ].map((link) => (
-                  <li key={link}>
-                    <Link to="/#products" className="text-white hover:text-white transition-colors text-xs font-medium uppercase">
-                      {link}
+                  { name: 'LT Power & Control', link: '/products/lt-power-control' },
+                  { name: 'Instrumentation', link: '/products/instrumentation' },
+                  { name: 'Elastomeric/Silicon', link: '/products/elastomeric-silicon' },
+                  { name: 'Electron Beam', link: '/products/electron-beam' },
+                  { name: 'Solar', link: '/products/solar-cables' },
+                  { name: 'Wind Energy', link: '/products/wind-energy-cables' },
+                  { name: 'Overhead Conductors', link: '/products/overhead-conductors' },
+                  { name: 'HT Cables', link: '/products/ht-power-cables' },
+                  { name: 'MVCC/Tree Spacer', link: '/products/mvcc' },
+                  { name: 'High Temperature', link: '/products/high-temperature' },
+                  { name: 'UL Cables', link: '/products/ul-cables' }
+                ].map((item) => (
+                  <li key={item.name}>
+                    <Link to={item.link} className="text-white/90 hover:text-brand-secondary transition-colors text-[11px] font-medium uppercase tracking-wide">
+                      {item.name}
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="col-span-2 md:col-span-1">
-              <h4 className="font-bold text-white mb-4 tracking-widest text-xs opacity-50 uppercase">FOLLOW US</h4>
-              <div className="flex gap-3 mb-6">
+
+            <div>
+              <h4 className="font-bold text-white mb-6 tracking-widest text-xs opacity-60 uppercase border-l-2 border-brand-secondary pl-3">INDUSTRIES</h4>
+              <ul className="space-y-3">
+                {[
+                  { name: 'Transmission & Dist.', link: '/industry/transmission-distribution' },
+                  { name: 'Renewable Energy', link: '/industry/renewable-energy' },
+                  { name: 'Power Generation', link: '/industry/power-generation' },
+                  { name: 'Exploration', link: '/industry/exploration' },
+                  { name: 'Mobility', link: '/industry/mobility' },
+                  { name: 'Defence', link: '/industry/defence' },
+                  { name: 'Manufacturing', link: '/industry/manufacturing' },
+                  { name: 'Infrastructure', link: '/industry/infrastructure' },
+                  { name: 'Harnessing', link: '/products/harnessing' }
+                ].map((item) => (
+                  <li key={item.name}>
+                    <Link to={item.link} className="text-white/90 hover:text-brand-secondary transition-colors text-[11px] font-medium uppercase tracking-wide">
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="flex flex-col h-full">
+              <h4 className="font-bold text-white mb-6 tracking-widest text-xs opacity-60 uppercase border-l-2 border-brand-secondary pl-3">CONNECT</h4>
+              <div className="flex gap-4 mb-auto">
                 {[
                   { Icon: Linkedin, href: 'https://www.linkedin.com/company/nicco-cables-pvt-ltd/' }
                 ].map((social, i) => (
@@ -85,14 +108,14 @@ const Footer: React.FC = () => {
                     href={social.href} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-white/5 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/10 hover:text-white transition-all hover:-translate-y-1 border border-white/10"
+                    className="w-12 h-12 rounded-xl bg-white/5 backdrop-blur-md flex items-center justify-center text-white hover:bg-brand-secondary hover:text-white transition-all hover:-translate-y-1 border border-white/10 shadow-lg"
                   >
-                    <social.Icon className="w-4 h-4" />
+                    <social.Icon className="w-5 h-5" />
                   </a>
                 ))}
               </div>
-              <button onClick={scrollToTop} className="flex items-center gap-2 text-xs font-extrabold tracking-[0.3em] text-white hover:text-white transition-colors group uppercase">
-                BACK TO TOP <ArrowUp className="w-3 h-3 group-hover:-translate-y-1 transition-transform" />
+              <button onClick={scrollToTop} className="mt-8 flex items-center gap-3 text-xs font-extrabold tracking-[0.3em] text-white hover:text-brand-secondary transition-colors group uppercase bg-white/5 w-fit px-6 py-4 rounded-xl border border-white/10 hover:bg-white/10">
+                SCROLL TO TOP <ArrowUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform text-brand-secondary" />
               </button>
             </div>
           </div>

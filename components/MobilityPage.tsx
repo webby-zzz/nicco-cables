@@ -147,13 +147,12 @@ const MobilityPage: React.FC = () => {
               A comprehensive ecosystem of high-performance cabling solutions designed for the global mobility sector. From deep-sea marine vessels to high-speed rail and next-generation automotive platforms, our cables ensure reliable power and signal integrity in motion.
             </p>
           </div>
-          <div className="md:w-1/2 w-full h-64 md:h-80 bg-brand-ash rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center p-4 bg-white border border-gray-100">
+          <div className="md:w-1/2 w-full h-64 md:h-80 bg-brand-ash rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center bg-white border border-gray-100">
             <ImageCarousel 
               images={[
-                "https://picsum.photos/seed/marine/1200/800",
-                "https://picsum.photos/seed/automotive/1200/800",
-                "https://picsum.photos/seed/coaxial/1200/800",
-                "https://picsum.photos/seed/hybrid/1200/800"
+                "/Product Images/Industry Solution/Mobility (Rolling Stock, Marine, Automotive, Aerospace)/aerial-view-docked-yachts-port-olimpic-barcelona.webp",
+                "/Product Images/Industry Solution/Mobility (Rolling Stock, Marine, Automotive, Aerospace)/airport-self-propelled-conveyor-belt-loaders-evening.webp",
+                "/Product Images/Industry Solution/Mobility (Rolling Stock, Marine, Automotive, Aerospace)/close-up-cargo-airplane-engine-main-landing-gear-fuselage.webp"
               ]} 
             />
           </div>

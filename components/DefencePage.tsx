@@ -149,13 +149,12 @@ const DefencePage: React.FC = () => {
               Cables deployed in defence applications demand the highest standards of fire safety, mechanical durability, and electrical reliability under extreme conditions. We supply a comprehensive range of specialised cables engineered for submarines, warships, tanks, radar systems, and missile launching platforms.
             </p>
           </div>
-          <div className="md:w-1/2 w-full h-64 md:h-80 bg-brand-ash rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center p-4 bg-white border border-gray-100">
+          <div className="md:w-1/2 w-full h-64 md:h-80 bg-brand-ash rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center bg-white border border-gray-100">
             <ImageCarousel 
               images={[
-                "https://picsum.photos/seed/lfh/1200/800",
-                "https://picsum.photos/seed/marine/1200/800",
-                "https://picsum.photos/seed/coaxial/1200/800",
-                "https://picsum.photos/seed/ethernet/1200/800"
+                "/Product Images/Industry Solution/Defence (Submarine, Warships & Tanks)/flotilla-russian-warships-sailing-toward-military-target-armed-warships-ready-attack-enemy.webp",
+                "/Product Images/Industry Solution/Defence (Submarine, Warships & Tanks)/life-style.webp",
+                "/Product Images/Industry Solution/Defence (Submarine, Warships & Tanks)/russian-warship-armed-with-armament-sails-into-sea-toward-military-target-attack-destroy.webp"
               ]} 
             />
           </div>

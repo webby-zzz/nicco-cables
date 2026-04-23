@@ -81,7 +81,7 @@ const ShipbuildingMarinePage: React.FC = () => {
               Engineered for reliable power transmission, control, communication, and signal integrity in harsh marine and offshore environments, our Shipbuilding & Marine Cables withstand moisture, oil, vibration, salt spray, fire risk, and mechanical stress. Suitable for ships, submarines, and offshore platforms available in power, instrumentation, RF, Ethernet, degaussing, EMC/VFD, silicone, shore supply, and PTFE/ETFE/FEP variants. Compliant with IEC 60092, BS 6883, BS 7917, VG 95218, and GOST standards.
             </p>
           </div>
-          <div className="md:w-1/2 w-full h-64 md:h-80 bg-brand-ash rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center p-4 bg-white border border-gray-100">
+          <div className="md:w-1/2 w-full h-64 md:h-80 bg-brand-ash rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center bg-white border border-gray-100">
             <ImageCarousel 
               images={[
                 "https://picsum.photos/seed/marine/1200/800",

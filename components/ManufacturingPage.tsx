@@ -132,12 +132,12 @@ const ManufacturingPage: React.FC = () => {
               Precision and reliability are the cornerstones of modern manufacturing. Nicco's manufacturing cabling solutions provide the backbone for automation, process control, and heavy-duty power distribution in factories and manufacturing plants.
             </p>
           </div>
-          <div className="md:w-1/2 w-full h-64 md:h-80 bg-brand-ash rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center p-4 bg-white border border-gray-100">
+          <div className="md:w-1/2 w-full h-64 md:h-80 bg-brand-ash rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center bg-white border border-gray-100">
             <ImageCarousel 
               images={[
-                "/Product Images/LT cables/1.jpg",
-                "/Product Images/instrumental-cables/1.webp",
-                "https://picsum.photos/seed/elastomeric/1200/800"
+                "/Product Images/Industry Solution/Manufacturing/inside-manufacturing-unit-cables.webp",
+                "/Product Images/Industry Solution/Manufacturing/robot-made-by-company-that-is-made-by-company-company.webp",
+                "/Product Images/Industry Solution/Manufacturing/two-worker-making-gates-smithy.webp"
               ]} 
             />
           </div>

@@ -5,7 +5,7 @@ import { Menu, X, ChevronDown, Zap, Shield, Sun, Building2, HardHat, Globe, Layo
 
 const Logo = () => (
   <Link to="/" className="flex items-center group cursor-pointer">
-    <div className="h-8 md:h-10 w-auto transition-all duration-200 group-hover:scale-105">
+    <div className="h-10 md:h-[3.25rem] w-auto transition-all duration-200 group-hover:scale-105">
       <img 
         src="/brand identity/Logo.png" 
         alt="NICCO Logo" 
@@ -153,7 +153,7 @@ const MegaMenu = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void })
       }`}
     >
       <div className="bg-white text-brand-dark shadow-[0_20px_50px_rgba(0,0,0,0.15)] overflow-hidden rounded-[2.5rem] border border-brand-ash/20 max-h-[85vh] overflow-y-auto">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 p-8 lg:p-12">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 p-6 lg:p-8">
           
           {/* Column 1: CABLES BY TYPES (6 cols) */}
           <div className="lg:col-span-7 space-y-6">
@@ -166,9 +166,9 @@ const MegaMenu = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void })
                   key={cable.name}
                   to={cable.link}
                   onClick={onClose}
-                  className="group flex flex-col items-center p-3 rounded-2xl border border-brand-ash/10 hover:border-brand-secondary/30 hover:shadow-xl hover:shadow-brand-secondary/5 transition-all duration-300 bg-brand-ash/5"
+                  className="group flex flex-col items-center p-2 rounded-2xl border border-brand-ash/10 hover:border-brand-secondary/30 hover:shadow-xl hover:shadow-brand-secondary/5 transition-all duration-300 bg-brand-ash/5"
                 >
-                  <div className="w-full aspect-square rounded-xl overflow-hidden mb-3 bg-white">
+                  <div className="w-10/12 aspect-[3/2] rounded-xl overflow-hidden mb-1.5 bg-white">
                     <img 
                       src={cable.image} 
                       alt={cable.name} 
@@ -185,7 +185,7 @@ const MegaMenu = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void })
 
           {/* Column 2: INDUSTRY SOLUTIONS (3 cols) */}
           <div className="lg:col-span-3 space-y-6 border-l border-brand-ash/10 pl-8">
-            <h4 className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.3em] text-brand-secondary mb-6">
+            <h4 className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.3em] text-brand-secondary mb-4">
               <Building2 className="w-4 h-4" /> INDUSTRY SOLUTIONS
             </h4>
             <ul className="space-y-3 text-[12px] font-bold uppercase tracking-tight">
@@ -217,7 +217,7 @@ const MegaMenu = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void })
           {/* Column 3: STANDARDS & BROCHURES (2 cols) */}
           <div className="lg:col-span-2 space-y-8 border-l border-brand-ash/10 pl-8">
             <div>
-              <h4 className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.3em] text-brand-secondary mb-6">
+              <h4 className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.3em] text-brand-secondary mb-4">
                 <Globe className="w-4 h-4" /> CABLES BY STANDARDS
               </h4>
               <ul className="space-y-4 text-[12px] font-bold uppercase tracking-tight">
@@ -236,11 +236,11 @@ const MegaMenu = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void })
               </ul>
             </div>
             
-            <div className="pt-8 border-t border-brand-ash/10">
+            <div className="pt-4 border-t border-brand-ash/10">
               <Link 
                 to="/brochures"
                 onClick={onClose}
-                className="w-full text-[10px] font-black uppercase tracking-widest bg-brand-secondary text-white px-4 py-4 rounded-xl hover:bg-brand-dark transition-all shadow-lg shadow-brand-secondary/20 flex items-center justify-center text-center"
+                className="w-full text-[10px] font-black uppercase tracking-widest bg-brand-secondary text-white px-3 py-3 rounded-xl hover:bg-brand-dark transition-all shadow-lg shadow-brand-secondary/20 flex items-center justify-center text-center"
               >
                 VIEW BROCHURES
               </Link>

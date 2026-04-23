@@ -91,10 +91,12 @@ const HarnessingPage: React.FC = () => {
               Engineered for railway rolling stock applications, our Electron Beam Irradiated Thin-Walled Flexible Elastomeric Cables deliver limited fire hazard properties with minimum flame spread, low smoke emission, and reduced toxic fumes.
             </p>
           </div>
-          <div className="md:w-1/2 w-full h-64 md:h-80 bg-brand-ash rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center p-4 bg-white border border-gray-100">
+          <div className="md:w-1/2 w-full h-64 md:h-80 bg-brand-ash rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center bg-white border border-gray-100">
             <ImageCarousel 
               images={[
-                "https://picsum.photos/seed/harnessing/1200/800"
+                "/Product Images/Industry Solution/Cable Harnessing/electrician-installer-cable-construction-site.webp",
+                "/Product Images/Industry Solution/Cable Harnessing/fiber-optic-cables-connected-network-equipment-data-center.webp",
+                "/Product Images/Industry Solution/Cable Harnessing/male-electrician-works-switchboard-with-electrical-connecting-cable.webp"
               ]} 
             />
           </div>

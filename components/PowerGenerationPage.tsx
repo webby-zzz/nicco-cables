@@ -163,13 +163,12 @@ const PowerGenerationPage: React.FC = () => {
               Reliable power generation facilities demand cables that perform consistently under high stress, extreme temperatures, and critical safety conditions. We supply a comprehensive range of cables purpose-built for nuclear, hydro, and thermal power applications from low-voltage control and instrumentation to high-voltage transmission.
             </p>
           </div>
-          <div className="md:w-1/2 w-full h-64 md:h-80 bg-brand-ash rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center p-4 bg-white border border-gray-100">
+          <div className="md:w-1/2 w-full h-64 md:h-80 bg-brand-ash rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center bg-white border border-gray-100">
             <ImageCarousel 
               images={[
-                "/Product Images/LT cables/1.jpg",
-                "/Product Images/HT-Power-Cables/1.webp",
-                "/Product Images/instrumental-cables/1.webp",
-                "https://picsum.photos/seed/fireresistant/1200/800"
+                "/Product Images/Industry Solution/Nuclear, Hydro & Thermal Power/big-nuclear-factory-france.webp",
+                "/Product Images/Industry Solution/Nuclear, Hydro & Thermal Power/picture-shasta-dam-surrounded-by-roads-trees-with-lake-mountains.webp",
+                "/Product Images/Industry Solution/Nuclear, Hydro & Thermal Power/smoke-emitting-from-factory-against-sky.webp"
               ]} 
             />
           </div>

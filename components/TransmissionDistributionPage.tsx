@@ -128,12 +128,12 @@ const TransmissionDistributionPage: React.FC = () => {
               From high-voltage overhead transmission to low-voltage distribution and control, Nicco's T&D product range is engineered to meet the demands of power utilities, infrastructure developers, and industrial operators. Built for diverse terrains and challenging environments, our cables and conductors keep the pulse of the nation's core infrastructure uninterrupted.
             </p>
           </div>
-          <div className="md:w-1/2 w-full h-64 md:h-80 bg-brand-ash rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center p-4 bg-white border border-gray-100">
+          <div className="md:w-1/2 w-full h-64 md:h-80 bg-brand-ash rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center bg-white border border-gray-100">
             <ImageCarousel 
               images={[
-                "/brand identity/Overhead.webp",
-                "/Product Images/LT cables/1.jpg",
-                "/Product Images/HT-Power-Cables/2.webp"
+                "/Product Images/Industry Solution/Transmission & Distribution/power-transmission-towers.webp",
+                "/Product Images/Industry Solution/Transmission & Distribution/transformer-substation-high-voltage-tower.webp",
+                "/Product Images/Industry Solution/Transmission & Distribution/visualization-energy-stream-travelling-through-overhead-electrical-transfer-lines-sunset.webp"
               ]} 
             />
           </div>

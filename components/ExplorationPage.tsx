@@ -180,14 +180,12 @@ const ExplorationPage: React.FC = () => {
               Cables deployed in oil & gas and mining environments must endure extreme mechanical stress, chemical exposure, and hazardous conditions. We supply a comprehensive range of cables engineered specifically for exploration, extraction, and processing applications — built for reliability where it matters most.
             </p>
           </div>
-          <div className="md:w-1/2 w-full h-64 md:h-80 bg-brand-ash rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center p-4 bg-white border border-gray-100">
+          <div className="md:w-1/2 w-full h-64 md:h-80 bg-brand-ash rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center bg-white border border-gray-100">
             <ImageCarousel 
               images={[
-                "/Product Images/LT cables/1.jpg",
-                "/Product Images/HT-Power-Cables/2.webp",
-                "/Product Images/instrumental-cables/1.webp",
-                "https://picsum.photos/seed/ethernet/1200/800",
-                "https://picsum.photos/seed/mining/1200/800"
+                "/Product Images/Industry Solution/Exploration - Oil & Gas, Mining/drilling-rig-close-up-construction-site-deep-hole-drilling-extraction-minerals-oil-gas-working-process.webp",
+                "/Product Images/Industry Solution/Exploration - Oil & Gas, Mining/oil-pump-jack-oilfield-winter-sunset-sky-background-extraction-oil-petroleum-concept-toned.webp",
+                "/Product Images/Industry Solution/Exploration - Oil & Gas, Mining/section-oil-field-where-oil-pumps-operate-silhouette-block-pumping-unit-against-dramatic-winter-sky.webp"
               ]} 
             />
           </div>

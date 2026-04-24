@@ -82,7 +82,7 @@ const Clientele: React.FC = () => {
           <div className="absolute inset-y-0 right-0 w-12 md:w-64 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
           
           <div
-            className="flex whitespace-nowrap animate-marquee"
+            className="flex whitespace-nowrap animate-marquee group-hover:[animation-play-state:paused]"
           >
             {/* First set of logos */}
             <div className="flex items-center">

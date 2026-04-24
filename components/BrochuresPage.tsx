@@ -21,21 +21,30 @@ const dummyBrochures: Brochure[] = [
     title: 'Nicco Cables Corporate Catalogue',
     category: 'Corporate',
     thumbnail: '/brochures/Thumbnails/Nicco Cables Corporate Catalogue.webp',
-    pdfUrl: '/brochures/Nicco Cables Corporate  Catalogue.pdf',
+    pdfUrl: '/brochures/Corporate Brochure.pdf',
     description: 'A comprehensive overview of Nicco Cables, our history, and our vision for the future of power transmission.',
     previewImage: '/brochures/Thumbnails/Nicco Cables Corporate Catalogue.webp'
   },
   {
     id: '2',
-    title: 'LT Cables Brochure',
+    title: 'Short LT Cables Brochure',
     category: 'Technical',
     thumbnail: '/brochures/Thumbnails/LT Cables Brochure.webp',
-    pdfUrl: '/brochures/LT cables brochure.pdf',
-    description: 'Detailed specifications for Low Tension (LT) cables.',
+    pdfUrl: '/brochures/Short LT cables brochure.pdf',
+    description: 'Detailed specifications for short length Low Tension (LT) cables.',
     previewImage: '/brochures/Thumbnails/LT Cables Brochure.webp'
   },
   {
     id: '3',
+    title: 'Long LT Power & Control Cables',
+    category: 'Technical',
+    thumbnail: '/brochures/Thumbnails/LT Cables Brochure.webp',
+    pdfUrl: '/brochures/Long LT Power & Control-compressed.pdf',
+    description: 'Comprehensive catalog for long length Low Tension power and control cables.',
+    previewImage: '/brochures/Thumbnails/LT Cables Brochure.webp'
+  },
+  {
+    id: '4',
     title: 'Medium Voltage Covered Conductor (MVCC)',
     category: 'Technical',
     thumbnail: '/brochures/Thumbnails/Medium Voltage Covered Conductor (MVCC).webp',
@@ -44,7 +53,7 @@ const dummyBrochures: Brochure[] = [
     previewImage: '/brochures/Thumbnails/Medium Voltage Covered Conductor (MVCC).webp'
   },
   {
-    id: '4',
+    id: '5',
     title: 'Railway Cables',
     category: 'Technical',
     thumbnail: '/brochures/Thumbnails/Railway Cables.webp',
@@ -53,7 +62,7 @@ const dummyBrochures: Brochure[] = [
     previewImage: '/brochures/Thumbnails/Railway Cables.webp'
   },
   {
-    id: '5',
+    id: '6',
     title: 'Wind Energy and Solar Cables',
     category: 'Technical',
     thumbnail: '/brochures/Thumbnails/Wind Energy and Solar Cables.webp',
@@ -62,7 +71,7 @@ const dummyBrochures: Brochure[] = [
     previewImage: '/brochures/Thumbnails/Wind Energy and Solar Cables.webp'
   },
   {
-    id: '6',
+    id: '7',
     title: 'Shipbuilding Cables',
     category: 'Technical',
     thumbnail: '/brochures/Thumbnails/Shipbuilding Cables.webp',
@@ -71,22 +80,13 @@ const dummyBrochures: Brochure[] = [
     previewImage: '/brochures/Thumbnails/Shipbuilding Cables.webp'
   },
   {
-    id: '7',
+    id: '8',
     title: 'Automotive Cables',
     category: 'Technical',
     thumbnail: '/brochures/Thumbnails/Automotive Cables.webp',
     pdfUrl: '/brochures/AUTOMOTIVE CABLES (R3).pdf',
     description: 'High-performance cables for the automotive industry.',
     previewImage: '/brochures/Thumbnails/Automotive Cables.webp'
-  },
-  {
-    id: '8',
-    title: 'Defense and Aerospace Cables',
-    category: 'Technical',
-    thumbnail: '/brochures/Thumbnails/Defense and Aerospace Cables.webp',
-    pdfUrl: '/brochures/Defense and Aerospace Cables.pdf',
-    description: 'Specialized cables meeting stringent requirements for defense and aerospace applications.',
-    previewImage: '/brochures/Thumbnails/Defense and Aerospace Cables.webp'
   },
   {
     id: '9',
@@ -99,24 +99,6 @@ const dummyBrochures: Brochure[] = [
   },
   {
     id: '10',
-    title: 'Elastomeric Insulated Cables (Nicco X Cvl)',
-    category: 'Technical',
-    thumbnail: '/brochures/Thumbnails/Elastomeric Insulated Cables (Nicco X Cvl).webp',
-    pdfUrl: '/brochures/ELASTOMERIC INSULATED CABLES (Nicco X Cvl).pdf',
-    description: 'Elastomeric insulated cables in collaboration with CVL.',
-    previewImage: '/brochures/Thumbnails/Elastomeric Insulated Cables (Nicco X Cvl).webp'
-  },
-  {
-    id: '11',
-    title: 'LT Power & Control Cable Catalog',
-    category: 'Technical',
-    thumbnail: '/brochures/Thumbnails/LT Power & Control Cable Catalog.webp',
-    pdfUrl: '/brochures/LT Power & Control Cable Catalog_compressed.pdf',
-    description: 'Comprehensive catalog for Low Tension power and control cables.',
-    previewImage: '/brochures/Thumbnails/LT Power & Control Cable Catalog.webp'
-  },
-  {
-    id: '12',
     title: 'HT Cables upto 11KV',
     category: 'Technical',
     thumbnail: '/brochures/Thumbnails/HT Cables upto 11KV.webp',
@@ -125,7 +107,7 @@ const dummyBrochures: Brochure[] = [
     previewImage: '/brochures/Thumbnails/HT Cables upto 11KV.webp'
   },
   {
-    id: '13',
+    id: '11',
     title: 'Fire Survival Cables',
     category: 'Technical',
     thumbnail: '/brochures/Thumbnails/Fire Survival Cables.webp',
@@ -134,13 +116,22 @@ const dummyBrochures: Brochure[] = [
     previewImage: '/brochures/Thumbnails/Fire Survival Cables.webp'
   },
   {
-    id: '14',
+    id: '12',
     title: 'Instrumentation Cables',
     category: 'Technical',
     thumbnail: '/brochures/Thumbnails/Instrumentation Cables.webp',
     pdfUrl: '/brochures/INSTRUMENTATION CABLES - NICCO .pdf',
     description: 'High-precision instrumentation cables for industrial control systems.',
     previewImage: '/brochures/Thumbnails/Instrumentation Cables.webp'
+  },
+  {
+    id: '13',
+    title: 'UL Cables',
+    category: 'Technical',
+    thumbnail: '/brochures/Thumbnails/UL Cables.png',
+    pdfUrl: '/brochures/UL .pdf',
+    description: 'International standard UL listed cables for diverse applications.',
+    previewImage: '/brochures/Thumbnails/UL Cables.png'
   }
 ];
 

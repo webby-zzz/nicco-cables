@@ -8,37 +8,37 @@ const standards = [
     id: 'power-control',
     title: 'Power & Control Cables',
     description: 'IS 1554, IS 7098 (Part 1)',
-    image: 'https://picsum.photos/seed/power/800/600'
+    image: '/Product Images/LT cables/1.jpg'
   },
   {
     id: 'elastomeric',
     title: 'Elastomeric Cables',
     description: 'IS 9968 (Part 1 & 2)',
-    image: 'https://picsum.photos/seed/elastomeric/800/600'
+    image: '/Product Images/Elastomeric-and-Silicon-Cables/8.webp'
   },
   {
     id: 'solar',
     title: 'Solar Cables',
     description: 'IS 17293',
-    image: 'https://picsum.photos/seed/solar/800/600'
+    image: '/Product Images/Solar-Cables/11.webp'
   },
   {
     id: 'fire-resistant',
     title: 'Fire Resistant Cables with Low Smoke & Gases',
     description: 'IS 17505',
-    image: 'https://picsum.photos/seed/fire/800/600'
+    image: '/Product Images/UL-Cables/3.webp'
   },
   {
     id: 'automotive',
     title: 'Automotive / Battery Cables',
     description: 'IS 2465',
-    image: 'https://picsum.photos/seed/auto/800/600'
+    image: '/Product Images/instrumental-cables/2.webp'
   },
   {
     id: 'overhead',
     title: 'Cables for Overhead Power Transmission & Distribution',
     description: 'IS 398 (Part 2, 4 & 6)',
-    image: 'https://picsum.photos/seed/transmission/800/600'
+    image: '/brand identity/Overhead.webp'
   }
 ];
 
@@ -119,7 +119,7 @@ const IndianStandardsPage: React.FC = () => {
               className="absolute inset-0"
             >
               <img 
-                src="https://picsum.photos/seed/standards/1200/800" 
+                src="/brand identity/energy-stream-flowing-through-steel-tower-high-voltage-power-lines-sunrise-horizon-sky-electric-cables-transmitting-electricity-obtained-from-sustainable-sources-3d-render-animation.jpg.webp" 
                 alt="Indian Standards" 
                 className="w-full h-full object-cover opacity-100"
                 referrerPolicy="no-referrer"

@@ -7,17 +7,17 @@ const Footer: React.FC = () => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
-    <footer className="py-4 bg-white px-4">
-      <div className="max-w-[1440px] mx-auto bg-[#413E3A] rounded-[2rem] p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.3)] relative overflow-hidden text-white">
+    <footer className="pb-4 bg-white px-4">
+      <div className="max-w-[1440px] mx-auto bg-[#413E3A] rounded-[2rem] p-6 md:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.3)] relative overflow-hidden text-white">
         
         {/* Decorative elements */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-secondary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 relative z-10">
-          <div className="lg:col-span-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-10 w-full pt-4">
-            <div className="flex flex-col justify-start">
-              <div className="h-14 w-auto mb-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 relative z-10">
+          <div className="lg:col-span-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 w-full pt-2">
+            <div className="flex flex-col justify-start col-span-2 md:col-span-3 lg:col-span-1">
+              <div className="h-16 w-auto mb-6">
                 <img 
                   src="/brand identity/Logo.png" 
                   alt="NICCO Logo" 
@@ -31,8 +31,8 @@ const Footer: React.FC = () => {
             </div>
             
             <div>
-              <h4 className="font-bold text-white mb-6 tracking-widest text-xs opacity-60 uppercase border-l-2 border-brand-secondary pl-3">COMPANY</h4>
-              <ul className="space-y-3">
+              <h4 className="font-bold text-white mb-4 tracking-widest text-xs opacity-60 uppercase border-l-2 border-brand-secondary pl-2">COMPANY</h4>
+              <ul className="space-y-2">
                 {[
                   { name: 'HOME', link: '/' },
                   { name: 'ABOUT US', link: '/about' },
@@ -50,8 +50,8 @@ const Footer: React.FC = () => {
             </div>
 
             <div>
-              <h4 className="font-bold text-white mb-6 tracking-widest text-xs opacity-60 uppercase border-l-2 border-brand-secondary pl-3">PRODUCTS</h4>
-              <ul className="space-y-3">
+              <h4 className="font-bold text-white mb-4 tracking-widest text-xs opacity-60 uppercase border-l-2 border-brand-secondary pl-2">PRODUCTS</h4>
+              <ul className="space-y-2">
                 {[
                   { name: 'LT Power & Control', link: '/products/lt-power-control' },
                   { name: 'Instrumentation', link: '/products/instrumentation' },
@@ -75,8 +75,8 @@ const Footer: React.FC = () => {
             </div>
 
             <div>
-              <h4 className="font-bold text-white mb-6 tracking-widest text-xs opacity-60 uppercase border-l-2 border-brand-secondary pl-3">INDUSTRIES</h4>
-              <ul className="space-y-3">
+              <h4 className="font-bold text-white mb-4 tracking-widest text-xs opacity-60 uppercase border-l-2 border-brand-secondary pl-2">INDUSTRIES</h4>
+              <ul className="space-y-2">
                 {[
                   { name: 'Transmission & Dist.', link: '/industry/transmission-distribution' },
                   { name: 'Renewable Energy', link: '/industry/renewable-energy' },
@@ -97,9 +97,34 @@ const Footer: React.FC = () => {
               </ul>
             </div>
 
+            <div>
+              <h4 className="font-bold text-white mb-4 tracking-widest text-xs opacity-60 uppercase border-l-2 border-brand-secondary pl-2">STANDARDS</h4>
+              <ul className="space-y-2">
+                {[
+                  { name: 'Indian', link: '/standards/indian' },
+                  { name: 'International (UL)', link: '/standards/international' }
+                ].map((item) => (
+                  <li key={item.name}>
+                    <Link to={item.link} className="text-white/90 hover:text-brand-secondary transition-colors text-[11px] font-medium uppercase tracking-wide">
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
             <div className="flex flex-col h-full">
-              <h4 className="font-bold text-white mb-6 tracking-widest text-xs opacity-60 uppercase border-l-2 border-brand-secondary pl-3">CONNECT</h4>
-              <div className="flex gap-4 mb-auto">
+              <h4 className="font-bold text-white mb-4 tracking-widest text-xs opacity-60 uppercase border-l-2 border-brand-secondary pl-2">CONNECT</h4>
+              <div className="flex flex-col gap-2 mb-6">
+                <a href="tel:03340647177" className="text-white/90 hover:text-brand-secondary transition-colors text-[11px] font-medium tracking-wide">
+                  (033) 40647177
+                </a>
+                <a href="mailto:info@niccocables.com" className="text-white/90 hover:text-brand-secondary transition-colors text-[11px] font-medium tracking-wide">
+                  info@niccocables.com
+                </a>
+              </div>
+
+              <div className="flex gap-3 mb-auto">
                 {[
                   { Icon: Linkedin, href: 'https://www.linkedin.com/company/nicco-cables-pvt-ltd/' }
                 ].map((social, i) => (
@@ -108,20 +133,20 @@ const Footer: React.FC = () => {
                     href={social.href} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="w-12 h-12 rounded-xl bg-white/5 backdrop-blur-md flex items-center justify-center text-white hover:bg-brand-secondary hover:text-white transition-all hover:-translate-y-1 border border-white/10 shadow-lg"
+                    className="w-10 h-10 rounded-xl bg-white/5 backdrop-blur-md flex items-center justify-center text-white hover:bg-brand-secondary hover:text-white transition-all hover:-translate-y-1 border border-white/10 shadow-lg"
                   >
-                    <social.Icon className="w-5 h-5" />
+                    <social.Icon className="w-4 h-4" />
                   </a>
                 ))}
               </div>
-              <button onClick={scrollToTop} className="mt-8 flex items-center gap-3 text-xs font-extrabold tracking-[0.3em] text-white hover:text-brand-secondary transition-colors group uppercase bg-white/5 w-fit px-6 py-4 rounded-xl border border-white/10 hover:bg-white/10">
-                SCROLL TO TOP <ArrowUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform text-brand-secondary" />
+              <button onClick={scrollToTop} className="mt-6 flex items-center gap-2 text-[10px] font-extrabold tracking-[0.3em] text-white hover:text-brand-secondary transition-colors group uppercase bg-white/5 w-fit px-4 py-3 rounded-xl border border-white/10 hover:bg-white/10">
+                SCROLL TO TOP <ArrowUp className="w-3 h-3 group-hover:-translate-y-1 transition-transform text-brand-secondary" />
               </button>
             </div>
           </div>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="mt-8 pt-4 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white font-bold tracking-widest text-xs">
             © 2024 NICCO CABLES. ALL RIGHTS RESERVED.
           </p>

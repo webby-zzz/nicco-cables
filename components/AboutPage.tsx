@@ -330,14 +330,9 @@ const AboutPage: React.FC = () => {
             <div className="absolute inset-y-0 left-0 w-12 md:w-64 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
             <div className="absolute inset-y-0 right-0 w-12 md:w-64 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
 
-            <motion.div
-              className="flex whitespace-nowrap"
-              animate={{ x: ["0%", "-50%"] }}
-              transition={{
-                duration: 13,
-                ease: "linear",
-                repeat: Infinity,
-              }}
+            <div
+              className="flex whitespace-nowrap animate-marquee group-hover:[animation-play-state:paused]"
+              style={{ animationDuration: '13s' }}
             >
               {/* First set of logos */}
               <div className="flex items-center">
@@ -377,7 +372,7 @@ const AboutPage: React.FC = () => {
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>

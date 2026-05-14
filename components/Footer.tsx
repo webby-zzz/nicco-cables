@@ -1,7 +1,35 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Linkedin, ArrowUp, Send } from 'lucide-react';
+import { Linkedin, ArrowUp, Send, ChevronDown } from 'lucide-react';
+
+const FooterSection = ({ title, links }: { title: string, links: {name: string, link: string}[] }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="border-b border-white/10 lg:border-none pb-4 lg:pb-0">
+      <button 
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex items-center justify-between lg:cursor-default lg:pointer-events-none"
+      >
+        <h4 className="font-bold text-white tracking-widest text-xs opacity-60 uppercase border-l-2 border-brand-secondary pl-2 text-left">
+          {title}
+        </h4>
+        <ChevronDown className={`w-4 h-4 text-white/60 lg:hidden transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+      </button>
+      <div className={`mt-4 lg:mt-4 overflow-hidden transition-all duration-300 lg:!max-h-none lg:!opacity-100 ${isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
+        <ul className="space-y-2">
+          {links.map((item) => (
+            <li key={item.name}>
+              <Link to={item.link} className="text-white/90 hover:text-brand-secondary transition-colors text-[11px] font-medium uppercase tracking-wide">
+                {item.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};
 
 const Footer: React.FC = () => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -15,8 +43,8 @@ const Footer: React.FC = () => {
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-secondary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 relative z-10">
-          <div className="lg:col-span-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 w-full pt-2">
-            <div className="flex flex-col justify-start col-span-2 md:col-span-3 lg:col-span-1">
+          <div className="lg:col-span-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 w-full pt-2">
+            <div className="flex flex-col justify-start md:col-span-2 lg:col-span-1 mb-6 lg:mb-0">
               <div className="h-16 w-auto mb-6">
                 <img 
                   src="/brand identity/Logo.png" 
@@ -30,88 +58,56 @@ const Footer: React.FC = () => {
               </p>
             </div>
             
-            <div>
-              <h4 className="font-bold text-white mb-4 tracking-widest text-xs opacity-60 uppercase border-l-2 border-brand-secondary pl-2">COMPANY</h4>
-              <ul className="space-y-2">
-                {[
-                  { name: 'HOME', link: '/' },
-                  { name: 'ABOUT US', link: '/about' },
-                  { name: 'BROCHURES', link: '/brochures' },
-                  { name: 'GALLERY', link: '/gallery' },
-                  { name: 'CONTACT US', link: '/contact' }
-                ].map((item) => (
-                  <li key={item.name}>
-                    <Link to={item.link} className="text-white/90 hover:text-brand-secondary transition-colors text-[11px] font-medium uppercase tracking-wide">
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <FooterSection 
+              title="COMPANY" 
+              links={[
+                { name: 'HOME', link: '/' },
+                { name: 'ABOUT US', link: '/about' },
+                { name: 'BROCHURES', link: '/brochures' },
+                { name: 'GALLERY', link: '/gallery' },
+                { name: 'CONTACT US', link: '/contact' }
+              ]} 
+            />
 
-            <div>
-              <h4 className="font-bold text-white mb-4 tracking-widest text-xs opacity-60 uppercase border-l-2 border-brand-secondary pl-2">PRODUCTS</h4>
-              <ul className="space-y-2">
-                {[
-                  { name: 'LT Power & Control', link: '/products/lt-power-control' },
-                  { name: 'Instrumentation', link: '/products/instrumentation' },
-                  { name: 'Elastomeric/Silicon', link: '/products/elastomeric-silicon' },
-                  { name: 'Electron Beam', link: '/products/electron-beam' },
-                  { name: 'Solar', link: '/products/solar-cables' },
-                  { name: 'Wind Energy', link: '/products/wind-energy-cables' },
-                  { name: 'Overhead Conductors', link: '/products/overhead-conductors' },
-                  { name: 'HT Cables', link: '/products/ht-power-cables' },
-                  { name: 'MVCC/Tree Spacer', link: '/products/mvcc' },
-                  { name: 'High Temperature', link: '/products/high-temperature' },
-                  { name: 'UL Cables', link: '/products/ul-cables' }
-                ].map((item) => (
-                  <li key={item.name}>
-                    <Link to={item.link} className="text-white/90 hover:text-brand-secondary transition-colors text-[11px] font-medium uppercase tracking-wide">
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <FooterSection 
+              title="PRODUCTS" 
+              links={[
+                { name: 'LT Power & Control', link: '/products/lt-power-control' },
+                { name: 'Instrumentation', link: '/products/instrumentation' },
+                { name: 'Elastomeric/Silicon', link: '/products/elastomeric-silicon' },
+                { name: 'Electron Beam', link: '/products/electron-beam' },
+                { name: 'Solar', link: '/products/solar-cables' },
+                { name: 'Wind Energy', link: '/products/wind-energy-cables' },
+                { name: 'Overhead Conductors', link: '/products/overhead-conductors' },
+                { name: 'HT Cables', link: '/products/ht-power-cables' },
+                { name: 'MVCC/Tree Spacer', link: '/products/mvcc' },
+                { name: 'High Temperature', link: '/products/high-temperature' },
+                { name: 'UL Cables', link: '/products/ul-cables' }
+              ]} 
+            />
 
-            <div>
-              <h4 className="font-bold text-white mb-4 tracking-widest text-xs opacity-60 uppercase border-l-2 border-brand-secondary pl-2">INDUSTRIES</h4>
-              <ul className="space-y-2">
-                {[
-                  { name: 'Transmission & Dist.', link: '/industry/transmission-distribution' },
-                  { name: 'Renewable Energy', link: '/industry/renewable-energy' },
-                  { name: 'Power Generation', link: '/industry/power-generation' },
-                  { name: 'Exploration', link: '/industry/exploration' },
-                  { name: 'Mobility', link: '/industry/mobility' },
-                  { name: 'Defence', link: '/industry/defence' },
-                  { name: 'Manufacturing', link: '/industry/manufacturing' },
-                  { name: 'Infrastructure', link: '/industry/infrastructure' },
-                  { name: 'Harnessing', link: '/products/harnessing' }
-                ].map((item) => (
-                  <li key={item.name}>
-                    <Link to={item.link} className="text-white/90 hover:text-brand-secondary transition-colors text-[11px] font-medium uppercase tracking-wide">
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <FooterSection 
+              title="INDUSTRIES" 
+              links={[
+                { name: 'Transmission & Dist.', link: '/industry/transmission-distribution' },
+                { name: 'Renewable Energy', link: '/industry/renewable-energy' },
+                { name: 'Power Generation', link: '/industry/power-generation' },
+                { name: 'Exploration', link: '/industry/exploration' },
+                { name: 'Mobility', link: '/industry/mobility' },
+                { name: 'Defence', link: '/industry/defence' },
+                { name: 'Manufacturing', link: '/industry/manufacturing' },
+                { name: 'Infrastructure', link: '/industry/infrastructure' },
+                { name: 'Harnessing', link: '/products/harnessing' }
+              ]} 
+            />
 
-            <div>
-              <h4 className="font-bold text-white mb-4 tracking-widest text-xs opacity-60 uppercase border-l-2 border-brand-secondary pl-2">STANDARDS</h4>
-              <ul className="space-y-2">
-                {[
-                  { name: 'Indian', link: '/standards/indian' },
-                  { name: 'International', link: '/standards/international' }
-                ].map((item) => (
-                  <li key={item.name}>
-                    <Link to={item.link} className="text-white/90 hover:text-brand-secondary transition-colors text-[11px] font-medium uppercase tracking-wide">
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <FooterSection 
+              title="STANDARDS" 
+              links={[
+                { name: 'Indian', link: '/standards/indian' },
+                { name: 'International', link: '/standards/international' }
+              ]} 
+            />
 
             <div className="flex flex-col h-full">
               <h4 className="font-bold text-white mb-4 tracking-widest text-xs opacity-60 uppercase border-l-2 border-brand-secondary pl-2">CONNECT</h4>

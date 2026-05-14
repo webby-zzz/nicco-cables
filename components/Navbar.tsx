@@ -5,7 +5,7 @@ import { Menu, X, ChevronDown, Zap, Shield, Sun, Building2, HardHat, Globe, Layo
 
 const Logo = () => (
   <Link to="/" className="flex items-center group cursor-pointer">
-    <div className="h-10 md:h-[3.25rem] w-auto transition-all duration-200 group-hover:scale-105">
+    <div className="h-6 md:h-[3.25rem] w-auto transition-all duration-200 group-hover:scale-105">
       <img 
         src="/brand identity/Logo.png" 
         alt="NICCO Logo" 

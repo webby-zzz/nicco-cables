@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import TrustAnchors from './components/TrustAnchors';
 import Overview from './components/Overview';
 import Clientele from './components/Clientele';
 import WhyNicco from './components/WhyNicco';
@@ -47,63 +48,14 @@ import ULCablesPage from './components/ULCablesPage';
 import { X } from 'lucide-react';
 
 const HomePage: React.FC = () => {
-  const [showPopup, setShowPopup] = useState(false);
-
-  useEffect(() => {
-    const hasRegistered = localStorage.getItem('nicco_elasia_registered');
-    if (hasRegistered) return;
-
-    const timer = setTimeout(() => {
-      setShowPopup(true);
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  const handleRegisterClick = () => {
-    localStorage.setItem('nicco_elasia_registered', 'true');
-    setShowPopup(false);
-    window.open('https://www.elasiaexpo.com/VisitorsRegistration', '_blank');
-  };
-
   return (
     <main>
       <Hero />
+      <TrustAnchors />
       <Overview />
       <Clientele />
       <WhyNicco />
       <Certifications />
-
-      {/* Elasia Popup */}
-      {showPopup && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-500">
-          <div className="relative w-full max-w-lg bg-white rounded-3xl overflow-hidden shadow-2xl animate-in zoom-in-95 duration-300">
-            <button 
-              onClick={() => setShowPopup(false)}
-              className="absolute top-4 right-4 p-2 bg-black/20 hover:bg-black/40 text-white rounded-full transition-colors z-20"
-            >
-              <X className="w-5 h-5" />
-            </button>
-            <div className="flex flex-col">
-              <div className="relative aspect-square w-full">
-                <img 
-                  src="/brand identity/ELASIA 2026 - 1080px X 1080px (6).jpg.jpeg" 
-                  alt="ELASIA 2026" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6 bg-white flex flex-col items-center">
-                <button 
-                  onClick={handleRegisterClick}
-                  className="w-full sm:w-auto px-10 py-4 bg-brand-secondary text-white font-black uppercase tracking-widest rounded-full hover:bg-brand-dark transition-all shadow-xl shadow-brand-secondary/20 transform hover:scale-105 active:scale-95 text-sm"
-                >
-                  Register Now
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </main>
   );
 };

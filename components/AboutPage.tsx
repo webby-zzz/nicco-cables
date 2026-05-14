@@ -1,52 +1,53 @@
 
 import React, { useEffect, useRef } from 'react';
 import { motion, useScroll, useSpring, useTransform } from 'motion/react';
-import { Settings, ShieldCheck, Lightbulb, Flag, Handshake, Target, Eye } from 'lucide-react';
+import { Settings, ShieldCheck, Lightbulb, Flag, Handshake, Target, Eye, Award, Zap } from 'lucide-react';
+import TrustAnchors from './TrustAnchors';
 
 const coreValues = [
   {
-    icon: <Settings className="w-8 h-8 text-brand-secondary" />,
+    icon: <img src="/icons/Nicco core values icons/helmet.gif" alt="Engineering Excellence" className="w-8 h-8 object-contain" referrerPolicy="no-referrer" />,
     title: "Engineering Excellence",
     description: "We uphold the highest standards of design, manufacturing, and testing to deliver products that perform reliably in demanding environments."
   },
   {
-    icon: <ShieldCheck className="w-8 h-8 text-brand-secondary" />,
+    icon: <img src="/icons/Nicco core values icons/premium-quality.gif" alt="Quality Without Compromise" className="w-8 h-8 object-contain" referrerPolicy="no-referrer" />,
     title: "Quality Without Compromise",
     description: "Every cable manufactured at Nicco undergoes stringent testing and quality assurance to ensure consistent performance and durability."
   },
   {
-    icon: <Lightbulb className="w-8 h-8 text-brand-secondary" />,
+    icon: <img src="/icons/Nicco core values icons/innovation.gif" alt="Innovation & Technology" className="w-8 h-8 object-contain" referrerPolicy="no-referrer" />,
     title: "Innovation & Technology",
     description: "Continuous investment in R&D, advanced materials, and modern manufacturing enables us to stay ahead in cable technology."
   },
   {
-    icon: <Flag className="w-8 h-8 text-brand-secondary" />,
+    icon: <img src="/icons/Nicco core values icons/mother-earth-day.gif" alt="Nation Building" className="w-8 h-8 object-contain" referrerPolicy="no-referrer" />,
     title: "Nation Building",
     description: "We are committed to supporting India’s infrastructure and strategic sectors through solutions that align with the vision of Make in India and Viksit Bharat."
   },
   {
-    icon: <Handshake className="w-8 h-8 text-brand-secondary" />,
+    icon: <img src="/icons/Nicco core values icons/handshake.gif" alt="Integrity & Trust" className="w-8 h-8 object-contain" referrerPolicy="no-referrer" />,
     title: "Integrity & Trust",
     description: "Our long-standing relationships with customers are built on transparency, reliability, and consistent delivery of value."
   }
 ];
 
 const accreditationLogos = [
-  { url: "/certifications/89281811cd50e63a99bb0a7e29ab271b.webp", label: "IRS" },
-  { url: "/certifications/UL_logo.svg.webp", label: "UL" },
-  { url: "/certifications/american-bureau-of-shipping-logo-brandlogos.net_nef0sjdw1.webp", label: "ABS" },
-  { url: "/certifications/ISO_9001-2015.svg.webp", label: "ISO 9001" },
-  { url: "/certifications/ISO_english_logo.svg.webp", label: "ISO" },
-  { url: "/certifications/images.webp", label: "CPRI" },
-  { url: "/certifications/Bureau_of_Indian_Standards_Logo.svg.webp", label: "BIS" },
-  { url: "/certifications/NABL_Official_LOGO_Registered.webp", label: "NABL" },
-  { url: "/certifications/International_Electrotechnical_Commission_Logo.svg.webp", label: "IEC" },
-  { url: "/certifications/Post-1.webp", label: "DNV" },
-  { url: "/certifications/Conformité_Européenne_(logo).webp", label: "CE" },
-  { url: "/certifications/ARAI-Logo-Hindi-.webp", label: "ARAI" },
-  { url: "/certifications/images_1.webp", label: "RDSO" },
-  { url: "/certifications/iris-logo-1.webp", label: "IRIS" },
-  { url: "/certifications/images (1).webp", label: "DDP" }
+  { url: "/certifications/Picture2.webp", label: "" },
+  { url: "/certifications/Picture3.webp", label: "" },
+  { url: "/certifications/Picture4.webp", label: "" },
+  { url: "/certifications/Picture5.webp", label: "" },
+  { url: "/certifications/Picture6.webp", label: "" },
+  { url: "/certifications/Picture7.webp", label: "" },
+  { url: "/certifications/Picture8.webp", label: "" },
+  { url: "/certifications/Picture9.webp", label: "" },
+  { url: "/certifications/Picture10.webp", label: "" },
+  { url: "/certifications/Picture11.webp", label: "" },
+  { url: "/certifications/Picture11 - Copy.webp", label: "" },
+  { url: "/certifications/Picture11 - Copy - Copy.webp", label: "" },
+  { url: "/certifications/Picture12.webp", label: "" },
+  { url: "/certifications/Picture12 - Copy.webp", label: "" },
+  { url: "/certifications/Picture12 - Copy (2).webp", label: "" }
 ];
 
 const timelineData = [
@@ -85,10 +86,22 @@ const timelineData = [
 const AboutPage: React.FC = () => {
   const [currentImage, setCurrentImage] = React.useState(0);
   const facilityImages = [
-    "/plants and machinery images/PXL_20260307_122257277.MP.webp",
-    "/plants and machinery images/PXL_20260307_122714674.MP.webp",
-    "/plants and machinery images/PXL_20260307_123509679.MP.webp",
-    "/plants and machinery images/PXL_20260307_124436883.MP.webp",
+    "/Machinery images/PXL_20260307_122257277.MP.webp",
+    "/Machinery images/PXL_20260307_122323422.MP.webp",
+    "/Machinery images/PXL_20260307_122714674.MP.webp",
+    "/Machinery images/PXL_20260307_122756824.MP.webp",
+    "/Machinery images/PXL_20260307_123121067.MP.webp",
+    "/Machinery images/PXL_20260307_123509679.MP.webp",
+    "/Machinery images/PXL_20260307_123540655.MP.webp",
+    "/Machinery images/PXL_20260307_123824439.MP.webp",
+    "/Machinery images/PXL_20260307_123841422.MP.webp",
+    "/Machinery images/PXL_20260307_124436883.MP.webp",
+    "/Machinery images/PXL_20260307_124447660.MP.webp",
+    "/Machinery images/PXL_20260307_125134896.MP.webp",
+    "/Machinery images/PXL_20260307_125202879.MP.webp",
+    "/Machinery images/PXL_20260307_125229963.MP.webp",
+    "/Machinery images/PXL_20260307_130008422.MP.webp",
+    "/Machinery images/PXL_20260307_130321908.MP.webp",
   ];
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -96,7 +109,7 @@ const AboutPage: React.FC = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % facilityImages.length);
-    }, 3000);
+    }, 2500);
     return () => clearInterval(timer);
   }, [facilityImages.length]);
 
@@ -126,7 +139,7 @@ const AboutPage: React.FC = () => {
           <div className="absolute inset-0 bg-brand-dark" />
           <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/60 via-transparent to-brand-dark" />
         </div>
-        
+
         <div className="relative z-10 text-center px-6 max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -134,7 +147,7 @@ const AboutPage: React.FC = () => {
             transition={{ duration: 0.56 }}
             className="w-16 h-1 bg-brand-secondary mx-auto mb-8"
           />
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.56, delay: 0.2 }}
@@ -142,21 +155,24 @@ const AboutPage: React.FC = () => {
           >
             Our{"\u00A0"}<span className="text-brand-secondary">Legacy</span>
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.56 }}
             className="text-white text-xs font-black uppercase tracking-widest"
           >
-            ENGINEERING EXCELLENCE SINCE 1944
+            EIGHT DECADES OF TRUST & INNOVATION
           </motion.p>
         </div>
       </section>
 
+      {/* Trust Anchors - Above the Fold */}
+      <TrustAnchors />
+
       {/* Introduction */}
       <section className="py-12 md:py-16 bg-white">
         <div className="max-w-[1440px] mx-auto px-4 lg:px-20 xl:px-32">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -169,9 +185,9 @@ const AboutPage: React.FC = () => {
                 8 Decades of <span className="text-brand-secondary">Trusted{"\u00A0"}Innovation.</span>
               </h3>
               <div className="relative rounded-[1.5rem] overflow-hidden aspect-square shadow-2xl group">
-                <img 
-                  src="/brand identity/about us page.webp" 
-                  alt="Nicco About Us" 
+                <img
+                  src="/brand identity/about us page.webp"
+                  alt="Nicco About Us"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   referrerPolicy="no-referrer"
                 />
@@ -214,32 +230,45 @@ const AboutPage: React.FC = () => {
 
           <div className="relative max-w-5xl mx-auto">
             {/* Central Line Background */}
-            <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 h-full w-[2px] bg-gray-100" />
-            
+            <div className="absolute left-8 md:left-12 transform -translate-x-1/2 h-full w-[2px] bg-gray-100" />
+
             {/* Animated Filling Line */}
-            <motion.div 
+            <motion.div
               style={{ scaleY: lineScale, transformOrigin: "top" }}
-              className="absolute left-8 md:left-1/2 transform -translate-x-1/2 h-full w-[2px] bg-brand-secondary z-10"
+              className="absolute left-8 md:left-12 transform -translate-x-1/2 h-full w-[2px] bg-brand-secondary z-10"
             />
 
             <div className="space-y-12 md:space-y-16 relative z-20">
               {timelineData.map((item, idx) => (
-                <div key={idx} className={`flex items-start md:items-center justify-between w-full ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''} flex-row`}>
-                  
-                  {/* Content Card */}
-                  <motion.div 
-                    initial={{ opacity: 0, x: idx % 2 === 0 ? 50 : -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    className="w-[calc(100%-5rem)] md:w-[42%] ml-auto md:ml-0 group"
+                <div key={idx} className="flex items-start md:items-center justify-start w-full relative">
+
+                  {/* Center Icon */}
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.1 }}
+                    className="absolute left-8 md:left-12 transform -translate-x-1/2 w-12 h-12 md:w-16 md:h-16 rounded-full bg-white border-[3px] border-brand-secondary flex items-center justify-center z-30 shadow-lg mt-0"
                   >
-                    <div className={`bg-white p-6 md:p-8 rounded-[1.5rem] shadow-xl border border-black/5 hover:border-brand-secondary/20 transition-all duration-300 relative text-left ${idx % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}>
+                    <div className="text-brand-secondary scale-75 md:scale-100">
+                      {item.icon}
+                    </div>
+                  </motion.div>
+
+                  {/* Content Card Wrapper */}
+                  <div className="w-[calc(100%-5rem)] md:w-[calc(100%-8rem)] ml-auto">
+                    <motion.div
+                      initial={{ opacity: 0.4, x: 50, scale: 0.95 }}
+                      whileInView={{ opacity: 1, x: 0, scale: 1, boxShadow: "0 20px 25px -5px rgba(237,28,36,0.15), 0 8px 10px -6px rgba(237,28,36,0.1)" }}
+                      viewport={{ once: false, margin: "-30% 0px -30% 0px" }}
+                      transition={{ duration: 0.5 }}
+                      className="bg-white p-6 md:p-8 rounded-[1.5rem] shadow-xl border border-black/5 relative text-left group"
+                    >
                       {/* Arrow/Pointer */}
-                      <div className={`absolute top-6 md:top-1/2 -translate-y-1/2 w-4 h-4 bg-white border border-black/5 transform rotate-45 z-0 ${idx % 2 === 0 ? '-left-2' : '-left-2 md:left-auto md:-right-2'}`} />
-                      
-                      <div className={`flex items-center gap-3 mb-4 justify-start ${idx % 2 === 0 ? 'md:justify-start' : 'md:justify-end'}`}>
-                        <span className="text-[10px] font-black text-brand-secondary uppercase tracking-widest px-2 py-0.5 bg-brand-secondary/10 rounded">
+                      <div className="absolute top-6 md:top-1/2 -translate-y-1/2 w-4 h-4 bg-white border-l border-b border-black/5 transform rotate-45 z-0 -left-2" />
+
+                      <div className="flex items-center gap-3 mb-4 justify-start">
+                        <span className="text-[10px] font-black text-brand-secondary uppercase tracking-widest px-2 py-0.5 bg-brand-secondary/10 rounded group-hover:bg-brand-secondary group-hover:text-white transition-colors duration-300">
                           {item.type}
                         </span>
                       </div>
@@ -247,24 +276,9 @@ const AboutPage: React.FC = () => {
                       <p className="text-black/70 leading-relaxed text-sm">
                         {item.description}
                       </p>
-                    </div>
-                  </motion.div>
+                    </motion.div>
+                  </div>
 
-                  {/* Center Icon */}
-                  <motion.div 
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.1 }}
-                    className="absolute left-8 md:relative md:left-auto transform -translate-x-1/2 md:translate-x-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-white border-[3px] border-brand-secondary flex items-center justify-center z-30 shadow-lg mt-2 md:mt-0"
-                  >
-                    <div className="text-brand-secondary scale-75 md:scale-100">
-                      {item.icon}
-                    </div>
-                  </motion.div>
-
-                  {/* Spacer for the other side on desktop */}
-                  <div className="hidden md:block w-[42%]" />
                 </div>
               ))}
             </div>
@@ -274,7 +288,7 @@ const AboutPage: React.FC = () => {
 
       {/* Core Values */}
       <section className="py-12 md:py-16 bg-brand-ash">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -306,7 +320,7 @@ const AboutPage: React.FC = () => {
 
       {/* Certifications Slider */}
       <section className="py-12 md:py-20 bg-white overflow-hidden relative">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -339,9 +353,9 @@ const AboutPage: React.FC = () => {
                 {accreditationLogos.map((logo, idx) => (
                   <div key={`logo-1-${idx}`} className="mx-12 md:mx-16 flex flex-col items-center text-center flex-shrink-0 transition-all duration-500">
                     <div className="h-24 md:h-28 w-36 flex items-center justify-center">
-                      <img 
-                        src={logo.url} 
-                        alt={logo.label} 
+                      <img
+                        src={logo.url}
+                        alt={logo.label}
                         loading="lazy"
                         referrerPolicy="no-referrer"
                         className="max-h-full max-w-full object-contain"
@@ -358,9 +372,9 @@ const AboutPage: React.FC = () => {
                 {accreditationLogos.map((logo, idx) => (
                   <div key={`logo-2-${idx}`} className="mx-12 md:mx-16 flex flex-col items-center text-center flex-shrink-0 transition-all duration-500">
                     <div className="h-24 md:h-28 w-36 flex items-center justify-center">
-                      <img 
-                        src={logo.url} 
-                        alt={logo.label} 
+                      <img
+                        src={logo.url}
+                        alt={logo.label}
                         loading="lazy"
                         referrerPolicy="no-referrer"
                         className="max-h-full max-w-full object-contain"
@@ -378,7 +392,7 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* Facilities */}
-      <motion.section 
+      <motion.section
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -394,7 +408,7 @@ const AboutPage: React.FC = () => {
                   World-Class <span className="text-brand-secondary">Facilities</span>
                 </h3>
               </div>
-              
+
               <p className="text-black leading-relaxed font-normal text-base">
                 Nicco Cables operates a state-of-the-art manufacturing facility spanning approximately 4,96,520 sq. ft., equipped with advanced machinery and automation systems designed for precision cable manufacturing.
               </p>
@@ -432,8 +446,8 @@ const AboutPage: React.FC = () => {
                   transition={{ duration: 1 }}
                   className="absolute inset-0"
                 >
-                  <img 
-                    src={facilityImages[currentImage]} 
+                  <img
+                    src={facilityImages[currentImage]}
                     alt={`Facility ${currentImage + 1}`}
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
@@ -441,9 +455,9 @@ const AboutPage: React.FC = () => {
                 </motion.div>
                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
                   {facilityImages.map((_, idx) => (
-                    <div 
-                      key={idx} 
-                      className={`w-2 h-2 rounded-full transition-all duration-300 ${idx === currentImage ? 'bg-brand-secondary w-6' : 'bg-white/50'}`} 
+                    <div
+                      key={idx}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${idx === currentImage ? 'bg-brand-secondary w-6' : 'bg-white/50'}`}
                     />
                   ))}
                 </div>

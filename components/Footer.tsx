@@ -102,7 +102,7 @@ const Footer: React.FC = () => {
               <ul className="space-y-2">
                 {[
                   { name: 'Indian', link: '/standards/indian' },
-                  { name: 'International (UL)', link: '/standards/international' }
+                  { name: 'International', link: '/standards/international' }
                 ].map((item) => (
                   <li key={item.name}>
                     <Link to={item.link} className="text-white/90 hover:text-brand-secondary transition-colors text-[11px] font-medium uppercase tracking-wide">

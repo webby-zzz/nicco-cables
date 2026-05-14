@@ -3,21 +3,21 @@ import React from 'react';
 import { motion } from 'motion/react';
 
 const accreditationLogos = [
-  { url: "/certifications/89281811cd50e63a99bb0a7e29ab271b.webp", label: "IRS" },
-  { url: "/certifications/UL_logo.svg.webp", label: "UL" },
-  { url: "/certifications/american-bureau-of-shipping-logo-brandlogos.net_nef0sjdw1.webp", label: "ABS" },
-  { url: "/certifications/ISO_9001-2015.svg.webp", label: "ISO 9001" },
-  { url: "/certifications/ISO_english_logo.svg.webp", label: "ISO" },
-  { url: "/certifications/images.webp", label: "CPRI" },
-  { url: "/certifications/Bureau_of_Indian_Standards_Logo.svg.webp", label: "BIS" },
-  { url: "/certifications/NABL_Official_LOGO_Registered.webp", label: "NABL" },
-  { url: "/certifications/International_Electrotechnical_Commission_Logo.svg.webp", label: "IEC" },
-  { url: "/certifications/Post-1.webp", label: "DNV" },
-  { url: "/certifications/Conformité_Européenne_(logo).webp", label: "CE" },
-  { url: "/certifications/ARAI-Logo-Hindi-.webp", label: "ARAI" },
-  { url: "/certifications/images_1.webp", label: "RDSO" },
-  { url: "/certifications/iris-logo-1.webp", label: "IRIS" },
-  { url: "/certifications/images (1).webp", label: "DDP" }
+  { url: "/certifications/Picture2.webp", label: "" },
+  { url: "/certifications/Picture3.webp", label: "" },
+  { url: "/certifications/Picture4.webp", label: "" },
+  { url: "/certifications/Picture5.webp", label: "" },
+  { url: "/certifications/Picture6.webp", label: "" },
+  { url: "/certifications/Picture7.webp", label: "" },
+  { url: "/certifications/Picture8.webp", label: "" },
+  { url: "/certifications/Picture9.webp", label: "" },
+  { url: "/certifications/Picture10.webp", label: "" },
+  { url: "/certifications/Picture11.webp", label: "" },
+  { url: "/certifications/Picture11 - Copy.webp", label: "" },
+  { url: "/certifications/Picture11 - Copy - Copy.webp", label: "" },
+  { url: "/certifications/Picture12.webp", label: "" },
+  { url: "/certifications/Picture12 - Copy.webp", label: "" },
+  { url: "/certifications/Picture12 - Copy (2).webp", label: "" }
 ];
 
 const Certifications: React.FC = () => {

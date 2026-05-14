@@ -1,26 +1,25 @@
-
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 import Breadcrumbs from './Breadcrumbs';
-
 import SplitTitle from './SplitTitle';
+import BrochureDownloadModal from './BrochureDownloadModal';
 
 const TechnicalTable: React.FC<{ title: string; data: { label: string; value: React.ReactNode }[] }> = ({ title, data }) => (
-  <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-md border border-gray-100 overflow-hidden mb-12">
-    <h3 className="text-xl font-bold text-brand-dark mb-6 border-l-4 border-brand-secondary pl-4 inline-block uppercase tracking-widest">
+  <div className="mb-12">
+    <h3 className="text-2xl font-bold text-brand-dark mb-6">
       {title}
     </h3>
     <div className="overflow-x-auto no-scrollbar">
-      <table className="w-full text-left border-collapse border border-brand-secondary/30">
+      <table className="w-full text-left border-collapse border border-gray-200 bg-white">
         <tbody>
           {data.map((item, index) => (
-            <tr key={index} className="border-b border-brand-secondary/30 hover:bg-brand-secondary/[0.02] transition-colors">
-              <th className="py-4 px-6 text-[11px] font-black text-brand-dark w-1/3 align-top bg-brand-secondary/[0.05] uppercase tracking-[0.2em] border-r border-brand-secondary/30">
+            <tr key={index} className="border-b border-gray-200">
+              <th className="py-4 px-6 text-base font-bold text-brand-dark w-1/3 align-top border-r border-gray-200">
                 {item.label}
               </th>
-              <td className="py-4 px-6 text-sm text-black font-medium align-top">
+              <td className="py-4 px-6 text-base text-gray-700 font-normal align-top leading-relaxed">
                 {item.value}
               </td>
             </tr>
@@ -35,6 +34,8 @@ const RFThermocoupleCablesPage: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalProps, setModalProps] = useState({ title: '', url: '' });
 
   const technicalDetails = [
     { label: "Construction", value: "Single core, multi-core, multi-pair — unscreened, individually screened & collectively screened, armoured / unarmoured" },
@@ -48,7 +49,7 @@ const RFThermocoupleCablesPage: React.FC = () => {
     { label: "Standards", value: "Def Stan 02-512, MIL-DTL-17H, and customer specifications" }
   ];
 
-  const sizesVariants = [
+  const variantsDetails = [
     { label: "Voltage Options", value: "38V AC up to 1000V" },
     { label: "Types", value: "PT Power Cables (PT-10, PT-45), RF and signal cables — shielded / unshielded, armoured / unarmoured, single and multi-core" },
     { label: "Applications", value: "Shipbuilding, submarines, offshore platforms, marine systems, radar communication, defence" }
@@ -78,25 +79,32 @@ const RFThermocoupleCablesPage: React.FC = () => {
             </p>
           </div>
           <div className="md:w-1/2 w-full">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="rounded-2xl overflow-hidden shadow-lg aspect-square bg-brand-ash" />
-              <div className="rounded-2xl overflow-hidden shadow-lg aspect-square bg-brand-ash" />
+            <div className="w-full aspect-square bg-white rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center border border-gray-100">
+              <img 
+                src="/Product Images/thumbnails/Thermocouple-Extension-Cable.jpeg" 
+                alt="Pressure Tight (PT) / RF Cables" 
+                className="w-full h-full object-contain"
+                referrerPolicy="no-referrer"
+              />
             </div>
           </div>
         </motion.div>
 
         <div className="flex flex-col gap-8">
           <TechnicalTable title="Technical Details" data={technicalDetails} />
-          <TechnicalTable title="Sizes & Variants" data={sizesVariants} />
+          <TechnicalTable title="Sizes & Variants" data={variantsDetails} />
         </div>
 
         {/* CTA Section */}
-        <div className="bg-brand-secondary rounded-[2rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-lg">
+        <div className="bg-brand-secondary rounded-[2rem] p-8 md:p-12 mt-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-lg">
           <div>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tighter mb-2">Need more information?</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tighter mb-2">Need more{"\u00A0"}information?</h2>
             <p className="text-white/90 text-base font-medium">Contact our team or download our product brochure.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+            <button onClick={() => { setModalProps({ title: 'PT / RF Cables', url: '#' }); setIsModalOpen(true); }} className="bg-brand-dark text-white px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-black transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
+              Download Brochure <ArrowRight className="w-4 h-4" />
+            </button>
             <Link 
               to="/contact"
               className="bg-white text-brand-secondary px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
@@ -107,6 +115,13 @@ const RFThermocoupleCablesPage: React.FC = () => {
         </div>
 
       </div>
+
+      <BrochureDownloadModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        brochureTitle={modalProps.title} 
+        pdfUrl={modalProps.url} 
+      />
     </div>
   );
 };

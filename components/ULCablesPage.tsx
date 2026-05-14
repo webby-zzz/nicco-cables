@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
@@ -7,19 +6,19 @@ import Breadcrumbs from './Breadcrumbs';
 import SplitTitle from './SplitTitle';
 
 const TechnicalTable: React.FC<{ title: string; data: { label: string; value: React.ReactNode }[] }> = ({ title, data }) => (
-  <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-md border border-gray-100 overflow-hidden mb-12">
-    <h3 className="text-xl font-bold text-brand-dark mb-6 border-l-4 border-brand-secondary pl-4 inline-block uppercase tracking-widest">
+  <div className="mb-12">
+    <h3 className="text-2xl font-bold text-brand-dark mb-6">
       {title}
     </h3>
     <div className="overflow-x-auto no-scrollbar">
-      <table className="w-full text-left border-collapse border border-brand-secondary/30">
+      <table className="w-full text-left border-collapse border border-gray-200 bg-white">
         <tbody>
           {data.map((item, index) => (
-            <tr key={index} className="border-b border-brand-secondary/30 hover:bg-brand-secondary/[0.02] transition-colors">
-              <th className="py-4 px-6 text-[11px] font-black text-brand-dark w-1/3 align-top bg-brand-secondary/[0.05] uppercase tracking-[0.2em] border-r border-brand-secondary/30">
+            <tr key={index} className="border-b border-gray-200">
+              <th className="py-4 px-6 text-base font-bold text-brand-dark w-1/3 align-top border-r border-gray-200">
                 {item.label}
               </th>
-              <td className="py-4 px-6 text-sm text-black font-medium align-top">
+              <td className="py-4 px-6 text-base text-gray-700 font-normal align-top leading-relaxed">
                 {item.value}
               </td>
             </tr>

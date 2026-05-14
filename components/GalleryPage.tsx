@@ -195,7 +195,7 @@ const GalleryPage: React.FC = () => {
       </section>
 
       {/* Tabs Section */}
-      <section className="py-6 sticky top-24 md:top-28 z-40">
+      <section className="py-6 relative z-40">
         <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
           <div className="bg-white/90 backdrop-blur-md shadow-xl border border-brand-secondary/10 rounded-[2rem] md:rounded-full py-3 md:py-4 px-2 md:px-8">
             <div className="flex items-center justify-start md:justify-center gap-2 overflow-x-auto no-scrollbar px-2">

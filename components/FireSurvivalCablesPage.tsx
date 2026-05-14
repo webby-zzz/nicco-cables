@@ -1,26 +1,25 @@
-
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 import Breadcrumbs from './Breadcrumbs';
-
 import SplitTitle from './SplitTitle';
+import BrochureDownloadModal from './BrochureDownloadModal';
 
 const TechnicalTable: React.FC<{ title: string; data: { label: string; value: React.ReactNode }[] }> = ({ title, data }) => (
-  <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-md border border-gray-100 overflow-hidden mb-12">
-    <h3 className="text-xl font-bold text-brand-dark mb-6 border-l-4 border-brand-secondary pl-4 inline-block uppercase tracking-widest">
+  <div className="mb-12">
+    <h3 className="text-2xl font-bold text-brand-dark mb-6">
       {title}
     </h3>
     <div className="overflow-x-auto no-scrollbar">
-      <table className="w-full text-left border-collapse border border-brand-secondary/30">
+      <table className="w-full text-left border-collapse border border-gray-200 bg-white">
         <tbody>
           {data.map((item, index) => (
-            <tr key={index} className="border-b border-brand-secondary/30 hover:bg-brand-secondary/[0.02] transition-colors">
-              <th className="py-4 px-6 text-[11px] font-black text-brand-dark w-1/3 align-top bg-brand-secondary/[0.05] uppercase tracking-[0.2em] border-r border-brand-secondary/30">
+            <tr key={index} className="border-b border-gray-200">
+              <th className="py-4 px-6 text-base font-bold text-brand-dark w-1/3 align-top border-r border-gray-200">
                 {item.label}
               </th>
-              <td className="py-4 px-6 text-sm text-black font-medium align-top">
+              <td className="py-4 px-6 text-base text-gray-700 font-normal align-top leading-relaxed">
                 {item.value}
               </td>
             </tr>
@@ -35,6 +34,8 @@ const FireSurvivalCablesPage: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalProps, setModalProps] = useState({ title: '', url: '' });
 
   const technicalDetails = [
     { label: "Construction", value: "Single & multi-core / Pairs / Triads / Quads" },
@@ -56,7 +57,7 @@ const FireSurvivalCablesPage: React.FC = () => {
     { label: "EN 50200", value: "830°C to 850°C — 30 / 60 / 120 min" }
   ];
 
-  const sizesVariants = [
+  const variantsDetails = [
     { label: "Voltage Options", value: "300V / 500V / 600V / 1100V" },
     { label: "Types", value: "Fire Survival (FS), Fire Resistant (FR), FRLS" },
     { label: "Applications", value: "Fire alarms, emergency lighting, public address systems for airports, metro, high-rise buildings, malls, industrial facilities" }
@@ -79,16 +80,20 @@ const FireSurvivalCablesPage: React.FC = () => {
               <span className="text-xs font-black uppercase tracking-widest">PRODUCTS</span>
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-[44px] font-black text-brand-dark tracking-tighter mb-6 leading-[1.1]">
-              <SplitTitle title="Fire Resistant and Fire Survival Cables" />
+              <SplitTitle title="Fire Resistant & Fire Survival Cables" />
             </h1>
             <p className="text-base text-black leading-relaxed font-medium">
               Engineered to maintain electrical functionality during fire conditions up to 950°C, our Fire Survival Cables ensure continuous operation of fire alarms, emergency lighting, and public address systems. Available in FS, FR, and FRLS variants — suitable for airports, metro systems, high-rise buildings, malls, and industrial facilities. Compliant with BS-7846, BS-7629, BS-8434, IEC-60331-21, and IS 17505.
             </p>
           </div>
           <div className="md:w-1/2 w-full">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="rounded-2xl overflow-hidden shadow-lg aspect-square bg-brand-ash" />
-              <div className="rounded-2xl overflow-hidden shadow-lg aspect-square bg-brand-ash" />
+            <div className="w-full aspect-square bg-white rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center border border-gray-100">
+              <img 
+                src="/Product Images/thumbnails/Fire Survival cable.jpeg" 
+                alt="Fire Resistant & Fire Survival Cables" 
+                className="w-full h-full object-contain"
+                referrerPolicy="no-referrer"
+              />
             </div>
           </div>
         </motion.div>
@@ -96,34 +101,19 @@ const FireSurvivalCablesPage: React.FC = () => {
         <div className="flex flex-col gap-8">
           <TechnicalTable title="Technical Details" data={technicalDetails} />
           <TechnicalTable title="Fire Performance Testing" data={firePerformanceTesting} />
-          <TechnicalTable title="Sizes & Variants" data={sizesVariants} />
+          <TechnicalTable title="Sizes & Variants" data={variantsDetails} />
         </div>
 
-        {/* Additional Image Section */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-12 grid grid-cols-1 md:grid-cols-2 gap-8"
-        >
-          <div className="w-full h-64 md:h-96 bg-brand-ash rounded-[2rem] shadow-lg" />
-          <div className="w-full h-64 md:h-96 bg-brand-ash rounded-[2rem] shadow-lg" />
-        </motion.div>
-
         {/* CTA Section */}
-        <div className="bg-brand-secondary rounded-[2rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-lg">
+        <div className="bg-brand-secondary rounded-[2rem] p-8 md:p-12 mt-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-lg">
           <div>
             <h2 className="text-3xl md:text-4xl font-black text-white tracking-tighter mb-2">Need more{"\u00A0"}information?</h2>
             <p className="text-white/90 text-base font-medium">Contact our team or download our product brochure.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-            <Link 
-              to="/brochures"
-              className="bg-brand-dark text-white px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-black transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
-            >
+            <button onClick={() => { setModalProps({ title: 'Fire Survival Cables', url: '#' }); setIsModalOpen(true); }} className="bg-brand-dark text-white px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-black transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
               Download Brochure <ArrowRight className="w-4 h-4" />
-            </Link>
+            </button>
             <Link 
               to="/contact"
               className="bg-white text-brand-secondary px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
@@ -134,6 +124,13 @@ const FireSurvivalCablesPage: React.FC = () => {
         </div>
 
       </div>
+
+      <BrochureDownloadModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        brochureTitle={modalProps.title} 
+        pdfUrl={modalProps.url} 
+      />
     </div>
   );
 };

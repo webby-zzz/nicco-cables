@@ -15,35 +15,35 @@ import {
 const pillars = [
   {
     title: "80+ Years of Proven Industry Leadership",
-    icon: <History className="w-6 h-6" />
+    icon: <img src="/icons/Nicco website icons/leadership.gif" alt="Leadership" className="w-10 h-10 object-contain" referrerPolicy="no-referrer" />
   },
   {
     title: "Pioneers in E-Beam Technology",
-    icon: <Zap className="w-6 h-6" />
+    icon: <img src="/icons/Nicco website icons/electricity.gif" alt="E-Beam Technology" className="w-10 h-10 object-contain" referrerPolicy="no-referrer" />
   },
   {
     title: "Integrated In-House Elastomeric Compounding",
-    icon: <FlaskConical className="w-6 h-6" />
+    icon: <img src="/icons/Nicco website icons/flask.gif" alt="Compounding" className="w-10 h-10 object-contain" referrerPolicy="no-referrer" />
   },
   {
     title: "Advanced Expertise in Hybrid Cable Solutions",
-    icon: <Layers className="w-6 h-6" />
+    icon: <img src="/icons/Nicco website icons/innovation.gif" alt="Expertise" className="w-10 h-10 object-contain" referrerPolicy="no-referrer" />
   },
   {
     title: "Specialized Pressure-Tight Cable Capabilities",
-    icon: <Waves className="w-6 h-6" />
+    icon: <img src="/icons/Nicco website icons/diving-equipment.gif" alt="Pressure-Tight Capabilities" className="w-10 h-10 object-contain" referrerPolicy="no-referrer" />
   },
   {
     title: "Dedicated Defence Cable Solutions",
-    icon: <Shield className="w-6 h-6" />
+    icon: <img src="/icons/Nicco website icons/shield.gif" alt="Defence Solutions" className="w-10 h-10 object-contain" referrerPolicy="no-referrer" />
   },
   {
     title: "Trusted Partner to Indian Railways",
-    icon: <TrainFront className="w-6 h-6" />
+    icon: <img src="/icons/Nicco website icons/train.gif" alt="Indian Railways" className="w-10 h-10 object-contain" referrerPolicy="no-referrer" />
   },
   {
     title: "Preferred Choice for Mining Cable Applications",
-    icon: <Mountain className="w-6 h-6" />
+    icon: <img src="/icons/Nicco website icons/natural-resources.gif" alt="Mining Cable Applications" className="w-10 h-10 object-contain" referrerPolicy="no-referrer" />
   }
 ];
 

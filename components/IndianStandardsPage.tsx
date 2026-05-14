@@ -8,13 +8,13 @@ const standards = [
     id: 'power-control',
     title: 'Power & Control Cables',
     description: 'IS 1554, IS 7098 (Part 1)',
-    image: '/Product Images/LT cables/1.jpg'
+    image: '/Product Images/thumbnails/LT Cables.jpeg'
   },
   {
     id: 'elastomeric',
     title: 'Elastomeric Cables',
     description: 'IS 9968 (Part 1 & 2)',
-    image: '/Product Images/Elastomeric-and-Silicon-Cables/8.webp'
+    image: '/Product Images/thumbnails/Silicon insulated cable.jpeg'
   },
   {
     id: 'solar',
@@ -26,7 +26,7 @@ const standards = [
     id: 'fire-resistant',
     title: 'Fire Resistant Cables with Low Smoke & Gases',
     description: 'IS 17505',
-    image: '/Product Images/UL-Cables/3.webp'
+    image: '/Product Images/thumbnails/Fire Survival cable.jpeg'
   },
   {
     id: 'automotive',
@@ -38,7 +38,7 @@ const standards = [
     id: 'overhead',
     title: 'Cables for Overhead Power Transmission & Distribution',
     description: 'IS 398 (Part 2, 4 & 6)',
-    image: '/brand identity/Overhead.webp'
+    image: '/Product Images/thumbnails/Overhead Conductors.jpeg'
   }
 ];
 

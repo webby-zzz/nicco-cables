@@ -34,6 +34,10 @@ const SearchBar = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }
     { name: 'Medium Voltage Covered Conductors / Tree Spacer Cables', link: '/products/mvcc', type: 'Product' },
     { name: 'High Temperature Cables (ETFE / FEP / PTFE)', link: '/products/high-temperature', type: 'Product' },
     { name: 'UL Cables (International)', link: '/products/ul-cables', type: 'Product' },
+    { name: 'Data & Ethernet Cables', link: '/products/data-ethernet', type: 'Product' },
+    { name: 'RF & Thermocouple Cables — Pressure Tight (PT) / RF Cables', link: '/products/rf-thermocouple', type: 'Product' },
+    { name: 'Thermocouple Extension & Compensating Cables', link: '/products/thermocouple', type: 'Product' },
+    { name: 'Fire Resistant & Fire Survival Cables', link: '/products/fire-survival', type: 'Product' },
     { name: 'Transmission and Distribution', link: '/industry/transmission-distribution', type: 'Industry' },
     { name: 'Renewable Energy', link: '/industry/renewable-energy', type: 'Industry' },
     { name: 'Power Generation', link: '/industry/power-generation', type: 'Industry' },
@@ -133,17 +137,21 @@ const SearchBar = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }
 
 const MegaMenu = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
   const cableTypes = [
-    { name: 'LT Power & Control Cables', image: '/Product Images/LT cables/1.jpg', link: '/products/lt-power-control' },
-    { name: 'Instrumentation Cables', image: '/Product Images/instrumental-cables/2.webp', link: '/products/instrumentation' },
-    { name: 'Elastomeric and Silicon Cables (upto 15 kV)', image: '/Product Images/Elastomeric-and-Silicon-Cables/8.webp', link: '/products/elastomeric-silicon' },
-    { name: 'Electron Beam Cables', image: '/brand identity/E-Beam.webp', link: '/products/electron-beam' },
+    { name: 'LT Power & Control Cables', image: '/Product Images/thumbnails/LT Cables.jpeg', link: '/products/lt-power-control' },
+    { name: 'Instrumentation Cables', image: '/Product Images/thumbnails/Instrumentation Cables.jpeg', link: '/products/instrumentation' },
+    { name: 'Elastomeric and Silicon Cables (upto 15 kV)', image: '/Product Images/thumbnails/Silicon insulated cable.jpeg', link: '/products/elastomeric-silicon' },
+    { name: 'Electron Beam Cables', image: '/Product Images/thumbnails/Electron beam cable.jpeg', link: '/products/electron-beam' },
     { name: 'Solar Cables', image: '/Product Images/Solar-Cables/11.webp', link: '/products/solar-cables' },
     { name: 'Wind Energy Cables', image: '/Product Images/Wind-Energy-Cables/12.webp', link: '/products/wind-energy-cables' },
-    { name: 'Overhead Conductors', image: '/brand identity/Overhead.webp', link: '/products/overhead-conductors' },
-    { name: 'HT Cables — Up to 11 kV', image: '/Product Images/HT-Power-Cables/2.webp', link: '/products/ht-power-cables' },
-    { name: 'Medium Voltage Covered Conductors / Tree Spacer Cables', image: '/Product Images/MVCC/6.webp', link: '/products/mvcc' },
-    { name: 'High Temperature Cables (ETFE / FEP / PTFE)', image: '/brand identity/High Temperature.webp', link: '/products/high-temperature' },
+    { name: 'Overhead Conductors', image: '/Product Images/thumbnails/Overhead Conductors.jpeg', link: '/products/overhead-conductors' },
+    { name: 'HT Cables — Up to 11 kV', image: '/Product Images/thumbnails/HT cable.jpeg', link: '/products/ht-power-cables' },
+    { name: 'Medium Voltage Covered Conductors / Tree Spacer Cables', image: '/Product Images/thumbnails/Medium voltage Covered conductors - tree spacer.jpeg', link: '/products/mvcc' },
+    { name: 'High Temperature Cables (ETFE / FEP / PTFE)', image: '/Product Images/thumbnails/High temperature PTFE cable.jpeg', link: '/products/high-temperature' },
     { name: 'UL Cables (International)', image: '/Product Images/UL-Cables/3.webp', link: '/products/ul-cables' },
+    { name: 'Data & Ethernet Cables', image: '/Product Images/thumbnails/Category cable.jpeg', link: '/products/data-ethernet' },
+    { name: 'RF & Thermocouple Cables — Pressure Tight (PT) / RF Cables', image: '/Product Images/thumbnails/Thermocouple-Extension-Cable.jpeg', link: '/products/rf-thermocouple' },
+    { name: 'Thermocouple Extension & Compensating Cables', image: '/Product Images/thumbnails/Thermocouple-Extension-Cable.jpeg', link: '/products/thermocouple' },
+    { name: 'Fire Resistant & Fire Survival Cables', image: '/Product Images/thumbnails/Fire Survival cable.jpeg', link: '/products/fire-survival' },
   ];
 
   return (
@@ -230,7 +238,7 @@ const MegaMenu = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void })
                 <li>
                   <Link to="/standards/international" onClick={onClose} className="hover:text-brand-secondary transition-colors flex items-center gap-2 group">
                     <span className="w-1 h-1 rounded-full bg-brand-ash group-hover:bg-brand-dark transition-colors" />
-                    International (UL)
+                    International
                   </Link>
                 </li>
               </ul>
@@ -257,6 +265,7 @@ const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -381,7 +390,12 @@ const Navbar: React.FC = () => {
   return (
     <div className="fixed top-0 left-0 right-0 z-50 flex flex-col items-center">
       <nav 
-        onMouseLeave={() => setIsMegaMenuOpen(false)}
+        onMouseEnter={() => { if (timeoutRef.current) clearTimeout(timeoutRef.current); }}
+        onMouseLeave={() => {
+          timeoutRef.current = setTimeout(() => {
+            setIsMegaMenuOpen(false);
+          }, 300);
+        }}
         className="transition-all duration-300 ease-in-out flex items-center justify-center relative w-[calc(100%-1rem)] md:w-[calc(100%-2rem)] max-w-[1440px] bg-white/90 backdrop-blur-md shadow-2xl border border-brand-secondary/10 px-4 lg:px-10 py-5 lg:py-4 mt-2 md:mt-4 rounded-full"
       >
         <div className="absolute flex items-center left-4 lg:left-10">
@@ -393,7 +407,10 @@ const Navbar: React.FC = () => {
             <div 
               key={item.name} 
               className="relative group h-full py-4 flex items-center"
-              onMouseEnter={() => setIsMegaMenuOpen(!!item.hasMegaMenu)}
+              onMouseEnter={() => {
+                if (timeoutRef.current) clearTimeout(timeoutRef.current);
+                setIsMegaMenuOpen(!!item.hasMegaMenu);
+              }}
             >
               {renderNavLink(item)}
             </div>
@@ -594,6 +611,54 @@ const Navbar: React.FC = () => {
                               }}
                             >
                               UL Cables (International)
+                            </Link>
+                          </li>
+                          <li>
+                            <Link 
+                              to="/products/data-ethernet" 
+                              className="block hover:text-brand-secondary transition-colors"
+                              onClick={() => {
+                                setMobileMenuOpen(false);
+                                setIsMegaMenuOpen(false);
+                              }}
+                            >
+                              Data & Ethernet Cables
+                            </Link>
+                          </li>
+                          <li>
+                            <Link 
+                              to="/products/rf-thermocouple" 
+                              className="block hover:text-brand-secondary transition-colors"
+                              onClick={() => {
+                                setMobileMenuOpen(false);
+                                setIsMegaMenuOpen(false);
+                              }}
+                            >
+                              RF & Thermocouple Cables — Pressure Tight (PT) / RF Cables
+                            </Link>
+                          </li>
+                          <li>
+                            <Link 
+                              to="/products/thermocouple" 
+                              className="block hover:text-brand-secondary transition-colors"
+                              onClick={() => {
+                                setMobileMenuOpen(false);
+                                setIsMegaMenuOpen(false);
+                              }}
+                            >
+                              Thermocouple Extension & Compensating Cables
+                            </Link>
+                          </li>
+                          <li>
+                            <Link 
+                              to="/products/fire-survival" 
+                              className="block hover:text-brand-secondary transition-colors"
+                              onClick={() => {
+                                setMobileMenuOpen(false);
+                                setIsMegaMenuOpen(false);
+                              }}
+                            >
+                              Fire Resistant & Fire Survival Cables
                             </Link>
                           </li>
                         </ul>

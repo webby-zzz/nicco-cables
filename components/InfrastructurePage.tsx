@@ -57,8 +57,8 @@ const InfrastructurePage: React.FC = () => {
     },
     {
       id: "ht-cables",
-      title: "HT Cables — Up to 11 kV",
-      description: "Engineered for medium voltage power transmission across infrastructure networks, our HT Cables cover earthed systems from 3.3 kV to 11 kV. Available in armoured and unarmoured variants with FR / FRLS / LSZH sheath options — suitable for underground, duct, trench, and tray installations. Compliant with IS 7098 (Part 2), IEC 60502-2, and BS/EN standards.",
+      title: "HT Cables upto 33 kV",
+      description: "Engineered for medium voltage power transmission across infrastructure networks, our HT Cables cover earthed systems from 3.3 kV to 33 kV. Available in armoured and unarmoured variants with FR / FRLS / LSZH sheath options — suitable for underground, duct, trench, and tray installations. Compliant with IS 7098 (Part 2), IEC 60502-2, and BS/EN standards.",
       technical: [
         { label: "Construction", value: "Single core or three core, stranded compacted circular conductor with conductor screen, insulation screen, metallic screen, and protective layers" },
         { label: "Voltage Rating", value: "Earthed — 1.9/3.3 kV | 3.8/6.6 kV | 6.35/11 kV | Unearthed — 3.3/3.3 kV | 6.6/6.6 kV" },
@@ -73,7 +73,7 @@ const InfrastructurePage: React.FC = () => {
         { label: "Standards", value: "IS 7098 (Part 2), IEC 60502-2, BS/EN standards, OEM / Utility specifications (on request)" }
       ],
       variants: [
-        { label: "Voltage Options", value: "3.3 kV / 6.6 kV / 11 kV (earthed and unearthed systems)" },
+        { label: "Voltage Options", value: "3.3 kV / 6.6 kV / 33 kV (earthed and unearthed systems)" },
         { label: "Core Configuration", value: "Single core and three core" },
         { label: "Installation", value: "Underground, duct, trench, and tray installations" }
       ]
@@ -220,7 +220,7 @@ const InfrastructurePage: React.FC = () => {
               Download Brochure <ArrowRight className="w-4 h-4" />
             </Link>
             <Link to="/contact" className="bg-white text-brand-secondary px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
-              Contact Us <ArrowRight className="w-4 h-4" />
+              Connect with Us <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </motion.div>

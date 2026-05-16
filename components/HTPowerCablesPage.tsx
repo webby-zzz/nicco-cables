@@ -51,7 +51,7 @@ const HTPowerCablesPage: React.FC = () => {
   ];
 
   const variantsDetails = [
-    { label: "Voltage Options", value: "3.3 kV / 6.6 kV / 11 kV (earthed and unearthed systems)" },
+    { label: "Voltage Options", value: "3.3 kV / 6.6 kV / 33 kV (earthed and unearthed systems)" },
     { label: "Core Configuration", value: "Single core and three core" },
     { label: "Installation", value: "Underground, duct, trench, and tray installations" }
   ];
@@ -73,10 +73,10 @@ const HTPowerCablesPage: React.FC = () => {
               <span className="text-xs font-black uppercase tracking-widest">PRODUCTS</span>
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-[44px] font-black text-brand-dark tracking-tighter mb-6 leading-[1.1]">
-              <SplitTitle title="HT Power Cables - Up to 11 kV" />
+              <SplitTitle title="HT Power Cables upto 33kV" />
             </h1>
             <p className="text-base text-black leading-relaxed font-medium">
-              Engineered for reliable power transmission and distribution in medium voltage networks, our HT Cables cover earthed systems from 3.3 kV to 11 kV. Built with high-quality materials and advanced processes, these cables ensure electrical safety, durability, and consistent performance in industrial and utility applications. Available in armoured and unarmoured variants with FR / FRLS / LSZH sheath options suitable for underground, duct, trench, and tray installations.
+              Engineered for reliable power transmission and distribution in medium voltage networks, our HT Cables cover earthed systems from 3.3 kV to 33 kV. Built with high-quality materials and advanced processes, these cables ensure electrical safety, durability, and consistent performance in industrial and utility applications. Available in armoured and unarmoured variants with FR / FRLS / LSZH sheath options suitable for underground, duct, trench, and tray installations.
             </p>
           </div>
           <div className="md:w-1/2 w-full">
@@ -121,14 +121,14 @@ const HTPowerCablesPage: React.FC = () => {
             <p className="text-white/90 text-base font-medium">Contact our team or download our product brochure.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-            <button onClick={() => { setModalProps({ title: 'HT Cables upto 11KV', url: '/brochures/HT Cables upto 11KV - NICCO .pdf' }); setIsModalOpen(true); }} className="bg-brand-dark text-white px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-black transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
+            <button onClick={() => { setModalProps({ title: 'HT Cables upto 33 kV', url: '/brochures/HT Cables upto 33 kV - NICCO .pdf' }); setIsModalOpen(true); }} className="bg-brand-dark text-white px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-black transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
               Download Brochure <ArrowRight className="w-4 h-4" />
             </button>
             <Link 
               to="/contact"
               className="bg-white text-brand-secondary px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
             >
-              Contact Us <ArrowRight className="w-4 h-4" />
+              Connect with Us <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>

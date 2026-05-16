@@ -33,7 +33,7 @@ const IndustriesVertical: React.FC = () => {
   const industries = [
     {
       title: "Transmission and Distribution",
-      description: "Optimizing the power grid with robust HT Cables (upto 33kV) and advanced Overhead Conductors.",
+      description: "Optimizing the power grid with robust HT Cables (upto 33 kV) and advanced Overhead Conductors.",
       link: "/industry/transmission-distribution"
     },
     {

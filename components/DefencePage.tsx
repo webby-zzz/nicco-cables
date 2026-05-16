@@ -56,7 +56,7 @@ const DefencePage: React.FC = () => {
     {
       id: "pt",
       title: "Pressure Tight (PT) Cables / RF Cables",
-      description: "Engineered to withstand radial and axial pressures from 10 to 72 bar while maintaining full sealing integrity, our PT / RF Cables deliver halogen-free, flame-retardant, and fire-survival performance in critical defence environments. Available in PT power cables (PT-10, PT-45), RF and signal variants — shielded / unshielded, armoured / unarmoured, single and multi-core. Compliant with Def Stan 02-512, MIL-DTL-17H, and customer specifications.",
+      description: "Engineered to withstand radial and axial pressures from 10 to 72 bar while maintaining full sealing integrity, our PT / RF Cables deliver halogen-free, flame-retardant, and Fire-Survival performance in critical defence environments. Available in PT Power Cables (PT-10, PT-45), RF and signal variants — shielded / unshielded, armoured / unarmoured, single and multi-core. Compliant with Def Stan 02-512, MIL-DTL-17H, and customer specifications.",
       technical: [
         { label: "Construction", value: "Single core, multi-core, multi-pair — unscreened, individually screened & collectively screened" },
         { label: "Voltage Grade", value: "38V AC / 250V / 600V / 660V / 690V / 1000V" },
@@ -203,7 +203,7 @@ const DefencePage: React.FC = () => {
               Download Brochure <ArrowRight className="w-4 h-4" />
             </Link>
             <Link to="/contact" className="bg-white text-brand-secondary px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
-              Contact Us <ArrowRight className="w-4 h-4" />
+              Connect with Us <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </motion.div>

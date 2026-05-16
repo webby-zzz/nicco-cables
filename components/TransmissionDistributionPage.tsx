@@ -54,7 +54,7 @@ const TransmissionDistributionPage: React.FC = () => {
     {
       id: "lt-power",
       title: "LT Power & Control Cables",
-      description: "Power your industrial, commercial, and infrastructure projects with Nicco's LT Power & Control Cables, engineered for reliable low voltage power distribution and control applications. Built with high-quality conductors and premium insulation, these cables deliver mechanical strength, operational safety, and a long service life across diverse conditions. Available up to 1.1 kV in XLPE & PVC insulation, with Armoured and Unarmoured variants, and FR / FRLS / LSZH sheath options including fire survival properties.",
+      description: "Power your industrial, commercial, and infrastructure projects with Nicco's LT Power & Control Cables, engineered for reliable low voltage power distribution and control applications. Built with high-quality conductors and premium insulation, these cables deliver mechanical strength, operational safety, and a long service life across diverse conditions. Available up to 1.1 kV in XLPE & PVC insulation, with Armoured and Unarmoured variants, and FR / FRLS / LSZH sheath options including Fire Survival properties.",
       technical: [
         { label: "Construction", value: "Multi-core stranded conductors with insulation, laid up with fillers and protective layers" },
         { label: "Voltage Rating", value: "Up to and including 1.1 kV (1100 V)" },
@@ -69,14 +69,14 @@ const TransmissionDistributionPage: React.FC = () => {
       ],
       variants: [
         { label: "Number of Cores", value: "Power Core up to 5C with circular/segmental conductors as applicable, Control core from 2 core to 61 cores" },
-        { label: "Size Range (sq.mm)", value: "Single core up to 1000 sq.mm & multi-core up to 630 sq.mm (power cables), 0.5 to 2.5 sq.mm (control cables)" },
+        { label: "Size Range (sq.mm)", value: "Single core up to 1000 sq.mm & multi-core up to 630 sq.mm (Power Cables), 0.5 to 2.5 sq.mm (Control Cables)" },
         { label: "Voltage Options", value: "Up to and including 1.1 kV" }
       ]
     },
     {
       id: "ht-cables",
-      title: "HT Power Cables - Up to 11 kV",
-      description: "Ensure reliable power transmission across medium voltage networks with Nicco's HT Power Cables, rated from 3.3 kV to 11 kV. Manufactured using premium-grade materials and advanced processes, these cables deliver exceptional electrical safety, dielectric strength, and long service life in demanding industrial and utility environments. Available in Armoured and Unarmoured variants with FR / FRLS / LSZH sheath options, suited for underground, duct, trench, and tray installations.",
+      title: "HT Power Cables upto 33kV",
+      description: "Ensure reliable power transmission across medium voltage networks with Nicco's HT Power Cables, rated from 3.3 kV to 33 kV. Manufactured using premium-grade materials and advanced processes, these cables deliver exceptional electrical safety, dielectric strength, and long service life in demanding industrial and utility environments. Available in Armoured and Unarmoured variants with FR / FRLS / LSZH sheath options, suited for underground, duct, trench, and tray installations.",
       technical: [
         { label: "Construction", value: "Single or three core, stranded compacted circular conductor with conductor screen, insulation, insulation screen, metallic screen, and protective layers" },
         { label: "Voltage Rating", value: "Earthed systems — 1.9/3.3 kV, 3.8/6.6 kV, 6.35/11 kV Unearthed systems — 3.3/3.3 kV, 6.6/6.6 kV" },
@@ -94,7 +94,7 @@ const TransmissionDistributionPage: React.FC = () => {
       variants: [
         { label: "Number of Cores", value: "Single core and three core (circular / compacted / segmental conductors as applicable)" },
         { label: "Size Range (sq.mm)", value: "Single core up to 630 sq.mm; Multi-core up to 400 sq.mm" },
-        { label: "Voltage Options", value: "Up to 11 kV" }
+        { label: "Voltage Options", value: "upto 33kV" }
       ]
     }
   ];
@@ -181,7 +181,7 @@ const TransmissionDistributionPage: React.FC = () => {
               Download Brochure <ArrowRight className="w-4 h-4" />
             </Link>
             <Link to="/contact" className="bg-white text-brand-secondary px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
-              Contact Us <ArrowRight className="w-4 h-4" />
+              Connect with Us <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </motion.div>

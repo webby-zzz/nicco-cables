@@ -80,7 +80,7 @@ const InstrumentationCablesPage: React.FC = () => {
               <SplitTitle title="Instrumentation Cables" />
             </h1>
             <p className="text-base text-black leading-relaxed font-medium">
-              Transmit low-level signals with precision using our Instrumentation Cables, engineered for accurate data communication between field instruments and control systems. Featuring twisted pairs, multi-layer shielding, and robust construction, these cables deliver exceptional noise rejection and signal integrity across demanding industrial environments. Widely used in oil & gas, power plants, chemical industries, refineries, water treatment plants, and automation systems — available in Cores, Pairs, Triads, and Quads configurations with FR / FRLS / LSZH sheath options including fire survival properties.
+              Transmit low-level signals with precision using our Instrumentation Cables, engineered for accurate data communication between field instruments and control systems. Featuring twisted pairs, multi-layer shielding, and robust construction, these cables deliver exceptional noise rejection and signal integrity across demanding industrial environments. Widely used in oil & gas, power plants, chemical industries, refineries, water treatment plants, and automation systems — available in Cores, Pairs, Triads, and Quads configurations with FR / FRLS / LSZH sheath options including Fire Survival properties.
             </p>
           </div>
           <div className="md:w-1/2 w-full">
@@ -142,7 +142,7 @@ const InstrumentationCablesPage: React.FC = () => {
               to="/contact"
               className="bg-white text-brand-secondary px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
             >
-              Contact Us <ArrowRight className="w-4 h-4" />
+              Connect with Us <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>

@@ -71,7 +71,7 @@ const RFThermocoupleCablesPage: React.FC = () => {
               <SplitTitle title="RF & Thermocouple Cables — Pressure Tight (PT) / RF Cables" />
             </h1>
             <p className="text-base text-black leading-relaxed font-medium">
-              Specially designed for critical pressure-resistant applications, our PT / RF Cables withstand radial and axial pressures from 10 to 72 bar while maintaining full sealing integrity. Featuring halogen-free, flame-retardant, and fire-survival properties with low smoke and toxicity ideal for shipbuilding, submarines, offshore platforms, radar communication, and defence applications. Compliant with Def Stan 02-512, MIL-DTL-17H, and customer specifications.
+              Specially designed for critical pressure-resistant applications, our PT / RF Cables withstand radial and axial pressures from 10 to 72 bar while maintaining full sealing integrity. Featuring halogen-free, flame-retardant, and Fire-Survival properties with low smoke and toxicity ideal for shipbuilding, submarines, offshore platforms, radar communication, and defence applications. Compliant with Def Stan 02-512, MIL-DTL-17H, and customer specifications.
             </p>
           </div>
           <div className="md:w-1/2 w-full">
@@ -105,7 +105,7 @@ const RFThermocoupleCablesPage: React.FC = () => {
               to="/contact"
               className="bg-white text-brand-secondary px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
             >
-              Contact Us <ArrowRight className="w-4 h-4" />
+              Connect with Us <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>

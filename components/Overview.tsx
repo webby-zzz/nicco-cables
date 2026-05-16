@@ -35,7 +35,7 @@ const Overview: React.FC = () => {
 
           <div className="lg:col-span-6 space-y-4">
             <p className="text-black font-normal leading-relaxed text-base">
-              For over <strong>8 decades</strong>, <strong>Nicco Cables</strong> has been at the forefront of <strong>India’s cable manufacturing industry</strong>. From <strong>HT cables up to 33kV</strong> to advanced <strong>fire-survival</strong> and <strong>electron-beam technologies</strong>, our solutions power critical sectors including <strong>transmission and distribution, renewable energy, power generation, exploration, mobility, defence, manufacturing, infrastructure, and harnessing</strong>.
+              For over <strong>8 decades</strong>, <strong>Nicco Cables</strong> has been at the forefront of <strong>India’s cable manufacturing industry</strong>. From <strong>HT Cables upto 33 kV</strong> to advanced <strong>Fire-Survival</strong> and <strong>Electron-Beam technologies</strong>, our solutions power critical sectors including <strong>transmission and distribution, renewable energy, power generation, exploration, mobility, defence, manufacturing, infrastructure, and harnessing</strong>.
             </p>
             <div className="h-[1px] w-16 bg-brand-secondary" />
             <p className="text-black leading-relaxed font-light text-base">

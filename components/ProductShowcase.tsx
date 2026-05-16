@@ -19,12 +19,12 @@ const products = [
   { 
     name: "Elastomeric and Silicon Cables (upto 15 kV)", 
     img: "https://placehold.co/1x1/000000/000000",
-    link: "/products/elastomeric-silicon"
+    link: "/products/Elastomeric-silicon"
   },
   { 
     name: "Electron Beam Cables", 
     img: "https://placehold.co/1x1/000000/000000",
-    link: "/products/electron-beam"
+    link: "/products/Electron-Beam"
   },
   { 
     name: "Solar Cables", 
@@ -42,7 +42,7 @@ const products = [
     link: "/products/overhead-conductors"
   },
   { 
-    name: "HT Cables — Up to 11 kV", 
+    name: "HT Cables upto 33 kV", 
     img: "https://placehold.co/1x1/000000/000000",
     link: "/products/ht-power-cables"
   },

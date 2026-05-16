@@ -82,7 +82,7 @@ const ManufacturingPage: React.FC = () => {
       ]
     },
     {
-      id: "elastomeric",
+      id: "Elastomeric",
       title: "Elastomeric & Silicon Cables (Up to 15 kV)",
       description: "Built for reliable power transmission and control in manufacturing environments, our Elastomeric & Silicon Cables deliver high electrical performance, mechanical strength, and durability under harsh operating conditions. Available from 1.1 kV up to 15 kV in single-core, multicore, and control configurations up to 61 cores. Compliant with IS 14494, BS 6708, NEMA WC-58, IEC 60502-1 & 2, and IS 9968.",
       technical: [
@@ -97,7 +97,7 @@ const ManufacturingPage: React.FC = () => {
       ],
       variants: [
         { label: "Voltage Options", value: "LV up to 1.1 kV | MV from 3.3 kV to 15 kV" },
-        { label: "Core Configuration", value: "Single core, multicore, control cables up to 61 cores" },
+        { label: "Core Configuration", value: "Single core, multicore, Control Cables up to 61 cores" },
         { label: "Applications", value: "Flexible reeling, festoon duty, high-temperature environments across cement, steel, water treatment, sugar and pharmaceutical facilities" }
       ]
     }
@@ -185,7 +185,7 @@ const ManufacturingPage: React.FC = () => {
               Download Brochure <ArrowRight className="w-4 h-4" />
             </Link>
             <Link to="/contact" className="bg-white text-brand-secondary px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
-              Contact Us <ArrowRight className="w-4 h-4" />
+              Connect with Us <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </motion.div>

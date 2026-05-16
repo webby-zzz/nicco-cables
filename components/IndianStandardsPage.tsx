@@ -11,7 +11,7 @@ const standards = [
     image: '/Product Images/thumbnails/LT Cables.jpeg'
   },
   {
-    id: 'elastomeric',
+    id: 'Elastomeric',
     title: 'Elastomeric Cables',
     description: 'IS 9968 (Part 1 & 2)',
     image: '/Product Images/thumbnails/Silicon insulated cable.jpeg'

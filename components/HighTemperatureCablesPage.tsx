@@ -106,7 +106,7 @@ const HighTemperatureCablesPage: React.FC = () => {
             </div>
             <div className="p-6 bg-brand-ash/30 rounded-2xl border border-brand-ash">
               <h4 className="font-black text-brand-dark mb-2 uppercase text-xs tracking-widest">Communication</h4>
-              <p className="text-sm text-black font-medium">High frequency coaxial cables for VHF, UHF, and SHF transmission</p>
+              <p className="text-sm text-black font-medium">High frequency Coaxial Cables for VHF, UHF, and SHF transmission</p>
             </div>
             <div className="p-6 bg-brand-ash/30 rounded-2xl border border-brand-ash">
               <h4 className="font-black text-brand-dark mb-2 uppercase text-xs tracking-widest">Marine</h4>
@@ -142,7 +142,7 @@ const HighTemperatureCablesPage: React.FC = () => {
               to="/contact"
               className="bg-white text-brand-secondary px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
             >
-              Contact Us <ArrowRight className="w-4 h-4" />
+              Connect with Us <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>

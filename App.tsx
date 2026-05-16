@@ -98,12 +98,12 @@ const App: React.FC = () => {
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/products/lt-power-control" element={<LTPowerControlPage />} />
           <Route path="/products/instrumentation" element={<InstrumentationCablesPage />} />
-          <Route path="/products/elastomeric-silicon" element={<ElastomericSiliconPage />} />
+          <Route path="/products/Elastomeric-silicon" element={<ElastomericSiliconPage />} />
           <Route path="/products/overhead-conductors" element={<OverheadConductorsPage />} />
           <Route path="/products/mvcc" element={<MVCCPage />} />
-          <Route path="/products/electron-beam" element={<ElectronBeamCablesPage />} />
+          <Route path="/products/Electron-Beam" element={<ElectronBeamCablesPage />} />
           <Route path="/products/high-temperature" element={<HighTemperatureCablesPage />} />
-          <Route path="/products/fire-survival" element={<FireSurvivalCablesPage />} />
+          <Route path="/products/Fire-Survival" element={<FireSurvivalCablesPage />} />
           <Route path="/products/ht-power-cables" element={<HTPowerCablesPage />} />
           <Route path="/products/solar-cables" element={<SolarCablesPage />} />
           <Route path="/products/wind-energy-cables" element={<WindEnergyCablesPage />} />

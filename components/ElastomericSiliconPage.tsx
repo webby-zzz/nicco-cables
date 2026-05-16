@@ -54,7 +54,7 @@ const ElastomericSiliconPage: React.FC = () => {
 
   const variantsDetails = [
     { label: "Voltage Range", value: "Up to 1.1 kV (LV) and 3.3 kV to 15 kV (MV)" },
-    { label: "Number of Cores", value: "Single-core, multicore, and control cables up to 61 cores" },
+    { label: "Number of Cores", value: "Single-core, multicore, and Control Cables up to 61 cores" },
     { label: "Applications", value: "Flexible reeling, festoon duty, high-temperature environments, heat, oil, and flame resistance" }
   ];
 
@@ -78,7 +78,7 @@ const ElastomericSiliconPage: React.FC = () => {
               <SplitTitle title="Elastomeric and Silicon Cables (up to 15 kV)" />
             </h1>
             <p className="text-base text-black leading-relaxed font-medium">
-              Elastomeric Mining Cables are designed for reliable transmission and distribution of electrical power and control in industrial, mining, and utility applications, manufactured in compliance with IS 14494, BS 6708, NEMA WC-58, IEC 60502-1 & 2, and IS 9968 standards. These cables offer high electrical performance, mechanical strength, and durability under harsh operating conditions. The product range includes low voltage cables up to 1.1 kV and medium voltage cables from 3.3 kV to 15 kV, available in single-core, multicore, and control cables up to 61 cores. They are widely used for flexible reeling, festoon duty, high-temperature environments, and applications requiring heat, oil, and flame resistance with high mechanical toughness.
+              Elastomeric Mining Cables are designed for reliable transmission and distribution of electrical power and control in industrial, mining, and utility applications, manufactured in compliance with IS 14494, BS 6708, NEMA WC-58, IEC 60502-1 & 2, and IS 9968 standards. These cables offer high electrical performance, mechanical strength, and durability under harsh operating conditions. The product range includes low voltage cables up to 1.1 kV and medium voltage cables from 3.3 kV to 15 kV, available in single-core, multicore, and Control Cables up to 61 cores. They are widely used for flexible reeling, festoon duty, high-temperature environments, and applications requiring heat, oil, and flame resistance with high mechanical toughness.
             </p>
           </div>
           <div className="md:w-1/2 w-full">
@@ -140,7 +140,7 @@ const ElastomericSiliconPage: React.FC = () => {
               to="/contact"
               className="bg-white text-brand-secondary px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
             >
-              Contact Us <ArrowRight className="w-4 h-4" />
+              Connect with Us <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>

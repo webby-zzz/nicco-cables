@@ -128,6 +128,48 @@ const RenewableEnergyPage: React.FC = () => {
               </p>
 
               <div className="flex flex-col gap-8">
+                {section.id === "wind" && (
+                  <div className="mb-4 bg-gray-50 border border-gray-200 rounded-[2rem] p-8 shadow-sm">
+                    <h3 className="text-xl font-bold text-brand-dark mb-4 uppercase tracking-wider">Torsion Test Requirement (Wind Turbine Cables)</h3>
+                    <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed mb-6">
+                      A torsion test shall be carried out to verify the mechanical performance and durability of the proposed cable design under simulated wind turbine operating conditions.
+                    </p>
+                    
+                    <h4 className="text-lg font-bold text-brand-dark mb-3 uppercase tracking-wider">Test Procedure</h4>
+                    <p className="text-sm md:text-base text-gray-700 mb-4">The torsion test shall consist of the following two stages:</p>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                      <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                        <h5 className="font-bold text-brand-secondary mb-3 uppercase text-sm tracking-widest">Low Temperature Torsion Test</h5>
+                        <p className="text-sm text-gray-700 mb-4 leading-relaxed">Torsion cycles shall be applied at the following temperatures depending on cable type:</p>
+                        <ul className="list-disc pl-5 text-sm text-gray-700 space-y-2 mb-4">
+                          <li><strong>LT Version Cable:</strong> -40°C ± 5°C</li>
+                          <li><strong>STD Version Cable:</strong> -20°C ± 5°C</li>
+                          <li><strong>TT Version Cable:</strong> 0°C ± 2°C</li>
+                        </ul>
+                        <p className="text-sm text-gray-700 font-bold bg-gray-50 p-2 rounded border border-gray-100 inline-block">Number of Cycles: 270 torsion cycles</p>
+                      </div>
+                      
+                      <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm flex flex-col">
+                        <h5 className="font-bold text-brand-secondary mb-3 uppercase text-sm tracking-widest">Ambient Temperature Torsion Test</h5>
+                        <ul className="list-disc pl-5 text-sm text-gray-700 space-y-3 mb-4">
+                          <li><strong>Temperature:</strong> 20°C ± 15°C</li>
+                          <li><strong>Number of Cycles:</strong> 5000 torsion cycles</li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <h4 className="text-lg font-bold text-brand-dark mb-3 uppercase tracking-wider">Test Sample Requirements</h4>
+                    <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm mb-6 space-y-3">
+                       <p className="text-sm text-gray-700 leading-relaxed">The torsion test at 20°C shall be performed on a cable sample of minimum 1 meter length.</p>
+                       <p className="text-sm text-gray-700 leading-relaxed">The sample length for tests conducted at 0°C, -20°C, or -40°C shall be mutually agreed between the supplier and the client during the design phase.</p>
+                    </div>
+                    
+                    <div className="p-5 bg-brand-secondary/5 rounded-xl border-l-4 border-brand-secondary">
+                       <p className="text-sm md:text-base font-bold text-brand-dark leading-relaxed">The cable shall demonstrate reliable performance under torsional stress conditions typically encountered in wind turbine tower loop applications.</p>
+                    </div>
+                  </div>
+                )}
                 <TechnicalTable title="Technical Details" data={section.technical} />
                 <TechnicalTable title="Sizes & Variants" data={section.variants} />
               </div>
@@ -155,7 +197,7 @@ const RenewableEnergyPage: React.FC = () => {
               Download Brochure <ArrowRight className="w-4 h-4" />
             </Link>
             <Link to="/contact" className="bg-white text-brand-secondary px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
-              Contact Us <ArrowRight className="w-4 h-4" />
+              Connect with Us <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </motion.div>

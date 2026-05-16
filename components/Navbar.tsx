@@ -23,21 +23,17 @@ const SearchBar = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }
   const inputRef = useRef<HTMLInputElement>(null);
 
   const searchableContent = [
-    { name: 'LT Power & Control Cables', link: '/products/lt-power-control', type: 'Product' },
+    { name: 'Data & Ethernet Cables (Cat 5, Cat 6, Cat 7)', link: '/products/data-ethernet', type: 'Product' },
+    { name: 'Elastomeric and Silicon Cables (upto 15 kV)', link: '/products/Elastomeric-silicon', type: 'Product' },
+    { name: 'Electron Beam Cables', link: '/products/Electron-Beam', type: 'Product' },
+    { name: 'Fire Resistant and Fire Survival Cables', link: '/products/Fire-Survival', type: 'Product' },
+    { name: 'High Temperature Cables (ETFE, FEP, PTFE)', link: '/products/high-temperature', type: 'Product' },
+    { name: 'HT Cables upto 33kV', link: '/products/ht-power-cables', type: 'Product' },
     { name: 'Instrumentation Cables', link: '/products/instrumentation', type: 'Product' },
-    { name: 'Elastomeric and Silicon Cables (upto 15 kV)', link: '/products/elastomeric-silicon', type: 'Product' },
-    { name: 'Electron Beam Cables', link: '/products/electron-beam', type: 'Product' },
-    { name: 'Solar Cables', link: '/products/solar-cables', type: 'Product' },
-    { name: 'Wind Energy Cables', link: '/products/wind-energy-cables', type: 'Product' },
+    { name: 'LT Power & Control', link: '/products/lt-power-control', type: 'Product' },
+    { name: 'Medium Voltage Covered Conductors/Tree Spacer Cables', link: '/products/mvcc', type: 'Product' },
     { name: 'Overhead Conductors', link: '/products/overhead-conductors', type: 'Product' },
-    { name: 'HT Cables — Up to 11 kV', link: '/products/ht-power-cables', type: 'Product' },
-    { name: 'Medium Voltage Covered Conductors / Tree Spacer Cables', link: '/products/mvcc', type: 'Product' },
-    { name: 'High Temperature Cables (ETFE / FEP / PTFE)', link: '/products/high-temperature', type: 'Product' },
-    { name: 'UL Cables (International)', link: '/products/ul-cables', type: 'Product' },
-    { name: 'Data & Ethernet Cables', link: '/products/data-ethernet', type: 'Product' },
-    { name: 'RF & Thermocouple Cables — Pressure Tight (PT) / RF Cables', link: '/products/rf-thermocouple', type: 'Product' },
-    { name: 'Thermocouple Extension & Compensating Cables', link: '/products/thermocouple', type: 'Product' },
-    { name: 'Fire Resistant & Fire Survival Cables', link: '/products/fire-survival', type: 'Product' },
+    { name: 'RF & Thermocouple Cables', link: '/products/rf-thermocouple', type: 'Product' },
     { name: 'Transmission and Distribution', link: '/industry/transmission-distribution', type: 'Industry' },
     { name: 'Renewable Energy', link: '/industry/renewable-energy', type: 'Industry' },
     { name: 'Power Generation', link: '/industry/power-generation', type: 'Industry' },
@@ -49,7 +45,7 @@ const SearchBar = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }
     { name: 'Harnessing', link: '/products/harnessing', type: 'Product' },
     { name: 'About Us', link: '/about', type: 'Page' },
     { name: 'Gallery', link: '/gallery', type: 'Page' },
-    { name: 'Contact Us', link: '/contact', type: 'Page' },
+    { name: 'Connect with Us', link: '/contact', type: 'Page' },
     { name: 'Brochures', link: '/brochures', type: 'Page' },
   ];
 
@@ -137,21 +133,17 @@ const SearchBar = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }
 
 const MegaMenu = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
   const cableTypes = [
-    { name: 'LT Power & Control Cables', image: '/Product Images/thumbnails/LT Cables.jpeg', link: '/products/lt-power-control' },
+    { name: 'Data & Ethernet Cables (Cat 5, Cat 6, Cat 7)', image: '/Product Images/thumbnails/Category cable.jpeg', link: '/products/data-ethernet' },
+    { name: 'Elastomeric and Silicon Cables (upto 15 kV)', image: '/Product Images/thumbnails/Silicon insulated cable.jpeg', link: '/products/Elastomeric-silicon' },
+    { name: 'Electron Beam Cables', image: '/Product Images/thumbnails/Electron beam cable.jpeg', link: '/products/Electron-Beam' },
+    { name: 'Fire Resistant and Fire Survival Cables', image: '/Product Images/thumbnails/Fire Survival cable.jpeg', link: '/products/Fire-Survival' },
+    { name: 'High Temperature Cables (ETFE, FEP, PTFE)', image: '/Product Images/thumbnails/High temperature PTFE cable.jpeg', link: '/products/high-temperature' },
+    { name: 'HT Cables upto 33kV', image: '/Product Images/thumbnails/HT cable.jpeg', link: '/products/ht-power-cables' },
     { name: 'Instrumentation Cables', image: '/Product Images/thumbnails/Instrumentation Cables.jpeg', link: '/products/instrumentation' },
-    { name: 'Elastomeric and Silicon Cables (upto 15 kV)', image: '/Product Images/thumbnails/Silicon insulated cable.jpeg', link: '/products/elastomeric-silicon' },
-    { name: 'Electron Beam Cables', image: '/Product Images/thumbnails/Electron beam cable.jpeg', link: '/products/electron-beam' },
-    { name: 'Solar Cables', image: '/Product Images/Solar-Cables/11.webp', link: '/products/solar-cables' },
-    { name: 'Wind Energy Cables', image: '/Product Images/Wind-Energy-Cables/12.webp', link: '/products/wind-energy-cables' },
+    { name: 'LT Power & Control', image: '/Product Images/thumbnails/LT Cables.jpeg', link: '/products/lt-power-control' },
+    { name: 'Medium Voltage Covered Conductors/Tree Spacer Cables', image: '/Product Images/thumbnails/Medium voltage Covered conductors - tree spacer.jpeg', link: '/products/mvcc' },
     { name: 'Overhead Conductors', image: '/Product Images/thumbnails/Overhead Conductors.jpeg', link: '/products/overhead-conductors' },
-    { name: 'HT Cables — Up to 11 kV', image: '/Product Images/thumbnails/HT cable.jpeg', link: '/products/ht-power-cables' },
-    { name: 'Medium Voltage Covered Conductors / Tree Spacer Cables', image: '/Product Images/thumbnails/Medium voltage Covered conductors - tree spacer.jpeg', link: '/products/mvcc' },
-    { name: 'High Temperature Cables (ETFE / FEP / PTFE)', image: '/Product Images/thumbnails/High temperature PTFE cable.jpeg', link: '/products/high-temperature' },
-    { name: 'UL Cables (International)', image: '/Product Images/UL-Cables/3.webp', link: '/products/ul-cables' },
-    { name: 'Data & Ethernet Cables', image: '/Product Images/thumbnails/Category cable.jpeg', link: '/products/data-ethernet' },
-    { name: 'RF & Thermocouple Cables — Pressure Tight (PT) / RF Cables', image: '/Product Images/thumbnails/Thermocouple-Extension-Cable.jpeg', link: '/products/rf-thermocouple' },
-    { name: 'Thermocouple Extension & Compensating Cables', image: '/Product Images/thumbnails/Thermocouple-Extension-Cable.jpeg', link: '/products/thermocouple' },
-    { name: 'Fire Resistant & Fire Survival Cables', image: '/Product Images/thumbnails/Fire Survival cable.jpeg', link: '/products/fire-survival' },
+    { name: 'RF & Thermocouple Cables', image: '/Product Images/thumbnails/Thermocouple-Extension-Cable.jpeg', link: '/products/rf-thermocouple' },
   ];
 
   return (
@@ -322,7 +314,7 @@ const Navbar: React.FC = () => {
     { name: 'PRODUCTS', link: '#', hasMegaMenu: true },
     { name: 'BROCHURES', link: '/brochures' },
     { name: 'GALLERY', link: '/gallery' },
-    { name: 'CONTACT US', link: '/contact' },
+    { name: 'CONNECT WITH US', link: '/contact' },
     { name: 'TRANSLATE', link: '#', isTranslate: true },
   ];
 
@@ -483,14 +475,74 @@ const Navbar: React.FC = () => {
                         <ul className="space-y-3 text-[14px] font-bold text-black pl-5 border-l border-brand-dark/10">
                           <li>
                             <Link 
-                              to="/products/lt-power-control" 
+                              to="/products/data-ethernet" 
                               className="block hover:text-brand-secondary transition-colors"
                               onClick={() => {
                                 setMobileMenuOpen(false);
                                 setIsMegaMenuOpen(false);
                               }}
                             >
-                              LT Power & Control Cables
+                              Data & Ethernet Cables (Cat 5, Cat 6, Cat 7)
+                            </Link>
+                          </li>
+                          <li>
+                            <Link 
+                              to="/products/Elastomeric-silicon" 
+                              className="block hover:text-brand-secondary transition-colors"
+                              onClick={() => {
+                                setMobileMenuOpen(false);
+                                setIsMegaMenuOpen(false);
+                              }}
+                            >
+                              Elastomeric and Silicon Cables (upto 15 kV)
+                            </Link>
+                          </li>
+                          <li>
+                            <Link 
+                              to="/products/Electron-Beam" 
+                              className="block hover:text-brand-secondary transition-colors"
+                              onClick={() => {
+                                setMobileMenuOpen(false);
+                                setIsMegaMenuOpen(false);
+                              }}
+                            >
+                              Electron Beam Cables
+                            </Link>
+                          </li>
+                          <li>
+                            <Link 
+                              to="/products/Fire-Survival" 
+                              className="block hover:text-brand-secondary transition-colors"
+                              onClick={() => {
+                                setMobileMenuOpen(false);
+                                setIsMegaMenuOpen(false);
+                              }}
+                            >
+                              Fire Resistant and Fire Survival Cables
+                            </Link>
+                          </li>
+                          <li>
+                            <Link 
+                              to="/products/high-temperature" 
+                              className="block hover:text-brand-secondary transition-colors"
+                              onClick={() => {
+                                setMobileMenuOpen(false);
+                                setIsMegaMenuOpen(false);
+                              }}
+                            >
+                              High Temperature Cables (ETFE, FEP, PTFE)
+                            </Link>
+                          </li>
+                          <li>
+                            <Link 
+                              to="/products/ht-power-cables" 
+                              className="block hover:text-brand-secondary transition-colors"
+                              onClick={() => {
+                                setMobileMenuOpen(false);
+                                setIsMegaMenuOpen(false);
+                              }}
+                            >
+                              HT Cables upto 33kV
                             </Link>
                           </li>
                           <li>
@@ -507,50 +559,26 @@ const Navbar: React.FC = () => {
                           </li>
                           <li>
                             <Link 
-                              to="/products/elastomeric-silicon" 
+                              to="/products/lt-power-control" 
                               className="block hover:text-brand-secondary transition-colors"
                               onClick={() => {
                                 setMobileMenuOpen(false);
                                 setIsMegaMenuOpen(false);
                               }}
                             >
-                              Elastomeric and Silicon Cables (upto 15 kV)
+                              LT Power & Control
                             </Link>
                           </li>
                           <li>
                             <Link 
-                              to="/products/electron-beam" 
+                              to="/products/mvcc" 
                               className="block hover:text-brand-secondary transition-colors"
                               onClick={() => {
                                 setMobileMenuOpen(false);
                                 setIsMegaMenuOpen(false);
                               }}
                             >
-                              Electron Beam Cables
-                            </Link>
-                          </li>
-                          <li>
-                            <Link 
-                              to="/products/solar-cables" 
-                              className="block hover:text-brand-secondary transition-colors"
-                              onClick={() => {
-                                setMobileMenuOpen(false);
-                                setIsMegaMenuOpen(false);
-                              }}
-                            >
-                              Solar Cables
-                            </Link>
-                          </li>
-                          <li>
-                            <Link 
-                              to="/products/wind-energy-cables" 
-                              className="block hover:text-brand-secondary transition-colors"
-                              onClick={() => {
-                                setMobileMenuOpen(false);
-                                setIsMegaMenuOpen(false);
-                              }}
-                            >
-                              Wind Energy Cables
+                              Medium Voltage Covered Conductors/Tree Spacer Cables
                             </Link>
                           </li>
                           <li>
@@ -567,66 +595,6 @@ const Navbar: React.FC = () => {
                           </li>
                           <li>
                             <Link 
-                              to="/products/ht-power-cables" 
-                              className="block hover:text-brand-secondary transition-colors"
-                              onClick={() => {
-                                setMobileMenuOpen(false);
-                                setIsMegaMenuOpen(false);
-                              }}
-                            >
-                              HT Cables — Up to 11 kV
-                            </Link>
-                          </li>
-                          <li>
-                            <Link 
-                              to="/products/mvcc" 
-                              className="block hover:text-brand-secondary transition-colors"
-                              onClick={() => {
-                                setMobileMenuOpen(false);
-                                setIsMegaMenuOpen(false);
-                              }}
-                            >
-                              Medium Voltage Covered Conductors / Tree Spacer Cables
-                            </Link>
-                          </li>
-                          <li>
-                            <Link 
-                              to="/products/high-temperature" 
-                              className="block hover:text-brand-secondary transition-colors"
-                              onClick={() => {
-                                setMobileMenuOpen(false);
-                                setIsMegaMenuOpen(false);
-                              }}
-                            >
-                              High Temperature Cables (ETFE / FEP / PTFE)
-                            </Link>
-                          </li>
-                          <li>
-                            <Link 
-                              to="/products/ul-cables" 
-                              className="block hover:text-brand-secondary transition-colors"
-                              onClick={() => {
-                                setMobileMenuOpen(false);
-                                setIsMegaMenuOpen(false);
-                              }}
-                            >
-                              UL Cables (International)
-                            </Link>
-                          </li>
-                          <li>
-                            <Link 
-                              to="/products/data-ethernet" 
-                              className="block hover:text-brand-secondary transition-colors"
-                              onClick={() => {
-                                setMobileMenuOpen(false);
-                                setIsMegaMenuOpen(false);
-                              }}
-                            >
-                              Data & Ethernet Cables
-                            </Link>
-                          </li>
-                          <li>
-                            <Link 
                               to="/products/rf-thermocouple" 
                               className="block hover:text-brand-secondary transition-colors"
                               onClick={() => {
@@ -634,31 +602,7 @@ const Navbar: React.FC = () => {
                                 setIsMegaMenuOpen(false);
                               }}
                             >
-                              RF & Thermocouple Cables — Pressure Tight (PT) / RF Cables
-                            </Link>
-                          </li>
-                          <li>
-                            <Link 
-                              to="/products/thermocouple" 
-                              className="block hover:text-brand-secondary transition-colors"
-                              onClick={() => {
-                                setMobileMenuOpen(false);
-                                setIsMegaMenuOpen(false);
-                              }}
-                            >
-                              Thermocouple Extension & Compensating Cables
-                            </Link>
-                          </li>
-                          <li>
-                            <Link 
-                              to="/products/fire-survival" 
-                              className="block hover:text-brand-secondary transition-colors"
-                              onClick={() => {
-                                setMobileMenuOpen(false);
-                                setIsMegaMenuOpen(false);
-                              }}
-                            >
-                              Fire Resistant & Fire Survival Cables
+                              RF & Thermocouple Cables
                             </Link>
                           </li>
                         </ul>

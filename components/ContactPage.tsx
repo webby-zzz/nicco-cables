@@ -164,7 +164,7 @@ const ContactPage: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-6"
             >
-              CONTACT US
+              CONNECT WITH US
             </motion.h1>
             <motion.h2 
               initial={{ opacity: 0, y: 30 }}

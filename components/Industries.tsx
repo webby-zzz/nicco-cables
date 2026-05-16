@@ -4,14 +4,14 @@ import { motion } from 'motion/react';
 import { Train, Shield, Anchor, Zap, Flame, Cpu, Sun, Wind, Activity, Factory, Car, Box } from 'lucide-react';
 
 const industryList = [
-  { icon: Train, title: "Railway Cables", desc: "RDSO approved signaling and power cables for nationwide networks." },
+  { icon: Train, title: "Railway Cables", desc: "RDSO approved signaling and Power Cables for nationwide networks." },
   { icon: Shield, title: "Defence Cables", desc: "Ruggedized cabling for extreme military environments and tactical gear." },
   { icon: Flame, title: "Fire Survival Cables", desc: "Rated at 950°C to ensure critical system operation during fire emergencies." },
   { icon: Anchor, title: "Shipbuilding & Marine", desc: "Corrosion-resistant solutions for offshore vessels and naval fleets." },
   { icon: Zap, title: "MVCC Conductor", desc: "Medium Voltage Covered Conductors for optimized power transmission." },
   { icon: Sun, title: "Solar & Renewable", desc: "TUV certified PV cables for wind farms and solar installations." },
   { icon: Car, title: "Automotive Cable", desc: "High-flex precision wiring for modern vehicle electronics." },
-  { icon: Box, title: "UL & HT Cables", desc: "Globally compliant UL listed and High Tension cables up to 11kV." },
+  { icon: Box, title: "UL & HT Cables", desc: "Globally compliant UL listed and High Tension cables upto 33kV." },
 ];
 
 const Industries: React.FC = () => {

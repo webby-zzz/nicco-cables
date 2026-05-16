@@ -6,12 +6,12 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 const categories = [
   { title: "LT Power & Control Cables", img: "", link: "/products/lt-power-control" },
   { title: "Instrumentation Cables", img: "", link: "/products/instrumentation" },
-  { title: "Elastomeric and Silicon Cables (upto 15 kV)", img: "", link: "/products/elastomeric-silicon" },
-  { title: "Electron Beam Cables", img: "", link: "/products/electron-beam" },
+  { title: "Elastomeric and Silicon Cables (upto 15 kV)", img: "", link: "/products/Elastomeric-silicon" },
+  { title: "Electron Beam Cables", img: "", link: "/products/Electron-Beam" },
   { title: "Solar Cables", img: "", link: "/products/solar-cables" },
   { title: "Wind Energy Cables", img: "", link: "/products/wind-energy-cables" },
   { title: "Overhead Conductors", img: "", link: "/products/overhead-conductors" },
-  { title: "HT Cables — Up to 11 kV", img: "", link: "/products/ht-power-cables" },
+  { title: "HT Cables upto 33 kV", img: "", link: "/products/ht-power-cables" },
   { title: "Medium Voltage Covered Conductors / Tree Spacer Cables", img: "", link: "/products/mvcc" },
   { title: "High Temperature Cables (ETFE / FEP / PTFE)", img: "", link: "/products/high-temperature" },
 ];

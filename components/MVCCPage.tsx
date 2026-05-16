@@ -38,7 +38,7 @@ const MVCCPage: React.FC = () => {
 
   const technicalDetails = [
     { label: "Construction", value: "Stranded conductor (concentric / Non-compacted as required)" },
-    { label: "Voltage Application", value: "Suitable for MV control cables rated from 11 kV to 33 kV" },
+    { label: "Voltage Application", value: "Suitable for MV Control Cables rated from 11 kV to 33 kV" },
     { label: "Conductor Material & Type", value: "Longitudinally watertight stranded all aluminium alloy (AAAC), AL-7, AL-59, or AL-59 Aluminium Clad Steel (ACS)." },
     { label: "Stranding", value: "as per applicable standard" },
     { label: "Conductor Screen", value: "Semi-Conductive" },
@@ -46,7 +46,7 @@ const MVCCPage: React.FC = () => {
     { label: "Outer Covering", value: "Anti Tracking, UV Resistant and erosion resistant XLPE/HDPE Compound" },
     { label: "Applicable Standards", value: "IEC 61089, IS 398 Part-2, IS 398 Part-4, IS 398 Part-6, BS EN 50182, BS EN 50397, SS4240813, SS 4240814" },
     { label: "Operating Temperature", value: "As per cable design (up to +90°C continuous conductor temperature)" },
-    { label: "Special Features", value: "Uniform stranding and diameter control, Suitable for XLPE insulated MV control cables, Good tensile strength and elongation properties, Compatible with extrusion and screening processes" }
+    { label: "Special Features", value: "Uniform stranding and diameter control, Suitable for XLPE insulated MV Control Cables, Good tensile strength and elongation properties, Compatible with extrusion and screening processes" }
   ];
 
   return (
@@ -69,7 +69,7 @@ const MVCCPage: React.FC = () => {
               <SplitTitle title="MVCC / Tree Spacer Cables" />
             </h1>
             <p className="text-base text-black leading-relaxed font-medium">
-              MVCC (Medium Voltage Covered Conductor) / Tree Spacer Cables are overhead conductors designed for medium voltage distribution networks from 11 kV to 33 kV, featuring aluminium or aluminium alloy conductors with a durable UV-resistant polymer covering. This covering improves electrical safety and reduces faults caused by vegetation, animals, or external contact, making it ideal for urban, coastal, polluted, and vegetation-dense areas. The product range includes AAAC, ACSR, AL59, AL59 ACS, AL7 and aluminium MVCC conductors. These conductors offer high mechanical strength, weather and corrosion resistance, improved reliability, and reduced maintenance for overhead distribution systems.
+              MVCC (Medium Voltage Covered Conductor) / Tree Spacer Cables are Overhead Conductors designed for medium voltage distribution networks from 11 kV to 33 kV, featuring aluminium or aluminium alloy conductors with a durable UV-resistant polymer covering. This covering improves electrical safety and reduces faults caused by vegetation, animals, or external contact, making it ideal for urban, coastal, polluted, and vegetation-dense areas. The product range includes AAAC, ACSR, AL59, AL59 ACS, AL7 and aluminium MVCC conductors. These conductors offer high mechanical strength, weather and corrosion resistance, improved reliability, and reduced maintenance for overhead distribution systems.
             </p>
           </div>
           <div className="md:w-1/2 w-full">
@@ -121,14 +121,14 @@ const MVCCPage: React.FC = () => {
             <p className="text-white/90 text-base font-medium">Contact our team or download our product brochure.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-            <button onClick={() => { setModalProps({ title: 'Medium Voltage Covered Conductor (MVCC)', url: '/brochures/HT Cables upto 11KV - NICCO .pdf' }); setIsModalOpen(true); }} className="bg-brand-dark text-white px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-black transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
+            <button onClick={() => { setModalProps({ title: 'Medium Voltage Covered Conductor (MVCC)', url: '/brochures/HT Cables upto 33 kV - NICCO .pdf' }); setIsModalOpen(true); }} className="bg-brand-dark text-white px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-black transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
               Download Brochure <ArrowRight className="w-4 h-4" />
             </button>
             <Link 
               to="/contact"
               className="bg-white text-brand-secondary px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
             >
-              Contact Us <ArrowRight className="w-4 h-4" />
+              Connect with Us <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>

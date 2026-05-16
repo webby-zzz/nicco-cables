@@ -40,7 +40,7 @@ const dummyBrochures: Brochure[] = [
     category: 'Technical',
     thumbnail: '/brochures/Thumbnails/LT Cables Brochure.webp',
     pdfUrl: '/brochures/Long LT Power & Control-compressed.pdf',
-    description: 'Comprehensive catalog for long length Low Tension power and control cables.',
+    description: 'Comprehensive catalog for long length Low Tension power and Control Cables.',
     previewImage: '/brochures/Thumbnails/LT Cables Brochure.webp'
   },
   {
@@ -58,7 +58,7 @@ const dummyBrochures: Brochure[] = [
     category: 'Technical',
     thumbnail: '/brochures/Thumbnails/Railway Cables.webp',
     pdfUrl: '/brochures/Railway Cables .pdf',
-    description: 'Detailed specifications for RDSO approved specialized cables for railway signaling and power applications.',
+    description: 'Detailed specifications for RDSO approved specialized cables for Railway Signaling and power applications.',
     previewImage: '/brochures/Thumbnails/Railway Cables.webp'
   },
   {
@@ -94,17 +94,17 @@ const dummyBrochures: Brochure[] = [
     category: 'Technical',
     thumbnail: '/brochures/Thumbnails/Elastomeric Insulated Cables.webp',
     pdfUrl: '/brochures/ELASTOMERIC INSULATED CABLES - NICCO.pdf',
-    description: 'Flexible and durable elastomeric insulated cables for various industrial uses.',
+    description: 'Flexible and durable Elastomeric insulated cables for various industrial uses.',
     previewImage: '/brochures/Thumbnails/Elastomeric Insulated Cables.webp'
   },
   {
     id: '10',
-    title: 'HT Cables upto 11KV',
+    title: 'HT Cables upto 33 kV',
     category: 'Technical',
-    thumbnail: '/brochures/Thumbnails/HT Cables upto 11KV.webp',
-    pdfUrl: '/brochures/HT Cables upto 11KV - NICCO .pdf',
-    description: 'Specifications for High Tension (HT) cables up to 11KV.',
-    previewImage: '/brochures/Thumbnails/HT Cables upto 11KV.webp'
+    thumbnail: '/brochures/Thumbnails/HT Cables upto 33 kV.webp',
+    pdfUrl: '/brochures/HT Cables upto 33 kV - NICCO .pdf',
+    description: 'Specifications for High Tension (HT) cables upto 33kV.',
+    previewImage: '/brochures/Thumbnails/HT Cables upto 33 kV.webp'
   },
   {
     id: '11',
@@ -121,7 +121,7 @@ const dummyBrochures: Brochure[] = [
     category: 'Technical',
     thumbnail: '/brochures/Thumbnails/Instrumentation Cables.webp',
     pdfUrl: '/brochures/INSTRUMENTATION CABLES - NICCO .pdf',
-    description: 'High-precision instrumentation cables for industrial control systems.',
+    description: 'High-precision Instrumentation Cables for industrial control systems.',
     previewImage: '/brochures/Thumbnails/Instrumentation Cables.webp'
   },
   {

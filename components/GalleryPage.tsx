@@ -36,6 +36,7 @@ const getCategory = (filename: string, path: string) => {
     lowerName.includes('exhibitor') || 
     lowerName.includes('exhibition') ||
     lowerName.includes('energy conclave') ||
+    lowerName.includes('elasia') ||
     lowerName.startsWith('iree') ||
     lowerName.startsWith('transtech')
   ) {

@@ -65,24 +65,24 @@ const Footer: React.FC = () => {
                 { name: 'ABOUT US', link: '/about' },
                 { name: 'BROCHURES', link: '/brochures' },
                 { name: 'GALLERY', link: '/gallery' },
-                { name: 'CONTACT US', link: '/contact' }
+                { name: 'CONNECT WITH US', link: '/contact' }
               ]} 
             />
 
             <FooterSection 
               title="PRODUCTS" 
               links={[
+                { name: 'Data & Ethernet Cables (Cat 5, Cat 6, Cat 7)', link: '/products/data-ethernet' },
+                { name: 'Elastomeric and Silicon Cables (upto 15 kV)', link: '/products/Elastomeric-silicon' },
+                { name: 'Electron Beam Cables', link: '/products/Electron-Beam' },
+                { name: 'Fire Resistant and Fire Survival Cables', link: '/products/Fire-Survival' },
+                { name: 'High Temperature Cables (ETFE, FEP, PTFE)', link: '/products/high-temperature' },
+                { name: 'HT Cables upto 33kV', link: '/products/ht-power-cables' },
+                { name: 'Instrumentation Cables', link: '/products/instrumentation' },
                 { name: 'LT Power & Control', link: '/products/lt-power-control' },
-                { name: 'Instrumentation', link: '/products/instrumentation' },
-                { name: 'Elastomeric/Silicon', link: '/products/elastomeric-silicon' },
-                { name: 'Electron Beam', link: '/products/electron-beam' },
-                { name: 'Solar', link: '/products/solar-cables' },
-                { name: 'Wind Energy', link: '/products/wind-energy-cables' },
+                { name: 'Medium Voltage Covered Conductors/Tree Spacer Cables', link: '/products/mvcc' },
                 { name: 'Overhead Conductors', link: '/products/overhead-conductors' },
-                { name: 'HT Cables', link: '/products/ht-power-cables' },
-                { name: 'MVCC/Tree Spacer', link: '/products/mvcc' },
-                { name: 'High Temperature', link: '/products/high-temperature' },
-                { name: 'UL Cables', link: '/products/ul-cables' }
+                { name: 'RF & Thermocouple Cables', link: '/products/rf-thermocouple' }
               ]} 
             />
 

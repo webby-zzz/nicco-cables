@@ -57,7 +57,7 @@ const LTPowerControlPage: React.FC = () => {
 
   const variantsDetails = [
     { label: "Number of Cores", value: "Power Core up to 5C with circular/segmental conductors as applicable, Control core from 2 core to 61 cores" },
-    { label: "Size Range (sq.mm)", value: "Single core up to 1000 sq.mm & multi-core up to 630 sq.mm (power cables), 0.5 to 2.5 sq.mm (control cables)" },
+    { label: "Size Range (sq.mm)", value: "Single core up to 1000 sq.mm & multi-core up to 630 sq.mm (Power Cables), 0.5 to 2.5 sq.mm (Control Cables)" },
     { label: "Voltage Options", value: "Up to and including 1.1 kV" }
   ];
 
@@ -81,7 +81,7 @@ const LTPowerControlPage: React.FC = () => {
               <SplitTitle title="LT Power & Control Cables" />
             </h1>
             <p className="text-base text-black leading-relaxed font-medium">
-              Power your industrial, commercial, and infrastructure projects with our LT Power & Control Cables, engineered for reliable power distribution and control applications. Built with high-quality conductors and premium insulation, these cables deliver mechanical strength, operational safety, and a long service life across diverse conditions. Available up to 1.1 kV in XLPE & PVC insulation, with Armoured and Unarmoured variants, and FR / FRLS / LSZH sheath options including fire survival properties.
+              Power your industrial, commercial, and infrastructure projects with our LT Power & Control Cables, engineered for reliable power distribution and control applications. Built with high-quality conductors and premium insulation, these cables deliver mechanical strength, operational safety, and a long service life across diverse conditions. Available up to 1.1 kV in XLPE & PVC insulation, with Armoured and Unarmoured variants, and FR / FRLS / LSZH sheath options including Fire Survival properties.
             </p>
           </div>
           <div className="md:w-1/2 w-full">
@@ -143,7 +143,7 @@ const LTPowerControlPage: React.FC = () => {
               to="/contact"
               className="bg-white text-brand-secondary px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
             >
-              Contact Us <ArrowRight className="w-4 h-4" />
+              Connect with Us <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>

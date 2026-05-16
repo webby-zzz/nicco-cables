@@ -50,7 +50,7 @@ const ElectronBeamCablesPage: React.FC = () => {
   const variantsDetails = [
     { label: "Voltage Options", value: "300/300 V up to 3.6/6.0 kV" },
     { label: "Core Configuration", value: "Single core and multi-core" },
-    { label: "Types", value: "Thin-walled flexible elastomeric cables, power & control cables, high-temperature rolling stock cables, locomotive cable sets" }
+    { label: "Types", value: "Thin-walled flexible Elastomeric cables, power & Control Cables, high-temperature rolling stock cables, locomotive cable sets" }
   ];
 
   return (
@@ -122,7 +122,7 @@ const ElectronBeamCablesPage: React.FC = () => {
               Auto Brochure <ArrowRight className="w-4 h-4" />
             </a>
             <Link to="/contact" className="bg-white text-brand-secondary px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
-              Contact Us <ArrowRight className="w-4 h-4" />
+              Connect with Us <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </motion.div>

@@ -5,7 +5,7 @@ import { Menu, X, ChevronDown, Zap, Shield, Sun, Building2, HardHat, Globe, Layo
 
 const Logo = () => (
   <Link to="/" className="flex items-center group cursor-pointer">
-    <div className="h-10 md:h-[3.25rem] w-auto transition-all duration-200 group-hover:scale-105">
+    <div className="h-8 md:h-[3.25rem] w-auto transition-all duration-200 group-hover:scale-105">
       <img 
         src="/brand identity/Logo.png" 
         alt="NICCO Logo" 
@@ -252,6 +252,88 @@ const MegaMenu = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void })
   );
 };
 
+const LANGUAGES = [
+  { code: 'en', label: 'English' },
+  { code: 'hi', label: 'Hindi' },
+  { code: 'bn', label: 'Bengali' },
+  { code: 'zh-CN', label: 'Chinese' },
+  { code: 'ja', label: 'Japanese' },
+  { code: 'fr', label: 'French' },
+  { code: 'de', label: 'German' },
+  { code: 'ur', label: 'Urdu' },
+  { code: 'ru', label: 'Russian' },
+  { code: 'sv', label: 'Swedish' },
+  { code: 'es', label: 'Spanish' },
+  { code: 'ko', label: 'Korean' },
+];
+
+const LanguageSelector = ({ isMobile = false }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentLang, setCurrentLang] = useState('English');
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleLanguageChange = (lang: typeof LANGUAGES[0]) => {
+    setCurrentLang(lang.label);
+    setIsOpen(false);
+    
+    const selectField = document.querySelector('.goog-te-combo') as HTMLSelectElement;
+    if (selectField) {
+      selectField.value = lang.code;
+      selectField.dispatchEvent(new Event('change'));
+    } else {
+      document.cookie = `googtrans=/en/${lang.code}; path=/;`;
+      window.location.reload();
+    }
+  };
+
+  const handleMouseEnter = () => {
+    if (!isMobile) {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      setIsOpen(true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (!isMobile) {
+      timeoutRef.current = setTimeout(() => setIsOpen(false), 200);
+    }
+  };
+
+  return (
+    <div 
+      className={`relative group ${!isMobile ? 'h-full flex items-center' : 'w-full flex flex-col items-center'}`}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <button 
+        onClick={() => isMobile && setIsOpen(!isOpen)}
+        className={`flex items-center gap-2 font-black uppercase tracking-widest hover:text-brand-secondary transition-all ${isMobile ? 'text-3xl text-brand-dark py-2' : 'text-[13px] text-brand-dark'}`}
+      >
+        <Globe className={isMobile ? "w-8 h-8" : "w-4 h-4"} />
+        {currentLang}
+        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isOpen ? 'rotate-180 text-brand-secondary' : ''}`} />
+      </button>
+      
+      <div 
+        className={`absolute ${isMobile ? 'top-full mt-4 left-1/2 -translate-x-1/2 w-[85vw] max-w-sm' : 'top-[calc(100%+0.5rem)] left-1/2 -translate-x-1/2 w-56'} bg-white/95 backdrop-blur-xl border border-brand-ash/20 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.15)] overflow-hidden z-[100] pb-2 transition-all duration-300 origin-top ${isOpen ? 'opacity-100 scale-y-100 visible' : 'opacity-0 scale-y-95 invisible pointer-events-none'}`}
+      >
+        <div className={`${isMobile ? 'max-h-[40vh]' : 'max-h-80'} overflow-y-auto pt-2 custom-scrollbar`}>
+          {LANGUAGES.map((lang) => (
+            <button
+              key={lang.code}
+              onClick={() => handleLanguageChange(lang)}
+              className={`w-full text-left px-6 py-3 text-sm font-bold transition-colors flex items-center justify-between group/btn ${currentLang === lang.label ? 'text-brand-secondary bg-brand-secondary/5' : 'text-brand-dark hover:bg-brand-ash/10 hover:text-brand-secondary'}`}
+            >
+              {lang.label}
+              {currentLang === lang.label && <div className="w-1.5 h-1.5 rounded-full bg-brand-secondary" />}
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -259,6 +341,19 @@ const Navbar: React.FC = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const location = useLocation();
+
+  useEffect(() => {
+    let wrapper = document.getElementById('google_translate_wrapper');
+    if (!wrapper) {
+      wrapper = document.createElement('div');
+      wrapper.id = 'google_translate_wrapper';
+      wrapper.style.display = 'none';
+      const el = document.createElement('div');
+      el.id = 'google_translate_element';
+      wrapper.appendChild(el);
+      document.body.appendChild(wrapper);
+    }
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -270,19 +365,14 @@ const Navbar: React.FC = () => {
     const initTranslate = () => {
       if ((window as any).google?.translate?.TranslateElement) {
         const element = document.getElementById('google_translate_element');
-        const mobileElement = document.getElementById('google_translate_element_mobile');
         
         if (element && element.innerHTML === '') {
           new (window as any).google.translate.TranslateElement(
-            { pageLanguage: 'en', layout: (window as any).google.translate.TranslateElement.InlineLayout.SIMPLE },
+            { 
+              pageLanguage: 'en',
+              includedLanguages: 'en,hi,bn,zh-CN,ja,fr,de,ur,ru,sv,es,ko'
+            },
             'google_translate_element'
-          );
-        }
-
-        if (mobileElement && mobileElement.innerHTML === '') {
-          new (window as any).google.translate.TranslateElement(
-            { pageLanguage: 'en', layout: (window as any).google.translate.TranslateElement.InlineLayout.SIMPLE },
-            'google_translate_element_mobile'
           );
         }
       }
@@ -325,13 +415,8 @@ const Navbar: React.FC = () => {
     
     if (item.isTranslate) {
       return (
-        <div className="relative flex items-center h-full gap-2 group">
-          <span className={`text-[13px] font-black uppercase tracking-widest transition-all ${
-              useDarkText ? 'text-brand-dark' : 'text-white'
-            }`}>
-            Translate
-          </span>
-          <div id="google_translate_element" className="flex items-center"></div>
+        <div className="relative flex items-center h-full">
+          <LanguageSelector isMobile={false} />
         </div>
       );
     }
@@ -388,7 +473,7 @@ const Navbar: React.FC = () => {
             setIsMegaMenuOpen(false);
           }, 300);
         }}
-        className="transition-all duration-300 ease-in-out flex items-center justify-center relative w-[calc(100%-1rem)] md:w-[calc(100%-2rem)] max-w-[1440px] bg-white/90 backdrop-blur-md shadow-2xl border border-brand-secondary/10 px-4 lg:px-10 py-3 lg:py-4 mt-2 md:mt-4 rounded-full"
+        className="transition-all duration-300 ease-in-out flex items-center justify-center relative w-[calc(100%-1rem)] md:w-[calc(100%-2rem)] max-w-[1440px] bg-white/90 backdrop-blur-md shadow-2xl border border-brand-secondary/10 px-4 lg:px-10 py-3 lg:py-4 mt-2 md:mt-4 rounded-full min-h-[4rem] lg:min-h-[5rem]"
       >
         <div className="absolute flex items-center left-4 lg:left-10">
           <Logo />
@@ -444,11 +529,8 @@ const Navbar: React.FC = () => {
           {menuItems.map((item) => {
             if (item.isTranslate) {
               return (
-                <div key={item.name} className="relative flex flex-col items-center w-full gap-2">
-                  <span className="text-3xl font-black text-brand-dark tracking-tighter uppercase">
-                    Translate
-                  </span>
-                  <div id="google_translate_element_mobile" className="flex items-center justify-center"></div>
+                <div key={item.name} className="relative flex flex-col items-center w-full mt-4">
+                  <LanguageSelector isMobile={true} />
                 </div>
               );
             }

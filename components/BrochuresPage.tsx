@@ -101,10 +101,10 @@ const dummyBrochures: Brochure[] = [
     id: '10',
     title: 'HT Cables upto 33 kV',
     category: 'Technical',
-    thumbnail: '/brochures/Thumbnails/HT Cables upto 33 kV.webp',
+    thumbnail: '/brochures/Thumbnails/HT Cables upto 11KV.webp',
     pdfUrl: '/brochures/HT Cables upto 33 kV - NICCO .pdf',
     description: 'Specifications for High Tension (HT) cables upto 33kV.',
-    previewImage: '/brochures/Thumbnails/HT Cables upto 33 kV.webp'
+    previewImage: '/brochures/Thumbnails/HT Cables upto 11KV.webp'
   },
   {
     id: '11',

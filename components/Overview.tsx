@@ -24,7 +24,7 @@ const Overview: React.FC = () => {
             {/* Visual Addition */}
             <div className="relative mt-4 rounded-[1.5rem] overflow-hidden aspect-video shadow-2xl group">
               <img 
-                src="/brand identity/OUR HERITAGE STORY.webp" 
+                src="/brand identity/cable-manufacturing.jpg.jpeg" 
                 alt="Nicco Heritage" 
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 referrerPolicy="no-referrer"

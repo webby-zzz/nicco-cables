@@ -93,7 +93,7 @@ const LazyImage = ({ src, alt, className }: { src: string; alt: string; classNam
 };
 
 const GalleryPage: React.FC = () => {
-  const [activeTab, setActiveTab] = useState('all');
+  const [activeTab, setActiveTab] = useState('Manufacturing Facility');
   const [selectedImage, setSelectedImage] = useState<GalleryItem | null>(null);
 
   useEffect(() => {
@@ -122,7 +122,6 @@ const GalleryPage: React.FC = () => {
   }, []);
 
   const categories = [
-    { id: 'all', label: 'All Images' },
     { id: 'Manufacturing Facility', label: 'Manufacturing Facility' },
     { id: 'Management/News updates', label: 'Management/News updates' },
     { id: 'Exhibitions & Conferences', label: 'Exhibitions & Conferences' },

@@ -12,7 +12,7 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black">
+    <section className="relative h-[45vh] lg:h-screen w-full flex items-center justify-center overflow-hidden bg-black">
       {/* Immersive Background */}
       <div 
         className="absolute inset-0 z-0 scale-110 transition-transform duration-100 ease-out"

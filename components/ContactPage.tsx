@@ -111,7 +111,7 @@ const ContactPage: React.FC = () => {
     },
     {
       city: "Noida",
-      icon: "/icons/noida.png",
+      icon: "/icons/Noida.png",
       address: [
         "Office No.404, 4th Floor",
         "Wave Silver Tower",

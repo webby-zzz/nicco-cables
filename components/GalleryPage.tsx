@@ -22,7 +22,7 @@ const getCategory = (filename: string, path: string) => {
 
   // Management/News updates
   if (
-    lowerName.startsWith('india & eu') || 
+    lowerName.startsWith('india & eu') ||
     lowerName.startsWith('national executive') || // IEEMA
     lowerName.startsWith('our chairperson') ||
     lowerName.includes('women_s day speech') ||
@@ -33,7 +33,7 @@ const getCategory = (filename: string, path: string) => {
 
   // Exhibitions & Conferences
   if (
-    lowerName.includes('exhibitor') || 
+    lowerName.includes('exhibitor') ||
     lowerName.includes('exhibition') ||
     lowerName.includes('energy conclave') ||
     lowerName.includes('elasia') ||
@@ -104,8 +104,16 @@ const GalleryPage: React.FC = () => {
     const galleryPaths = Object.keys(import.meta.glob('/public/Gallery/**/*'));
     const plantsPaths = Object.keys(import.meta.glob('/public/plants and machinery images/**/*'));
     const machineryPaths = Object.keys(import.meta.glob('/public/Machinery images/**/*'));
-    const imagePaths = Array.from(new Set([...galleryPaths, ...plantsPaths, ...machineryPaths]));
     
+    const pathMap = new Map<string, string>();
+    [...galleryPaths, ...plantsPaths, ...machineryPaths].forEach(path => {
+      const filename = path.split('/').pop() || '';
+      if (!pathMap.has(filename)) {
+        pathMap.set(filename, path);
+      }
+    });
+    const imagePaths = Array.from(pathMap.values());
+
     const items: GalleryItem[] = imagePaths.map((path, index) => {
       const filename = path.split('/').pop() || '';
       const title = filename.replace(/\.[^/.]+$/, "");
@@ -168,14 +176,14 @@ const GalleryPage: React.FC = () => {
         <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-secondary/5 -skew-x-12 translate-x-1/4" />
         <div className="max-w-[1440px] mx-auto px-4 lg:px-10 relative z-10">
           <div className="max-w-3xl">
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-6"
             >
               GALLERY
             </motion.h1>
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
@@ -183,7 +191,7 @@ const GalleryPage: React.FC = () => {
             >
               Moments of Excellence &{"\u00A0"}Impact
             </motion.h2>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
@@ -204,11 +212,10 @@ const GalleryPage: React.FC = () => {
                 <button
                   key={cat.id}
                   onClick={() => setActiveTab(cat.id)}
-                  className={`whitespace-nowrap px-5 py-2 rounded-full text-xs font-black uppercase tracking-widest transition-all duration-200 border ${
-                    activeTab === cat.id 
-                      ? 'bg-brand-secondary text-white border-brand-secondary shadow-lg shadow-brand-secondary/10' 
+                  className={`whitespace-nowrap px-5 py-2 rounded-full text-xs font-black uppercase tracking-widest transition-all duration-200 border ${activeTab === cat.id
+                      ? 'bg-brand-secondary text-white border-brand-secondary shadow-lg shadow-brand-secondary/10'
                       : 'bg-transparent text-black border-transparent hover:border-brand-dark hover:bg-brand-dark hover:text-white'
-                  }`}
+                    }`}
                 >
                   {cat.label}
                 </button>
@@ -222,7 +229,7 @@ const GalleryPage: React.FC = () => {
       <section className="py-12 md:py-20">
         <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
           {filteredItems.length > 0 ? (
-            <motion.div 
+            <motion.div
               layout
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
             >
@@ -237,12 +244,12 @@ const GalleryPage: React.FC = () => {
                     transition={{ duration: 0.28 }}
                     className="group"
                   >
-                    <div 
+                    <div
                       onClick={() => setSelectedImage(item)}
                       className="relative aspect-[4/3] rounded-[2rem] overflow-hidden shadow-sm mb-5 bg-gray-50 border border-gray-100 cursor-pointer group-hover:shadow-xl transition-all duration-300"
                     >
-                      <LazyImage 
-                        src={item.imageUrl} 
+                      <LazyImage
+                        src={item.imageUrl}
                         alt={item.title}
                         className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                       />
@@ -252,7 +259,7 @@ const GalleryPage: React.FC = () => {
                         </div>
                       </div>
                     </div>
-                    
+
                     {item.category !== 'Manufacturing Facility' && (
                       <div className="px-2">
                         <p className="font-black text-brand-secondary uppercase tracking-[0.2em] mb-1 text-xs">{item.category}</p>
@@ -280,21 +287,21 @@ const GalleryPage: React.FC = () => {
       <AnimatePresence>
         {selectedImage && (
           <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-12">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedImage(null)}
               className="absolute inset-0 bg-brand-dark/98 backdrop-blur-sm"
             />
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.98 }}
               className="relative w-full max-w-5xl max-h-full flex flex-col items-center"
             >
-              <button 
+              <button
                 onClick={() => setSelectedImage(null)}
                 className="absolute -top-12 right-0 p-2 text-white hover:text-brand-secondary transition-colors z-10"
               >
@@ -302,14 +309,14 @@ const GalleryPage: React.FC = () => {
               </button>
 
               {/* Navigation Arrows */}
-              <button 
+              <button
                 onClick={handlePrev}
                 className="absolute left-0 md:-left-16 top-1/2 -translate-y-1/2 p-4 text-white hover:text-brand-secondary transition-colors z-10"
               >
                 <ChevronLeft className="w-10 h-10" />
               </button>
-              
-              <button 
+
+              <button
                 onClick={handleNext}
                 className="absolute right-0 md:-right-16 top-1/2 -translate-y-1/2 p-4 text-white hover:text-brand-secondary transition-colors z-10"
               >
@@ -317,13 +324,13 @@ const GalleryPage: React.FC = () => {
               </button>
 
               <div className="w-full relative flex flex-col items-center">
-                <img 
-                  src={selectedImage.imageUrl} 
+                <img
+                  src={selectedImage.imageUrl}
                   alt={selectedImage.title}
                   className="w-full h-auto max-h-[70vh] object-contain mx-auto rounded-2xl shadow-2xl"
                   referrerPolicy="no-referrer"
                 />
-                
+
                 {selectedImage.category !== 'Manufacturing Facility' && (
                   <div className="mt-8 text-center max-w-2xl px-4">
                     <p className="text-brand-secondary text-[10px] font-black uppercase tracking-[0.3em] mb-2">{selectedImage.category}</p>

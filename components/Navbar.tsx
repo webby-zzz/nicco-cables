@@ -133,7 +133,7 @@ const SearchBar = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }
 
 const MegaMenu = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
   const cableTypes = [
-    { name: 'Data & Ethernet Cables (Cat 5, Cat 6, Cat 7)', image: '/Product Images/thumbnails/Category cable.jpeg', link: '/products/data-ethernet' },
+    { name: 'Data & Ethernet Cables (Cat 5, Cat 6, Cat 7)', image: '/Product Images/thumbnails/data cables featured image.jpeg', link: '/products/data-ethernet' },
     { name: 'Elastomeric and Silicon Cables (upto 15 kV)', image: '/Product Images/thumbnails/Silicon insulated cable.jpeg', link: '/products/Elastomeric-silicon' },
     { name: 'Electron Beam Cables', image: '/Product Images/thumbnails/Electron beam cable.jpeg', link: '/products/Electron-Beam' },
     { name: 'Fire Resistant and Fire Survival Cables', image: '/Product Images/thumbnails/Fire Survival cable.jpeg', link: '/products/Fire-Survival' },
@@ -143,7 +143,7 @@ const MegaMenu = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void })
     { name: 'LT Power & Control', image: '/Product Images/thumbnails/LT Cables.jpeg', link: '/products/lt-power-control' },
     { name: 'Medium Voltage Covered Conductors/Tree Spacer Cables', image: '/Product Images/thumbnails/Medium voltage Covered conductors - tree spacer.jpeg', link: '/products/mvcc' },
     { name: 'Overhead Conductors', image: '/Product Images/thumbnails/Overhead Conductors.jpeg', link: '/products/overhead-conductors' },
-    { name: 'RF & Thermocouple Cables', image: '/Product Images/thumbnails/Thermocouple-Extension-Cable.jpeg', link: '/products/rf-thermocouple' },
+    { name: 'RF & Thermocouple Cables', image: '/Product Images/thumbnails/Thermocouple-Extension-Cable.webp', link: '/products/rf-thermocouple' },
   ];
 
   return (
@@ -190,15 +190,15 @@ const MegaMenu = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void })
             </h4>
             <ul className="space-y-3 text-[12px] font-bold uppercase tracking-tight">
               {[
-                { name: 'Transmission and Distribution', link: '/industry/transmission-distribution' },
-                { name: 'Renewable Energy', link: '/industry/renewable-energy' },
-                { name: 'Power Generation', link: '/industry/power-generation' },
-                { name: 'Exploration', link: '/industry/exploration' },
-                { name: 'Mobility', link: '/industry/mobility' },
                 { name: 'Defence', link: '/industry/defence' },
-                { name: 'Manufacturing', link: '/industry/manufacturing' },
-                { name: 'Infrastructure', link: '/industry/infrastructure' },
+                { name: 'Exploration', link: '/industry/exploration' },
                 { name: 'Harnessing', link: '/products/harnessing' },
+                { name: 'Infrastructure', link: '/industry/infrastructure' },
+                { name: 'Manufacturing', link: '/industry/manufacturing' },
+                { name: 'Mobility', link: '/industry/mobility' },
+                { name: 'Power Generation', link: '/industry/power-generation' },
+                { name: 'Renewable Energy', link: '/industry/renewable-energy' },
+                { name: 'Transmission and Distribution', link: '/industry/transmission-distribution' },
               ].map((item) => (
                 <li key={item.name}>
                   <Link 
@@ -265,6 +265,29 @@ const LANGUAGES = [
   { code: 'sv', label: 'Swedish' },
   { code: 'es', label: 'Spanish' },
   { code: 'ko', label: 'Korean' },
+  { code: 'ar', label: 'Arabic' },
+  { code: 'ms', label: 'Malay' },
+  { code: 'id', label: 'Indonesian' },
+  { code: 'it', label: 'Italian' },
+  { code: 'pt', label: 'Portuguese' },
+  { code: 'nl', label: 'Dutch' },
+  { code: 'pl', label: 'Polish' },
+  { code: 'tr', label: 'Turkish' },
+  { code: 'uk', label: 'Ukrainian' },
+  { code: 'ro', label: 'Romanian' },
+  { code: 'el', label: 'Greek' },
+  { code: 'cs', label: 'Czech' },
+  { code: 'hu', label: 'Hungarian' },
+  { code: 'fi', label: 'Finnish' },
+  { code: 'da', label: 'Danish' },
+  { code: 'no', label: 'Norwegian' },
+  { code: 'bg', label: 'Bulgarian' },
+  { code: 'hr', label: 'Croatian' },
+  { code: 'sk', label: 'Slovak' },
+  { code: 'sw', label: 'Swahili' },
+  { code: 'yo', label: 'Yoruba' },
+  { code: 'ha', label: 'Hausa' },
+  { code: 'ig', label: 'Igbo' },
 ];
 
 const LanguageSelector = ({ isMobile = false }) => {
@@ -301,7 +324,8 @@ const LanguageSelector = ({ isMobile = false }) => {
 
   return (
     <div 
-      className={`relative group ${!isMobile ? 'h-full flex items-center' : 'w-full flex flex-col items-center'}`}
+      className={`relative group ${!isMobile ? 'h-full flex items-center' : 'w-full flex flex-col items-center'} notranslate`}
+      translate="no"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -370,7 +394,7 @@ const Navbar: React.FC = () => {
           new (window as any).google.translate.TranslateElement(
             { 
               pageLanguage: 'en',
-              includedLanguages: 'en,hi,bn,zh-CN,ja,fr,de,ur,ru,sv,es,ko'
+              includedLanguages: 'en,hi,bn,zh-CN,ja,fr,de,ur,ru,sv,es,ko,ar,ms,id,it,pt,nl,pl,tr,uk,ro,el,cs,hu,fi,da,no,bg,hr,sk,sw,yo,ha,ig'
             },
             'google_translate_element'
           );
@@ -698,38 +722,14 @@ const Navbar: React.FC = () => {
                         <ul className="space-y-3 text-[14px] font-bold text-black pl-5 border-l border-brand-dark/10">
                           <li>
                             <Link 
-                              to="/industry/transmission-distribution" 
+                              to="/industry/defence" 
                               className="block hover:text-brand-secondary transition-colors"
                               onClick={() => {
                                 setMobileMenuOpen(false);
                                 setIsMegaMenuOpen(false);
                               }}
                             >
-                              Transmission and Distribution
-                            </Link>
-                          </li>
-                          <li>
-                            <Link 
-                              to="/industry/renewable-energy" 
-                              className="block hover:text-brand-secondary transition-colors"
-                              onClick={() => {
-                                setMobileMenuOpen(false);
-                                setIsMegaMenuOpen(false);
-                              }}
-                            >
-                              Renewable Energy
-                            </Link>
-                          </li>
-                          <li>
-                            <Link 
-                              to="/industry/power-generation" 
-                              className="block hover:text-brand-secondary transition-colors"
-                              onClick={() => {
-                                setMobileMenuOpen(false);
-                                setIsMegaMenuOpen(false);
-                              }}
-                            >
-                              Power Generation
+                              Defence
                             </Link>
                           </li>
                           <li>
@@ -746,38 +746,14 @@ const Navbar: React.FC = () => {
                           </li>
                           <li>
                             <Link 
-                              to="/industry/mobility" 
+                              to="/products/harnessing" 
                               className="block hover:text-brand-secondary transition-colors"
                               onClick={() => {
                                 setMobileMenuOpen(false);
                                 setIsMegaMenuOpen(false);
                               }}
                             >
-                              Mobility
-                            </Link>
-                          </li>
-                          <li>
-                            <Link 
-                              to="/industry/defence" 
-                              className="block hover:text-brand-secondary transition-colors"
-                              onClick={() => {
-                                setMobileMenuOpen(false);
-                                setIsMegaMenuOpen(false);
-                              }}
-                            >
-                              Defence
-                            </Link>
-                          </li>
-                          <li>
-                            <Link 
-                              to="/industry/manufacturing" 
-                              className="block hover:text-brand-secondary transition-colors"
-                              onClick={() => {
-                                setMobileMenuOpen(false);
-                                setIsMegaMenuOpen(false);
-                              }}
-                            >
-                              Manufacturing
+                              Harnessing
                             </Link>
                           </li>
                           <li>
@@ -794,14 +770,62 @@ const Navbar: React.FC = () => {
                           </li>
                           <li>
                             <Link 
-                              to="/products/harnessing" 
+                              to="/industry/manufacturing" 
                               className="block hover:text-brand-secondary transition-colors"
                               onClick={() => {
                                 setMobileMenuOpen(false);
                                 setIsMegaMenuOpen(false);
                               }}
                             >
-                              Harnessing
+                              Manufacturing
+                            </Link>
+                          </li>
+                          <li>
+                            <Link 
+                              to="/industry/mobility" 
+                              className="block hover:text-brand-secondary transition-colors"
+                              onClick={() => {
+                                setMobileMenuOpen(false);
+                                setIsMegaMenuOpen(false);
+                              }}
+                            >
+                              Mobility
+                            </Link>
+                          </li>
+                          <li>
+                            <Link 
+                              to="/industry/power-generation" 
+                              className="block hover:text-brand-secondary transition-colors"
+                              onClick={() => {
+                                setMobileMenuOpen(false);
+                                setIsMegaMenuOpen(false);
+                              }}
+                            >
+                              Power Generation
+                            </Link>
+                          </li>
+                          <li>
+                            <Link 
+                              to="/industry/renewable-energy" 
+                              className="block hover:text-brand-secondary transition-colors"
+                              onClick={() => {
+                                setMobileMenuOpen(false);
+                                setIsMegaMenuOpen(false);
+                              }}
+                            >
+                              Renewable Energy
+                            </Link>
+                          </li>
+                          <li>
+                            <Link 
+                              to="/industry/transmission-distribution" 
+                              className="block hover:text-brand-secondary transition-colors"
+                              onClick={() => {
+                                setMobileMenuOpen(false);
+                                setIsMegaMenuOpen(false);
+                              }}
+                            >
+                              Transmission and Distribution
                             </Link>
                           </li>
                         </ul>

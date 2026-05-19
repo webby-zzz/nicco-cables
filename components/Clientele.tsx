@@ -54,7 +54,8 @@ const logos = [
   "/clientele/images_1.webp",
   "/clientele/locomotive-builders-plate-chittaranjan-locomotive-works-chittaranjan-india-1969-902580-small.webp",
   "/clientele/logo.webp",
-  "/clientele/logo_1.webp"
+  "/clientele/logo_1.webp",
+  "/clientele/adnoc.webp"
 ];
 
 const Clientele: React.FC = () => {

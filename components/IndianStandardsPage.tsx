@@ -58,7 +58,7 @@ const StandardSection: React.FC<{ standard: typeof standards[0], index: number }
             <img 
               src={standard.image} 
               alt={standard.title} 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${standard.id === 'automotive' ? 'rotate-90' : ''}`}
               referrerPolicy="no-referrer"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent opacity-100" />

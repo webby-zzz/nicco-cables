@@ -16,7 +16,7 @@ const getCategory = (filename: string, path: string) => {
   const lowerName = name.toLowerCase();
   const lowerPath = path.toLowerCase();
 
-  if (lowerPath.includes('/manufacturing/') || lowerPath.includes('/plants and machinery images/')) {
+  if (lowerPath.includes('/manufacturing/') || lowerPath.includes('/plants and machinery images/') || lowerPath.includes('/machinery images/')) {
     return 'Manufacturing Facility';
   }
 
@@ -103,7 +103,8 @@ const GalleryPage: React.FC = () => {
   const { galleryItems } = useMemo(() => {
     const galleryPaths = Object.keys(import.meta.glob('/public/Gallery/**/*'));
     const plantsPaths = Object.keys(import.meta.glob('/public/plants and machinery images/**/*'));
-    const imagePaths = Array.from(new Set([...galleryPaths, ...plantsPaths]));
+    const machineryPaths = Object.keys(import.meta.glob('/public/Machinery images/**/*'));
+    const imagePaths = Array.from(new Set([...galleryPaths, ...plantsPaths, ...machineryPaths]));
     
     const items: GalleryItem[] = imagePaths.map((path, index) => {
       const filename = path.split('/').pop() || '';
@@ -252,17 +253,17 @@ const GalleryPage: React.FC = () => {
                       </div>
                     </div>
                     
-                    <div className="px-2">
-                      <p className="font-black text-brand-secondary uppercase tracking-[0.2em] mb-1 text-xs">{item.category}</p>
-                      {item.category !== 'Manufacturing Facility' && (
+                    {item.category !== 'Manufacturing Facility' && (
+                      <div className="px-2">
+                        <p className="font-black text-brand-secondary uppercase tracking-[0.2em] mb-1 text-xs">{item.category}</p>
                         <h3 className="text-lg font-black text-brand-dark tracking-tighter mb-1 uppercase">{item.title}</h3>
-                      )}
-                      {item.description && (
-                        <p className="text-xs text-black font-medium leading-relaxed opacity-100">
-                          {item.description}
-                        </p>
-                      )}
-                    </div>
+                        {item.description && (
+                          <p className="text-xs text-black font-medium leading-relaxed opacity-100">
+                            {item.description}
+                          </p>
+                        )}
+                      </div>
+                    )}
                   </motion.div>
                 ))}
               </AnimatePresence>
@@ -323,15 +324,15 @@ const GalleryPage: React.FC = () => {
                   referrerPolicy="no-referrer"
                 />
                 
-                <div className="mt-8 text-center max-w-2xl px-4">
-                  <p className="text-brand-secondary text-[10px] font-black uppercase tracking-[0.3em] mb-2">{selectedImage.category}</p>
-                  {selectedImage.category !== 'Manufacturing Facility' && (
+                {selectedImage.category !== 'Manufacturing Facility' && (
+                  <div className="mt-8 text-center max-w-2xl px-4">
+                    <p className="text-brand-secondary text-[10px] font-black uppercase tracking-[0.3em] mb-2">{selectedImage.category}</p>
                     <h3 className="text-base md:text-lg font-bold tracking-normal text-white mb-2 uppercase">{selectedImage.title}</h3>
-                  )}
-                  {selectedImage.description && (
-                    <p className="text-white/80 font-medium leading-relaxed text-sm">{selectedImage.description}</p>
-                  )}
-                </div>
+                    {selectedImage.description && (
+                      <p className="text-white/80 font-medium leading-relaxed text-sm">{selectedImage.description}</p>
+                    )}
+                  </div>
+                )}
               </div>
             </motion.div>
           </div>

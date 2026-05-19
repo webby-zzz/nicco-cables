@@ -77,7 +77,7 @@ const RFThermocoupleCablesPage: React.FC = () => {
           <div className="md:w-1/2 w-full">
             <div className="w-full aspect-square bg-white rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center border border-gray-100">
               <img 
-                src="/Product Images/thumbnails/Thermocouple-Extension-Cable.jpeg" 
+                src="/Product Images/thumbnails/Thermocouple-Extension-Cable.webp" 
                 alt="Pressure Tight (PT) / RF Cables" 
                 className="w-full h-full object-contain"
                 referrerPolicy="no-referrer"

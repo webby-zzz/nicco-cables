@@ -6,27 +6,27 @@ import TrustAnchors from './TrustAnchors';
 
 const coreValues = [
   {
-    icon: <img src="/icons/Nicco core values icons/helmet.gif" alt="Engineering Excellence" className="w-8 h-8 object-contain" referrerPolicy="no-referrer" />,
+    icon: <img src="/icons/Nicco core values icons/helmet.gif" alt="Engineering Excellence" className="w-12 h-12 object-contain" referrerPolicy="no-referrer" />,
     title: "Engineering Excellence",
     description: "We uphold the highest standards of design, manufacturing, and testing to deliver products that perform reliably in demanding environments."
   },
   {
-    icon: <img src="/icons/Nicco core values icons/premium-quality.gif" alt="Quality Without Compromise" className="w-8 h-8 object-contain" referrerPolicy="no-referrer" />,
+    icon: <img src="/icons/Nicco core values icons/premium-quality.gif" alt="Quality Without Compromise" className="w-12 h-12 object-contain" referrerPolicy="no-referrer" />,
     title: "Quality Without Compromise",
     description: "Every cable manufactured at Nicco undergoes stringent testing and quality assurance to ensure consistent performance and durability."
   },
   {
-    icon: <img src="/icons/Nicco core values icons/innovation.gif" alt="Innovation & Technology" className="w-8 h-8 object-contain" referrerPolicy="no-referrer" />,
+    icon: <img src="/icons/Nicco core values icons/innovation.gif" alt="Innovation & Technology" className="w-12 h-12 object-contain" referrerPolicy="no-referrer" />,
     title: "Innovation & Technology",
     description: "Continuous investment in R&D, advanced materials, and modern manufacturing enables us to stay ahead in cable technology."
   },
   {
-    icon: <img src="/icons/Nicco core values icons/mother-earth-day.gif" alt="Nation Building" className="w-8 h-8 object-contain" referrerPolicy="no-referrer" />,
+    icon: <img src="/icons/Nicco core values icons/mother-earth-day.gif" alt="Nation Building" className="w-12 h-12 object-contain" referrerPolicy="no-referrer" />,
     title: "Nation Building",
     description: "We are committed to supporting India’s infrastructure and strategic sectors through solutions that align with the vision of Make in India and Viksit Bharat."
   },
   {
-    icon: <img src="/icons/Nicco core values icons/handshake.gif" alt="Integrity & Trust" className="w-8 h-8 object-contain" referrerPolicy="no-referrer" />,
+    icon: <img src="/icons/Nicco core values icons/handshake.gif" alt="Integrity & Trust" className="w-12 h-12 object-contain" referrerPolicy="no-referrer" />,
     title: "Integrity & Trust",
     description: "Our long-standing relationships with customers are built on transparency, reliability, and consistent delivery of value."
   }
@@ -52,10 +52,16 @@ const accreditationLogos = [
 
 const timelineData = [
   {
-    title: "Engineering Excellence",
-    description: "Designing high-performance cable solutions for critical infrastructure and strategic industries.",
-    icon: <Flag className="w-5 h-5" />,
-    type: "Mission"
+    title: "Global Innovation",
+    description: "To be recognized as a global leader in advanced cable technologies and world-class connectivity.",
+    icon: <Lightbulb className="w-5 h-5" />,
+    type: "Vision"
+  },
+  {
+    title: "Resilient Future",
+    description: "Powering industries and strengthening infrastructure to support a modern, resilient economy.",
+    icon: <Settings className="w-5 h-5" />,
+    type: "Vision"
   },
   {
     title: "Quality Assurance",
@@ -68,18 +74,6 @@ const timelineData = [
     description: "Contributing meaningfully to India’s industrial growth and global competitiveness through responsible manufacturing.",
     icon: <Handshake className="w-5 h-5" />,
     type: "Mission"
-  },
-  {
-    title: "Global Innovation",
-    description: "To be recognized as a global leader in advanced cable technologies and world-class connectivity.",
-    icon: <Lightbulb className="w-5 h-5" />,
-    type: "Vision"
-  },
-  {
-    title: "Resilient Future",
-    description: "Powering industries and strengthening infrastructure to support a modern, resilient economy.",
-    icon: <Settings className="w-5 h-5" />,
-    type: "Vision"
   }
 ];
 
@@ -182,7 +176,7 @@ const AboutPage: React.FC = () => {
             <div className="lg:col-span-5">
               <h2 className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-4 block">ABOUT US</h2>
               <h3 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tighter leading-tight mb-6">
-                8 Decades of <span className="text-brand-secondary">Trusted{"\u00A0"}Innovation.</span>
+                8 DECADES OF <span className="text-brand-secondary">TRUST & INNOVATION</span>
               </h3>
               <div className="relative rounded-[1.5rem] overflow-hidden aspect-square shadow-2xl group">
                 <img
@@ -303,10 +297,10 @@ const AboutPage: React.FC = () => {
           <div className="flex flex-wrap justify-center gap-4 mx-auto max-w-[1200px]">
             {coreValues.map((value, idx) => (
               <div key={idx} className="flex flex-col items-start text-left p-6 bg-white rounded-[1.5rem] border border-black/5 shadow-xl w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)] max-w-[400px]">
-                <div className="w-10 h-10 bg-brand-secondary/5 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-16 h-16 bg-brand-secondary/5 rounded-xl flex items-center justify-center mb-4">
                   {value.icon}
                 </div>
-                <h5 className="text-sm font-black text-brand-dark tracking-tighter mb-2 leading-tight uppercase">
+                <h5 className="text-sm font-black text-brand-secondary tracking-tighter mb-2 leading-tight uppercase">
                   {value.title}
                 </h5>
                 <p className="text-xs text-black leading-relaxed font-medium">

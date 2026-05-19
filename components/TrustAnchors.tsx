@@ -48,13 +48,14 @@ const TrustAnchors: React.FC = () => {
 
   const paginate = (newDirection: number) => {
     setDirection(newDirection);
-    setCurrentIndex((prev) => (prev + newDirection + anchors.length) % anchors.length);
+    const step = window.innerWidth >= 768 ? 3 : 1;
+    setCurrentIndex((prev) => (prev + (newDirection * step) + anchors.length) % anchors.length);
   };
 
   useEffect(() => {
     const timer = setInterval(() => {
       paginate(1);
-    }, 3000);
+    }, 6000);
     return () => clearInterval(timer);
   }, [anchors.length]);
 
@@ -111,18 +112,28 @@ const TrustAnchors: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -40 }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="absolute inset-0 flex flex-row items-center justify-center gap-4 md:gap-6 w-full px-4"
+              className="absolute inset-0 flex flex-row items-center justify-center w-full px-4"
             >
-              <div className="flex-shrink-0 scale-90 md:scale-100">
-                {anchors[currentIndex].icon}
-              </div>
-              <div className="max-w-[1000px] text-left">
-                <h4 className="text-[13px] md:text-[15px] font-black text-brand-dark uppercase tracking-wider leading-tight mb-0.5">
-                  {anchors[currentIndex].title}
-                </h4>
-                <p className="text-[11px] md:text-[12px] text-brand-muted font-medium leading-snug">
-                  {anchors[currentIndex].description}
-                </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 w-full max-w-7xl">
+                {[
+                  anchors[currentIndex],
+                  anchors[(currentIndex + 1) % anchors.length],
+                  anchors[(currentIndex + 2) % anchors.length]
+                ].map((anchor, i) => (
+                  <div key={i} className={`flex items-center gap-4 ${i > 0 ? 'hidden md:flex' : 'flex'}`}>
+                    <div className="flex-shrink-0 scale-90 md:scale-100">
+                      {anchor.icon}
+                    </div>
+                    <div className="text-left">
+                      <h4 className="text-[13px] md:text-[14px] font-black text-brand-dark uppercase tracking-wider leading-tight mb-0.5">
+                        {anchor.title}
+                      </h4>
+                      <p className="text-[11px] md:text-[11px] text-brand-muted font-medium leading-snug">
+                        {anchor.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </motion.div>
           </AnimatePresence>

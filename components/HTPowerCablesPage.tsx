@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
@@ -80,11 +79,11 @@ const HTPowerCablesPage: React.FC = () => {
             </p>
           </div>
           <div className="md:w-1/2 w-full">
-            <div className="w-full aspect-video bg-white rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center border border-gray-100">
+            <div className="w-full aspect-[4/3] bg-white rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center border border-gray-100 p-8">
               <img 
-                src="/Product Images/HT-Power-Cables/1.webp" 
+                src="/Product Images/thumbnails/HT cable.jpeg" 
                 alt="HT Power Cable 1" 
-                className="w-full h-full object-contain rotate-90 scale-[1.8]"
+                className="w-full h-full object-contain"
                 referrerPolicy="no-referrer"
               />
             </div>
@@ -102,9 +101,17 @@ const HTPowerCablesPage: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="my-12 flex justify-center"
+          className="my-12 grid grid-cols-1 md:grid-cols-2 gap-8"
         >
-          <div className="w-full max-w-5xl aspect-video bg-white rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center border border-gray-100">
+          <div className="w-full aspect-video bg-white rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center border border-gray-100">
+            <img 
+              src="/Product Images/HT-Power-Cables/1.webp" 
+              alt="HT Power Cable 1" 
+              className="w-full h-full object-contain rotate-90 scale-[1.8]"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+          <div className="w-full aspect-video bg-white rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center border border-gray-100">
             <img 
               src="/Product Images/HT-Power-Cables/2.webp" 
               alt="HT Power Cable 2" 
@@ -144,6 +151,5 @@ const HTPowerCablesPage: React.FC = () => {
     </div>
   );
 };
-
 
 export default HTPowerCablesPage;

@@ -32,19 +32,9 @@ const IndustryCard: React.FC<IndustryCardProps> = ({ title, description, link })
 const IndustriesVertical: React.FC = () => {
   const industries = [
     {
-      title: "Transmission and Distribution",
-      description: "Optimizing the power grid with robust HT Cables (upto 33 kV) and advanced Overhead Conductors.",
-      link: "/industry/transmission-distribution"
-    },
-    {
-      title: "Renewable Energy",
-      description: "Empowering Solar and Wind farms with specialized Electron Beam Cables and high-performance LT systems.",
-      link: "/industry/renewable-energy"
-    },
-    {
-      title: "Power Generation",
-      description: "Critical infrastructure support using LT Control and specialized HT systems for Nuclear and Hydro plants.",
-      link: "/industry/power-generation"
+      title: "Defence",
+      description: "Submarine and tactical grade connectivity. Advanced Electron Beam and specialized high-temp cabling.",
+      link: "/industry/defence"
     },
     {
       title: "Exploration",
@@ -52,19 +42,9 @@ const IndustriesVertical: React.FC = () => {
       link: "/industry/exploration"
     },
     {
-      title: "Mobility",
-      description: "High-flex mobility solutions for Rolling Stock, Warships, and Marine vessels using RF & Thermocouple.",
-      link: "/industry/mobility"
-    },
-    {
-      title: "Defence",
-      description: "Submarine and tactical grade connectivity. Advanced Electron Beam and specialized high-temp cabling.",
-      link: "/industry/defence"
-    },
-    {
-      title: "Manufacturing",
-      description: "Precision for industrial processes. Instrumentation Cables and High Temp (ETFE, FEP, PTFE) solutions.",
-      link: "/industry/manufacturing"
+      title: "Harnessing",
+      description: "Integrated system complexity simplified. Medium Voltage Covered Conductors in optimized harnesses.",
+      link: "/products/harnessing"
     },
     {
       title: "Infrastructure",
@@ -72,9 +52,29 @@ const IndustriesVertical: React.FC = () => {
       link: "/industry/infrastructure"
     },
     {
-      title: "Harnessing",
-      description: "Integrated system complexity simplified. Medium Voltage Covered Conductors in optimized harnesses.",
-      link: "/products/harnessing"
+      title: "Manufacturing",
+      description: "Precision for industrial processes. Instrumentation Cables and High Temp (ETFE, FEP, PTFE) solutions.",
+      link: "/industry/manufacturing"
+    },
+    {
+      title: "Mobility",
+      description: "High-flex mobility solutions for Rolling Stock, Warships, and Marine vessels using RF & Thermocouple.",
+      link: "/industry/mobility"
+    },
+    {
+      title: "Power Generation",
+      description: "Critical infrastructure support using LT Control and specialized HT systems for Nuclear and Hydro plants.",
+      link: "/industry/power-generation"
+    },
+    {
+      title: "Renewable Energy",
+      description: "Empowering Solar and Wind farms with specialized Electron Beam Cables and high-performance LT systems.",
+      link: "/industry/renewable-energy"
+    },
+    {
+      title: "Transmission and Distribution",
+      description: "Optimizing the power grid with robust HT Cables (upto 33 kV) and advanced Overhead Conductors.",
+      link: "/industry/transmission-distribution"
     }
   ];
 

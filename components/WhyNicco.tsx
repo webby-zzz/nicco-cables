@@ -1,5 +1,5 @@
-
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { 
   History, 
@@ -14,36 +14,36 @@ import {
 
 const pillars = [
   {
-    title: "80+ Years of Proven Industry Leadership",
-    icon: <img src="/icons/Nicco website icons/leadership.gif" alt="Leadership" className="w-10 h-10 object-contain" referrerPolicy="no-referrer" />
+    title: <><span className="text-brand-secondary">80+ Years</span> of Proven Industry Leadership</>,
+    icon: <img src="/icons/Nicco website icons/leadership.gif" alt="Leadership" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
   },
   {
-    title: "Pioneers in E-Beam Technology",
-    icon: <img src="/icons/Nicco website icons/electricity.gif" alt="E-Beam Technology" className="w-10 h-10 object-contain" referrerPolicy="no-referrer" />
+    title: <>Pioneers in <span className="text-brand-secondary">E-Beam Technology</span></>,
+    icon: <img src="/icons/Nicco website icons/electricity.gif" alt="E-Beam Technology" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
   },
   {
-    title: "Integrated In-House Elastomeric Compounding",
-    icon: <img src="/icons/Nicco website icons/flask.gif" alt="Compounding" className="w-10 h-10 object-contain" referrerPolicy="no-referrer" />
+    title: <>Integrated <span className="text-brand-secondary">In-House</span> Elastomeric Compounding</>,
+    icon: <img src="/icons/Nicco website icons/flask.gif" alt="Compounding" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
   },
   {
-    title: "Advanced Expertise in Hybrid Cable Solutions",
-    icon: <img src="/icons/Nicco website icons/innovation.gif" alt="Expertise" className="w-10 h-10 object-contain" referrerPolicy="no-referrer" />
+    title: <><span className="text-brand-secondary">Advanced Expertise</span> in Hybrid Cable Solutions</>,
+    icon: <img src="/icons/Nicco website icons/innovation.gif" alt="Expertise" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
   },
   {
-    title: "Specialized Pressure-Tight Cable Capabilities",
-    icon: <img src="/icons/Nicco website icons/diving-equipment.gif" alt="Pressure-Tight Capabilities" className="w-10 h-10 object-contain" referrerPolicy="no-referrer" />
+    title: <>Specialized <span className="text-brand-secondary">Pressure-Tight</span> Cable Capabilities</>,
+    icon: <img src="/icons/Nicco website icons/diving-equipment.gif" alt="Pressure-Tight Capabilities" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
   },
   {
-    title: "Dedicated Defence Cable Solutions",
-    icon: <img src="/icons/Nicco website icons/shield.gif" alt="Defence Solutions" className="w-10 h-10 object-contain" referrerPolicy="no-referrer" />
+    title: <>Dedicated <span className="text-brand-secondary">Defence</span> Cable Solutions</>,
+    icon: <img src="/icons/Nicco website icons/shield.gif" alt="Defence Solutions" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
   },
   {
-    title: "Trusted Partner to Indian Railways",
-    icon: <img src="/icons/Nicco website icons/train.gif" alt="Indian Railways" className="w-10 h-10 object-contain" referrerPolicy="no-referrer" />
+    title: <>Trusted Partner to <span className="text-brand-secondary">Indian Railways</span></>,
+    icon: <img src="/icons/Nicco website icons/train.gif" alt="Indian Railways" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
   },
   {
-    title: "Preferred Choice for Mining Cable Applications",
-    icon: <img src="/icons/Nicco website icons/natural-resources.gif" alt="Mining Cable Applications" className="w-10 h-10 object-contain" referrerPolicy="no-referrer" />
+    title: <>Preferred Choice for <span className="text-brand-secondary">Mining Cables</span> Applications</>,
+    icon: <img src="/icons/Nicco website icons/natural-resources.gif" alt="Mining Cable Applications" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
   }
 ];
 
@@ -67,6 +67,11 @@ const WhyNicco: React.FC = () => {
               <p className="mt-6 text-black/70 max-w-2xl mx-auto lg:mx-0 text-lg font-medium leading-relaxed">
                 With a legacy of innovation and a commitment to quality, we provide specialized cable solutions that power the most demanding industries across the globe.
               </p>
+              <div className="mt-8 flex justify-center lg:justify-start">
+                <Link to="/about" className="inline-block px-6 py-2.5 bg-brand-secondary text-white rounded-full font-bold uppercase tracking-widest text-xs hover:bg-black transition-all shadow-xl shadow-brand-dark/10">
+                  Know More
+                </Link>
+              </div>
             </div>
             <div className="lg:col-span-5">
               <div className="relative rounded-[2rem] overflow-hidden aspect-[4/3] shadow-2xl group">

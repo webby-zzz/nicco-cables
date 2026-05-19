@@ -41,12 +41,7 @@ const Overview: React.FC = () => {
             <p className="text-black leading-relaxed font-light text-base">
               With <strong>world-class manufacturing</strong>, <strong>in-house R&D</strong>, advanced <strong>compounding technology</strong>, and <strong>NABL-accredited testing</strong>, we engineer cables that deliver uncompromising <strong>safety, durability, and performance</strong> in the most demanding environments.
             </p>
-            
-            <div className="pt-2">
-              <Link to="/about" className="inline-block px-6 py-2.5 bg-brand-secondary text-white rounded-full font-bold uppercase tracking-widest text-xs hover:bg-black transition-all shadow-xl shadow-brand-dark/10">
-                Know More
-              </Link>
-            </div>
+
           </div>
 
         </motion.div>

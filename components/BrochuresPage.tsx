@@ -21,22 +21,22 @@ const dummyBrochures: Brochure[] = [
     title: 'Nicco Cables Corporate Catalogue',
     category: 'Corporate',
     thumbnail: '/brochures/Thumbnails/Nicco Cables Corporate Catalogue.webp',
-    pdfUrl: '/brochures/Corporate Brochure.pdf',
+    pdfUrl: '/brochures/Nicco Cables Pvt. Ltd. Corporate  Catalogue (2)_compressed.pdf',
     description: 'A comprehensive overview of Nicco Cables, our history, and our vision for the future of power transmission.',
     previewImage: '/brochures/Thumbnails/Nicco Cables Corporate Catalogue.webp'
   },
   {
     id: '2',
-    title: 'Short LT Cables Brochure',
+    title: 'Data Centre Cables',
     category: 'Technical',
-    thumbnail: '/brochures/Thumbnails/LT Cables Brochure.webp',
-    pdfUrl: '/brochures/Short LT cables brochure.pdf',
-    description: 'Detailed specifications for short length Low Tension (LT) cables.',
-    previewImage: '/brochures/Thumbnails/LT Cables Brochure.webp'
+    thumbnail: '/brochures/Thumbnails/Nicco Cables Corporate Catalogue.webp',
+    pdfUrl: '/brochures/Data Centre_compressed.pdf',
+    description: 'Detailed specifications for Data Centre cables.',
+    previewImage: '/brochures/Thumbnails/Nicco Cables Corporate Catalogue.webp'
   },
   {
     id: '3',
-    title: 'Long LT Power & Control Cables',
+    title: 'LT Power & Control Cables',
     category: 'Technical',
     thumbnail: '/brochures/Thumbnails/LT Cables Brochure.webp',
     pdfUrl: '/brochures/Long LT Power & Control-compressed.pdf',
@@ -48,7 +48,7 @@ const dummyBrochures: Brochure[] = [
     title: 'Medium Voltage Covered Conductor (MVCC)',
     category: 'Technical',
     thumbnail: '/brochures/Thumbnails/Medium Voltage Covered Conductor (MVCC).webp',
-    pdfUrl: '/brochures/Medium Voltage Covered Conductor (MVCC) with E-Beam Process passed.pdf',
+    pdfUrl: '/brochures/Medium Voltage Covered Conductor (MVCC) with E-Beam Process passed (1)_compressed.pdf',
     description: 'Specifications for Medium Voltage Covered Conductor (MVCC) with E-Beam Process.',
     previewImage: '/brochures/Thumbnails/Medium Voltage Covered Conductor (MVCC).webp'
   },
@@ -57,7 +57,7 @@ const dummyBrochures: Brochure[] = [
     title: 'Railway Cables',
     category: 'Technical',
     thumbnail: '/brochures/Thumbnails/Railway Cables.webp',
-    pdfUrl: '/brochures/Railway Cables .pdf',
+    pdfUrl: '/brochures/Railway Cables_compressed.pdf',
     description: 'Detailed specifications for RDSO approved specialized cables for Railway Signaling and power applications.',
     previewImage: '/brochures/Thumbnails/Railway Cables.webp'
   },
@@ -66,7 +66,7 @@ const dummyBrochures: Brochure[] = [
     title: 'Wind Energy and Solar Cables',
     category: 'Technical',
     thumbnail: '/brochures/Thumbnails/Wind Energy and Solar Cables.webp',
-    pdfUrl: '/brochures/Wind Energy and Solar Cables.pdf',
+    pdfUrl: '/brochures/Wind Energy and Solar Cables (1)_compressed.pdf',
     description: 'Cables designed specifically for renewable energy applications including wind and solar.',
     previewImage: '/brochures/Thumbnails/Wind Energy and Solar Cables.webp'
   },
@@ -75,7 +75,7 @@ const dummyBrochures: Brochure[] = [
     title: 'Shipbuilding Cables',
     category: 'Technical',
     thumbnail: '/brochures/Thumbnails/Shipbuilding Cables.webp',
-    pdfUrl: '/brochures/_SHIPBUILDING CABLES.pdf',
+    pdfUrl: '/brochures/SHIPBUILDING CABLES_compressed.pdf',
     description: 'Marine-grade cables designed for shipbuilding and offshore applications.',
     previewImage: '/brochures/Thumbnails/Shipbuilding Cables.webp'
   },
@@ -84,52 +84,43 @@ const dummyBrochures: Brochure[] = [
     title: 'Automotive Cables',
     category: 'Technical',
     thumbnail: '/brochures/Thumbnails/Automotive Cables.webp',
-    pdfUrl: '/brochures/AUTOMOTIVE CABLES (R3).pdf',
+    pdfUrl: '/brochures/AUTOMOTIVE CABLES_compressed.pdf',
     description: 'High-performance cables for the automotive industry.',
     previewImage: '/brochures/Thumbnails/Automotive Cables.webp'
   },
   {
     id: '9',
-    title: 'Elastomeric Insulated Cables',
-    category: 'Technical',
-    thumbnail: '/brochures/Thumbnails/Elastomeric Insulated Cables.webp',
-    pdfUrl: '/brochures/ELASTOMERIC INSULATED CABLES - NICCO.pdf',
-    description: 'Flexible and durable Elastomeric insulated cables for various industrial uses.',
-    previewImage: '/brochures/Thumbnails/Elastomeric Insulated Cables.webp'
-  },
-  {
-    id: '10',
-    title: 'HT Cables upto 33 kV',
+    title: 'HT Cables',
     category: 'Technical',
     thumbnail: '/brochures/Thumbnails/HT Cables upto 11KV.webp',
-    pdfUrl: '/brochures/HT Cables upto 33 kV - NICCO .pdf',
-    description: 'Specifications for High Tension (HT) cables upto 33kV.',
+    pdfUrl: '/brochures/HT Cables upto 11KV - NICCO  (5.83 x 8.27 in) (1)_compressed.pdf',
+    description: 'Specifications for High Tension (HT) cables.',
     previewImage: '/brochures/Thumbnails/HT Cables upto 11KV.webp'
   },
   {
-    id: '11',
+    id: '10',
     title: 'Fire Survival Cables',
     category: 'Technical',
     thumbnail: '/brochures/Thumbnails/Fire Survival Cables.webp',
-    pdfUrl: '/brochures/Fire Survival Cables rated at 950°C - NICCO .pdf',
+    pdfUrl: '/brochures/Fire Survival Cables rated at 950°C - NICCO_compressed.pdf',
     description: 'Fire survival cables rated at 950°C for critical safety applications.',
     previewImage: '/brochures/Thumbnails/Fire Survival Cables.webp'
   },
   {
-    id: '12',
+    id: '11',
     title: 'Instrumentation Cables',
     category: 'Technical',
     thumbnail: '/brochures/Thumbnails/Instrumentation Cables.webp',
-    pdfUrl: '/brochures/INSTRUMENTATION CABLES - NICCO .pdf',
+    pdfUrl: '/brochures/INSTRUMENTATION CABLES - NICCO_compressed.pdf',
     description: 'High-precision Instrumentation Cables for industrial control systems.',
     previewImage: '/brochures/Thumbnails/Instrumentation Cables.webp'
   },
   {
-    id: '13',
+    id: '12',
     title: 'UL Cables',
     category: 'Technical',
     thumbnail: '/brochures/Thumbnails/UL Cables.png',
-    pdfUrl: '/brochures/UL .pdf',
+    pdfUrl: '/brochures/UL Cables_compressed.pdf',
     description: 'International standard UL listed cables for diverse applications.',
     previewImage: '/brochures/Thumbnails/UL Cables.png'
   }

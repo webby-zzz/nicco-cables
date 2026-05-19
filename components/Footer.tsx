@@ -89,15 +89,15 @@ const Footer: React.FC = () => {
             <FooterSection 
               title="INDUSTRIES" 
               links={[
-                { name: 'Transmission & Dist.', link: '/industry/transmission-distribution' },
-                { name: 'Renewable Energy', link: '/industry/renewable-energy' },
-                { name: 'Power Generation', link: '/industry/power-generation' },
-                { name: 'Exploration', link: '/industry/exploration' },
-                { name: 'Mobility', link: '/industry/mobility' },
                 { name: 'Defence', link: '/industry/defence' },
-                { name: 'Manufacturing', link: '/industry/manufacturing' },
+                { name: 'Exploration', link: '/industry/exploration' },
+                { name: 'Harnessing', link: '/products/harnessing' },
                 { name: 'Infrastructure', link: '/industry/infrastructure' },
-                { name: 'Harnessing', link: '/products/harnessing' }
+                { name: 'Manufacturing', link: '/industry/manufacturing' },
+                { name: 'Mobility', link: '/industry/mobility' },
+                { name: 'Power Generation', link: '/industry/power-generation' },
+                { name: 'Renewable Energy', link: '/industry/renewable-energy' },
+                { name: 'Transmission & Dist.', link: '/industry/transmission-distribution' }
               ]} 
             />
 

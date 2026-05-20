@@ -39,7 +39,7 @@ const dummyBrochures: Brochure[] = [
     title: 'LT Power & Control Cables',
     category: 'Technical',
     thumbnail: '/brochures/Thumbnails/LT Cables Brochure.webp',
-    pdfUrl: '/brochures/Long LT Power & Control-compressed.pdf',
+    pdfUrl: '/brochures/Long LT Power & Control Cable-compressed\u00A0(1).pdf',
     description: 'Comprehensive catalog for long length Low Tension power and Control Cables.',
     previewImage: '/brochures/Thumbnails/LT Cables Brochure.webp'
   },
@@ -123,6 +123,15 @@ const dummyBrochures: Brochure[] = [
     pdfUrl: '/brochures/UL Cables_compressed.pdf',
     description: 'International standard UL listed cables for diverse applications.',
     previewImage: '/brochures/Thumbnails/UL Cables.png'
+  },
+  {
+    id: '13',
+    title: 'Elastomeric Insulated Cables',
+    category: 'Technical',
+    thumbnail: '/brochures/Thumbnails/Elastomeric Insulated Cables.webp',
+    pdfUrl: '/brochures/_NICCO - ELASTOMERIC INSULATED CABLES_compressed.pdf',
+    description: 'Highly flexible, durable, and temperature-resistant Elastomeric Insulated Cables designed for heavy industrial and demanding applications.',
+    previewImage: '/brochures/Thumbnails/Elastomeric Insulated Cables.webp'
   }
 ];
 

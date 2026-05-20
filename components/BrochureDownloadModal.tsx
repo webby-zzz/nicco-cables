@@ -34,10 +34,12 @@ const BrochureDownloadModal: React.FC<BrochureDownloadModalProps> = ({
         },
         body: JSON.stringify({
           access_key:
-            import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || 'YOUR_ACCESS_KEY_HERE',
+            import.meta.env.VITE_WEB3FORMS_CONTACT_KEY || 'c2b6b3f3-573d-4674-8f45-85c11ea3eab9',
           subject: `New Brochure Download: ${brochureTitle}`,
+          name: data.name,
           from_name: data.name,
           email: data.email,
+          replyto: data.email,
           phone: data.phone,
           brochure: brochureTitle,
         }),

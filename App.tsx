@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import TrustAnchors from './components/TrustAnchors';
 import Overview from './components/Overview';
 import Clientele from './components/Clientele';
 import WhyNicco from './components/WhyNicco';
@@ -51,7 +50,6 @@ const HomePage: React.FC = () => {
   return (
     <main>
       <Hero />
-      <TrustAnchors />
       <Overview />
       <Clientele />
       <WhyNicco />

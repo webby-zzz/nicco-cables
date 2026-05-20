@@ -55,7 +55,7 @@ const TrustAnchors: React.FC = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       paginate(1);
-    }, 6000);
+    }, 2000);
     return () => clearInterval(timer);
   }, [anchors.length]);
 
@@ -85,10 +85,10 @@ const TrustAnchors: React.FC = () => {
   };
 
   return (
-    <section className="bg-brand-ash py-2 md:py-2 border-b border-black/5 relative z-20 overflow-hidden select-none">
+    <section className="bg-brand-ash py-3 md:py-4 border-b border-black/5 relative z-20 overflow-hidden select-none">
       <div className="w-full px-4 md:px-8">
         <div 
-          className="relative h-16 md:h-16 w-full flex items-center justify-center cursor-grab active:cursor-grabbing"
+          className="relative h-14 md:h-16 w-full flex items-center justify-center cursor-grab active:cursor-grabbing"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
@@ -108,10 +108,10 @@ const TrustAnchors: React.FC = () => {
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -40 }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
               className="absolute inset-0 flex flex-row items-center justify-center w-full px-4"
             >
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 w-full max-w-7xl">
@@ -120,17 +120,14 @@ const TrustAnchors: React.FC = () => {
                   anchors[(currentIndex + 1) % anchors.length],
                   anchors[(currentIndex + 2) % anchors.length]
                 ].map((anchor, i) => (
-                  <div key={i} className={`flex items-center gap-4 ${i > 0 ? 'hidden md:flex' : 'flex'}`}>
-                    <div className="flex-shrink-0 scale-90 md:scale-100">
+                  <div key={i} className={`flex flex-col items-center justify-center gap-2 text-center ${i > 0 ? 'hidden md:flex' : 'flex'}`}>
+                    <div className="flex-shrink-0 scale-90 md:scale-100 mb-1">
                       {anchor.icon}
                     </div>
-                    <div className="text-left">
-                      <h4 className="text-[13px] md:text-[14px] font-black text-brand-dark uppercase tracking-wider leading-tight mb-0.5">
+                    <div className="text-center">
+                      <h4 className="text-[13px] md:text-[14px] font-black text-brand-dark uppercase tracking-wider leading-tight max-w-[240px] mx-auto">
                         {anchor.title}
                       </h4>
-                      <p className="text-[11px] md:text-[11px] text-brand-muted font-medium leading-snug">
-                        {anchor.description}
-                      </p>
                     </div>
                   </div>
                 ))}

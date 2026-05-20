@@ -30,10 +30,12 @@ const ContactPage: React.FC = () => {
           Accept: "application/json"
         },
         body: JSON.stringify({
-          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_ACCESS_KEY_HERE",
+          access_key: import.meta.env.VITE_WEB3FORMS_CONTACT_KEY || "c2b6b3f3-573d-4674-8f45-85c11ea3eab9",
           subject: "New Contact Form Submission from Niccocables Website",
+          name: formDataObj.name,
           from_name: formDataObj.name,
           email: formDataObj.email,
+          replyto: formDataObj.email,
           phone: formDataObj.phone,
           company: formDataObj.company || 'N/A',
           message: formDataObj.message || 'N/A'
@@ -72,10 +74,12 @@ const ContactPage: React.FC = () => {
           Accept: "application/json"
         },
         body: JSON.stringify({
-          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_ACCESS_KEY_HERE",
+          access_key: import.meta.env.VITE_WEB3FORMS_CAREER_KEY || "9d167c9f-a1b9-4732-8744-dc44316485a7",
           subject: "New Career Application from Niccocables Website",
           name: formDataObj.name,
+          from_name: formDataObj.name,
           email: formDataObj.email,
+          replyto: formDataObj.email,
           phone: formDataObj.phone,
           position: formDataObj.position,
           cv_link: formDataObj.cv_link,
@@ -154,7 +158,7 @@ const ContactPage: React.FC = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative pt-48 md:pt-56 pb-16 bg-brand-dark overflow-hidden">
+      <section className="relative pt-28 md:pt-56 pb-16 bg-brand-dark overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-secondary/5 -skew-x-12 translate-x-1/4" />
         <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
           <div className="max-w-3xl">
@@ -200,7 +204,7 @@ const ContactPage: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-xs font-black text-white uppercase tracking-widest mb-1">Contact</p>
-                  <a href="tel:03340647177" className="text-sm font-bold text-white hover:text-brand-secondary transition-colors">(033) 40647177</a>
+                  <a href="tel:+9140647177" className="text-sm font-bold text-white hover:text-brand-secondary transition-colors">+9140647177</a>
                 </div>
               </div>
             </div>

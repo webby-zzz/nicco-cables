@@ -112,8 +112,8 @@ const Footer: React.FC = () => {
             <div className="flex flex-col h-full">
               <h4 className="font-bold text-white mb-4 tracking-widest text-xs opacity-60 uppercase border-l-2 border-brand-secondary pl-2">CONNECT</h4>
               <div className="flex flex-col gap-2 mb-6">
-                <a href="tel:03340647177" className="text-white/90 hover:text-brand-secondary transition-colors text-[11px] font-medium tracking-wide">
-                  (033) 40647177
+                <a href="tel:+9140647177" className="text-white/90 hover:text-brand-secondary transition-colors text-[11px] font-medium tracking-wide">
+                  +9140647177
                 </a>
                 <a href="mailto:info@niccocables.com" className="text-white/90 hover:text-brand-secondary transition-colors text-[11px] font-medium tracking-wide">
                   info@niccocables.com

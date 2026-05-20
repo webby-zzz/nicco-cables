@@ -339,9 +339,9 @@ const LanguageSelector = ({ isMobile = false }) => {
       </button>
       
       <div 
-        className={`absolute ${isMobile ? 'top-full mt-4 left-1/2 -translate-x-1/2 w-[85vw] max-w-sm' : 'top-[calc(100%+0.5rem)] left-1/2 -translate-x-1/2 w-56'} bg-white/95 backdrop-blur-xl border border-brand-ash/20 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.15)] overflow-hidden z-[100] pb-2 transition-all duration-300 origin-top ${isOpen ? 'opacity-100 scale-y-100 visible' : 'opacity-0 scale-y-95 invisible pointer-events-none'}`}
+        className={`${isMobile ? 'relative w-full max-w-xs mt-4' : 'absolute top-[calc(100%+0.5rem)] left-1/2 -translate-x-1/2 w-56 z-[100]'} bg-white/95 backdrop-blur-xl border border-brand-ash/20 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.15)] overflow-hidden transition-all duration-300 origin-top ${isOpen ? 'opacity-100 scale-y-100 visible max-h-80 pb-2' : 'opacity-0 scale-y-95 invisible pointer-events-none max-h-0'}`}
       >
-        <div className={`${isMobile ? 'max-h-[40vh]' : 'max-h-80'} overflow-y-auto pt-2 custom-scrollbar`}>
+        <div className={`${isMobile ? 'max-h-[30vh]' : 'max-h-80'} overflow-y-auto pt-2 custom-scrollbar`}>
           {LANGUAGES.map((lang) => (
             <button
               key={lang.code}
@@ -489,7 +489,7 @@ const Navbar: React.FC = () => {
   const useDarkText = true;
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 flex flex-col items-center">
+    <div className="sticky lg:fixed top-0 left-0 right-0 z-50 flex flex-col items-center w-full bg-transparent">
       <nav 
         onMouseEnter={() => { if (timeoutRef.current) clearTimeout(timeoutRef.current); }}
         onMouseLeave={() => {
@@ -497,7 +497,11 @@ const Navbar: React.FC = () => {
             setIsMegaMenuOpen(false);
           }, 300);
         }}
-        className="transition-all duration-300 ease-in-out flex items-center justify-center relative w-[calc(100%-1rem)] md:w-[calc(100%-2rem)] max-w-[1440px] bg-white/90 backdrop-blur-md shadow-2xl border border-brand-secondary/10 px-4 lg:px-10 py-3 lg:py-4 mt-2 md:mt-4 rounded-full min-h-[4rem] lg:min-h-[5rem]"
+        className={`transition-all duration-300 ease-in-out flex items-center justify-center relative max-w-[1440px] bg-white/90 backdrop-blur-md px-4 lg:px-10 py-3 lg:py-4 min-h-[4rem] lg:min-h-[5rem] ${
+          isScrolled 
+            ? 'w-[calc(100%-1rem)] md:w-[calc(100%-2rem)] lg:w-[calc(100%-2rem)] mt-2 md:mt-4 lg:mt-4 rounded-full shadow-2xl border border-brand-secondary/10'
+            : 'w-full lg:w-[calc(100%-2rem)] mt-0 lg:mt-4 rounded-none lg:rounded-full shadow-md lg:shadow-2xl border-b border-brand-secondary/10 lg:border'
+        }`}
       >
         <div className="absolute flex items-center left-4 lg:left-10">
           <Logo />
@@ -548,7 +552,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       <div className={`fixed inset-0 glass-panel z-[60] transition-all duration-300 lg:hidden overflow-y-auto ${mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none translate-y-10'}`}>
-        <div className="flex flex-col items-center justify-center min-h-full py-20 space-y-8 px-6 text-center">
+        <div className="flex flex-col items-center justify-start w-full pt-28 pb-16 space-y-8 px-6 text-center">
           <button className="absolute top-10 right-10 p-4" onClick={() => setMobileMenuOpen(false)}><X className="w-8 h-8 text-brand-dark" /></button>
           {menuItems.map((item) => {
             if (item.isTranslate) {

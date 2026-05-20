@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import BrochureDownloadModal from './BrochureDownloadModal';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
@@ -14,7 +15,7 @@ const TechnicalTable: React.FC<{ title: string; data: { label: string; value: Re
     <div className="w-full bg-white border border-gray-200 rounded-lg overflow-hidden">
       {data.map((item, index) => (
         <div key={index} className="flex flex-col sm:flex-row border-b last:border-b-0 border-gray-200">
-          <div className="w-full sm:w-1/3 bg-gray-50 py-3 px-4 sm:px-6 font-bold text-brand-dark text-sm sm:text-base border-b sm:border-b-0 sm:border-r border-gray-200 sm:border-l-4 sm:border-l-brand-secondary">
+          <div className="w-full sm:w-1/3 bg-gray-50 py-3 px-4 sm:px-6 font-bold text-brand-dark text-sm sm:text-base border-b sm:border-b-0 sm:border-r border-gray-200 border-l-4 border-l-brand-secondary">
             {item.label}
           </div>
           <div className="w-full sm:w-2/3 py-3 px-4 sm:px-6 text-sm sm:text-base text-gray-700 font-normal leading-relaxed break-words">
@@ -27,6 +28,61 @@ const TechnicalTable: React.FC<{ title: string; data: { label: string; value: Re
 );
 
 const RenewableEnergyPage: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalProps, setModalProps] = useState({ title: '', url: '' });
+
+  const brochureMapping: Record<string, { title: string; url: string }> = {
+    "LT Power & Control Cables": {
+      title: "LT Power & Control Cables",
+      url: "/brochures/Long LT Power & Control Cable-compressed\u00A0(1).pdf"
+    },
+    "HT Cables upto 33 kV": {
+      title: "HT Cables",
+      url: "/brochures/HT Cables upto 11KV - NICCO  (5.83 x 8.27 in) (1)_compressed.pdf"
+    },
+    "HT Power Cables upto 33kV": {
+      title: "HT Cables",
+      url: "/brochures/HT Cables upto 11KV - NICCO  (5.83 x 8.27 in) (1)_compressed.pdf"
+    },
+    "Instrumentation Cables": {
+      title: "Instrumentation Cables",
+      url: "/brochures/INSTRUMENTATION CABLES - NICCO_compressed.pdf"
+    },
+    "Fire Resistant & Fire Survival Cables": {
+      title: "Fire Survival Cables",
+      url: "/brochures/Fire Survival Cables rated at 950°C - NICCO_compressed.pdf"
+    },
+    "Elastomeric Mining Cables": {
+      title: "Elastomeric Insulated Cables",
+      url: "/brochures/_NICCO - ELASTOMERIC INSULATED CABLES_compressed.pdf"
+    },
+    "Elastomeric & Silicon Cables (Up to 15 kV)": {
+      title: "Elastomeric Insulated Cables",
+      url: "/brochures/_NICCO - ELASTOMERIC INSULATED CABLES_compressed.pdf"
+    },
+    "Ethernet / LAN Cables": {
+      title: "Data Centre Cables",
+      url: "/brochures/Data Centre_compressed.pdf"
+    },
+    "Solar Cables": {
+      title: "Wind Energy and Solar Cables",
+      url: "/brochures/Wind Energy and Solar Cables (1)_compressed.pdf"
+    },
+    "Wind Energy Cables": {
+      title: "Wind Energy and Solar Cables",
+      url: "/brochures/Wind Energy and Solar Cables (1)_compressed.pdf"
+    },
+    "Automotive Cables": {
+      title: "Automotive Cables",
+      url: "/brochures/AUTOMOTIVE CABLES_compressed.pdf"
+    },
+    "Shipbuilding & Marine Cables": {
+      title: "Shipbuilding Cables",
+      url: "/brochures/SHIPBUILDING CABLES_compressed.pdf"
+    }
+  };
+
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -73,7 +129,7 @@ const RenewableEnergyPage: React.FC = () => {
   ];
 
   return (
-    <div className="bg-white min-h-screen pt-28 md:pt-36 pb-16">
+    <div className="bg-white min-h-screen pt-20 md:pt-36 pb-16">
       <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
         
         <Breadcrumbs />
@@ -126,6 +182,23 @@ const RenewableEnergyPage: React.FC = () => {
               <p className="text-base text-black font-medium leading-relaxed mb-10">
                 {section.description}
               </p>
+
+              {brochureMapping[section.title] && (
+                <div className="mb-8 flex justify-start">
+                  <button 
+                    onClick={() => {
+                      setModalProps({
+                        title: brochureMapping[section.title].title,
+                        url: brochureMapping[section.title].url
+                      });
+                      setIsModalOpen(true);
+                    }}
+                    className="inline-flex items-center gap-2 bg-brand-secondary/10 hover:bg-brand-secondary text-brand-secondary hover:text-white px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all duration-300 border border-brand-secondary/20 hover:shadow-lg hover:shadow-brand-secondary/20"
+                  >
+                    Download {brochureMapping[section.title].title} Brochure <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+              )}
 
               <div className="flex flex-col gap-8">
                 {section.id === "wind" && (
@@ -203,6 +276,12 @@ const RenewableEnergyPage: React.FC = () => {
         </motion.div>
 
       </div>
+      <BrochureDownloadModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        brochureTitle={modalProps.title} 
+        pdfUrl={modalProps.url} 
+      />
     </div>
   );
 };

@@ -112,15 +112,42 @@ const ElectronBeamCablesPage: React.FC = () => {
             <p className="text-white/90 text-base font-medium">Contact our team or download our product brochure.</p>
           </div>
           <div className="flex flex-wrap gap-4 w-full md:w-auto mt-4 md:mt-0 justify-center md:justify-end">
-            <a href="/product page brochures/A5 Catalogues/Wind&Solar.pdf" target="_blank" rel="noopener noreferrer" className="bg-brand-dark text-white px-6 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-black transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
-              Solar Brochure <ArrowRight className="w-4 h-4" />
-            </a>
-            <a href="/product page brochures/A5 Catalogues/Railway.pdf" target="_blank" rel="noopener noreferrer" className="bg-brand-dark text-white px-6 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-black transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
+            <button 
+              onClick={() => {
+                setModalProps({
+                  title: 'Wind Energy and Solar Cables',
+                  url: '/brochures/Wind Energy and Solar Cables (1)_compressed.pdf'
+                });
+                setIsModalOpen(true);
+              }}
+              className="bg-brand-dark text-white px-6 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-black transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
+            >
+              Solar/Wind Brochure <ArrowRight className="w-4 h-4" />
+            </button>
+            <button 
+              onClick={() => {
+                setModalProps({
+                  title: 'Railway Cables',
+                  url: '/brochures/Railway Cables_compressed.pdf'
+                });
+                setIsModalOpen(true);
+              }}
+              className="bg-brand-dark text-white px-6 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-black transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
+            >
               Railway Brochure <ArrowRight className="w-4 h-4" />
-            </a>
-            <a href="/product page brochures/A5 Catalogues/Auto (Current, R3).pdf" target="_blank" rel="noopener noreferrer" className="bg-brand-dark text-white px-6 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-black transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
+            </button>
+            <button 
+              onClick={() => {
+                setModalProps({
+                  title: 'Automotive Cables',
+                  url: '/brochures/AUTOMOTIVE CABLES_compressed.pdf'
+                });
+                setIsModalOpen(true);
+              }}
+              className="bg-brand-dark text-white px-6 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-black transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
+            >
               Auto Brochure <ArrowRight className="w-4 h-4" />
-            </a>
+            </button>
             <Link to="/contact" className="bg-white text-brand-secondary px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
               Connect with Us <ArrowRight className="w-4 h-4" />
             </Link>

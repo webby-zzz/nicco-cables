@@ -1,5 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, useScroll, useSpring, useTransform } from 'motion/react';
 import { Settings, ShieldCheck, Lightbulb, Flag, Handshake, Target, Eye, Award, Zap } from 'lucide-react';
 import TrustAnchors from './TrustAnchors';
@@ -194,7 +195,7 @@ const AboutPage: React.FC = () => {
               <div className="h-[1px] w-24 bg-brand-secondary" />
               <div className="space-y-6 text-black leading-relaxed font-light text-base">
                 <p>
-                  Established with a vision to support the nation’s growing industrial and power needs, Nicco has evolved into a <strong className="font-bold text-brand-dark">technology-driven manufacturer</strong> of advanced electrical cables and specialized connectivity systems. Today, the company engineers a comprehensive portfolio including <strong className="font-bold text-brand-dark">HT Cables upto 33 kV</strong>, LT power and Control Cables, Instrumentation Cables, <strong className="font-bold text-brand-dark">Fire Survival cables</strong>, Electron-Beam irradiated cables, and specialized Elastomeric and Silicon cable solutions.
+                  Established with a vision to support the nation’s growing industrial and power needs, Nicco has evolved into a <strong className="font-bold text-brand-dark">technology-driven manufacturer</strong> of advanced electrical cables and specialized connectivity systems. Today, the company engineers a comprehensive portfolio including <Link to="/products/ht-power-cables" className="text-black font-light hover:underline">HT Cables upto 33 kV</Link>, <Link to="/products/lt-power-control" className="text-black font-light hover:underline">LT Power & Control Cables</Link>, <Link to="/products/instrumentation" className="text-black font-light hover:underline">Instrumentation Cables</Link>, <Link to="/products/Fire-Survival" className="text-black font-light hover:underline">Fire Survival Cables</Link>, <Link to="/products/Electron-Beam" className="text-black font-light hover:underline">Electron-Beam Irradiated Cables</Link>, and specialized <Link to="/products/Elastomeric-silicon" className="text-black font-light hover:underline">Elastomeric and Silicon Cable Solutions</Link>.
                 </p>
                 <p>
                   Our manufacturing capabilities are supported by <strong className="font-bold text-brand-dark">cutting-edge plant and machinery</strong>, advanced compounding technology, and a fully equipped <strong className="font-bold text-brand-dark">in-house R&D and testing ecosystem</strong>. The company was also among the first in India’s private sector to introduce <strong className="font-bold text-brand-dark">Electron Beam Irradiation Technology, first in India</strong> enabling superior cable performance in high-demand industrial applications.

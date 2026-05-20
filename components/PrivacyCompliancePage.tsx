@@ -11,7 +11,7 @@ const PrivacyCompliancePage: React.FC = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative pt-48 md:pt-56 pb-16 bg-brand-dark overflow-hidden">
+      <section className="relative pt-28 md:pt-56 pb-16 bg-brand-dark overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-secondary/5 -skew-x-12 translate-x-1/4" />
         <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
           <div className="max-w-3xl">

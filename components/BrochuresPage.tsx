@@ -65,10 +65,10 @@ const dummyBrochures: Brochure[] = [
     id: '6',
     title: 'Wind Energy and Solar Cables',
     category: 'Technical',
-    thumbnail: '/brochures/Thumbnails/Wind Energy and Solar Cables.webp',
+    thumbnail: '/brochures/Thumbnails/new Wind Energy and Solar Cables.jpg',
     pdfUrl: '/brochures/Wind Energy and Solar Cables (1)_compressed.pdf',
     description: 'Cables designed specifically for renewable energy applications including wind and solar.',
-    previewImage: '/brochures/Thumbnails/Wind Energy and Solar Cables.webp'
+    previewImage: '/brochures/Thumbnails/new Wind Energy and Solar Cables.jpg'
   },
   {
     id: '7',
@@ -110,10 +110,10 @@ const dummyBrochures: Brochure[] = [
     id: '11',
     title: 'Instrumentation Cables',
     category: 'Technical',
-    thumbnail: '/brochures/Thumbnails/Instrumentation Cables.webp',
+    thumbnail: '/brochures/Thumbnails/new Instrumentation Cables.jpg',
     pdfUrl: '/brochures/INSTRUMENTATION CABLES - NICCO_compressed.pdf',
     description: 'High-precision Instrumentation Cables for industrial control systems.',
-    previewImage: '/brochures/Thumbnails/Instrumentation Cables.webp'
+    previewImage: '/brochures/Thumbnails/new Instrumentation Cables.jpg'
   },
   {
     id: '12',
@@ -147,7 +147,7 @@ const BrochuresPage: React.FC = () => {
   return (
     <div className="bg-white min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-48 md:pt-56 pb-16 bg-brand-dark overflow-hidden">
+      <section className="relative pt-28 md:pt-56 pb-16 bg-brand-dark overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-secondary/5 -skew-x-12 translate-x-1/4" />
         <div className="max-w-[1440px] mx-auto px-4 lg:px-10 relative z-10">
           <div className="max-w-3xl">

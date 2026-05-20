@@ -1,5 +1,6 @@
 
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import BrochureDownloadModal from './BrochureDownloadModal';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
@@ -15,7 +16,7 @@ const TechnicalTable: React.FC<{ title: string; data: { label: string; value: Re
     <div className="w-full bg-white border border-gray-200 rounded-lg overflow-hidden">
       {data.map((item, index) => (
         <div key={index} className="flex flex-col sm:flex-row border-b last:border-b-0 border-gray-200">
-          <div className="w-full sm:w-1/3 bg-gray-50 py-3 px-4 sm:px-6 font-bold text-brand-dark text-sm sm:text-base border-b sm:border-b-0 sm:border-r border-gray-200 sm:border-l-4 sm:border-l-brand-secondary">
+          <div className="w-full sm:w-1/3 bg-gray-50 py-3 px-4 sm:px-6 font-bold text-brand-dark text-sm sm:text-base border-b sm:border-b-0 sm:border-r border-gray-200 border-l-4 border-l-brand-secondary">
             {item.label}
           </div>
           <div className="w-full sm:w-2/3 py-3 px-4 sm:px-6 text-sm sm:text-base text-gray-700 font-normal leading-relaxed break-words">
@@ -28,6 +29,9 @@ const TechnicalTable: React.FC<{ title: string; data: { label: string; value: Re
 );
 
 const ShipbuildingMarinePage: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalProps, setModalProps] = useState({ title: '', url: '' });
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -53,7 +57,7 @@ const ShipbuildingMarinePage: React.FC = () => {
   ];
 
   return (
-    <div className="bg-white min-h-screen pt-28 md:pt-36 pb-16">
+    <div className="bg-white min-h-screen pt-20 md:pt-36 pb-16">
       <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
         
         <Breadcrumbs />
@@ -111,12 +115,7 @@ const ShipbuildingMarinePage: React.FC = () => {
             <p className="text-white/90 text-base font-medium">Contact our team or download our product brochure.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-            <Link 
-              to="/brochures"
-              className="bg-brand-dark text-white px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-black transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
-            >
-              Download Brochure <ArrowRight className="w-4 h-4" />
-            </Link>
+            <button onClick={() => { setModalProps({ title: 'Shipbuilding Cables', url: '/brochures/SHIPBUILDING CABLES_compressed.pdf' }); setIsModalOpen(true); }} className="bg-brand-dark text-white px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-black transition-colors flex items-center justify-center gap-2 whitespace-nowrap">Download Brochure <ArrowRight className="w-4 h-4" /></button>
             <Link to="/contact" className="bg-white text-brand-secondary px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
               Connect with Us <ArrowRight className="w-4 h-4" />
             </Link>
@@ -124,6 +123,12 @@ const ShipbuildingMarinePage: React.FC = () => {
         </motion.div>
 
       </div>
+      <BrochureDownloadModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        brochureTitle={modalProps.title} 
+        pdfUrl={modalProps.url} 
+      />
     </div>
   );
 };

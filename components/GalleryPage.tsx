@@ -16,7 +16,7 @@ const getCategory = (filename: string, path: string) => {
   const lowerName = name.toLowerCase();
   const lowerPath = path.toLowerCase();
 
-  if (lowerPath.includes('/manufacturing/') || lowerPath.includes('/plants and machinery images/') || lowerPath.includes('/machinery images/')) {
+  if (lowerPath.includes('/manufacturing/') || lowerPath.includes('/plants and machinery images/')) {
     return 'Manufacturing Facility';
   }
 
@@ -103,10 +103,9 @@ const GalleryPage: React.FC = () => {
   const { galleryItems } = useMemo(() => {
     const galleryPaths = Object.keys(import.meta.glob('/public/Gallery/**/*'));
     const plantsPaths = Object.keys(import.meta.glob('/public/plants and machinery images/**/*'));
-    const machineryPaths = Object.keys(import.meta.glob('/public/Machinery images/**/*'));
     
     const pathMap = new Map<string, string>();
-    [...galleryPaths, ...plantsPaths, ...machineryPaths].forEach(path => {
+    [...galleryPaths, ...plantsPaths].forEach(path => {
       const filename = path.split('/').pop() || '';
       if (!pathMap.has(filename)) {
         pathMap.set(filename, path);

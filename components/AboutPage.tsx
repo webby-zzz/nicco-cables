@@ -80,21 +80,21 @@ const timelineData = [
 const AboutPage: React.FC = () => {
   const [currentImage, setCurrentImage] = React.useState(0);
   const facilityImages = [
-    "/Machinery images/PXL_20260307_122257277.MP.webp",
-    "/Machinery images/PXL_20260307_122714674.MP.webp",
-    "/Machinery images/PXL_20260307_122756824.MP.webp",
-    "/Machinery images/PXL_20260307_123121067.MP.webp",
-    "/Machinery images/PXL_20260307_123509679.MP.webp",
-    "/Machinery images/PXL_20260307_123540655.MP.webp",
-    "/Machinery images/PXL_20260307_123824439.MP.webp",
-    "/Machinery images/PXL_20260307_123841422.MP.webp",
-    "/Machinery images/PXL_20260307_124436883.MP.webp",
-    "/Machinery images/PXL_20260307_125134896.MP.webp",
-    "/Machinery images/PXL_20260307_125202879.MP.webp",
-    "/Machinery images/PXL_20260307_130008422.MP.webp",
-    "/Machinery images/PXL_20260307_130321908.MP.webp",
-    "/Machinery images/WhatsApp Image 2026-04-13 at 4.48.10 PM.webp",
-    "/Machinery images/WhatsApp Image 2026-04-13 at 4.53.32 PM.webp"
+    "/Machinery images/manufacturing machines (1).webp",
+    "/Machinery images/manufacturing machines (2).webp",
+    "/Machinery images/manufacturing machines (3).webp",
+    "/Machinery images/manufacturing machines (4).webp",
+    "/Machinery images/manufacturing machines (5).webp",
+    "/Machinery images/manufacturing machines (6).webp",
+    "/Machinery images/manufacturing machines (7).webp",
+    "/Machinery images/manufacturing machines (8).webp",
+    "/Machinery images/manufacturing machines (9).webp",
+    "/Machinery images/manufacturing machines (10).webp",
+    "/Machinery images/manufacturing machines (11).webp",
+    "/Machinery images/manufacturing machines (12).webp",
+    "/Machinery images/manufacturing machines (13).webp",
+    "/Machinery images/manufacturing machines (14).webp",
+    "/Machinery images/manufacturing machines (15).webp"
   ];
 
   const containerRef = useRef<HTMLDivElement>(null);

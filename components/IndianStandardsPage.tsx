@@ -54,14 +54,20 @@ const StandardSection: React.FC<{ standard: typeof standards[0], index: number }
       <div className={`flex flex-col ${index % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 lg:gap-12 items-center`}>
         {/* Image Side */}
         <div className="w-full lg:w-1/2">
-          <div className="relative rounded-[1.5rem] lg:rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/3] group">
+          <div className="relative rounded-[1.5rem] lg:rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/3] bg-white border border-gray-100 flex items-center justify-center group">
             <img 
               src={standard.image} 
               alt={standard.title} 
-              className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${standard.id === 'automotive' ? 'rotate-90' : ''}`}
+              className={`w-full h-full transition-all duration-700 ${
+                standard.id === 'automotive' 
+                  ? 'object-contain rotate-90 scale-[1.1] group-hover:scale-[1.15]' 
+                  : 'object-cover group-hover:scale-105'
+              }`}
               referrerPolicy="no-referrer"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent opacity-100" />
+            {standard.id !== 'automotive' && (
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent opacity-100" />
+            )}
           </div>
         </div>
 

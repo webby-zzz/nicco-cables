@@ -91,7 +91,6 @@ const AboutPage: React.FC = () => {
     "/Machinery images/PXL_20260307_124436883.MP.webp",
     "/Machinery images/PXL_20260307_125134896.MP.webp",
     "/Machinery images/PXL_20260307_125202879.MP.webp",
-    "/Machinery images/PXL_20260307_125229963.MP.webp",
     "/Machinery images/PXL_20260307_130008422.MP.webp",
     "/Machinery images/PXL_20260307_130321908.MP.webp",
     "/Machinery images/WhatsApp Image 2026-04-13 at 4.48.10 PM.webp",

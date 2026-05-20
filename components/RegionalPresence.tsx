@@ -29,9 +29,9 @@ const locations = [
     image: "https://placehold.co/1x1/000000/000000",
     details: [
       "Nicco Cables Private Ltd",
-      "Wave Silver Tower",
-      "Noida, Sector-18",
-      "New Delhi - 201301"
+      "1501 & 1502, Wave One Gold Offices,",
+      "Sector 18,",
+      "Noida, Uttar Pradesh – 201301"
     ],
     contact: "7419888228",
     email: "Info@niccocable.com"

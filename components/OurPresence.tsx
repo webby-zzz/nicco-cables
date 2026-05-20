@@ -24,10 +24,9 @@ const officeDetails = [
   {
     city: "Noida",
     details: [
-      "Office No.404, 4th Floor",
-      "Wave Silver Tower",
-      "Sec 18,",
-      "Noida – 201301"
+      "1501 & 1502, Wave One Gold Offices,",
+      "Sector 18,",
+      "Noida, Uttar Pradesh – 201301"
     ]
   },
   {

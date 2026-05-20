@@ -76,7 +76,7 @@ const WhyNicco: React.FC = () => {
             <div className="lg:col-span-5">
               <div className="relative rounded-[2rem] overflow-hidden aspect-[4/3] shadow-2xl group">
                 <img 
-                  src="/brand identity/WHY CHOOSE US.webp" 
+                  src="/brand identity/homepage image.webp" 
                   alt="Why Choose Nicco" 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   referrerPolicy="no-referrer"

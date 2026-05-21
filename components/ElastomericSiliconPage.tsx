@@ -118,8 +118,8 @@ const ElastomericSiliconPage: React.FC = () => {
         >
           <div className="w-full max-w-5xl aspect-video bg-white rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center border border-gray-100">
             <img 
-              src="/Product Images/Elastomeric-and-Silicon-Cables/8.webp" 
-              alt="Elastomeric Cable 8" 
+              src="/Product Images/Elastomeric-and-Silicon-Cables/Elastomeric Cables.jpeg" 
+              alt="Elastomeric Cables" 
               className="w-full h-full object-contain"
               referrerPolicy="no-referrer"
             />

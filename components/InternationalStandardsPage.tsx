@@ -1,9 +1,15 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
+import { Download, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import SplitTitle from './SplitTitle';
+import BrochureDownloadModal from './BrochureDownloadModal';
 
 const InternationalStandardsPage: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalProps, setModalProps] = useState({ title: '', url: '' });
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -67,7 +73,8 @@ const InternationalStandardsPage: React.FC = () => {
     },
     {
       category: "Power, Control, Solar, Appliance Wire Cables",
-      items: ["UL 44", "UL 854", "UL 83", "UL 4703", "ICEA-S-76-474"]
+      items: ["UL 44", "UL 854", "UL 83", "UL 4703", "ICEA-S-76-474"],
+      hasULBrochure: true
     },
     {
       category: "Cables for Rolling Stock & Coach Wiring",
@@ -120,11 +127,49 @@ const InternationalStandardsPage: React.FC = () => {
                   </li>
                 ))}
               </ul>
+              {std.hasULBrochure && (
+                <div className="mt-6 pt-4 border-t border-gray-100">
+                  <button 
+                    onClick={() => {
+                      setModalProps({ title: 'UL Cables', url: '/brochures/UL Cables_compressed.pdf' });
+                      setIsModalOpen(true);
+                    }}
+                    className="w-full flex items-center justify-center gap-2 bg-brand-secondary/10 hover:bg-brand-secondary text-brand-secondary hover:text-white px-4 py-2.5 rounded-xl font-black text-[10px] uppercase tracking-widest transition-all duration-300 border border-brand-secondary/25 shadow-sm"
+                  >
+                    <Download className="w-3.5 h-3.5" /> Download UL Brochure
+                  </button>
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
 
+        {/* CTA Section */}
+        <div className="bg-brand-secondary rounded-[2rem] p-8 md:p-12 mt-16 flex flex-col md:flex-row items-center justify-between gap-8 shadow-lg">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tighter mb-2">Need more{"\u00A0"}information?</h2>
+            <p className="text-white/90 text-base font-medium">Contact our team or download our product brochure.</p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+            <button onClick={() => { setModalProps({ title: 'UL Cables', url: '/brochures/UL Cables_compressed.pdf' }); setIsModalOpen(true); }} className="bg-brand-dark text-white px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-black transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
+              Download UL Brochure <ArrowRight className="w-4 h-4" />
+            </button>
+            <Link 
+              to="/contact"
+              className="bg-white text-brand-secondary px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
+            >
+              Connect with Us <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+
       </div>
+      <BrochureDownloadModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        brochureTitle={modalProps.title} 
+        pdfUrl={modalProps.url} 
+      />
     </div>
   );
 };

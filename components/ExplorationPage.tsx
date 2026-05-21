@@ -231,6 +231,7 @@ const ExplorationPage: React.FC = () => {
             <p className="text-base text-black leading-relaxed font-medium">
               Cables deployed in oil & gas and mining environments must endure extreme mechanical stress, chemical exposure, and hazardous conditions. We supply a comprehensive range of cables engineered specifically for exploration, extraction, and processing applications — built for reliability where it matters most.
             </p>
+
           </div>
           <div className="md:w-1/2 w-full h-64 md:h-80 bg-brand-ash rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center bg-white border border-gray-100">
             <ImageCarousel 
@@ -300,12 +301,18 @@ const ExplorationPage: React.FC = () => {
             <p className="text-white/90 text-base font-medium">Contact our team or download our product brochure.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-            <Link 
-              to="/brochures"
+            <button 
+              onClick={() => {
+                setModalProps({
+                  title: "Oil & Gas Cables",
+                  url: "/brochures/Oil & Gas_compressed.pdf"
+                });
+                setIsModalOpen(true);
+              }}
               className="bg-brand-dark text-white px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-black transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
             >
-              Download Brochure <ArrowRight className="w-4 h-4" />
-            </Link>
+              Download Oil & Gas Brochure <ArrowRight className="w-4 h-4" />
+            </button>
             <Link to="/contact" className="bg-white text-brand-secondary px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
               Connect with Us <ArrowRight className="w-4 h-4" />
             </Link>

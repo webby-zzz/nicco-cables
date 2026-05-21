@@ -155,7 +155,7 @@ const AboutPage: React.FC = () => {
             transition={{ delay: 0.6, duration: 0.56 }}
             className="text-white text-xs font-black uppercase tracking-widest"
           >
-            EIGHT DECADES OF TRUST & INNOVATION
+            EIGHT DECADES OF <br className="md:hidden" /> TRUST & INNOVATION
           </motion.p>
         </div>
       </section>
@@ -176,7 +176,7 @@ const AboutPage: React.FC = () => {
             <div className="lg:col-span-5">
               <h2 className="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-4 block">ABOUT US</h2>
               <h3 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tighter leading-tight mb-6">
-                8 DECADES OF <span className="text-brand-secondary">TRUST & INNOVATION</span>
+                8 DECADES OF <br className="md:hidden" /> <span className="text-brand-secondary">TRUST & INNOVATION</span>
               </h3>
               <div className="relative rounded-[1.5rem] overflow-hidden aspect-square shadow-2xl group">
                 <img

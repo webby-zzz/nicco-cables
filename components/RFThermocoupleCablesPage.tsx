@@ -98,9 +98,9 @@ const RFThermocoupleCablesPage: React.FC = () => {
             <p className="text-white/90 text-base font-medium">Contact our team or download our product brochure.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-            <button onClick={() => { setModalProps({ title: 'PT / RF Cables', url: '#' }); setIsModalOpen(true); }} className="bg-brand-dark text-white px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-black transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
-              Download Brochure <ArrowRight className="w-4 h-4" />
-            </button>
+            <Link to="/brochures" className="bg-brand-dark text-white px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-black transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
+              View Brochures <ArrowRight className="w-4 h-4" />
+            </Link>
             <Link 
               to="/contact"
               className="bg-white text-brand-secondary px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 whitespace-nowrap"

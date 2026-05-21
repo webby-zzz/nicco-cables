@@ -132,6 +132,15 @@ const dummyBrochures: Brochure[] = [
     pdfUrl: '/brochures/_NICCO - ELASTOMERIC INSULATED CABLES_compressed.pdf',
     description: 'Highly flexible, durable, and temperature-resistant Elastomeric Insulated Cables designed for heavy industrial and demanding applications.',
     previewImage: '/brochures/Thumbnails/Elastomeric Insulated Cables.webp'
+  },
+  {
+    id: '14',
+    title: 'Oil & Gas Cables',
+    category: 'Technical',
+    thumbnail: '/brochures/Thumbnails/Oil & Gas.png',
+    pdfUrl: '/brochures/Oil & Gas_compressed.pdf',
+    description: 'Specialized high-performance cables designed for oil and gas exploration, drilling, extraction, and processing facilities.',
+    previewImage: '/brochures/Thumbnails/Oil & Gas.png'
   }
 ];
 

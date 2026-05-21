@@ -136,7 +136,7 @@ const HighTemperatureCablesPage: React.FC = () => {
               to="/brochures"
               className="bg-brand-dark text-white px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-black transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
             >
-              Download Brochure <ArrowRight className="w-4 h-4" />
+              View Brochures <ArrowRight className="w-4 h-4" />
             </Link>
             <Link 
               to="/contact"

@@ -60,10 +60,6 @@ const DefencePage: React.FC = () => {
       title: "Elastomeric Insulated Cables",
       url: "/brochures/_NICCO - ELASTOMERIC INSULATED CABLES_compressed.pdf"
     },
-    "Ethernet / LAN Cables": {
-      title: "Data Centre Cables",
-      url: "/brochures/Data Centre_compressed.pdf"
-    },
     "Solar Cables": {
       title: "Wind Energy and Solar Cables",
       url: "/brochures/Wind Energy and Solar Cables (1)_compressed.pdf"
@@ -269,12 +265,18 @@ const DefencePage: React.FC = () => {
             <p className="text-white/90 text-base font-medium">Contact our team or download our product brochure.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-            <Link 
-              to="/brochures"
+            <button 
+              onClick={() => {
+                setModalProps({
+                  title: "Shipbuilding Cables",
+                  url: "/brochures/SHIPBUILDING CABLES_compressed.pdf"
+                });
+                setIsModalOpen(true);
+              }}
               className="bg-brand-dark text-white px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-black transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
             >
-              View Brochures <ArrowRight className="w-4 h-4" />
-            </Link>
+              Download Shipbuilding Brochure <ArrowRight className="w-4 h-4" />
+            </button>
             <Link to="/contact" className="bg-white text-brand-secondary px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
               Connect with Us <ArrowRight className="w-4 h-4" />
             </Link>

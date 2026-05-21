@@ -279,18 +279,23 @@ const MobilityPage: React.FC = () => {
             <p className="text-white/90 text-base font-medium">Contact our team or download our product brochure.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-            <Link 
-              to="/brochures"
+            <button 
+              onClick={() => {
+                setModalProps({
+                  title: "Railway Cables",
+                  url: "/brochures/Railway Cables_compressed.pdf"
+                });
+                setIsModalOpen(true);
+              }}
               className="bg-brand-dark text-white px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-black transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
             >
-              View Brochures <ArrowRight className="w-4 h-4" />
-            </Link>
+              Download Railway Brochure <ArrowRight className="w-4 h-4" />
+            </button>
             <Link to="/contact" className="bg-white text-brand-secondary px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
               Connect with Us <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </motion.div>
-
       </div>
       <BrochureDownloadModal 
         isOpen={isModalOpen} 

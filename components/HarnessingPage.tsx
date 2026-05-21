@@ -1,5 +1,6 @@
 
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import BrochureDownloadModal from './BrochureDownloadModal';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
@@ -28,6 +29,9 @@ const TechnicalTable: React.FC<{ title: string; data: { label: string; value: Re
 );
 
 const HarnessingPage: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalProps, setModalProps] = useState({ title: '', url: '' });
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -141,12 +145,30 @@ const HarnessingPage: React.FC = () => {
             <p className="text-white/90 text-base font-medium">Contact our team or download our product brochure.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-            <Link 
-              to="/brochures"
+            <button 
+              onClick={() => {
+                setModalProps({
+                  title: "Automotive Cables",
+                  url: "/brochures/AUTOMOTIVE CABLES_compressed.pdf"
+                });
+                setIsModalOpen(true);
+              }}
               className="bg-brand-dark text-white px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-black transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
             >
-              View Brochures <ArrowRight className="w-4 h-4" />
-            </Link>
+              Download Automotive Brochure <ArrowRight className="w-4 h-4" />
+            </button>
+            <button 
+              onClick={() => {
+                setModalProps({
+                  title: "Railway Cables",
+                  url: "/brochures/Railway Cables_compressed.pdf"
+                });
+                setIsModalOpen(true);
+              }}
+              className="bg-brand-dark text-white px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-black transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
+            >
+              Download Railway Brochure <ArrowRight className="w-4 h-4" />
+            </button>
             <Link to="/contact" className="bg-white text-brand-secondary px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
               Connect with Us <ArrowRight className="w-4 h-4" />
             </Link>
@@ -154,6 +176,12 @@ const HarnessingPage: React.FC = () => {
         </motion.div>
 
       </div>
+      <BrochureDownloadModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        brochureTitle={modalProps.title} 
+        pdfUrl={modalProps.url} 
+      />
     </div>
   );
 };

@@ -61,10 +61,6 @@ const InfrastructurePage: React.FC = () => {
       title: "Elastomeric Insulated Cables",
       url: "/brochures/_NICCO - ELASTOMERIC INSULATED CABLES_compressed.pdf"
     },
-    "Ethernet / LAN Cables": {
-      title: "Data Centre Cables",
-      url: "/brochures/Data Centre_compressed.pdf"
-    },
     "Solar Cables": {
       title: "Wind Energy and Solar Cables",
       url: "/brochures/Wind Energy and Solar Cables (1)_compressed.pdf"

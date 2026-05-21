@@ -18,7 +18,8 @@ const Overview: React.FC = () => {
           <div className="lg:col-span-6 relative">
             <h2 className="text-xs font-bold text-brand-secondary tracking-widest uppercase mb-3 block">OUR HERITAGE STORY</h2>
             <h3 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tighter leading-tight mb-4">
-              Powering Connections <span className="text-brand-secondary">that Build{"\u00A0"}Nations</span>
+              <span className="inline-block">Powering Connections</span> <br className="md:hidden" />
+              <span className="text-brand-secondary inline-block">That Build{"\u00A0"}Nations</span>
             </h3>
             
             {/* Visual Addition */}

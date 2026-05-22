@@ -1,3 +1,4 @@
+import Seo from './Seo';
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
@@ -63,6 +64,22 @@ const LTPowerControlPage: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen pt-20 md:pt-36 pb-16">
+      <Seo
+        title="LT Power & Control Cables | Nicco Cables"
+        description="Premium Low Tension (LT) Power and Control Cables up to 1.1 kV. Available in XLPE/PVC insulation, armoured/unarmoured, with flame retardant FRLS and LSZH options."
+        keywords="LT Power Cables, Control Cables, Low Tension Cables, Armoured Cables, Unarmoured Cables, Nicco Cables"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "LT Power & Control Cables",
+          "description": "Premium Low Tension (LT) Power and Control Cables up to 1.1 kV. Available in XLPE/PVC insulation, armoured/unarmoured, with flame retardant FRLS and LSZH options.",
+          "category": "Cables & Wires",
+          "manufacturer": {
+                    "@type": "Organization",
+                    "name": "Nicco Cables"
+      }
+}}
+      />
       <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
         
         <Breadcrumbs />
@@ -89,7 +106,7 @@ const LTPowerControlPage: React.FC = () => {
               <div className="rounded-2xl overflow-hidden shadow-lg aspect-square bg-white border border-gray-100 flex items-center justify-center">
                 <img 
                   src="/Product Images/LT cables/3.jpg" 
-                  alt="LT Power & Control Cable 3" 
+                  alt="Nicco LT Power & Control Cable variant 3 - stranded conductor cable for industrial electrical distribution" 
                   className="w-full h-full object-contain"
                   referrerPolicy="no-referrer"
                 />
@@ -97,7 +114,7 @@ const LTPowerControlPage: React.FC = () => {
               <div className="rounded-2xl overflow-hidden shadow-lg aspect-square bg-white border border-gray-100 flex items-center justify-center">
                 <img 
                   src="/Product Images/LT cables/2.jpg" 
-                  alt="LT Power & Control Cable 2" 
+                  alt="Nicco LT Power & Control Cable variant 2 - insulated armoured multi-core cable" 
                   className="w-full h-full object-contain rotate-90"
                   referrerPolicy="no-referrer"
                 />
@@ -122,7 +139,7 @@ const LTPowerControlPage: React.FC = () => {
           <div className="w-full max-w-5xl aspect-video bg-white rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center border border-gray-100">
             <img 
               src="/Product Images/LT cables/1.jpg" 
-              alt="LT Power & Control Cable 1" 
+              alt="Nicco LT Power & Control Cable cross-section detail showing insulation, armor, and outer sheath layers" 
               className="w-full h-full object-contain rotate-90 scale-[1.4]"
               referrerPolicy="no-referrer"
             />

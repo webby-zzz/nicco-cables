@@ -1,3 +1,4 @@
+import Seo from './Seo';
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
@@ -62,6 +63,22 @@ const InstrumentationCablesPage: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen pt-20 md:pt-36 pb-16">
+      <Seo
+        title="Instrumentation Cables | Nicco Cables"
+        description="Specialized instrumentation cables for signal transmission in process control systems, petrochemical plants, and heavy industries. Designed to resist electromagnetic interference."
+        keywords="Instrumentation Cables, signal cables, process control cables, shielded cables, screened cables, Nicco Cables"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "Instrumentation Cables",
+          "description": "Specialized instrumentation cables for signal transmission in process control systems, petrochemical plants, and heavy industries.",
+          "category": "Cables & Wires",
+          "manufacturer": {
+                    "@type": "Organization",
+                    "name": "Nicco Cables"
+      }
+}}
+      />
       <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
         
         <Breadcrumbs />

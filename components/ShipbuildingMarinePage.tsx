@@ -1,3 +1,4 @@
+import Seo from './Seo';
 
 import React, { useState, useEffect } from 'react';
 import BrochureDownloadModal from './BrochureDownloadModal';
@@ -58,6 +59,22 @@ const ShipbuildingMarinePage: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen pt-20 md:pt-36 pb-16">
+      <Seo
+        title="Shipbuilding & Marine Cables | Nicco Cables"
+        description="Marine-grade power, control, and instrumentation cables for ships, offshore drilling platforms, and marine equipment. Flame retardant and low smoke."
+        keywords="Shipbuilding Cables, Marine Cables, Offshore cables, marine grade wires, flame retardant naval cables"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "Shipbuilding & Marine Cables",
+          "description": "Marine-grade power, control, and instrumentation cables for ships, offshore drilling platforms, and marine equipment.",
+          "category": "Cables & Wires",
+          "manufacturer": {
+                    "@type": "Organization",
+                    "name": "Nicco Cables"
+      }
+}}
+      />
       <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
         
         <Breadcrumbs />

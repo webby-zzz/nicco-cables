@@ -1,3 +1,4 @@
+import Seo from './Seo';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
@@ -61,6 +62,22 @@ const FireSurvivalCablesPage: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen pt-20 md:pt-36 pb-16">
+      <Seo
+        title="Fire Resistant & Fire Survival Cables | Nicco Cables"
+        description="Flame survival and fire resistant cables designed to maintain circuit integrity and critical power supply during emergency fire conditions."
+        keywords="Fire Survival Cables, Fire Resistant Cables, Flame survival wires, circuit integrity, safety cables, Nicco Cables"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "Fire Resistant & Fire Survival Cables",
+          "description": "Flame survival and fire resistant cables designed to maintain circuit integrity and critical power supply during emergency fire conditions.",
+          "category": "Cables & Wires",
+          "manufacturer": {
+                    "@type": "Organization",
+                    "name": "Nicco Cables"
+      }
+}}
+      />
       <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
         
         <Breadcrumbs />

@@ -1,3 +1,4 @@
+import Seo from './Seo';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
@@ -57,6 +58,22 @@ const HTPowerCablesPage: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen pt-20 md:pt-36 pb-16">
+      <Seo
+        title="HT Power Cables (Up to 33 kV) | Nicco Cables"
+        description="High Tension (HT) XLPE insulated power cables up to 33 kV for heavy power distribution networks, utilities, and industrial complexes."
+        keywords="HT Power Cables, High Tension Cables, XLPE insulated cables, Medium Voltage cables, electrical grid cables"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "HT Power Cables",
+          "description": "High Tension (HT) XLPE insulated power cables up to 33 kV for heavy power distribution networks, utilities, and industrial complexes.",
+          "category": "Cables & Wires",
+          "manufacturer": {
+                    "@type": "Organization",
+                    "name": "Nicco Cables"
+      }
+}}
+      />
       <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
         
         <Breadcrumbs />

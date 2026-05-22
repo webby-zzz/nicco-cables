@@ -1,3 +1,4 @@
+import Seo from './Seo';
 
 import React, { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -171,6 +172,17 @@ const GalleryPage: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen">
+      <Seo
+        title="Manufacturing Gallery & Facilities | Nicco Cables"
+        description="Explore the manufacturing floor, advanced compounding lines, testing laboratories, and engineering infrastructure at Nicco Cables' Shyamnagar plant."
+        keywords="manufacturing gallery, facility photos, Shyamnagar unit, production machinery, testing labs"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "ImageGallery",
+          "name": "Nicco Cables Manufacturing Gallery",
+          "description": "Visual tour of Nicco Cables machinery, raw materials, manufacturing floor, and quality control systems."
+      }}
+      />
       {/* Hero Section */}
       <section className="relative pt-28 md:pt-56 pb-16 bg-brand-dark overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-secondary/5 -skew-x-12 translate-x-1/4" />

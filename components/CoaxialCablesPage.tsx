@@ -1,3 +1,4 @@
+import Seo from './Seo';
 
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
@@ -49,6 +50,22 @@ const CoaxialCablesPage: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen pt-20 md:pt-36 pb-16">
+      <Seo
+        title="Coaxial Cables | Nicco Cables"
+        description="High-frequency low-loss coaxial cables for telecom, broadcasting, signal transmission, and RF communications."
+        keywords="Coaxial Cables, RF cables, low loss coaxial, telecommunication wires, broadcasting signal cables"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "Coaxial Cables",
+          "description": "High-frequency low-loss coaxial cables for telecom, broadcasting, signal transmission, and RF communications.",
+          "category": "Cables & Wires",
+          "manufacturer": {
+                    "@type": "Organization",
+                    "name": "Nicco Cables"
+      }
+}}
+      />
       <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
         
         <Breadcrumbs />

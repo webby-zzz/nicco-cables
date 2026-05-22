@@ -1,3 +1,4 @@
+import Seo from './Seo';
 
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
@@ -10,6 +11,17 @@ const PrivacyCompliancePage: React.FC = () => {
 
   return (
     <div className="bg-white">
+      <Seo
+        title="Privacy Policy & Corporate Compliance | Nicco Cables"
+        description="Nicco Cables' official privacy policy, cookie policy, legal compliance frameworks, and data protection guidelines."
+        keywords="privacy policy, legal terms, corporate compliance, data protection, GDPR"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Privacy Policy & Corporate Compliance",
+          "description": "Official legal terms and data security guidelines of Nicco Cables."
+      }}
+      />
       {/* Hero Section */}
       <section className="relative pt-28 md:pt-56 pb-16 bg-brand-dark overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-secondary/5 -skew-x-12 translate-x-1/4" />

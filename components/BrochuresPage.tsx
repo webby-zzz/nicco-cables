@@ -1,3 +1,4 @@
+import Seo from './Seo';
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -155,6 +156,17 @@ const BrochuresPage: React.FC = () => {
   
   return (
     <div className="bg-white min-h-screen">
+      <Seo
+        title="Product Brochures & Technical Catalogs | Nicco Cables"
+        description="Download official PDF product brochures, datasheets, and catalogs for Nicco Cables' complete range of industrial wires, power, and E-beam cables."
+        keywords="Nicco Cables brochures, product catalogs, download PDF, technical specifications, product literature"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "Product Brochures & Technical Catalogs",
+          "description": "Download technical documentation for Nicco Cables corporate catalogue, data centre, LT power, wind and solar, and defense cables."
+      }}
+      />
       {/* Hero Section */}
       <section className="relative pt-28 md:pt-56 pb-16 bg-brand-dark overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-secondary/5 -skew-x-12 translate-x-1/4" />

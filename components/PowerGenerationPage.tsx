@@ -1,3 +1,4 @@
+import Seo from './Seo';
 
 import React, { useState, useEffect } from 'react';
 import BrochureDownloadModal from './BrochureDownloadModal';
@@ -192,6 +193,17 @@ const PowerGenerationPage: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen pt-20 md:pt-36 pb-16">
+      <Seo
+        title="Cables for Power Generation Plants | Nicco Cables"
+        description="High-reliability control, instrumentation, and power cables for thermal, hydro, solar, and nuclear power generating stations."
+        keywords="power plant cables, thermal power station, nuclear cables, hydro generator wires, control instrumentation"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Cables for Power Generation Plants",
+          "description": "High-reliability cables for thermal, hydro, nuclear, and turbine power generation plants."
+      }}
+      />
       <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
         
         <Breadcrumbs />

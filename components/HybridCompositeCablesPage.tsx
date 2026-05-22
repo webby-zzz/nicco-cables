@@ -1,3 +1,4 @@
+import Seo from './Seo';
 
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
@@ -53,6 +54,22 @@ const HybridCompositeCablesPage: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen pt-20 md:pt-36 pb-16">
+      <Seo
+        title="Hybrid & Composite Cables | Nicco Cables"
+        description="Custom composite cables combining power, control, fiber optics, and data lines in a single sheath for specialized umbilical or robotic systems."
+        keywords="Hybrid Cables, Composite Cables, multi-functional cables, umbilical cabling, robot cables"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "Hybrid & Composite Cables",
+          "description": "Custom composite cables combining power, control, fiber optics, and data lines in a single sheath for specialized umbilical or robotic systems.",
+          "category": "Cables & Wires",
+          "manufacturer": {
+                    "@type": "Organization",
+                    "name": "Nicco Cables"
+      }
+}}
+      />
       <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
         
         <Breadcrumbs />

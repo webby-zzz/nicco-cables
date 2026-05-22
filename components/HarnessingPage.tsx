@@ -1,3 +1,4 @@
+import Seo from './Seo';
 
 import React, { useState, useEffect } from 'react';
 import BrochureDownloadModal from './BrochureDownloadModal';
@@ -68,6 +69,22 @@ const HarnessingPage: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen pt-20 md:pt-36 pb-16">
+      <Seo
+        title="Custom Wire Harnessing Solutions | Nicco Cables"
+        description="Custom designed and pre-terminated wire harnessing assemblies for defense, railways, power panels, and industrial equipment."
+        keywords="Wire Harnessing, custom harnesses, terminated cable assemblies, industrial wire loom"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "Custom Wire Harnessing Solutions",
+          "description": "Custom designed and pre-terminated wire harnessing assemblies for defense, railways, power panels, and industrial equipment.",
+          "category": "Cables & Wires",
+          "manufacturer": {
+                    "@type": "Organization",
+                    "name": "Nicco Cables"
+      }
+}}
+      />
       <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
         
         <Breadcrumbs />

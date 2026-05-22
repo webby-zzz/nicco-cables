@@ -1,3 +1,4 @@
+import Seo from './Seo';
 import React, { useState, useEffect } from 'react';
 import BrochureDownloadModal from './BrochureDownloadModal';
 import { Link } from 'react-router-dom';
@@ -130,6 +131,17 @@ const RenewableEnergyPage: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen pt-20 md:pt-36 pb-16">
+      <Seo
+        title="Cables for Renewable Energy Sector | Nicco Cables"
+        description="Specialized solar PV cables, wind turbine torsion cables, and battery storage cabling solutions for green energy projects."
+        keywords="renewable energy cables, solar cables, wind turbine wires, green energy cabling, battery storage wires"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Cables for Renewable Energy Sector",
+          "description": "Specialized cable solutions for solar, wind, and battery storage energy systems."
+      }}
+      />
       <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
         
         <Breadcrumbs />

@@ -1,3 +1,4 @@
+import Seo from './Seo';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
@@ -53,6 +54,22 @@ const RFThermocoupleCablesPage: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen pt-20 md:pt-36 pb-16">
+      <Seo
+        title="RF & Thermocouple Cables | Nicco Cables"
+        description="RF signal cables and temperature-compensating thermocouple extension cables for industrial process sensors and instrumentation."
+        keywords="RF Cables, Thermocouple extension cables, sensor wires, temperature compensation cables"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "RF & Thermocouple Cables",
+          "description": "RF signal cables and temperature-compensating thermocouple extension cables for industrial process sensors and instrumentation.",
+          "category": "Cables & Wires",
+          "manufacturer": {
+                    "@type": "Organization",
+                    "name": "Nicco Cables"
+      }
+}}
+      />
       <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
         
         <Breadcrumbs />

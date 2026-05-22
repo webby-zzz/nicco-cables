@@ -1,3 +1,4 @@
+import Seo from './Seo';
 
 import React, { useState, useEffect } from 'react';
 import BrochureDownloadModal from './BrochureDownloadModal';
@@ -56,6 +57,22 @@ const AutomotiveCablesPage: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen pt-28 md:pt-36 pb-16">
+      <Seo
+        title="Automotive Cables | Nicco Cables"
+        description="High-performance wiring harnesses and thin-wall cables for automotive electrical systems, commercial vehicles, and electric vehicles."
+        keywords="Automotive Cables, vehicle wiring harnesses, thin-wall automotive wire, EV cables, auto electrical system wires"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "Automotive Cables",
+          "description": "High-performance wiring harnesses and thin-wall cables for automotive electrical systems, commercial vehicles, and electric vehicles.",
+          "category": "Cables & Wires",
+          "manufacturer": {
+                    "@type": "Organization",
+                    "name": "Nicco Cables"
+      }
+}}
+      />
       <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
         
         <Breadcrumbs />

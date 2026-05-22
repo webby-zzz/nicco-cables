@@ -1,3 +1,4 @@
+import Seo from './Seo';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
@@ -53,6 +54,22 @@ const WindEnergyCablesPage: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen pt-20 md:pt-36 pb-16">
+      <Seo
+        title="Wind Energy Cables | Nicco Cables"
+        description="Flexible, torsion-resistant cables engineered for wind turbine nacelles, towers, and power collection systems."
+        keywords="Wind Energy Cables, wind turbine cables, torsion resistant cables, flexible generator wires, green energy cabling"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "Wind Energy Cables",
+          "description": "Flexible, torsion-resistant cables engineered for wind turbine nacelles, towers, and power collection systems.",
+          "category": "Cables & Wires",
+          "manufacturer": {
+                    "@type": "Organization",
+                    "name": "Nicco Cables"
+      }
+}}
+      />
       <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
         
         <Breadcrumbs />

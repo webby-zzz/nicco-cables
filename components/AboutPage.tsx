@@ -1,3 +1,4 @@
+import Seo from './Seo';
 
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
@@ -127,6 +128,17 @@ const AboutPage: React.FC = () => {
 
   return (
     <div className="bg-white">
+      <Seo
+        title="About Nicco Cables | 8 Decades of Engineering Excellence"
+        description="Learn about Nicco Cables' rich history, 5,50,000 sq. ft. state-of-the-art manufacturing facility, NABL-accredited testing labs, and certified cable engineering expertise."
+        keywords="Nicco Cables legacy, corporate history, cable manufacturer India, manufacturing facility, quality certification"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          "name": "About Nicco Cables",
+          "description": "Over 8 decades of engineering excellence and commitment to powering global infrastructure."
+      }}
+      />
       {/* Hero Section */}
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden bg-brand-dark pt-20">
         <div className="absolute inset-0 z-0">

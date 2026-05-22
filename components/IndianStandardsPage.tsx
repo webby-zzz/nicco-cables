@@ -1,3 +1,4 @@
+import Seo from './Seo';
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Globe, FileText, CheckCircle2 } from 'lucide-react';
@@ -108,6 +109,17 @@ const IndianStandardsPage: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen pt-20 md:pt-36">
+      <Seo
+        title="Indian Cable Standards Compliance (IS/BIS) | Nicco Cables"
+        description="Detailed guide to Bureau of Indian Standards (BIS) and Indian Standards (IS) compliance for power, control, and elastomeric cables."
+        keywords="Indian Standards, IS compliance, BIS certificate, cable engineering specifications"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Indian Cable Standards Compliance (IS/BIS)",
+          "description": "Guide to national BIS certifications and ISI marked products by Nicco Cables."
+      }}
+      />
       {/* Hero Section */}
       <div className="max-w-[1440px] mx-auto px-4 lg:px-10 mb-16">
         <motion.section 

@@ -1,3 +1,4 @@
+import Seo from './Seo';
 
 import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
@@ -157,6 +158,17 @@ const ContactPage: React.FC = () => {
 
   return (
     <div className="bg-white">
+      <Seo
+        title="Contact Us | Nicco Cables Locations & Regional Offices"
+        description="Get in touch with Nicco Cables. Find contact information, telephone number +91 (033) 40647177, email address, and maps for our Head Office in Kolkata and regional offices."
+        keywords="Nicco Cables contact, contact details, head office Kolkata, regional offices, manufacturing unit, career application"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Contact Nicco Cables",
+          "description": "Get in touch with Nicco Cables customer support and sales team in Kolkata, Mumbai, Noida, Chennai, Hyderabad, and Bhubaneswar."
+      }}
+      />
       {/* Hero Section */}
       <section className="relative pt-28 md:pt-56 pb-16 bg-brand-dark overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-secondary/5 -skew-x-12 translate-x-1/4" />

@@ -1,3 +1,4 @@
+import Seo from './Seo';
 import React, { useState, useEffect } from 'react';
 import BrochureDownloadModal from './BrochureDownloadModal';
 import { Link } from 'react-router-dom';
@@ -65,6 +66,22 @@ const ULCablesPage: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen pt-20 md:pt-36 pb-16">
+      <Seo
+        title="UL Certified Cables | Nicco Cables"
+        description="Underwriters Laboratories (UL) certified power, control, and electronic wiring cables meeting strict US and Canadian safety standards."
+        keywords="UL Cables, UL certified wires, Underwriters Laboratories, North American standard cables"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "UL Certified Cables",
+          "description": "Underwriters Laboratories (UL) certified power, control, and electronic wiring cables meeting strict US and Canadian safety standards.",
+          "category": "Cables & Wires",
+          "manufacturer": {
+                    "@type": "Organization",
+                    "name": "Nicco Cables"
+      }
+}}
+      />
       <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
         
         <Breadcrumbs />

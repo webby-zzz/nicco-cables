@@ -1,3 +1,4 @@
+import Seo from './Seo';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
@@ -58,6 +59,22 @@ const DataEthernetCablesPage: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen pt-20 md:pt-36 pb-16">
+      <Seo
+        title="Data & Ethernet Cables (Cat 5, Cat 6, Cat 7) | Nicco Cables"
+        description="High-speed structured data and Ethernet copper cables (Cat5e, Cat6, Cat6A, Cat7) for enterprise IT networking and industrial communications."
+        keywords="Data Cables, Ethernet Cables, Cat5, Cat6, Cat7, Lan wires, networking cables"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "Data & Ethernet Cables (Cat 5, Cat 6, Cat 7)",
+          "description": "High-speed structured data and Ethernet copper cables (Cat5e, Cat6, Cat6A, Cat7) for enterprise IT networking and industrial communications.",
+          "category": "Cables & Wires",
+          "manufacturer": {
+                    "@type": "Organization",
+                    "name": "Nicco Cables"
+      }
+}}
+      />
       <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
         
         <Breadcrumbs />

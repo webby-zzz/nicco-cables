@@ -1,3 +1,4 @@
+import Seo from './Seo';
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
@@ -60,6 +61,22 @@ const ElastomericSiliconPage: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen pt-20 md:pt-36 pb-16">
+      <Seo
+        title="Elastomeric & Silicon Cables (Up to 15 kV) | Nicco Cables"
+        description="High-durability Elastomeric and Silicon Rubber insulated cables for flexible applications, high temperatures, mining, railways, and steel mills."
+        keywords="Elastomeric Cables, Silicon Rubber Cables, Flexible Rubber Cables, Mining Cables, High Temperature Rubber Wires"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "Elastomeric & Silicon Cables",
+          "description": "High-durability Elastomeric and Silicon Rubber insulated cables for flexible applications, high temperatures, mining, railways, and steel mills.",
+          "category": "Cables & Wires",
+          "manufacturer": {
+                    "@type": "Organization",
+                    "name": "Nicco Cables"
+      }
+}}
+      />
       <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
         
         <Breadcrumbs />

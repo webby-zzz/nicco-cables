@@ -1,3 +1,4 @@
+import Seo from './Seo';
 
 import React, { useState, useEffect } from 'react';
 import BrochureDownloadModal from './BrochureDownloadModal';
@@ -205,6 +206,17 @@ const ExplorationPage: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen pt-20 md:pt-36 pb-16">
+      <Seo
+        title="Cables for Exploration, Oil & Gas, Mining | Nicco Cables"
+        description="Tough, chemical-resistant, flame-retardant elastomeric and armored cables for mining shovels, offshore oil rigs, and petrochemical plants."
+        keywords="mining cables, oil and gas cables, offshore drilling, elastomeric mining wire, exploration cabling"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Cables for Exploration, Oil & Gas, Mining",
+          "description": "High-reliability heavy duty cabling for exploration, mining, and oil & gas operations."
+      }}
+      />
       <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
         
         <Breadcrumbs />

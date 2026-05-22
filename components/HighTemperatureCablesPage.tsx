@@ -1,3 +1,4 @@
+import Seo from './Seo';
 
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
@@ -56,6 +57,22 @@ const HighTemperatureCablesPage: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen pt-20 md:pt-36 pb-16">
+      <Seo
+        title="High Temperature Cables (ETFE, FEP, PTFE) | Nicco Cables"
+        description="Fluoropolymer insulated (ETFE, FEP, PTFE) cables designed to withstand extreme thermal conditions, chemical exposure, and high mechanical stress."
+        keywords="High Temperature Cables, ETFE Cables, FEP Cables, PTFE Cables, Fluoropolymer insulated wires, extreme environment cabling"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "High Temperature Cables (ETFE, FEP, PTFE)",
+          "description": "Fluoropolymer insulated (ETFE, FEP, PTFE) cables designed to withstand extreme thermal conditions, chemical exposure, and high mechanical stress.",
+          "category": "Cables & Wires",
+          "manufacturer": {
+                    "@type": "Organization",
+                    "name": "Nicco Cables"
+      }
+}}
+      />
       <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
         
         <Breadcrumbs />

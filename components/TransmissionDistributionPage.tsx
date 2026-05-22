@@ -1,3 +1,4 @@
+import Seo from './Seo';
 import React, { useState, useEffect } from 'react';
 import BrochureDownloadModal from './BrochureDownloadModal';
 import { Link } from 'react-router-dom';
@@ -157,6 +158,17 @@ const TransmissionDistributionPage: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen pt-20 md:pt-36 pb-16">
+      <Seo
+        title="Cables for Transmission & Distribution Industry | Nicco Cables"
+        description="Heavy duty overhead conductors, MVCC, and power cables engineered for electrical utilities and high voltage transmission grids."
+        keywords="transmission cables, distribution wires, utility conductors, high voltage grids, power grid cables"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Cables for Transmission & Distribution Industry",
+          "description": "Nicco Cables engineering high-reliability power transmission and distribution solutions."
+      }}
+      />
       <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
         
         <Breadcrumbs />

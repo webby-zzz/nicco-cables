@@ -1,3 +1,4 @@
+import Seo from './Seo';
 
 import React, { useState, useEffect } from 'react';
 import BrochureDownloadModal from './BrochureDownloadModal';
@@ -185,6 +186,17 @@ const InfrastructurePage: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen pt-20 md:pt-36 pb-16">
+      <Seo
+        title="Cables for Infrastructure & Buildings | Nicco Cables"
+        description="Fire survival, low smoke zero halogen (LSZH), and LT power cables for airports, commercial high-rises, hospitals, and smart cities."
+        keywords="infrastructure cabling, airport electrical wire, building fire survival cables, LSZH cables"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Cables for Infrastructure & Buildings",
+          "description": "Highly safe, flame survival, and low-smoke cabling solutions for public transit, high-rises, and modern building infrastructure."
+      }}
+      />
       <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
         
         <Breadcrumbs />

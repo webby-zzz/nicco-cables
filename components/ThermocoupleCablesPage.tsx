@@ -1,3 +1,4 @@
+import Seo from './Seo';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
@@ -64,6 +65,22 @@ const ThermocoupleCablesPage: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen pt-20 md:pt-36 pb-16">
+      <Seo
+        title="Thermocouple Cables | Nicco Cables"
+        description="Compensating and extension thermocouple cables for accurate temperature measurement and signal relay in furnace/process automation."
+        keywords="Thermocouple Cables, compensating cables, temperature sensing wires, furnace wiring"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "Thermocouple Cables",
+          "description": "Compensating and extension thermocouple cables for accurate temperature measurement and signal relay in furnace/process automation.",
+          "category": "Cables & Wires",
+          "manufacturer": {
+                    "@type": "Organization",
+                    "name": "Nicco Cables"
+      }
+}}
+      />
       <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
         
         <Breadcrumbs />

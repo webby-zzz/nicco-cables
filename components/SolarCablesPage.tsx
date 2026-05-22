@@ -1,3 +1,4 @@
+import Seo from './Seo';
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
@@ -54,6 +55,22 @@ const SolarCablesPage: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen pt-20 md:pt-36 pb-16">
+      <Seo
+        title="Solar PV Cables | Nicco Cables"
+        description="TUV certified solar photovoltaic cables designed to withstand UV radiation, ozone, moisture, and extreme outdoor weather conditions."
+        keywords="Solar Cables, PV Cables, Photovoltaic wires, TUV certified solar cables, renewable energy cabling"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "Solar PV Cables",
+          "description": "TUV certified solar photovoltaic cables designed to withstand UV radiation, ozone, moisture, and extreme outdoor weather conditions.",
+          "category": "Cables & Wires",
+          "manufacturer": {
+                    "@type": "Organization",
+                    "name": "Nicco Cables"
+      }
+}}
+      />
       <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
         
         <Breadcrumbs />

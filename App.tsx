@@ -1,3 +1,4 @@
+import Seo from './components/Seo';
 
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
@@ -49,6 +50,24 @@ import { X } from 'lucide-react';
 const HomePage: React.FC = () => {
   return (
     <main>
+      <Seo
+        title="Nicco Cables | Premium Industrial Cable & Conductor Manufacturer"
+        description="Nicco Cables is one of India's leading cable manufacturers, producing premium power, control, elastomeric, electron beam, and high temperature cables for defense, railways, power, and telecom."
+        keywords="Nicco Cables, cable manufacturer India, industrial cables, power cables, control cables, electron beam cables, elastomeric cables, high temperature cables"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Nicco Cables",
+          "url": "https://www.niccocables.com",
+          "logo": "https://www.niccocables.com/brand%20identity/Logo.png",
+          "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+91-33-40647177",
+                    "contactType": "customer service",
+                    "email": "info@niccocables.com"
+      }
+}}
+      />
       <Hero />
       <Overview />
       <Clientele />

@@ -1,3 +1,4 @@
+import Seo from './Seo';
 
 import React, { useState, useEffect } from 'react';
 import BrochureDownloadModal from './BrochureDownloadModal';
@@ -161,6 +162,17 @@ const ManufacturingPage: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen pt-20 md:pt-36 pb-16">
+      <Seo
+        title="Cables for Manufacturing & Heavy Industry | Nicco Cables"
+        description="Power, control, and motor cables for steel plants, cement mills, factory automation, machinery builders, and manufacturing lines."
+        keywords="industrial manufacturing, steel mill cables, automation wiring, heavy machinery cords"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Cables for Manufacturing & Heavy Industry",
+          "description": "Power, control, and data cables designed for the continuous operations of heavy manufacturing plants."
+      }}
+      />
       <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
         
         <Breadcrumbs />

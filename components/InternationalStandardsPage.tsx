@@ -1,3 +1,4 @@
+import Seo from './Seo';
 
 import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
@@ -84,6 +85,17 @@ const InternationalStandardsPage: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen pt-20 md:pt-36 pb-16">
+      <Seo
+        title="International Cable Standards Compliance (IEC/BS) | Nicco Cables"
+        description="Guide to IEC, British Standards (BS), European Standards (EN), and ASTM compliance specifications met by Nicco Cables."
+        keywords="International standards, IEC compliance, BS specification, EN standards, ASTM wires"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "International Cable Standards Compliance (IEC/BS)",
+          "description": "Compliance standards and test parameters according to global IEC, BS, EN, and ASTM frameworks."
+      }}
+      />
       <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
         
         {/* Header Section */}

@@ -1,3 +1,4 @@
+import Seo from './Seo';
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
@@ -54,6 +55,22 @@ const OverheadConductorsPage: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen pt-20 md:pt-36 pb-16">
+      <Seo
+        title="Overhead Conductors | Nicco Cables"
+        description="High-capacity overhead electrical conductors for power transmission and distribution lines. Manufactured with premium-grade copper and aluminum."
+        keywords="Overhead Conductors, AAC, AAAC, ACSR, Transmission Conductors, Power Grid Conductors"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "Overhead Conductors",
+          "description": "High-capacity overhead electrical conductors for power transmission and distribution lines.",
+          "category": "Cables & Wires",
+          "manufacturer": {
+                    "@type": "Organization",
+                    "name": "Nicco Cables"
+      }
+}}
+      />
       <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
         
         <Breadcrumbs />

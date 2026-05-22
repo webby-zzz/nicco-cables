@@ -1,3 +1,4 @@
+import Seo from './Seo';
 import React, { useState, useEffect } from 'react';
 import BrochureDownloadModal from './BrochureDownloadModal';
 import { motion } from 'motion/react';
@@ -176,6 +177,17 @@ const MobilityPage: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen pt-20 md:pt-36 pb-16">
+      <Seo
+        title="Cables for Mobility, Railways & Metros | Nicco Cables"
+        description="RDSO-approved railway signalling, overhead catenary conductors, traction cables, and E-beam rolling stock wires for train and metro transit networks."
+        keywords="railway cables, metro transit wires, signalling cables, catenary conductors, rolling stock wires"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Cables for Mobility, Railways & Metros",
+          "description": "RDSO-approved traction, signalling, rolling stock, and catenary cables for Indian Railways and metros."
+      }}
+      />
       <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
         
         <Breadcrumbs />

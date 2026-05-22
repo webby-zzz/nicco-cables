@@ -1,3 +1,4 @@
+import Seo from './Seo';
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
@@ -55,6 +56,22 @@ const ElectronBeamCablesPage: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen pt-28 md:pt-36 pb-16">
+      <Seo
+        title="Electron Beam (E-Beam) Cables | Nicco Cables"
+        description="Advanced E-Beam irradiated cross-linked cables offering superior heat, chemical, abrasion, and flame resistance for railways, solar, and defense."
+        keywords="Electron Beam Cables, E-beam irradiated cables, cross-linked cables, thermal resistant cables, rolling stock wires"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "Electron Beam (E-Beam) Cables",
+          "description": "Advanced E-Beam irradiated cross-linked cables offering superior heat, chemical, abrasion, and flame resistance for railways, solar, and defense.",
+          "category": "Cables & Wires",
+          "manufacturer": {
+                    "@type": "Organization",
+                    "name": "Nicco Cables"
+      }
+}}
+      />
       <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
         
         <Breadcrumbs />

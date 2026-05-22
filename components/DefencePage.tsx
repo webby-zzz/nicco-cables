@@ -1,3 +1,4 @@
+import Seo from './Seo';
 import React, { useState, useEffect } from 'react';
 import BrochureDownloadModal from './BrochureDownloadModal';
 import { motion } from 'motion/react';
@@ -174,6 +175,17 @@ const DefencePage: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen pt-20 md:pt-36 pb-16">
+      <Seo
+        title="Cables for Defence & Aerospace Industry | Nicco Cables"
+        description="Military-grade cables for naval warships, submarine systems, radar systems, armored combat vehicles, and aerospace defense systems meeting MIL standards."
+        keywords="defence cables, military grade wires, warship cables, submarine cabling, radar sensor wire"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Cables for Defence & Aerospace Industry",
+          "description": "Specialized high-spec cabling for naval warships, submersibles, radar arrays, and defense logistics."
+      }}
+      />
       <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
         
         <Breadcrumbs />

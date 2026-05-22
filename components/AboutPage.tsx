@@ -202,7 +202,7 @@ const AboutPage: React.FC = () => {
             </div>
             <div className="lg:col-span-7 lg:pt-16 space-y-6 text-black leading-relaxed font-normal text-base">
               <p>
-                For more than eight decades, <strong className="font-bold text-brand-dark">Nicco Corporation Limited</strong> has been a trusted name in India’s <strong className="font-bold text-brand-dark">cable manufacturing industry</strong>, delivering <strong className="font-bold text-brand-dark">high-performance connectivity solutions</strong> for critical infrastructure and strategic sectors.
+                For more than eight decades, <strong className="font-bold text-brand-dark">Nicco Cables</strong> has been a trusted name in India’s <strong className="font-bold text-brand-dark">cable manufacturing industry</strong>, delivering <strong className="font-bold text-brand-dark">high-performance connectivity solutions</strong> for critical infrastructure and strategic sectors.
               </p>
               <div className="h-[1px] w-24 bg-brand-secondary" />
               <div className="space-y-6">

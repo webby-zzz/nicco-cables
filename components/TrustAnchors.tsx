@@ -21,7 +21,7 @@ const TrustAnchors: React.FC = () => {
     },
     {
       icon: <Zap className="w-8 h-8 text-brand-secondary flex-shrink-0" />,
-      title: "3 MeV Electron Beam",
+      title: "3 MeV E-Beam Machine",
       description: "First private sector company in India to install a 3 MeV Electron Beam Accelerator (Radiation Dynamics Inc., USA) for advanced irradiated curing Cable Technology"
     },
     {
@@ -36,7 +36,7 @@ const TrustAnchors: React.FC = () => {
     },
     {
       icon: <Cable className="w-8 h-8 text-brand-secondary flex-shrink-0" />,
-      title: "Wide Portfolio",
+      title: "Wide Product Portfolio",
       description: "Wide portfolio of high-performance and specialty cable solutions"
     },
     {
@@ -85,10 +85,10 @@ const TrustAnchors: React.FC = () => {
   };
 
   return (
-    <section className="bg-brand-ash py-3 md:py-4 border-b border-black/5 relative z-20 overflow-hidden select-none">
+    <section className="bg-brand-ash py-5 md:py-6 border-b border-black/5 relative z-20 overflow-hidden select-none">
       <div className="w-full px-4 md:px-8">
         <div 
-          className="relative h-14 md:h-16 w-full flex items-center justify-center cursor-grab active:cursor-grabbing"
+          className="relative h-16 md:h-18 w-full flex items-center justify-center cursor-grab active:cursor-grabbing"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}

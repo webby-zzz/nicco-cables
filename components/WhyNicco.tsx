@@ -65,7 +65,7 @@ const WhyNicco: React.FC = () => {
                 Engineering Excellence <span className="text-brand-secondary">Redefined.</span>
               </h3>
               <p className="mt-6 text-black/70 max-w-2xl mx-auto lg:mx-0 text-base md:text-lg font-medium leading-relaxed">
-                With a legacy of innovation and a commitment to quality, we provide specialized cable solutions that power the most demanding industries <span className="whitespace-nowrap">across the globe.</span>
+                Cutting-edge automation, in-house compounding, and certifications forged against the toughest global standards, because a nation that never settles deserves cables that never compromise.
               </p>
               <div className="mt-8 flex justify-center lg:justify-start">
                 <Link to="/about" className="inline-block px-6 py-2.5 bg-brand-secondary text-white rounded-full font-bold uppercase tracking-widest text-xs hover:bg-black transition-all shadow-xl shadow-brand-dark/10">

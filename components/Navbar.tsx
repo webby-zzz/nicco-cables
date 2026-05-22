@@ -497,10 +497,10 @@ const Navbar: React.FC = () => {
             setIsMegaMenuOpen(false);
           }, 300);
         }}
-        className={`transition-all duration-300 ease-in-out flex items-center justify-center relative max-w-[1440px] bg-white/90 backdrop-blur-md px-4 lg:px-10 py-3 lg:py-4 min-h-[4rem] lg:min-h-[5rem] ${
+        className={`transition-all duration-300 ease-in-out flex items-center justify-center relative px-4 lg:px-10 py-3 lg:py-4 min-h-[4rem] lg:min-h-[5rem] ${
           isScrolled 
-            ? 'w-[calc(100%-1rem)] md:w-[calc(100%-2rem)] lg:w-[calc(100%-2rem)] mt-2 md:mt-4 lg:mt-4 rounded-full shadow-2xl border border-brand-secondary/10'
-            : 'w-full lg:w-[calc(100%-2rem)] mt-0 lg:mt-4 rounded-none lg:rounded-full shadow-md lg:shadow-2xl border-b border-brand-secondary/10 lg:border'
+            ? 'w-[calc(100%-1rem)] md:w-[calc(100%-2rem)] lg:w-[calc(100%-2rem)] max-w-[1440px] mt-2 md:mt-4 lg:mt-4 rounded-full bg-white/95 backdrop-blur-md shadow-2xl border border-brand-secondary/10'
+            : 'w-full max-w-full mt-0 rounded-none bg-white/90 backdrop-blur-md shadow-none border-b border-brand-secondary/10'
         }`}
       >
         <div className="absolute flex items-center left-4 lg:left-10">

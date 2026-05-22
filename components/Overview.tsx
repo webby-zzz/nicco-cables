@@ -34,15 +34,29 @@ const Overview: React.FC = () => {
             </div>
           </div>
 
-          <div className="lg:col-span-6 space-y-4">
-            <p className="text-black font-normal leading-relaxed text-base">
-              For over <strong>8 decades</strong>, <strong>Nicco Cables</strong> has been at the forefront of <strong>India’s cable manufacturing industry</strong>. From <strong>HT Cables upto 33 kV</strong> to advanced <strong>Fire-Survival</strong> and <strong>Electron-Beam technologies</strong>, our solutions power critical sectors including <strong>transmission and distribution, renewable energy, power generation, exploration, mobility, defence, manufacturing, infrastructure, and harnessing</strong>.
+          <div className="lg:col-span-6 space-y-4 text-black leading-relaxed font-normal text-base">
+            <p>
+              For over 8 decades, Nicco Cables has stood at the forefront of <strong className="font-bold text-brand-dark">India's cable manufacturing industry</strong>, a legacy forged in trust, engineering excellence, and an unbreakable commitment to powering <strong className="font-bold text-brand-dark">the Nation's most critical infrastructure</strong>.
             </p>
             <div className="h-[1px] w-16 bg-brand-secondary" />
-            <p className="text-black leading-relaxed font-light text-base">
-              With <strong>world-class manufacturing</strong>, <strong>in-house R&D</strong>, advanced <strong>compounding technology</strong>, and <strong>NABL-accredited testing</strong>, we engineer cables that deliver uncompromising <strong>safety, durability, and performance</strong> in the most demanding environments.
-            </p>
-
+            <div className="space-y-4">
+              <p>
+                From high speed trains and metro networks to offshore oil & gas platforms, roaring wind farms, the depths of mining operations, and the heart of India's most classified defence missions, our cables go where failure is simply not an option.
+              </p>
+              <p>
+                We engineer for the sectors that keep India moving,<br />
+                <strong className="font-bold text-brand-dark">Transmission & Distribution, Renewable Energy, Power Generation, Exploration, Mobility, Defence, Manufacturing, Infrastructure and Harnessing</strong> delivering power, precision, and reliability across every industry that matters.
+              </p>
+              <p>
+                Proudly at the forefront of <strong className="font-bold text-brand-dark">Atmanirbhar Bharat and Viksit Bharat 2047</strong>, Nicco cables are the trusted choice of energy majors and mission-critical operators across India and around the world.
+              </p>
+              <p>
+                With over 5,50,000 sq. ft. of <strong className="font-bold text-brand-dark">world-class manufacturing infrastructure</strong>, cutting-edge in-house R&D, <strong className="font-bold text-brand-dark">advanced compounding technology</strong>, <strong className="font-bold text-brand-dark">NABL-accredited testing laboratory</strong>, a pan-India regional presence, and an exceptional team of professionals, we don't just manufacture cables.
+              </p>
+              <p className="font-bold text-brand-dark">
+                We build the backbone of India.
+              </p>
+            </div>
           </div>
 
         </motion.div>

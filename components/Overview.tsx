@@ -41,17 +41,17 @@ const Overview: React.FC = () => {
             <div className="h-[1px] w-16 bg-brand-secondary" />
             <div className="space-y-4">
               <p>
-                From high speed trains and metro networks to offshore oil & gas platforms, roaring wind farms, the depths of mining operations, and the heart of India's most classified defence missions, our cables go where failure is simply not an option.
+                From high speed trains and metro networks to offshore oil & gas platforms, roaring wind farms, the depths of mining operations, and the heart of India's most classified defence missions, our Cables go where failure is simply not an option.
               </p>
               <p>
                 We engineer for the sectors that keep India moving,<br />
                 <strong className="font-bold text-brand-dark">Transmission & Distribution, Renewable Energy, Power Generation, Exploration, Mobility, Defence, Manufacturing, Infrastructure and Harnessing</strong> delivering power, precision, and reliability across every industry that matters.
               </p>
               <p>
-                Proudly at the forefront of <strong className="font-bold text-brand-dark">Atmanirbhar Bharat and Viksit Bharat 2047</strong>, Nicco cables are the trusted choice of energy majors and mission-critical operators across India and around the world.
+                Proudly at the forefront of <strong className="font-bold text-brand-dark">Atmanirbhar Bharat and Viksit Bharat 2047</strong>, Nicco Cables are the trusted choice of energy majors and mission-critical operators across India and around the world.
               </p>
               <p>
-                With over 5,50,000 sq. ft. of <strong className="font-bold text-brand-dark">world-class manufacturing infrastructure</strong>, cutting-edge in-house R&D, <strong className="font-bold text-brand-dark">advanced compounding technology</strong>, <strong className="font-bold text-brand-dark">NABL-accredited testing laboratory</strong>, a pan-India regional presence, and an exceptional team of professionals, we don't just manufacture cables.
+                With over 5,50,000 sq. ft. of <strong className="font-bold text-brand-dark">world-class manufacturing infrastructure</strong>, cutting-edge in-house R&D, <strong className="font-bold text-brand-dark">advanced compounding technology</strong>, <strong className="font-bold text-brand-dark">NABL-accredited testing laboratory</strong>, a pan-India regional presence, and an exceptional team of professionals, we don't just manufacture Cables.
               </p>
               <p className="font-bold text-brand-dark">
                 We build the backbone of India.

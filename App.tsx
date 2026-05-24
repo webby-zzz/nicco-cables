@@ -48,6 +48,9 @@ import ULCablesPage from './components/ULCablesPage';
 import { X } from 'lucide-react';
 
 const HomePage: React.FC = () => {
+  // Set this to true to show the Clientele section again
+  const showClientele = false;
+
   return (
     <main>
       <Seo
@@ -65,12 +68,12 @@ const HomePage: React.FC = () => {
                     "telephone": "+91-33-40647177",
                     "contactType": "customer service",
                     "email": "info@niccocables.com"
-      }
+       }
 }}
       />
       <Hero />
       <Overview />
-      <Clientele />
+      {showClientele && <Clientele />}
       <WhyNicco />
       <Certifications />
     </main>

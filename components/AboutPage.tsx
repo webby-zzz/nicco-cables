@@ -13,22 +13,22 @@ const coreValues = [
     description: "We uphold the highest standards of design, manufacturing, and testing to deliver products that perform reliably in demanding environments."
   },
   {
-    icon: <img src="/icons/Nicco core values icons/premium-quality.gif" alt="Quality Without Compromise" className="w-12 h-12 object-contain" referrerPolicy="no-referrer" />,
+    icon: <img loading="lazy" src="/icons/Nicco core values icons/premium-quality.gif" alt="Quality Without Compromise" className="w-12 h-12 object-contain" referrerPolicy="no-referrer" />,
     title: "Quality Without Compromise",
     description: "Every cable manufactured at Nicco undergoes stringent testing and quality assurance to ensure consistent performance and durability."
   },
   {
-    icon: <img src="/icons/Nicco core values icons/innovation.gif" alt="Innovation & Technology" className="w-12 h-12 object-contain" referrerPolicy="no-referrer" />,
+    icon: <img loading="lazy" src="/icons/Nicco core values icons/innovation.gif" alt="Innovation & Technology" className="w-12 h-12 object-contain" referrerPolicy="no-referrer" />,
     title: "Innovation & Technology",
     description: "Continuous investment in R&D, advanced materials, and modern manufacturing enables us to stay ahead in cable technology."
   },
   {
-    icon: <img src="/icons/Nicco core values icons/mother-earth-day.gif" alt="Nation Building" className="w-12 h-12 object-contain" referrerPolicy="no-referrer" />,
+    icon: <img loading="lazy" src="/icons/Nicco core values icons/mother-earth-day.gif" alt="Nation Building" className="w-12 h-12 object-contain" referrerPolicy="no-referrer" />,
     title: "Nation Building",
     description: "We are committed to supporting India’s infrastructure and strategic sectors through solutions that align with the vision of Make in India and Viksit Bharat."
   },
   {
-    icon: <img src="/icons/Nicco core values icons/handshake.gif" alt="Integrity & Trust" className="w-12 h-12 object-contain" referrerPolicy="no-referrer" />,
+    icon: <img loading="lazy" src="/icons/Nicco core values icons/handshake.gif" alt="Integrity & Trust" className="w-12 h-12 object-contain" referrerPolicy="no-referrer" />,
     title: "Integrity & Trust",
     description: "Our long-standing relationships with customers are built on transparency, reliability, and consistent delivery of value."
   }
@@ -191,12 +191,10 @@ const AboutPage: React.FC = () => {
                 8 DECADES OF <br className="md:hidden" /> <span className="text-brand-secondary">TRUST & INNOVATION</span>
               </h3>
               <div className="relative rounded-[1.5rem] overflow-hidden aspect-square shadow-2xl group">
-                <img
-                  src="/brand identity/about us page.webp"
+                <img loading="lazy" src="/brand identity/about us page.webp"
                   alt="Nicco About Us"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  referrerPolicy="no-referrer"
-                />
+                  referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-brand-secondary/10 group-hover:bg-transparent transition-colors duration-300" />
               </div>
             </div>
@@ -452,12 +450,10 @@ const AboutPage: React.FC = () => {
                   transition={{ duration: 1 }}
                   className="absolute inset-0"
                 >
-                  <img
-                    src={facilityImages[currentImage]}
+                  <img loading="lazy" src={facilityImages[currentImage]}
                     alt={`Facility ${currentImage + 1}`}
                     className="w-full h-full object-cover"
-                    referrerPolicy="no-referrer"
-                  />
+                    referrerPolicy="no-referrer" />
                 </motion.div>
                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
                   {facilityImages.map((_, idx) => (

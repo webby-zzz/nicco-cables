@@ -131,12 +131,10 @@ const ULCablesPage: React.FC = () => {
           className="my-12 flex justify-center"
         >
           <div className="w-full max-w-5xl aspect-video bg-white rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center border border-gray-100">
-            <img 
-              src="/Product Images/UL-Cables/3.webp" 
+            <img loading="lazy" src="/Product Images/UL-Cables/3.webp" 
               alt="UL Cable 3" 
               className="w-full h-full object-contain scale-[1.4]"
-              referrerPolicy="no-referrer"
-            />
+              referrerPolicy="no-referrer" />
           </div>
         </motion.div>
 

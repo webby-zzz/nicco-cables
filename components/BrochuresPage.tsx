@@ -213,12 +213,10 @@ const BrochuresPage: React.FC = () => {
                 className="group"
               >
                 <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden shadow-xl mb-6 bg-gray-100 border border-gray-100 group-hover:shadow-2xl transition-all duration-300">
-                  <img 
-                    src={brochure.thumbnail} 
+                  <img loading="lazy" src={brochure.thumbnail} 
                     alt={brochure.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    referrerPolicy="no-referrer"
-                  />
+                    referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
                     <p className="text-white text-xs font-bold uppercase tracking-widest mb-2">{brochure.category}</p>
                     <h4 className="text-white text-xl font-black tracking-tighter leading-tight">{brochure.title}</h4>

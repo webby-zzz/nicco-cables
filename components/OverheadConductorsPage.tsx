@@ -120,12 +120,10 @@ const OverheadConductorsPage: React.FC = () => {
           className="mb-12"
         >
           <div className="w-full h-64 md:h-96 bg-white rounded-[2rem] shadow-lg overflow-hidden border border-gray-100 flex items-center justify-center p-4">
-            <img 
-              src="/Product Images/HT-Power-Cables/1.webp" 
+            <img loading="lazy" src="/Product Images/HT-Power-Cables/1.webp" 
               alt="HT Power Cables Detail" 
               className="w-full h-full object-contain rotate-90 scale-110"
-              referrerPolicy="no-referrer"
-            />
+              referrerPolicy="no-referrer" />
           </div>
         </motion.div>
 

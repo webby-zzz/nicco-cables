@@ -102,12 +102,10 @@ const WindEnergyCablesPage: React.FC = () => {
                 />
               </div>
               <div className="rounded-2xl overflow-hidden shadow-lg aspect-square bg-white border border-gray-100 flex items-center justify-center">
-                <img 
-                  src="/Product Images/Wind-Energy-Cables/12.webp" 
+                <img loading="lazy" src="/Product Images/Wind-Energy-Cables/12.webp" 
                   alt="Wind Energy Cable 12" 
                   className="w-full h-full object-contain"
-                  referrerPolicy="no-referrer"
-                />
+                  referrerPolicy="no-referrer" />
               </div>
             </div>
           </div>
@@ -169,12 +167,10 @@ const WindEnergyCablesPage: React.FC = () => {
           className="my-12 flex justify-center"
         >
           <div className="w-full max-w-5xl aspect-video bg-white rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center border border-gray-100">
-            <img 
-              src="/Product Images/Wind-Energy-Cables/2.webp" 
+            <img loading="lazy" src="/Product Images/Wind-Energy-Cables/2.webp" 
               alt="Wind Energy Cable 2" 
               className="w-full h-full object-contain scale-[1.4]"
-              referrerPolicy="no-referrer"
-            />
+              referrerPolicy="no-referrer" />
           </div>
         </motion.div>
 

@@ -46,12 +46,10 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 w-full pt-2">
             <div className="flex flex-col justify-start md:col-span-2 lg:col-span-1 mb-6 lg:mb-0">
               <div className="h-16 w-auto mb-6">
-                <img
-                  src="/brand identity/Logo.png"
+                <img loading="lazy" src="/brand identity/Logo.png"
                   alt="NICCO Logo"
                   className="h-full w-auto object-contain"
-                  referrerPolicy="no-referrer"
-                />
+                  referrerPolicy="no-referrer" />
               </div>
               <p className="text-white/80 leading-relaxed font-light text-[13px]">
                 Over 8 decades of unwavering commitment to powering global infrastructure. The pulse of the nation’s core industries.

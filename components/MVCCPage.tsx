@@ -114,20 +114,16 @@ const MVCCPage: React.FC = () => {
           className="mb-12 grid grid-cols-1 md:grid-cols-2 gap-8"
         >
           <div className="w-full h-64 md:h-80 bg-white rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center border border-gray-100 p-4">
-            <img 
-              src="/Product Images/MVCC/5.webp" 
+            <img loading="lazy" src="/Product Images/MVCC/5.webp" 
               alt="MVCC Cable 5" 
               className="w-full h-full object-contain rotate-90 scale-[1.2]"
-              referrerPolicy="no-referrer"
-            />
+              referrerPolicy="no-referrer" />
           </div>
           <div className="w-full h-64 md:h-80 bg-white rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center border border-gray-100 p-4">
-            <img 
-              src="/Product Images/MVCC/6.webp" 
+            <img loading="lazy" src="/Product Images/MVCC/6.webp" 
               alt="MVCC Cable 6" 
               className="w-full h-full object-contain -rotate-90 scale-[1.2]"
-              referrerPolicy="no-referrer"
-            />
+              referrerPolicy="no-referrer" />
           </div>
         </motion.div>
 

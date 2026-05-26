@@ -136,12 +136,10 @@ const IndianStandardsPage: React.FC = () => {
               transition={{ duration: 0.84, ease: "easeOut", delay: 0.2 }}
               className="absolute inset-0"
             >
-              <img 
-                src="/brand identity/energy-stream-flowing-through-steel-tower-high-voltage-power-lines-sunrise-horizon-sky-electric-cables-transmitting-electricity-obtained-from-sustainable-sources-3d-render-animation.jpg.webp" 
+              <img loading="lazy" src="/brand identity/energy-stream-flowing-through-steel-tower-high-voltage-power-lines-sunrise-horizon-sky-electric-cables-transmitting-electricity-obtained-from-sustainable-sources-3d-render-animation.jpg.webp" 
                 alt="Indian Standards" 
                 className="w-full h-full object-cover opacity-100"
-                referrerPolicy="no-referrer"
-              />
+                referrerPolicy="no-referrer" />
               <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/80 via-transparent to-transparent lg:hidden" />
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-brand-dark/80 lg:hidden" />
             </motion.div>

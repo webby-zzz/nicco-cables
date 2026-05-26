@@ -109,12 +109,10 @@ const ElastomericSiliconPage: React.FC = () => {
                 />
               </div>
               <div className="rounded-2xl overflow-hidden shadow-lg aspect-square bg-white border border-gray-100 flex items-center justify-center">
-                <img 
-                  src="/Product Images/Elastomeric-and-Silicon-Cables/2.webp" 
+                <img loading="lazy" src="/Product Images/Elastomeric-and-Silicon-Cables/2.webp" 
                   alt="Elastomeric Cable 2" 
                   className="w-full h-full object-contain rotate-90"
-                  referrerPolicy="no-referrer"
-                />
+                  referrerPolicy="no-referrer" />
               </div>
             </div>
           </div>
@@ -134,12 +132,10 @@ const ElastomericSiliconPage: React.FC = () => {
           className="mb-12 flex justify-center"
         >
           <div className="w-full max-w-5xl aspect-video bg-white rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center border border-gray-100">
-            <img 
-              src="/Product Images/Elastomeric-and-Silicon-Cables/Elastomeric Cables.jpeg" 
+            <img loading="lazy" src="/Product Images/Elastomeric-and-Silicon-Cables/Elastomeric Cables.jpeg" 
               alt="Elastomeric Cables" 
               className="w-full h-full object-contain"
-              referrerPolicy="no-referrer"
-            />
+              referrerPolicy="no-referrer" />
           </div>
         </motion.div>
 

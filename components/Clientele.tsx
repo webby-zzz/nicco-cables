@@ -89,12 +89,10 @@ const Clientele: React.FC = () => {
             <div className="flex items-center">
               {logos.map((logo, index) => (
                 <div key={`logo-1-${index}`} className="mx-12 w-48 h-28 flex items-center justify-center transition-all duration-500">
-                  <img
-                    src={logo}
+                  <img loading="lazy" src={logo}
                     alt={`Client Logo ${index}`}
                     className="max-w-full max-h-full object-contain"
-                    referrerPolicy="no-referrer"
-                  />
+                    referrerPolicy="no-referrer" />
                 </div>
               ))}
             </div>
@@ -102,12 +100,10 @@ const Clientele: React.FC = () => {
             <div className="flex items-center">
               {logos.map((logo, index) => (
                 <div key={`logo-2-${index}`} className="mx-12 w-48 h-28 flex items-center justify-center transition-all duration-500">
-                  <img
-                    src={logo}
+                  <img loading="lazy" src={logo}
                     alt={`Client Logo ${index}`}
                     className="max-w-full max-h-full object-contain"
-                    referrerPolicy="no-referrer"
-                  />
+                    referrerPolicy="no-referrer" />
                 </div>
               ))}
             </div>

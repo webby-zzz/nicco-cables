@@ -370,7 +370,7 @@ const ContactPage: React.FC = () => {
               {/* Manufacturing Plant */}
               <div className="flex gap-6 items-start">
                 <div className="w-16 h-16 rounded-2xl bg-brand-ash flex items-center justify-center flex-shrink-0 border border-brand-secondary/20 overflow-hidden p-2">
-                  <img src="/brand identity/Manufacturing Plant Icon.png" alt="Manufacturing Plant" className="w-full h-full object-contain" referrerPolicy="no-referrer" />
+                  <img loading="lazy" src="/brand identity/Manufacturing Plant Icon.png" alt="Manufacturing Plant" className="w-full h-full object-contain" referrerPolicy="no-referrer" />
                 </div>
                 <div className="flex-1 space-y-4">
                   <div>
@@ -418,7 +418,7 @@ const ContactPage: React.FC = () => {
                     <div key={idx} className="bg-brand-ash/30 p-6 rounded-[1.5rem] border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 group flex flex-col gap-6">
                       <div className="flex gap-4 items-start">
                         <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center flex-shrink-0 shadow-sm overflow-hidden p-2 mt-1">
-                          <img src={office.icon} alt={office.city} className="w-full h-full object-contain" referrerPolicy="no-referrer" />
+                          <img loading="lazy" src={office.icon} alt={office.city} className="w-full h-full object-contain" referrerPolicy="no-referrer" />
                         </div>
                         <div>
                           <div className="flex flex-col mb-1">

@@ -121,20 +121,16 @@ const HTPowerCablesPage: React.FC = () => {
           className="my-12 grid grid-cols-1 md:grid-cols-2 gap-8"
         >
           <div className="w-full aspect-video bg-white rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center border border-gray-100">
-            <img 
-              src="/Product Images/HT-Power-Cables/1.webp" 
+            <img loading="lazy" src="/Product Images/HT-Power-Cables/1.webp" 
               alt="HT Power Cable 1" 
               className="w-full h-full object-contain rotate-90 scale-[1.8]"
-              referrerPolicy="no-referrer"
-            />
+              referrerPolicy="no-referrer" />
           </div>
           <div className="w-full aspect-video bg-white rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center border border-gray-100">
-            <img 
-              src="/Product Images/HT-Power-Cables/2.webp" 
+            <img loading="lazy" src="/Product Images/HT-Power-Cables/2.webp" 
               alt="HT Power Cable 2" 
               className="w-full h-full object-contain rotate-90 scale-[1.4]"
-              referrerPolicy="no-referrer"
-            />
+              referrerPolicy="no-referrer" />
           </div>
         </motion.div>
 

@@ -11,12 +11,10 @@ const ExhibitionBanner: React.FC = () => {
         </h2>
       </div>
       <div className="w-full">
-        <img 
-          src="/brand identity/exhibition banner.jpeg" 
+        <img loading="lazy" src="/brand identity/exhibition banner.jpeg" 
           alt="Exhibition Banner" 
           className="w-full h-auto block"
-          referrerPolicy="no-referrer"
-        />
+          referrerPolicy="no-referrer" />
       </div>
     </section>
   );

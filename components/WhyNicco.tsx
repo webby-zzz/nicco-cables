@@ -15,35 +15,35 @@ import {
 const pillars = [
   {
     title: <><span className="text-brand-secondary">80+ Years</span> of Proven Industry Leadership</>,
-    icon: <img src="/icons/Nicco website icons/leadership.gif" alt="Leadership" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
+    icon: <img loading="lazy" src="/icons/Nicco website icons/leadership.gif" alt="Leadership" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
   },
   {
     title: <>Pioneers in <span className="text-brand-secondary">E-Beam Technology</span></>,
-    icon: <img src="/icons/Nicco website icons/electricity.gif" alt="E-Beam Technology" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
+    icon: <img loading="lazy" src="/icons/Nicco website icons/electricity.gif" alt="E-Beam Technology" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
   },
   {
     title: <>Integrated <span className="text-brand-secondary">In-House</span> Elastomeric Compounding</>,
-    icon: <img src="/icons/Nicco website icons/flask.gif" alt="Compounding" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
+    icon: <img loading="lazy" src="/icons/Nicco website icons/flask.gif" alt="Compounding" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
   },
   {
     title: <><span className="text-brand-secondary">Advanced Expertise</span> in Hybrid Cable Solutions</>,
-    icon: <img src="/icons/Nicco website icons/innovation.gif" alt="Expertise" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
+    icon: <img loading="lazy" src="/icons/Nicco website icons/innovation.gif" alt="Expertise" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
   },
   {
     title: <>Specialized <span className="text-brand-secondary">Pressure-Tight</span> Cable Capabilities</>,
-    icon: <img src="/icons/Nicco website icons/diving-equipment.gif" alt="Pressure-Tight Capabilities" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
+    icon: <img loading="lazy" src="/icons/Nicco website icons/diving-equipment.gif" alt="Pressure-Tight Capabilities" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
   },
   {
     title: <>Dedicated <span className="text-brand-secondary">Defence</span> Cable Solutions</>,
-    icon: <img src="/icons/Nicco website icons/shield.gif" alt="Defence Solutions" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
+    icon: <img loading="lazy" src="/icons/Nicco website icons/shield.gif" alt="Defence Solutions" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
   },
   {
     title: <>Trusted Partner to <span className="text-brand-secondary">Indian Railways</span></>,
-    icon: <img src="/icons/Nicco website icons/train.gif" alt="Indian Railways" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
+    icon: <img loading="lazy" src="/icons/Nicco website icons/train.gif" alt="Indian Railways" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
   },
   {
     title: <>Preferred Choice for <span className="text-brand-secondary">Mining Cables</span> Applications</>,
-    icon: <img src="/icons/Nicco website icons/natural-resources.gif" alt="Mining Cable Applications" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
+    icon: <img loading="lazy" src="/icons/Nicco website icons/natural-resources.gif" alt="Mining Cable Applications" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
   }
 ];
 
@@ -75,12 +75,10 @@ const WhyNicco: React.FC = () => {
             </div>
             <div className="lg:col-span-5">
               <div className="relative rounded-[2rem] overflow-hidden aspect-[4/3] shadow-2xl group">
-                <img 
-                  src="/brand identity/homepage image.webp" 
+                <img loading="lazy" src="/brand identity/homepage image.webp" 
                   alt="Why Choose Nicco" 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  referrerPolicy="no-referrer"
-                />
+                  referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-brand-secondary/5 group-hover:bg-transparent transition-colors duration-300" />
               </div>
             </div>

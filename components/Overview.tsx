@@ -24,12 +24,10 @@ const Overview: React.FC = () => {
             
             {/* Visual Addition */}
             <div className="relative mt-4 rounded-[1.5rem] overflow-hidden aspect-video shadow-2xl group">
-              <img 
-                src="/brand identity/cable-manufacturing.jpg.jpeg" 
+              <img loading="lazy" src="/brand identity/cable-manufacturing.jpg.jpeg" 
                 alt="Nicco Heritage" 
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                referrerPolicy="no-referrer"
-              />
+                referrerPolicy="no-referrer" />
               <div className="absolute inset-0 bg-brand-secondary/10 group-hover:bg-transparent transition-colors duration-300" />
             </div>
           </div>

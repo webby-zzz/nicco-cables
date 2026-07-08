@@ -153,6 +153,15 @@ const ContactPage: React.FC = () => {
         "20th Main Road, Anna Nagar,",
         "Chennai – 600040"
       ]
+    },
+    {
+      city: "Bengaluru",
+      icon: "/icons/Bangalore.png",
+      address: [
+        "#409, 2nd floor,",
+        "ITI HBCS Layout, Nayandahalli,",
+        "Mysore Road, Bengaluru-560039"
+      ]
     }
   ];
 

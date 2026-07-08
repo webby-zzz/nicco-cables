@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Linkedin, ArrowUp, Send, ChevronDown } from 'lucide-react';
 
-const FooterSection = ({ title, links }: { title: string, links: { name: string, link: string }[] }) => {
+const FooterSection = ({ title, links, className = "" }: { title: string, links: { name: string, link: string }[], className?: string }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-white/10 lg:border-none pb-4 lg:pb-0">
+    <div className={`border-b border-white/10 lg:border-none pb-4 lg:pb-0 ${className}`}>
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex items-center justify-between lg:cursor-default lg:pointer-events-none"
@@ -17,10 +17,10 @@ const FooterSection = ({ title, links }: { title: string, links: { name: string,
         <ChevronDown className={`w-4 h-4 text-white/60 lg:hidden transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
       <div className={`mt-4 lg:mt-4 overflow-hidden transition-all duration-300 lg:!max-h-none lg:!opacity-100 ${isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
-        <ul className="space-y-2">
+        <ul className="space-y-3.5">
           {links.map((item) => (
             <li key={item.name}>
-              <Link to={item.link} className="text-white/90 hover:text-brand-secondary transition-colors text-[11px] font-medium uppercase tracking-wide">
+              <Link to={item.link} className="block text-white/90 hover:text-brand-secondary transition-colors text-[11px] font-medium uppercase tracking-wide leading-tight">
                 {item.name}
               </Link>
             </li>
@@ -43,8 +43,8 @@ const Footer: React.FC = () => {
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-secondary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 relative z-10">
-          <div className="lg:col-span-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 w-full pt-2">
-            <div className="flex flex-col justify-start md:col-span-2 lg:col-span-1 mb-6 lg:mb-0">
+          <div className="lg:col-span-12 flex flex-col md:grid md:grid-cols-2 lg:flex lg:flex-row lg:justify-between gap-8 lg:gap-4 w-full pt-2">
+            <div className="flex flex-col justify-start md:col-span-2 lg:w-[20%] mb-6 lg:mb-0">
               <div className="h-16 w-auto mb-6">
                 <img loading="lazy" src="/brand identity/Logo.png"
                   alt="NICCO Logo"
@@ -58,6 +58,7 @@ const Footer: React.FC = () => {
 
             <FooterSection
               title="COMPANY"
+              className="md:col-span-1 lg:w-[12%]"
               links={[
                 { name: 'HOME', link: '/' },
                 { name: 'ABOUT US', link: '/about' },
@@ -69,6 +70,7 @@ const Footer: React.FC = () => {
 
             <FooterSection
               title="PRODUCTS"
+              className="md:col-span-1 lg:w-[25%]"
               links={[
                 { name: 'Data & Ethernet Cables (Cat 5, Cat 6, Cat 7)', link: '/products/data-ethernet' },
                 { name: 'Elastomeric and Silicon Cables (upto 15 kV)', link: '/products/Elastomeric-silicon' },
@@ -86,6 +88,7 @@ const Footer: React.FC = () => {
 
             <FooterSection
               title="INDUSTRIES"
+              className="md:col-span-1 lg:w-[15%]"
               links={[
                 { name: 'Defence', link: '/industry/defence' },
                 { name: 'Exploration', link: '/industry/exploration' },
@@ -101,13 +104,14 @@ const Footer: React.FC = () => {
 
             <FooterSection
               title="STANDARDS"
+              className="md:col-span-1 lg:w-[11%]"
               links={[
                 { name: 'Indian', link: '/standards/indian' },
                 { name: 'International', link: '/standards/international' }
               ]}
             />
 
-            <div className="flex flex-col h-full">
+            <div className="flex flex-col h-full md:col-span-1 lg:w-[17%]">
               <h4 className="font-bold text-white mb-4 tracking-widest text-xs opacity-60 uppercase border-l-2 border-brand-secondary pl-2">CONNECT</h4>
               <div className="flex flex-col gap-2 mb-6">
                 <a href="tel:+91(033)40647177" className="text-white/90 hover:text-brand-secondary transition-colors text-[11px] font-medium tracking-wide">

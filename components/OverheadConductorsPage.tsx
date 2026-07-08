@@ -111,21 +111,6 @@ const OverheadConductorsPage: React.FC = () => {
           <TechnicalTable title="Sizes & Variants" data={variantsDetails} />
         </div>
 
-        {/* Additional Image Section */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-12"
-        >
-          <div className="w-full h-64 md:h-96 bg-white rounded-[2rem] shadow-lg overflow-hidden border border-gray-100 flex items-center justify-center p-4">
-            <img loading="lazy" src="/Product Images/HT-Power-Cables/1.webp" 
-              alt="HT Power Cables Detail" 
-              className="w-full h-full object-contain rotate-90 scale-110"
-              referrerPolicy="no-referrer" />
-          </div>
-        </motion.div>
 
         {/* CTA Section */}
         <div className="bg-brand-secondary rounded-[2rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-lg">

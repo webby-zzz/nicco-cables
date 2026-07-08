@@ -49,9 +49,9 @@ const pillars = [
 
 const WhyNicco: React.FC = () => {
   return (
-    <section className="py-16 md:py-24 bg-[#F3F2EE] border-y border-gray-100 relative overflow-hidden">
+    <section className="py-8 md:py-12 bg-[#F3F2EE] border-y border-gray-100 relative overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-4 lg:px-10 w-full">
-        <div className="mb-16">
+        <div className="mb-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -74,7 +74,7 @@ const WhyNicco: React.FC = () => {
               </div>
             </div>
             <div className="lg:col-span-5">
-              <div className="relative rounded-[2rem] overflow-hidden aspect-[4/3] shadow-2xl group">
+              <div className="relative rounded-[2rem] overflow-hidden h-[220px] md:h-[280px] w-full shadow-2xl group">
                 <img loading="lazy" src="/brand identity/homepage image.webp" 
                   alt="Why Choose Nicco" 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"

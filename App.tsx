@@ -3,10 +3,12 @@ import Seo from './components/Seo';
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import ExhibitionPopup from './components/ExhibitionPopup';
 import Hero from './components/Hero';
 import Overview from './components/Overview';
 import Clientele from './components/Clientele';
 import WhyNicco from './components/WhyNicco';
+import ProductRange from './components/ProductRange';
 import Certifications from './components/Certifications';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -75,6 +77,7 @@ const HomePage: React.FC = () => {
       <Overview />
       {showClientele && <Clientele />}
       <WhyNicco />
+      <ProductRange />
       <Certifications />
     </main>
   );
@@ -151,6 +154,7 @@ const App: React.FC = () => {
         </Routes>
         <Footer />
         <ScrollToTop />
+        <ExhibitionPopup />
       </div>
     </Router>
   );

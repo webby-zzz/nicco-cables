@@ -130,7 +130,7 @@ const AboutPage: React.FC = () => {
     <div className="bg-white">
       <Seo
         title="About Nicco Cables | 8 Decades of Engineering Excellence"
-        description="Learn about Nicco Cables' rich history, 5,50,000 sq. ft. state-of-the-art manufacturing facility, NABL-accredited testing labs, and certified cable engineering expertise."
+        description="Learn about Nicco Cables' rich history, 4,96,520 sq. ft. state-of-the-art manufacturing facility, NABL-accredited testing labs, and certified cable engineering expertise."
         keywords="Nicco Cables legacy, corporate history, cable manufacturer India, manufacturing facility, quality certification"
         schema={{
           "@context": "https://schema.org",

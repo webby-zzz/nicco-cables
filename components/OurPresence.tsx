@@ -56,6 +56,14 @@ const officeDetails = [
       "20th Main Road, Anna Nagar,",
       "Chennai – 600040"
     ]
+  },
+  {
+    city: "Bengaluru",
+    details: [
+      "#409, 2nd floor,",
+      "ITI HBCS Layout, Nayandahalli,",
+      "Mysore Road, Bengaluru-560039"
+    ]
   }
 ];
 

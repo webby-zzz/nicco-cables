@@ -125,21 +125,6 @@ const InstrumentationCablesPage: React.FC = () => {
           <TechnicalTable title="Sizes & Variants" data={variantsDetails} />
         </div>
 
-        {/* Additional Image Section */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-12 flex justify-center"
-        >
-          <div className="w-full max-w-5xl aspect-video bg-white rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center border border-gray-100">
-            <img loading="lazy" src="/Product Images/instrumental-cables/3.webp" 
-              alt="Instrumentation Cable 3" 
-              className="w-full h-full object-contain rotate-90 scale-[1.4]"
-              referrerPolicy="no-referrer" />
-          </div>
-        </motion.div>
 
         {/* CTA Section */}
         <div className="bg-brand-secondary rounded-[2rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-lg">

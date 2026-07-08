@@ -92,9 +92,9 @@ const MVCCPage: React.FC = () => {
           <div className="md:w-1/2 w-full">
             <div className="w-full aspect-[4/3] bg-white rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center border border-gray-100">
               <img 
-                src="/Product Images/MVCC/7.webp" 
-                alt="MVCC Cable 7" 
-                className="w-full h-full object-contain rotate-90 scale-[1.3]"
+                src="/Product Images/MVCC/MVCC.jpeg" 
+                alt="MVCC / Tree Spacer Cable" 
+                className="w-full h-full object-contain"
                 referrerPolicy="no-referrer"
               />
             </div>
@@ -105,27 +105,6 @@ const MVCCPage: React.FC = () => {
           <TechnicalTable title="Technical Details" data={technicalDetails} />
         </div>
 
-        {/* Additional Image Section */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-12 grid grid-cols-1 md:grid-cols-2 gap-8"
-        >
-          <div className="w-full h-64 md:h-80 bg-white rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center border border-gray-100 p-4">
-            <img loading="lazy" src="/Product Images/MVCC/5.webp" 
-              alt="MVCC Cable 5" 
-              className="w-full h-full object-contain rotate-90 scale-[1.2]"
-              referrerPolicy="no-referrer" />
-          </div>
-          <div className="w-full h-64 md:h-80 bg-white rounded-[2rem] shadow-lg overflow-hidden flex items-center justify-center border border-gray-100 p-4">
-            <img loading="lazy" src="/Product Images/MVCC/6.webp" 
-              alt="MVCC Cable 6" 
-              className="w-full h-full object-contain -rotate-90 scale-[1.2]"
-              referrerPolicy="no-referrer" />
-          </div>
-        </motion.div>
 
         {/* CTA Section */}
         <div className="bg-brand-secondary rounded-[2rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-lg">

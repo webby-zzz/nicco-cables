@@ -1,16 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { 
-  History, 
-  Zap, 
-  FlaskConical, 
-  Layers, 
-  Waves, 
-  Shield, 
-  TrainFront, 
-  Mountain 
-} from 'lucide-react';
 
 const pillars = [
   {
@@ -28,22 +18,6 @@ const pillars = [
   {
     title: <><span className="text-brand-secondary">Advanced Expertise</span> in Hybrid Cable Solutions</>,
     icon: <img loading="lazy" src="/icons/Nicco website icons/innovation.gif" alt="Expertise" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
-  },
-  {
-    title: <>Specialized <span className="text-brand-secondary">Pressure-Tight</span> Cable Capabilities</>,
-    icon: <img loading="lazy" src="/icons/Nicco website icons/diving-equipment.gif" alt="Pressure-Tight Capabilities" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
-  },
-  {
-    title: <>Dedicated <span className="text-brand-secondary">Defence</span> Cable Solutions</>,
-    icon: <img loading="lazy" src="/icons/Nicco website icons/shield.gif" alt="Defence Solutions" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
-  },
-  {
-    title: <>Trusted Partner to <span className="text-brand-secondary">Indian Railways</span></>,
-    icon: <img loading="lazy" src="/icons/Nicco website icons/train.gif" alt="Indian Railways" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
-  },
-  {
-    title: <>Preferred Choice for <span className="text-brand-secondary">Mining Cables</span> Applications</>,
-    icon: <img loading="lazy" src="/icons/Nicco website icons/natural-resources.gif" alt="Mining Cable Applications" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
   }
 ];
 

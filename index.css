@@ -14,31 +14,31 @@
 
   --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
 
-  --text-xs: 10px;
-  --text-xs--line-height: 14px;
-  --text-sm: 12px;
-  --text-sm--line-height: 16px;
-  --text-base: 14px;
-  --text-base--line-height: 20px;
-  --text-lg: 16px;
-  --text-lg--line-height: 24px;
-  --text-xl: 18px;
-  --text-xl--line-height: 26px;
-  --text-2xl: 22px;
-  --text-2xl--line-height: 28px;
-  --text-3xl: 28px;
-  --text-3xl--line-height: 32px;
-  --text-4xl: 34px;
-  --text-4xl--line-height: 38px;
-  --text-5xl: 46px;
+  --text-xs: 9px;
+  --text-xs--line-height: 13px;
+  --text-sm: 11px;
+  --text-sm--line-height: 15px;
+  --text-base: 13px;
+  --text-base--line-height: 19px;
+  --text-lg: 15px;
+  --text-lg--line-height: 23px;
+  --text-xl: 17px;
+  --text-xl--line-height: 25px;
+  --text-2xl: 21px;
+  --text-2xl--line-height: 27px;
+  --text-3xl: 27px;
+  --text-3xl--line-height: 31px;
+  --text-4xl: 33px;
+  --text-4xl--line-height: 37px;
+  --text-5xl: 45px;
   --text-5xl--line-height: 1;
-  --text-6xl: 58px;
+  --text-6xl: 57px;
   --text-6xl--line-height: 1;
-  --text-7xl: 70px;
+  --text-7xl: 69px;
   --text-7xl--line-height: 1;
-  --text-8xl: 94px;
+  --text-8xl: 93px;
   --text-8xl--line-height: 1;
-  --text-9xl: 126px;
+  --text-9xl: 125px;
   --text-9xl--line-height: 1;
 }
 
@@ -195,18 +195,58 @@ footer {
   --text-9xl--line-height: 1;
 }
 
-/* Reduce arbitrary pixel font size classes by 2px when outside the footer */
+/* Reduce arbitrary pixel font size classes by 3px when outside the footer (Mobile defaults) */
 body *:not(footer *) {
-  &.text-\[10px\] { font-size: 8px !important; }
-  &.text-\[11px\] { font-size: 9px !important; }
-  &.text-\[12px\] { font-size: 10px !important; }
-  &.text-\[13px\] { font-size: 11px !important; }
-  &.text-\[14px\] { font-size: 12px !important; }
-  &.text-\[16px\] { font-size: 14px !important; }
-  &.text-\[44px\] { font-size: 42px !important; }
+  &.text-\[10px\] { font-size: 7px !important; }
+  &.text-\[11px\] { font-size: 8px !important; }
+  &.text-\[12px\] { font-size: 9px !important; }
+  &.text-\[13px\] { font-size: 10px !important; }
+  &.text-\[14px\] { font-size: 11px !important; }
+  &.text-\[16px\] { font-size: 13px !important; }
+  &.text-\[44px\] { font-size: 41px !important; }
 }
 
 @media (min-width: 768px) {
+  /* Restore desktop font sizes (2px reduction) for screen widths >= 768px */
+  :root {
+    --text-xs: 10px;
+    --text-xs--line-height: 14px;
+    --text-sm: 12px;
+    --text-sm--line-height: 16px;
+    --text-base: 14px;
+    --text-base--line-height: 20px;
+    --text-lg: 16px;
+    --text-lg--line-height: 24px;
+    --text-xl: 18px;
+    --text-xl--line-height: 26px;
+    --text-2xl: 22px;
+    --text-2xl--line-height: 28px;
+    --text-3xl: 28px;
+    --text-3xl--line-height: 32px;
+    --text-4xl: 34px;
+    --text-4xl--line-height: 38px;
+    --text-5xl: 46px;
+    --text-5xl--line-height: 1;
+    --text-6xl: 58px;
+    --text-6xl--line-height: 1;
+    --text-7xl: 70px;
+    --text-7xl--line-height: 1;
+    --text-8xl: 94px;
+    --text-8xl--line-height: 1;
+    --text-9xl: 126px;
+    --text-9xl--line-height: 1;
+  }
+
+  body *:not(footer *) {
+    &.text-\[10px\] { font-size: 8px !important; }
+    &.text-\[11px\] { font-size: 9px !important; }
+    &.text-\[12px\] { font-size: 10px !important; }
+    &.text-\[13px\] { font-size: 11px !important; }
+    &.text-\[14px\] { font-size: 12px !important; }
+    &.text-\[16px\] { font-size: 14px !important; }
+    &.text-\[44px\] { font-size: 42px !important; }
+  }
+
   body *:not(footer *).md\:text-\[14px\] {
     font-size: 12px !important;
   }

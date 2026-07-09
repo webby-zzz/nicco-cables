@@ -16,7 +16,7 @@ const pillars = [
     icon: <img loading="lazy" src="/icons/Nicco website icons/flask.gif" alt="Compounding" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
   },
   {
-    title: <><span className="text-brand-secondary">Advanced Expertise</span> in Hybrid Cable Solutions</>,
+    title: <>Advancing <span className="text-brand-secondary">Atmanirbhar & Viksit Bharat</span> & Global Growth</>,
     icon: <img loading="lazy" src="/icons/Nicco website icons/innovation.gif" alt="Expertise" className="w-16 h-16 object-contain" referrerPolicy="no-referrer" />
   }
 ];

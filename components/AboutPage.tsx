@@ -84,7 +84,6 @@ const AboutPage: React.FC = () => {
   const facilityImages = [
     "/Machinery images/manufacturing machines (1).webp",
     "/Machinery images/manufacturing machines (2).webp",
-    "/Machinery images/manufacturing machines (3).webp",
     "/Machinery images/manufacturing machines (4).webp",
     "/Machinery images/manufacturing machines (5).webp",
     "/Machinery images/manufacturing machines (6).webp",

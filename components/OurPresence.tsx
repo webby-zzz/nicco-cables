@@ -46,15 +46,6 @@ const officeDetails = [
       "Ananda Bhaban",
       "Near Bharat Petrol Pump,",
       "Rasulgarh,",
-      "Bhubaneswar- 751010"
-    ]
-  },
-  {
-    city: "Chennai",
-    details: [
-      "Haive House, Old. No. 1226 New No. 24,",
-      "20th Main Road, Anna Nagar,",
-      "Chennai – 600040"
     ]
   },
   {

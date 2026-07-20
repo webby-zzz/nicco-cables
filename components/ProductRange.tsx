@@ -21,7 +21,7 @@ const products = [
   },
   {
     name: "Fire Resistant & Survival Cables",
-    image: "/Product Images/thumbnails/Fire Survival cable.jpeg",
+    image: "/Product Images/thumbnails/new Fire Survival cable.jpeg",
     link: "/products/Fire-Survival"
   },
   {
@@ -169,7 +169,7 @@ const ProductRange: React.FC = () => {
                         alt={product.name} 
                         loading="lazy"
                         referrerPolicy="no-referrer"
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
                     {/* Centered Uppercase Bold Title Below */}

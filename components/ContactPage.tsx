@@ -146,15 +146,6 @@ const ContactPage: React.FC = () => {
       ]
     },
     {
-      city: "Chennai",
-      icon: "/brand identity/Chennai.png",
-      address: [
-        "Haive House, Old. No. 1226 New No. 24,",
-        "20th Main Road, Anna Nagar,",
-        "Chennai – 600040"
-      ]
-    },
-    {
       city: "Bengaluru",
       icon: "/icons/Bangalore.png",
       address: [
@@ -175,7 +166,7 @@ const ContactPage: React.FC = () => {
           "@context": "https://schema.org",
           "@type": "ContactPage",
           "name": "Contact Nicco Cables",
-          "description": "Get in touch with Nicco Cables customer support and sales team in Kolkata, Mumbai, Noida, Chennai, Hyderabad, and Bhubaneswar."
+          "description": "Get in touch with Nicco Cables customer support and sales team in Kolkata, Mumbai, Noida, Hyderabad, and Bhubaneswar."
       }}
       />
       {/* Hero Section */}

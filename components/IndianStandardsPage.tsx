@@ -27,7 +27,7 @@ const standards = [
     id: 'fire-resistant',
     title: 'Fire Resistant Cables with Low Smoke & Gases',
     description: 'IS 17505',
-    image: '/Product Images/thumbnails/Fire Survival cable.jpeg'
+    image: '/Product Images/thumbnails/new Fire Survival cable.jpeg'
   },
   {
     id: 'automotive',

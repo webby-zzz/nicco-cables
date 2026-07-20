@@ -37,19 +37,6 @@ const locations = [
     email: "Info@niccocable.com"
   },
   {
-    city: "Chennai",
-    icon: Building2,
-    image: "https://placehold.co/1x1/000000/000000",
-    details: [
-      "Nicco Cables Private Ltd",
-      "Haive House, Old No-1226",
-      "New No-24, 20th Main Road,",
-      "Anna Nagar, Chennai - 600040"
-    ],
-    contact: "7419888220",
-    email: "Info@niccocable.com"
-  },
-  {
     city: "Mumbai",
     icon: Building,
     image: "https://placehold.co/1x1/000000/000000",

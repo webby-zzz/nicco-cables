@@ -45,7 +45,7 @@ const Overview: React.FC = () => {
                 We deliver power and reliability across key sectors: <strong className="font-bold text-brand-dark">Transmission & Distribution, Renewable Energy, Power Generation, Exploration, Mobility, Defence, Manufacturing, Infrastructure and Harnessing</strong>.
               </p>
               <p>
-                Supporting <strong className="font-bold text-brand-dark">Atmanirbhar Bharat and Viksit Bharat 2047</strong>, Nicco operates 4,96,520 sq. ft. of world-class infrastructure, in-house R&D, advanced compounding, and NABL testing laboratories.
+                Supporting <strong className="font-bold text-brand-dark">Atmanirbhar Bharat and Viksit Bharat 2047</strong>, Nicco operates 5,50,000 sq. ft. of world-class infrastructure, in-house R&D, advanced compounding, and NABL testing laboratories.
               </p>
               <p className="font-bold text-brand-dark">
                 We build the backbone of India.

@@ -113,7 +113,10 @@ const GalleryPage: React.FC = () => {
         pathMap.set(filename, path);
       }
     });
-    const imagePaths = Array.from(pathMap.values());
+    const imagePaths = Array.from(pathMap.values()).filter(path => {
+      const lower = path.toLowerCase();
+      return !lower.includes('machinery (3)') && !lower.includes('manufacturing machines (3)');
+    });
 
     const items: GalleryItem[] = imagePaths.map((path, index) => {
       const filename = path.split('/').pop() || '';

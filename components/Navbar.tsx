@@ -136,7 +136,7 @@ const MegaMenu = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void })
     { name: 'Data & Ethernet Cables (Cat 5, Cat 6, Cat 7)', image: '/Product Images/thumbnails/data cables featured image.jpeg', link: '/products/data-ethernet' },
     { name: 'Elastomeric and Silicon Cables (upto 15 kV)', image: '/Product Images/thumbnails/Silicon insulated cable.jpeg', link: '/products/Elastomeric-silicon' },
     { name: 'Electron Beam Cables', image: '/Product Images/thumbnails/Electron beam cable.jpeg', link: '/products/Electron-Beam' },
-    { name: 'Fire Resistant and Fire Survival Cables', image: '/Product Images/thumbnails/Fire Survival cable.jpeg', link: '/products/Fire-Survival' },
+    { name: 'Fire Resistant and Fire Survival Cables', image: '/Product Images/thumbnails/new Fire Survival cable.jpeg', link: '/products/Fire-Survival' },
     { name: 'High Temperature Cables (ETFE, FEP, PTFE)', image: '/Product Images/thumbnails/High temperature PTFE cable.jpeg', link: '/products/high-temperature' },
     { name: 'HT Cables upto 33kV', image: '/Product Images/thumbnails/HT cable.jpeg', link: '/products/ht-power-cables' },
     { name: 'Instrumentation Cables', image: '/Product Images/thumbnails/Instrumentation Cables.jpeg', link: '/products/instrumentation' },

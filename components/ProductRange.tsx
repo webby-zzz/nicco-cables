@@ -45,7 +45,7 @@ const products = [
     link: "/products/lt-power-control"
   },
   {
-    name: "MV Covered Conductors",
+    name: "MVCC",
     image: "/Product Images/thumbnails/Medium voltage Covered conductors - tree spacer.jpeg",
     link: "/products/mvcc"
   },

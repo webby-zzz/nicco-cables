@@ -55,14 +55,14 @@ const ExhibitionPopup: React.FC = () => {
             <div className="w-full flex items-center justify-center">
               {/* PC Banner (Landscape 16:9 aspect) */}
               <img 
-                src="/expo banner/PC Website Banner for E3 (1920px X 1080px).jpg.jpeg" 
+                src="/expo banner/PC Website Banner for E3 (1920px X 1080px)_page-0001.webp" 
                 alt="Exhibition Banner PC" 
                 className="hidden md:block w-full h-auto object-contain max-h-[85vh] rounded-3xl"
                 referrerPolicy="no-referrer"
               />
               {/* Phone Banner (Square 1:1 aspect) */}
               <img 
-                src="/expo banner/PHONE Website Banner for E3 (1080px X 1080px).jpg.jpeg" 
+                src="/expo banner/PHONE Website Banner for E3 (1080px X 1080px)_page-0001.webp" 
                 alt="Exhibition Banner Phone" 
                 className="block md:hidden w-full h-auto object-contain max-h-[80vh] rounded-2xl"
                 referrerPolicy="no-referrer"

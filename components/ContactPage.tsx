@@ -346,11 +346,22 @@ const ContactPage: React.FC = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
                     <div className="space-y-4">
-                      <p className="text-base text-black leading-relaxed font-medium">
+                      <a
+                        href="https://maps.app.goo.gl/29mpEos4NKSyU3L7A"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-base text-black leading-relaxed font-medium hover:text-brand-secondary transition-colors inline-block"
+                      >
                         Suket Building, 2nd Floor, 20 Ballygunge Circular Road Kolkata - 700019
-                      </p>
+                      </a>
                     </div>
-                    <div className="rounded-[1.5rem] overflow-hidden shadow-2xl aspect-video bg-gray-100 border border-gray-100">
+                    <a
+                      href="https://maps.app.goo.gl/29mpEos4NKSyU3L7A"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block rounded-[1.5rem] overflow-hidden shadow-2xl aspect-video bg-gray-100 border border-gray-100 relative group cursor-pointer"
+                      title="Open location on Google Maps"
+                    >
                       {/* Map for Head Office - Kolkata */}
                       <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.9786!2d88.36!3d22.54!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02766666666667%3A0x6666666666666666!2s20%20Ballygunge%20Circular%20Road%2C%20Kolkata!5e0!3m2!1sen!2sin!4v1710312000000!5m2!1sen!2sin"
@@ -361,8 +372,9 @@ const ContactPage: React.FC = () => {
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"
                         title="Head Office Map"
+                        className="pointer-events-none"
                       ></iframe>
-                    </div>
+                    </a>
                   </div>
                 </div>
               </div>

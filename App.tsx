@@ -154,7 +154,6 @@ const App: React.FC = () => {
         </Routes>
         <Footer />
         <ScrollToTop />
-        <ExhibitionPopup />
       </div>
     </Router>
   );

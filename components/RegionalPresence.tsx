@@ -13,6 +13,7 @@ const locations = [
   {
     city: "Kolkata",
     icon: Landmark,
+    mapUrl: "https://maps.app.goo.gl/29mpEos4NKSyU3L7A",
     image: "https://placehold.co/1x1/000000/000000",
     details: [
       "Nicco Cables Private Ltd",
@@ -99,11 +100,24 @@ const RegionalPresence: React.FC = () => {
                   <loc.icon className="w-full h-full stroke-[1.5px]" />
                 </div>
                 <h4 className="text-2xl font-black text-brand-dark mb-6 tracking-tighter">{loc.city}</h4>
-                <div className="space-y-1 mb-auto">
-                  {loc.details.map((line, i) => (
-                    <p key={i} className="text-[11px] text-black font-bold leading-relaxed">{line}</p>
-                  ))}
-                </div>
+                {loc.mapUrl ? (
+                  <a
+                    href={loc.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="space-y-1 mb-auto hover:text-brand-secondary transition-colors block"
+                  >
+                    {loc.details.map((line, i) => (
+                      <p key={i} className="text-[11px] text-black font-bold leading-relaxed hover:text-brand-secondary">{line}</p>
+                    ))}
+                  </a>
+                ) : (
+                  <div className="space-y-1 mb-auto">
+                    {loc.details.map((line, i) => (
+                      <p key={i} className="text-[11px] text-black font-bold leading-relaxed">{line}</p>
+                    ))}
+                  </div>
+                )}
                 <div className="space-y-4 pt-8 border-t border-gray-100 w-full mt-10">
                   <div className="flex items-center justify-center gap-3 text-[11px] font-black text-brand-dark tracking-widest">
                     <Phone className="w-3.5 h-3.5 text-brand-ash group-hover:text-brand-secondary transition-colors" />

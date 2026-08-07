@@ -5,6 +5,7 @@ import { motion } from 'motion/react';
 const officeDetails = [
   {
     city: "Kolkata (HQ)",
+    mapUrl: "https://maps.app.goo.gl/29mpEos4NKSyU3L7A",
     details: [
       "Nicco Cables Private Ltd",
       "Suket Building, 2nd Floor,",
@@ -74,11 +75,24 @@ const OurPresence: React.FC = () => {
               className="bg-white border border-gray-100 rounded-[2rem] hover:shadow-2xl transition-all duration-500 flex flex-col items-center text-center group overflow-hidden relative p-6"
             >
               <h4 className="text-lg font-black text-brand-dark mb-2 tracking-tighter uppercase">{loc.city}</h4>
-              <div className="space-y-1">
-                {loc.details.map((line, i) => (
-                  <p key={i} className="text-xs text-black font-bold leading-relaxed">{line}</p>
-                ))}
-              </div>
+              {loc.mapUrl ? (
+                <a
+                  href={loc.mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="space-y-1 hover:text-brand-secondary transition-colors"
+                >
+                  {loc.details.map((line, i) => (
+                    <p key={i} className="text-xs text-black font-bold leading-relaxed hover:text-brand-secondary">{line}</p>
+                  ))}
+                </a>
+              ) : (
+                <div className="space-y-1">
+                  {loc.details.map((line, i) => (
+                    <p key={i} className="text-xs text-black font-bold leading-relaxed">{line}</p>
+                  ))}
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
